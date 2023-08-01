@@ -21,5 +21,15 @@
   "bugs": {
     "url": "https://github.com/idrissruso/awail/issues"
   },
-  "homepage": "https://github.com/idrissruso/awail#readme"
+  "homepage": "https://github.com/idrissruso/awail#readme",
+  "dependencies": {
+    "ejs": "^3.1.9",
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.29.3",
+    "install": "^0.13.0",
+    "nodemon": "^3.0.1",
+    "npm": "^9.8.1"
+  }
 }
