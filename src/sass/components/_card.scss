@@ -1,0 +1,41 @@
+.card {
+  background-color: #fff;
+  display: flex;
+  border-radius: 10px;
+  border: 3px solid $color-primary-light;
+  overflow: hidden;
+  transition: box-shadow 0.5s, transform 0.1s;
+  padding: 1rem;
+  --webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+
+  //when the card is hovered
+  &:hover {
+    box-shadow: $shadow-dark;
+  }
+
+  //when the card is selected
+  &:active {
+    transform: scale(0.99);
+    box-shadow: none;
+  }
+  &-box {
+    justify-self: start;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &__img {
+      height: 8rem;
+      object-fit: cover;
+      margin-right: 1rem;
+    }
+  }
+
+  &__content {
+    font-size: 3rem;
+    font-weight: 300;
+    display: flex;
+    align-items: center;
+  }
+}

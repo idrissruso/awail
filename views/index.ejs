@@ -4,9 +4,45 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
     <title>Awail</title>
   </head>
   <body>
-    <h1>hello world</h1>
+    <div class="logo-box">
+      <img class="logo__img" src="logo.png" alt="logo" />
+    </div>
   </body>
+  <div class="options-container">
+    <div class="card" id="parent-option-card">
+      <div class="card-box">
+        <img src="family.png" alt="option image " class="card-box__img" />
+      </div>
+      <div class="card__content">
+        <p><span>Accès</span> des parents</p>
+      </div>
+    </div>
+
+    <div class="card" id="student-option-card">
+      <div class="card-box">
+        <img src="student.png" alt="option image " class="card-box__img" />
+      </div>
+      <div class="card__content">
+        <p><span>Accès</span> des élèves</p>
+      </div>
+    </div>
+    <div class="card" id="admin-option-card">
+      <div class="card-box">
+        <img src="admin.png" alt="option image " class="card-box__img" />
+      </div>
+      <div class="card__content">
+        <p><span>Accès</span> administrateur</p>
+      </div>
+    </div>
+  </div>
 </html>

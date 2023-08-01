@@ -1,0 +1,29 @@
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; // 1rem = 10px, 10px/16px = 62.5%
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: 'Inconsolata', monospace;
+  font-size: 1.4rem;
+  color: $color-gray-1;
+  background-image: linear-gradient(
+    to right bottom,
+    #2b2a4c,
+    #eee2de,
+    #eee2de,
+    #2b2a4c
+  );
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  padding: 16rem;
+}

@@ -1,0 +1,75 @@
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "Inconsolata", monospace;
+  font-size: 1.4rem;
+  color: #3d3d3d;
+  background-image: linear-gradient(to right bottom, #2b2a4c, #eee2de, #eee2de, #2b2a4c);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  padding: 16rem;
+}
+
+.card {
+  background-color: #fff;
+  display: flex;
+  border-radius: 10px;
+  border: 3px solid #302b63;
+  overflow: hidden;
+  transition: box-shadow 0.5s, transform 0.1s;
+  padding: 1rem;
+  --webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+}
+.card:hover {
+  box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.3);
+}
+.card:active {
+  transform: scale(0.99);
+  box-shadow: none;
+}
+.card-box {
+  justify-self: start;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card-box__img {
+  height: 8rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin-right: 1rem;
+}
+.card__content {
+  font-size: 3rem;
+  font-weight: 300;
+  display: flex;
+  align-items: center;
+}
+
+.logo-box {
+  text-align: center;
+  margin: -10rem 0 5rem 0;
+}
+.logo__img {
+  width: 15rem;
+}
+
+.options-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}/*# sourceMappingURL=main.css.map */
