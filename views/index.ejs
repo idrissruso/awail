@@ -10,6 +10,7 @@
       href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@300;400;500;600&display=swap"
       rel="stylesheet"
     />
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
 
     <title>Awail</title>
   </head>
@@ -17,32 +18,48 @@
     <div class="logo-box">
       <img class="logo__img" src="logo.png" alt="logo" />
     </div>
-  </body>
-  <div class="options-container">
-    <div class="card" id="parent-option-card">
-      <div class="card-box">
-        <img src="family.png" alt="option image " class="card-box__img" />
+    <div class="options-container">
+      <div class="card" id="parent-option-card">
+        <div class="card-box">
+          <img src="family.png" alt="option image " class="card-box__img" />
+        </div>
+        <div class="card__content">
+          <p><span>Accès</span> des parents</p>
+        </div>
       </div>
-      <div class="card__content">
-        <p><span>Accès</span> des parents</p>
-      </div>
-    </div>
 
-    <div class="card" id="student-option-card">
-      <div class="card-box">
-        <img src="student.png" alt="option image " class="card-box__img" />
+      <div class="card" id="student-option-card">
+        <div class="card-box">
+          <img src="student.png" alt="option image " class="card-box__img" />
+        </div>
+        <div class="card__content">
+          <p><span>Accès</span> des élèves</p>
+        </div>
       </div>
-      <div class="card__content">
-        <p><span>Accès</span> des élèves</p>
+      <div class="card" id="admin-option-card">
+        <div class="card-box">
+          <img src="admin.png" alt="option image " class="card-box__img" />
+        </div>
+        <div class="card__content">
+          <p><span>Accès</span> administrateur</p>
+        </div>
       </div>
     </div>
-    <div class="card" id="admin-option-card">
-      <div class="card-box">
-        <img src="admin.png" alt="option image " class="card-box__img" />
-      </div>
-      <div class="card__content">
-        <p><span>Accès</span> administrateur</p>
-      </div>
+  </body>
+  <section class="section-login">
+    <div class="section-login__container">
+      <form action="#" class="login__form">
+        <span class="login__form-close">✖️</span>
+        <div class="form__group">
+          <label for="username" class="form__label">Nom d'utilisateur</label>
+          <input type="text" class="form__input" id="username" />
+        </div>
+        <div class="form__group">
+          <label for="password" class="form__label">Mot de Passe</label
+          ><input type="text" class="form__input" />
+        </div>
+        <button class="form__btn">Connexion</button>
+      </form>
     </div>
-  </div>
+  </section>
 </html>
