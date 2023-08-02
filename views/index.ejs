@@ -18,6 +18,7 @@
     <div class="logo-box">
       <img class="logo__img" src="logo.png" alt="logo" />
     </div>
+    <!--option cards-->
     <div class="options-container">
       <div class="card" id="parent-option-card">
         <div class="card-box">
@@ -46,19 +47,49 @@
       </div>
     </div>
   </body>
+  <!--login pop-up-->
   <section class="section-login">
     <div class="section-login__container">
+      <div class="section-login__container-sidebar">
+        <div class="section-login__container-sidebar--title">
+          <h1 class="heading-primary">مركز الأوائل</h1>
+          <h3 class="heading-tertiary"><span>Accès</span> des élèves</h3>
+        </div>
+        <div class="section-login__container-sidebar--logo">
+          <img src="student.png" alt="option image " class="card-box__img" />
+        </div>
+      </div>
       <form action="#" class="login__form">
         <span class="login__form-close">✖️</span>
         <div class="form__group">
+          <input
+            required
+            type="text"
+            class="form__input"
+            placeholder="Nom d'utilisateur"
+            id="username"
+          />
           <label for="username" class="form__label">Nom d'utilisateur</label>
-          <input type="text" class="form__input" id="username" />
         </div>
         <div class="form__group">
-          <label for="password" class="form__label">Mot de Passe</label
-          ><input type="text" class="form__input" />
+          <input
+            required
+            type="password"
+            class="form__input"
+            placeholder="Mot de Passe"
+            id="password"
+          />
+          <label for="password" class="form__label">Mot de Passe</label>
         </div>
-        <button class="form__btn">Connexion</button>
+        <div class="form__group form__group-checkbox">
+          <input type="checkbox" class="form__checker" id="checker" />
+          <label for="checker" class="form__group-checkbox--label"
+            >Afficher Le mot de Passe</label
+          >
+        </div>
+        <div class="form__group">
+          <button class="form__btn">Connexion</button>
+        </div>
       </form>
     </div>
   </section>

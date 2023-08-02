@@ -1,9 +1,11 @@
 .login__form {
+  padding: 5rem 2rem;
+  display: flex;
+  flex-direction: column;
   &-close {
     position: absolute;
     top: 1rem;
     right: 1rem;
-
     color: $color-primary;
     cursor: pointer;
   }
@@ -11,12 +13,72 @@
 
 .form {
   &__group {
+    display: flex;
+    flex-direction: column;
+    color: inherit;
+    &:not(:last-child) {
+      margin-bottom: 1rem;
+    }
+    &-checkbox {
+      align-self: flex-start;
+      display: flex;
+      flex-direction: row;
+      &--label {
+        display: inline-block;
+        margin-left: 1rem;
+        font-size: 1.4rem;
+      }
+    }
+  }
+
+  &__input {
+    display: block;
+    font-size: 1.5rem;
+    padding: 1.5rem 2rem;
+    outline: none;
+    color: inherit;
+    font-family: inherit;
+    border: 0;
+    border-bottom: 0.4rem solid transparent;
+    border-radius: 3px;
+    transition: all 0.5s;
+    &:focus {
+      outline: 0;
+      border-bottom: 0.4rem solid $color-primary;
+      box-shadow: $shadow-dark;
+      &:invalid {
+        border-bottom: 0.4rem solid red;
+      }
+    }
   }
 
   &__label {
+    display: block;
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin: 0.7rem 0rem 0rem 2rem;
+    transform: translateY(-4.4rem);
+    opacity: 0;
+    transition: all 0.5s;
   }
-  &__input {
+
+  &__input:focus + &__label {
+    opacity: 1;
+    transform: translateY(0);
   }
-  &__button {
+
+  &__input::placeholder {
+    color: $color-gray-1;
+  }
+
+  &__btn {
+    background-color: $color-primary;
+    padding: 1rem 3rem;
+    color: $color-gray;
+    align-self: flex-start;
+  }
+
+  &__checker {
+    background-color: $color-primary;
   }
 }

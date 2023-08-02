@@ -18,6 +18,17 @@
   &__container {
     position: relative;
     background-color: $color-secondary;
-    padding: 3rem 5rem;
+    display: grid;
+    grid-template-columns: max-content minmax(max-content, 450px);
+    box-shadow: $shadow-light;
+    &-sidebar {
+      color: #fff;
+      padding: 1rem 2rem;
+      background-color: $color-primary-dark;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+    }
   }
 }

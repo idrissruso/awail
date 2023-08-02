@@ -1,3 +1,4 @@
+@charset "UTF-8";
 html {
   box-sizing: border-box;
   font-size: 62.5%;
@@ -20,6 +21,39 @@ body {
   background-size: cover;
   height: 100vh;
   padding: 16rem;
+}
+
+.heading-primary {
+  font-size: 2.6rem;
+  font-weight: 900;
+  margin: 1rem;
+}
+
+input[type=checkbox] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  /* Styling checkbox */
+  width: 15px;
+  height: 15px;
+  background-color: transparent;
+  position: relative;
+  border: 3px solid #24243e;
+  border-radius: 2px;
+}
+
+input[type=checkbox]:checked {
+  background-color: #24243e;
+}
+
+input[type=checkbox]:checked:after {
+  content: "✔";
+  color: white;
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .card {
@@ -68,12 +102,84 @@ body {
   width: 15rem;
 }
 
+.login__form {
+  padding: 5rem 2rem;
+  display: flex;
+  flex-direction: column;
+}
 .login__form-close {
   position: absolute;
   top: 1rem;
   right: 1rem;
   color: #24243e;
   cursor: pointer;
+}
+
+.form__group {
+  display: flex;
+  flex-direction: column;
+  color: inherit;
+}
+.form__group:not(:last-child) {
+  margin-bottom: 1rem;
+}
+.form__group-checkbox {
+  align-self: flex-start;
+  display: flex;
+  flex-direction: row;
+}
+.form__group-checkbox--label {
+  display: inline-block;
+  margin-left: 1rem;
+  font-size: 1.4rem;
+}
+.form__input {
+  display: block;
+  font-size: 1.5rem;
+  padding: 1.5rem 2rem;
+  outline: none;
+  color: inherit;
+  font-family: inherit;
+  border: 0;
+  border-bottom: 0.4rem solid transparent;
+  border-radius: 3px;
+  transition: all 0.5s;
+}
+.form__input:focus {
+  outline: 0;
+  border-bottom: 0.4rem solid #24243e;
+  box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.3);
+}
+.form__input:focus:invalid {
+  border-bottom: 0.4rem solid red;
+}
+.form__label {
+  display: block;
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin: 0.7rem 0rem 0rem 2rem;
+  transform: translateY(-4.4rem);
+  opacity: 0;
+  transition: all 0.5s;
+}
+.form__input:focus + .form__label {
+  opacity: 1;
+  transform: translateY(0);
+}
+.form__input::-moz-placeholder {
+  color: #3d3d3d;
+}
+.form__input::placeholder {
+  color: #3d3d3d;
+}
+.form__btn {
+  background-color: #24243e;
+  padding: 1rem 3rem;
+  color: #e7e7e7;
+  align-self: flex-start;
+}
+.form__checker {
+  background-color: #24243e;
 }
 
 .options-container {
@@ -97,5 +203,16 @@ body {
 .section-login__container {
   position: relative;
   background-color: #eee2de;
-  padding: 3rem 5rem;
+  display: grid;
+  grid-template-columns: max-content minmax(max-content, 450px);
+  box-shadow: 0 2rem 4rem rgba(36, 36, 62, 0.5);
+}
+.section-login__container-sidebar {
+  color: #fff;
+  padding: 1rem 2rem;
+  background-color: #201e40;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
 }/*# sourceMappingURL=main.css.map */
