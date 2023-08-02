@@ -152,7 +152,7 @@ input[type=checkbox]:checked:after {
   box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.3);
 }
 .form__input:focus:invalid {
-  border-bottom: 0.4rem solid red;
+  border-bottom: 0.4rem solid #a50b0b;
 }
 .form__label {
   display: block;

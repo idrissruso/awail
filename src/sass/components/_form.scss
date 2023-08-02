@@ -48,7 +48,7 @@
       border-bottom: 0.4rem solid $color-primary;
       box-shadow: $shadow-dark;
       &:invalid {
-        border-bottom: 0.4rem solid red;
+        border-bottom: 0.4rem solid $color-tertiary-dark;
       }
     }
   }
