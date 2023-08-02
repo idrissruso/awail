@@ -48,15 +48,20 @@
     </div>
   </body>
   <!--login pop-up-->
-  <section class="section-login">
+  <section class="section-login hidden">
     <div class="section-login__container">
       <div class="section-login__container-sidebar">
         <div class="section-login__container-sidebar--title">
           <h1 class="heading-primary">مركز الأوائل</h1>
-          <h3 class="heading-tertiary"><span>Accès</span> des élèves</h3>
+          <h3 class="heading-tertiary" id="login__caption">Accès des élèves</h3>
         </div>
         <div class="section-login__container-sidebar--logo">
-          <img src="student.png" alt="option image " class="card-box__img" />
+          <img
+            src="student.png"
+            alt="option image "
+            class="card-box__img"
+            id="login-box__logo"
+          />
         </div>
       </div>
       <form action="#" class="login__form">
@@ -93,4 +98,6 @@
       </form>
     </div>
   </section>
+  <!--scripts-->
+  <script src="index.js"></script>
 </html>

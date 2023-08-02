@@ -9,7 +9,7 @@
   --webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   -moz-backface-visibility: hidden;
-
+  cursor: pointer;
   //when the card is hovered
   &:hover {
     box-shadow: $shadow-dark;
