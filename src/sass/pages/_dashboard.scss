@@ -1,0 +1,131 @@
+.dashboard-container {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  overflow: auto;
+
+  &__content {
+    display: grid;
+    grid-template-rows: 1fr 82% 1fr;
+    background-color: $color-secondary-light;
+  }
+
+  &__sidebar {
+    & > * {
+      cursor: pointer;
+    }
+    background-color: rgba($color-primary-dark, 0.9);
+    @include line;
+  }
+
+  &__navbar {
+    border-bottom: 1.3px solid rgba($color-primary-dark, 0.2);
+    /////
+    ///
+  }
+
+  &__main {
+  }
+
+  &__footer {
+  }
+}
+
+.sidebar {
+  &__brand {
+    display: flex;
+    padding: 0.5rem 1rem;
+    align-items: center;
+    @include line;
+    &-box {
+      height: 4rem;
+      width: 4rem;
+      border-radius: 50%;
+      padding: 0.3rem;
+      box-shadow: $shadow-dark;
+    }
+    &-logo {
+      height: 3rem;
+      width: 3.5rem;
+      object-fit: cover;
+    }
+    &-name {
+      color: $color-secondary-dark;
+      font-weight: 300;
+    }
+  }
+
+  &__user {
+    padding: 1rem;
+    @include line;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    &-img--box {
+      height: 4rem;
+      width: 4rem;
+      border-radius: 50%;
+
+      box-shadow: $shadow-dark;
+    }
+    &-profile {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 50%;
+    }
+    &-name {
+      color: $color-secondary-dark;
+      font-weight: 600;
+
+      transition: all 0.2s;
+      &:hover {
+        color: $color-secondary-light;
+      }
+    }
+  }
+}
+
+.navigation {
+  padding: 0.5rem;
+
+  &__item {
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    gap: 1rem;
+    color: $color-secondary-dark;
+    font-weight: 600;
+    transition: all 0.2s;
+    &:hover {
+      color: $color-secondary-light;
+      background-color: $color-primary-dark;
+    }
+    &--active {
+      color: $color-secondary-light;
+    }
+    &-icon {
+      display: block;
+      height: 2.5rem;
+      width: 2.5rem;
+      fill: $color-secondary-light;
+    }
+    &:first-child {
+      background-color: $color-tertiary-dark;
+      color: #fff;
+    }
+  }
+
+  .parametre_securite {
+    margin-top: 5rem;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    font-size: 1.4rem;
+    text-align: center;
+    color: $color-secondary-dark;
+    letter-spacing: 2px;
+    cursor: auto;
+  }
+}

@@ -1,3 +1,17 @@
+.home {
+  background-image: linear-gradient(
+    to right bottom,
+    #2b2a4c,
+    #eee2de,
+    #eee2de,
+    #2b2a4c
+  );
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  padding: 16rem;
+}
+
 .options-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));

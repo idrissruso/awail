@@ -1,0 +1,9 @@
+@mixin line {
+  border-bottom: 1.3px solid rgba($color-secondary-dark, 0.5);
+}
+
+@mixin centralize {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
