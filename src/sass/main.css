@@ -255,6 +255,51 @@ input[type=checkbox]:checked:after {
 }
 .dashboard-container__navbar {
   border-bottom: 1.3px solid rgba(32, 30, 64, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+}
+.dashboard-container__navbar button {
+  border: none;
+  cursor: pointer;
+}
+.dashboard-container__navbar .navbar__toggle-icon {
+  height: 2.5rem;
+  width: 2.5rem;
+  fill: #2c2c2c;
+}
+.dashboard-container__navbar .navbar__search {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 40%;
+}
+.dashboard-container__navbar .navbar__search-input {
+  border: none;
+  background-color: #e7e7e7;
+  padding: 1rem 1.5rem;
+  border-radius: 100px;
+  transition: all 1s;
+  width: 80%;
+}
+.dashboard-container__navbar .navbar__search-input:focus {
+  outline: none;
+  background-color: #cbcbcb;
+  width: 100%;
+}
+.dashboard-container__navbar .navbar__search-icon {
+  height: 1.5rem;
+  width: 1.5rem;
+  fill: #2c2c2c;
+  display: block;
+  transform: translateX(-3rem);
+}
+.dashboard-container__navbar .navbar__setting-icon {
+  height: 2rem;
+  width: 2rem;
+  fill: #2c2c2c;
+  cursor: pointer;
 }
 .sidebar__brand {
   display: flex;
