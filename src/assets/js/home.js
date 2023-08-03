@@ -18,4 +18,28 @@ userBox.on('click', function () {
   main.load('main/editUser.ejs')
 })
 
+addStudent.on('click', function () {
+  // Load the content of the addStudent page into the main element
+  main.load('main/addStudent.ejs')
+})
+
+brandBox.on('click', function () {
+  // Load the content of the dashboard page into the main element
+  main.load('main/dashboard.ejs')
+})
+
+manageStudent.on('click', function () {
+  // Load the content of the manageStudent page into the main element
+  main.load('main/manageStudent.ejs')
+})
+
+addUser.on('click', function () {
+  // Load the content of the addUser page into the main element
+  main.load('main/addUser.ejs')
+})
+
+dashboard.on('click', function () {
+  // Load the content of the dashboard page into the main element
+  main.load('main/dashboard.ejs')
+})
 // Add event listeners to other elements as needed
