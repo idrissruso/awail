@@ -1,0 +1,72 @@
+.dashboard__card {
+  border-radius: 1rem;
+  overflow: hidden;
+  flex: 1 0 30rem;
+  color: #fff;
+
+  #second__card {
+    background-color: $color-green;
+  }
+
+  #second__card-btn {
+    background-color: $color-green-dark;
+    &:hover {
+      background-color: $color-green-darker;
+    }
+  }
+
+  &-content {
+    padding: 1rem;
+    background-color: $color-primary-light-1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .content {
+      &__statistics {
+        &-num {
+          font-size: 5rem;
+          font-weight: 900;
+          text-transform: uppercase;
+        }
+        &-title {
+          font-size: 1.4rem;
+          margin: 1rem 0;
+        }
+      }
+      &__icon {
+        width: 10rem;
+        height: 10rem;
+        transition: all 0.3s;
+      }
+    }
+
+    &:hover .content__icon {
+      transform: scale(1.1);
+    }
+  }
+
+  &-button {
+    background-color: $color-primary-light-1-light;
+    padding: 0.5rem 1rem;
+    @include centralize;
+    transition: all 0.3s;
+    cursor: pointer;
+    &:hover {
+      background-color: $color-primary-light-1-dark;
+    }
+    &--text {
+      @include centralize;
+      .arrow {
+        width: 2rem;
+        height: 2rem;
+        fill: #fff;
+        transition: all 0.3s;
+        margin-left: 1rem;
+      }
+    }
+
+    &:hover &--text .arrow {
+      transform: translateX(0.5rem);
+    }
+  }
+}

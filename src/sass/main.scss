@@ -16,6 +16,7 @@
 @import './components/card';
 @import './components/logo';
 @import './components/form';
+@import './components/dashboardCards';
 
 //layout
 
@@ -23,6 +24,8 @@
 
 @import './pages/home';
 @import './pages/dashboard';
+@import './pages/root';
+@import './pages/editUser';
 
 //themes
 

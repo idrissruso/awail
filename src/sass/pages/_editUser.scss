@@ -1,0 +1,89 @@
+.editUser {
+  padding: 2rem 1rem;
+  &__container {
+    background-color: #fff;
+    box-shadow: 0 0.5rem 1rem rgba($color-primary-dark, 0.2);
+    height: 75vh;
+  }
+
+  &__heading {
+    padding: 1rem 1.5rem;
+    font-size: 2rem;
+    font-weight: 600;
+    color: $color-primary-dark;
+    @include line;
+  }
+
+  &__content {
+    .form {
+      display: flex;
+      align-items: end;
+      padding: 10rem;
+      &__box-img {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        &--img {
+          height: 100%;
+          width: 100%;
+          transform: scale(1.3);
+          transition: all 0.4s;
+          object-fit: cover;
+          object-position: center;
+        }
+
+        figure:hover > .form__box-img--caption {
+          opacity: 1;
+          visibility: visible;
+          transform: translateY(-5rem);
+          cursor: pointer;
+        }
+
+        figure:hover {
+          & > .form__box-img--img {
+            transform: scale(1);
+            filter: brightness(90%) blur(0.4rem);
+          }
+        }
+        //from__box-img--caption
+
+        figure {
+          position: relative;
+          float: left;
+          width: 15rem;
+          height: 15rem;
+          clip-path: circle(50% at 50% 50%);
+          -webkit-shape-outside: circle(50% to 50% 50%);
+          shape-outside: circle(50% at 50% 50%);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+        &--caption {
+          font-size: 2.5rem;
+          margin-left: 2%;
+          position: absolute;
+          top: 80%;
+          opacity: 0;
+          visibility: hidden;
+          transition: all 0.3s;
+        }
+        &--name {
+        }
+        &--email {
+        }
+      }
+
+      &__box-info {
+        flex: 1;
+        &--group {
+        }
+        &--label {
+        }
+        &--input {
+        }
+      }
+    }
+  }
+}

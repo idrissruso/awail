@@ -1,1 +1,71 @@
-<h1>edit user</h1>
+<div class="editUser">
+  <div class="editUser__container">
+    <h1 class="editUser__heading">Modifier L'utilisateur</h1>
+    <div class="editUser__content">
+      <form class="form">
+        <div class="form__box-img">
+          <figure>
+            <img src="author.JPG" alt="user image" class="form__box-img--img" />
+            <figcaption class="form__box-img--caption">🖋️</figcaption>
+          </figure>
+
+          <span class="form__box-img--name">Idrissa Rusongeka</span>
+          <span class="form__box-img--email">idriss@gmail.com</span>
+          <input type="file" class="form__box-img--btn" />
+        </div>
+        <div class="form__box-info">
+          <div class="form__box-info--group">
+            <label for="name" class="form__box-info--label">Nom</label>
+            <input
+              type="text"
+              name="name"
+              id="name"
+              class="form__box-info--input"
+            />
+          </div>
+          <div class="form__box-info--group">
+            <label for="email" class="form__box-info--label">Email</label>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              class="form__box-info--input"
+            />
+          </div>
+          <div class="form__box-info--group">
+            <label for="role" class="form__box-info--label">Role</label>
+            <select name="role" id="role" class="form__box-info--input">
+              <option value="admin">Admin</option>
+              <option value="user">User</option>
+            </select>
+          </div>
+          <div class="form__box-info--group">
+            <label for="password" class="form__box-info--label"
+              >Mot de passe</label
+            >
+            <input
+              type="password"
+              name="password"
+              id="password"
+              class="form__box-info--input"
+            />
+          </div>
+          <div class="form__box-info--group">
+            <label for="password2" class="form__box-info--label"
+              >Confirmer le mot de passe</label
+            >
+            <input
+              type="password"
+              name="password2"
+              id="password2"
+              class="form__box-info--input"
+            />
+          </div>
+          <div class="form__box-info--group">
+            <button class="form__box-info--btn">Modifier</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
