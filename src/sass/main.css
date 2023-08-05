@@ -13,7 +13,7 @@ html {
 }
 
 body {
-  font-family: "Inconsolata", monospace;
+  font-family: "Roboto", sans-serif;
   font-size: 1.4rem;
   color: #3d3d3d;
 }
@@ -189,10 +189,10 @@ input[type=checkbox]:checked:after {
   background-color: #28a745;
 }
 .dashboard__card #second__card-btn {
-  background-color: #2d8f4a;
+  background-color: #259b40;
 }
 .dashboard__card #second__card-btn:hover {
-  background-color: #218838;
+  background-color: #23923d;
 }
 .dashboard__card-content {
   padding: 1rem;
@@ -203,11 +203,12 @@ input[type=checkbox]:checked:after {
 }
 .dashboard__card-content .content__statistics-num {
   font-size: 5rem;
-  font-weight: 900;
+  font-weight: 600;
   text-transform: uppercase;
 }
 .dashboard__card-content .content__statistics-title {
   font-size: 1.4rem;
+  font-weight: 100;
   margin: 1rem 0;
 }
 .dashboard__card-content .content__icon {
@@ -219,7 +220,7 @@ input[type=checkbox]:checked:after {
   transform: scale(1.1);
 }
 .dashboard__card-button {
-  background-color: #1592a8;
+  background-color: #1596aa;
   padding: 0.5rem 1rem;
   display: flex;
   justify-content: center;
@@ -228,7 +229,7 @@ input[type=checkbox]:checked:after {
   cursor: pointer;
 }
 .dashboard__card-button:hover {
-  background-color: #127786;
+  background-color: #148ea1;
 }
 .dashboard__card-button--text {
   display: flex;
@@ -303,8 +304,8 @@ input[type=checkbox]:checked:after {
 }
 
 .dashboard__heading {
-  font-size: 2rem;
-  font-weight: 900;
+  font-size: 1.6rem;
+  font-weight: 600;
   margin: 2rem;
   text-transform: uppercase;
 }
@@ -316,9 +317,9 @@ input[type=checkbox]:checked:after {
 }
 
 .dashboard-container {
-  height: 100vh;
   display: grid;
   grid-template-columns: max-content 1fr;
+  grid-template-rows: 100vh;
   overflow: auto;
 }
 .dashboard-container__content {
@@ -344,6 +345,7 @@ input[type=checkbox]:checked:after {
 .dashboard-container__sidebar {
   background-color: rgba(32, 30, 64, 0.9);
   border-bottom: 1.3px solid rgba(233, 233, 233, 0.5);
+  grid-row: 1/-1;
 }
 .dashboard-container__sidebar > * {
   cursor: pointer;
@@ -469,8 +471,9 @@ input[type=checkbox]:checked:after {
   border-radius: 5px;
   gap: 1rem;
   color: #e9e9e9;
-  font-weight: 600;
   transition: all 0.2s;
+  font-size: 1.4rem;
+  font-weight: 400;
 }
 .navigation__item:hover {
   color: #f7f6f1;
@@ -493,7 +496,7 @@ input[type=checkbox]:checked:after {
   margin-top: 5rem;
   margin-bottom: 2rem;
   text-transform: uppercase;
-  font-size: 1.4rem;
+  font-size: 1.19rem;
   text-align: center;
   color: #e9e9e9;
   letter-spacing: 2px;
@@ -502,23 +505,25 @@ input[type=checkbox]:checked:after {
 
 .editUser {
   padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
 }
 .editUser__container {
   background-color: #fff;
   box-shadow: 0 0.5rem 1rem rgba(32, 30, 64, 0.2);
-  height: 75vh;
 }
 .editUser__heading {
   padding: 1rem 1.5rem;
-  font-size: 2rem;
+  font-size: 1.6rem;
   font-weight: 600;
   color: #201e40;
-  border-bottom: 1.3px solid rgba(233, 233, 233, 0.5);
+  border-bottom: 1px solid #e7e7e7;
 }
 .editUser__content .form {
   display: flex;
-  align-items: end;
   padding: 10rem;
+  -moz-column-gap: 10rem;
+       column-gap: 10rem;
 }
 .editUser__content .form__box-img {
   display: flex;
@@ -567,6 +572,88 @@ input[type=checkbox]:checked:after {
   visibility: hidden;
   transition: all 0.3s;
 }
+.editUser__content .form__box-img--name {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #201e40;
+  margin: 0.5rem 0 0.7rem;
+}
+.editUser__content .form__box-img--email {
+  font-size: 1.4rem;
+  font-weight: 300;
+  color: #201e40;
+}
+.editUser__content .form__box-img--file {
+  display: none;
+}
+.editUser__content .form__box-img--btn {
+  margin-top: 1rem;
+  padding: 1rem 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  background-color: #17a2b8;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 400;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.editUser__content .form__box-img--btn:hover {
+  background-color: #0f6674;
+}
 .editUser__content .form__box-info {
   flex: 1;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+.editUser__content .form__box-info--heading {
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: #201e40;
+  margin-bottom: 1rem;
+  grid-column: 1/span 2;
+  justify-self: flex-end;
+}
+.editUser__content .form__box-info--group {
+  display: flex;
+  flex-direction: column;
+}
+.editUser__content .form__box-info--label {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #201e40;
+  margin-bottom: 0.5rem;
+}
+.editUser__content .form__box-info--input {
+  padding: 1rem 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  background-color: #e7e7e7;
+  color: #201e40;
+  font-size: 1rem;
+  font-weight: 400;
+  transition: all 0.3s;
+}
+.editUser__content .form__box-info--input:focus {
+  outline: none;
+  box-shadow: 0 0.5rem 1rem rgba(32, 30, 64, 0.2);
+}
+.editUser__content .form__box-info--btn {
+  margin-top: 1rem;
+  padding: 1rem 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  background-color: #17a2b8;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 400;
+  cursor: pointer;
+  transition: all 0.3s;
+  grid-column: 2/-1;
+  width: 50%;
+  justify-self: flex-end;
+}
+.editUser__content .form__box-info--btn:hover {
+  background-color: #0f6674;
 }/*# sourceMappingURL=main.css.map */

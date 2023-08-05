@@ -1,7 +1,7 @@
 .dashboard-container {
-  height: 100vh;
   display: grid;
   grid-template-columns: max-content 1fr;
+  grid-template-rows: 100vh;
   overflow: auto;
 
   &__content {
@@ -34,6 +34,7 @@
     }
     background-color: rgba($color-primary-dark, 0.9);
     @include line;
+    grid-row: 1/-1;
   }
 
   &__navbar {
@@ -169,8 +170,9 @@
     border-radius: 5px;
     gap: 1rem;
     color: $color-secondary-dark;
-    font-weight: 600;
     transition: all 0.2s;
+    font-size: 1.4rem;
+    font-weight: 400;
     &:hover {
       color: $color-secondary-light;
       background-color: $color-primary-dark;
@@ -194,7 +196,7 @@
     margin-top: 5rem;
     margin-bottom: 2rem;
     text-transform: uppercase;
-    font-size: 1.4rem;
+    font-size: 1.19rem;
     text-align: center;
     color: $color-secondary-dark;
     letter-spacing: 2px;

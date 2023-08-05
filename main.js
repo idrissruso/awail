@@ -15,6 +15,11 @@ app.use(Express.static(path.join(__dirname, 'src', 'assets', 'svg'))) //connect 
 
 //render the home page
 app.get('/', (req, res) => {
+  res.render('index.ejs')
+})
+
+//render the dashboard page
+app.get('/dashboard', (req, res) => {
   res.render('root.ejs')
 })
 
