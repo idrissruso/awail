@@ -1,1 +1,152 @@
-<h1>add user</h1>
+<div class="addStudent">
+  <div class="addStudent__container">
+    <h1 class="addStudent__heading">Ajouter un élève</h1>
+    <div class="addStudent__content">
+      <form action="#" class="addStudent-form">
+        <h3 id="heading">Détails d'élève.</h3>
+        <div class="student">
+          <div class="addStudent-form__group" id="matricule">
+            <label class="addStudent-form__label" for="student-no"
+              >Matricule</label
+            >
+            <input
+              type="text"
+              name="student-no"
+              id="student-no"
+              class="addStudent-form__input"
+              placeholder="Matricule"
+              required
+            />
+          </div>
+
+          <div class="addStudent-form__group">
+            <label class="addStudent-form__label" for="student-name"
+              >Nom Complet</label
+            >
+            <input
+              type="text"
+              name="student-name"
+              id="student-name"
+              class="addStudent-form__input"
+              placeholder="Nom complet"
+              required
+            />
+          </div>
+          <div class="addStudent-form__group" id="age">
+            <label class="addStudent-form__label" for="student-age">Age</label>
+            <input
+              type="number"
+              name="student-age"
+              id="student-age"
+              class="addStudent-form__input"
+              placeholder="Age"
+              required
+            />
+          </div>
+          <div class="addStudent-form__group" id="sex">
+            <label class="addStudent-form__label" for="student-sex">Sex</label>
+            <select
+              name="student-sex"
+              id="student-sex"
+              class="addStudent-form__input"
+            >
+              <option value="Masculin">masculin</option>
+              <option value="Feminin">Feminin</option>
+            </select>
+          </div>
+          <div class="addStudent-from__group">
+            <label class="addStudent-form__label" for="student-class"
+              >Class</label
+            >
+            <select
+              name="student-class"
+              id="student-class"
+              class="addStudent-form__input"
+            >
+              <option value="1">1ere</option>
+              <option value="2">2eme</option>
+              <option value="3">3eme</option>
+              <option value="4">4eme</option>
+              <option value="5">5eme</option>
+              <option value="6">6eme</option>
+            </select>
+          </div>
+          <div class="addStudent-from__group">
+            <label class="addStudent-form__label" for="student-img"
+              >Photo</label
+            >
+            <input type="file" class="addStudent-form__input" />
+          </div>
+        </div>
+        <h3 id="heading">Détails du Parent</h3>
+        <div class="parent">
+          <div class="addStudent-form__group">
+            <label class="addStudent-form__label" for="parent-name"
+              >Nom Complet</label
+            >
+            <input
+              type="text"
+              name="parent-name"
+              id="parent-name"
+              class="addStudent-form__input"
+              placeholder="Nom complet"
+            />
+          </div>
+          <div class="addStudent-form__group">
+            <label class="addStudent-form__label" for="parent-profession"
+              >Profession</label
+            >
+            <input
+              type="text"
+              name="parent-profession"
+              id="parent-profession"
+              class="addStudent-form__input"
+              placeholder="Profession"
+            />
+          </div>
+          <div class="addStudent-form__group">
+            <label class="addStudent-form__label" for="parent-tel">Tel</label>
+            <input
+              type="tel"
+              name="parent-tel"
+              id="parent-tel"
+              class="addStudent-form__input"
+              placeholder="Tel"
+            />
+          </div>
+          <div class="addStudent-form__group">
+            <label class="addStudent-form__label" for="parent-email"
+              >Email</label
+            >
+            <input
+              type="email"
+              name="parent-email"
+              id="parent-email"
+              class="addStudent-form__input"
+              placeholder="Email"
+            />
+          </div>
+        </div>
+        <h3 id="heading">Adresse</h3>
+        <div class="adress">
+          <div class="addStudent-form__group">
+            <label class="addStudent-form__label" for="adress"
+              >Adresse Complet</label
+            >
+            <textarea
+              name="student-address"
+              id="adress"
+              class="addStudent-form__input"
+              cols="30"
+              rows="3"
+              style="width: 30rem"
+            ></textarea>
+          </div>
+        </div>
+        <div class="addStudent-form__group">
+          <button class="addStudent-form__btn">Ajouter</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

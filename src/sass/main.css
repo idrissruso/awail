@@ -1,4 +1,12 @@
 @charset "UTF-8";
+@keyframes fadeOut {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}
 html {
   box-sizing: border-box;
   font-size: 62.5%;
@@ -335,7 +343,7 @@ input[type=checkbox]:checked:after {
   font-size: 1.5rem;
 }
 .dashboard-container__footer span {
-  color: #24243e;
+  color: #17a2b8;
   font-weight: 600;
 }
 .dashboard-container__main {
@@ -656,4 +664,101 @@ input[type=checkbox]:checked:after {
 }
 .editUser__content .form__box-info--btn:hover {
   background-color: #0f6674;
+}
+
+.addStudent {
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+}
+.addStudent__container {
+  background-color: #fff;
+  box-shadow: 0 0.5rem 1rem rgba(32, 30, 64, 0.2);
+}
+.addStudent__heading {
+  padding: 1rem 1.5rem;
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: #fff;
+  background-color: #17a2b8;
+  border-bottom: 1px solid #e7e7e7;
+}
+.addStudent-form {
+  padding: 1rem 2rem;
+}
+.addStudent-form #heading {
+  padding: 1rem 1.5rem;
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: #d71313;
+  border-bottom: 1.3px solid rgba(32, 30, 64, 0.1);
+}
+.addStudent-form .adress,
+.addStudent-form .student,
+.addStudent-form .parent {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+  align-items: center;
+  border-bottom: 1.3px solid rgba(32, 30, 64, 0.1);
+  padding: 2rem 0;
+}
+.addStudent-form #matricule,
+.addStudent-form #age,
+.addStudent-form #sex {
+  flex: 0 0 10%;
+}
+.addStudent-form__group {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1;
+  width: 100%;
+}
+.addStudent-form__label {
+  display: block;
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #201e40;
+  margin-bottom: 0.5rem;
+}
+.addStudent-form__input {
+  padding: 1rem 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  background-color: #e7e7e7;
+  color: #201e40;
+  font-size: 1rem;
+  font-weight: 400;
+  transition: all 0.3s;
+  border-bottom: 0.2rem solid transparent;
+}
+.addStudent-form__input:focus {
+  outline: none;
+  box-shadow: 0 0.5rem 1rem rgba(32, 30, 64, 0.2);
+  border-bottom: 0.2rem solid #17a2b8;
+}
+.addStudent-form__input:invalid {
+  border-bottom: 0.2rem solid #d71313;
+}
+.addStudent-form__btn {
+  align-self: flex-start;
+  margin-top: 2rem;
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #fff;
+  background-color: #218838;
+  border: none;
+  border-radius: 0.5rem;
+  transition: all 0.3s;
+  box-shadow: 0 0.5rem 1rem rgba(32, 30, 64, 0.2);
+  margin-bottom: 1rem;
+  cursor: pointer;
+  backface-visibility: hidden;
+  animation: fadeOut 0.5s ease-in-out infinite alternate;
+}
+.addStudent-form__btn:hover {
+  background-color: #175f27;
 }/*# sourceMappingURL=main.css.map */

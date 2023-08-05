@@ -1,6 +1,9 @@
 @mixin line {
   border-bottom: 1.3px solid rgba($color-secondary-dark, 0.5);
 }
+@mixin line-dark {
+  border-bottom: 1.3px solid rgba($color-primary-dark, 0.1);
+}
 
 @mixin centralize {
   display: flex;
