@@ -319,7 +319,7 @@ input[type=checkbox]:checked:after {
 .dashboard-container {
   display: grid;
   grid-template-columns: max-content 1fr;
-  grid-template-rows: 100vh;
+  grid-template-rows: minmax(100vh, 1fr);
   overflow: auto;
 }
 .dashboard-container__content {
@@ -489,7 +489,7 @@ input[type=checkbox]:checked:after {
   fill: #f7f6f1;
 }
 .navigation__item:first-child {
-  background-color: #271e91;
+  background-color: #117a8b;
   color: #fff;
 }
 .navigation .parametre_securite {
