@@ -255,6 +255,16 @@ input[type=checkbox]:checked:after {
   transform: translateX(0.5rem);
 }
 
+.pop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
 .home {
   background-image: linear-gradient(to right bottom, #2b2a4c, #eee2de, #eee2de, #2b2a4c);
   background-repeat: no-repeat;
@@ -848,7 +858,6 @@ input[type=checkbox]:checked:after {
   color: #2c2c2c;
   background-color: #fff;
   border: 1px solid #e7e7e7;
-  display: flex;
 }
 .manageStudents__row--header {
   font-weight: 600;
@@ -864,4 +873,43 @@ input[type=checkbox]:checked:after {
 }
 .manageStudents__cell:not(:last-child) {
   border-right: 1px solid #e7e7e7;
+}
+.manageStudents__img {
+  max-width: 5rem;
+  min-height: 5rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+.manageStudents__btn--remove, .manageStudents__btn--modify, .manageStudents__btn--courses {
+  background-color: #2d8f4a;
+  border: none;
+  padding: 0.5rem 1rem;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 100;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.manageStudents__btn--remove:hover, .manageStudents__btn--modify:hover, .manageStudents__btn--courses:hover {
+  background-color: #216836;
+}
+.manageStudents__btn--remove {
+  background-color: #d71313;
+}
+.manageStudents__btn--remove:hover {
+  background-color: #a80f0f;
+}
+.manageStudents__btn--modify {
+  background-color: #2d8f4a;
+}
+.manageStudents__btn--modify:hover {
+  background-color: #216836;
+}
+.manageStudents__btn--courses {
+  background-color: #17a2b8;
+}
+.manageStudents__btn--courses:hover {
+  background-color: #117a8b;
 }/*# sourceMappingURL=main.css.map */

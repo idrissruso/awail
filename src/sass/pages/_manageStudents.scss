@@ -89,7 +89,6 @@
     color: $color-gray-dark;
     background-color: #fff;
     border: 1px solid $color-gray;
-    display: flex;
   }
 
   &__row {
@@ -108,6 +107,52 @@
     text-align: center;
     &:not(:last-child) {
       border-right: 1px solid $color-gray;
+    }
+  }
+
+  &__img {
+    max-width: 5rem;
+    min-height: 5rem;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  &__btn {
+    &--remove,
+    &--modify,
+    &--courses {
+      background-color: $color-green-dark;
+      border: none;
+      padding: 0.5rem 1rem;
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 100;
+      cursor: pointer;
+      transition: all 0.2s;
+      &:hover {
+        background-color: darken($color-green-dark, 10%);
+      }
+    }
+
+    &--remove {
+      background-color: $color-tertiary;
+      &:hover {
+        background-color: darken($color-tertiary, 10%);
+      }
+    }
+
+    &--modify {
+      background-color: $color-green-dark;
+      &:hover {
+        background-color: darken($color-green-dark, 10%);
+      }
+    }
+
+    &--courses {
+      background-color: $color-primary-light-1;
+      &:hover {
+        background-color: darken($color-primary-light-1, 10%);
+      }
     }
   }
 }
