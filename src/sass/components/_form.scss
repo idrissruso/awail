@@ -33,24 +33,6 @@
   }
 
   &__input {
-    display: block;
-    font-size: 1.5rem;
-    padding: 1.5rem 2rem;
-    outline: none;
-    color: inherit;
-    font-family: inherit;
-    border: 0;
-    border-bottom: 0.4rem solid transparent;
-    border-radius: 3px;
-    transition: all 0.5s;
-    &:focus {
-      outline: 0;
-      border-bottom: 0.4rem solid $color-primary;
-      box-shadow: $shadow-dark;
-      &:invalid {
-        border-bottom: 0.4rem solid $color-tertiary-dark;
-      }
-    }
   }
 
   &__label {

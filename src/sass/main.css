@@ -138,26 +138,6 @@ input[type=checkbox]:checked:after {
   margin-left: 1rem;
   font-size: 1.4rem;
 }
-.form__input {
-  display: block;
-  font-size: 1.5rem;
-  padding: 1.5rem 2rem;
-  outline: none;
-  color: inherit;
-  font-family: inherit;
-  border: 0;
-  border-bottom: 0.4rem solid transparent;
-  border-radius: 3px;
-  transition: all 0.5s;
-}
-.form__input:focus {
-  outline: 0;
-  border-bottom: 0.4rem solid #24243e;
-  box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.3);
-}
-.form__input:focus:invalid {
-  border-bottom: 0.4rem solid #a50b0b;
-}
 .form__label {
   display: block;
   font-size: 1.4rem;
@@ -255,7 +235,17 @@ input[type=checkbox]:checked:after {
   transform: translateX(0.5rem);
 }
 
-.pop {
+.shown {
+  visibility: visible;
+  opacity: 1;
+}
+
+.hidden {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.modifyStudent {
   position: fixed;
   top: 0;
   left: 0;
@@ -263,6 +253,19 @@ input[type=checkbox]:checked:after {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modifyStudent h1 {
+  position: relative;
+}
+.modifyStudent .close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  color: #24243e;
+  cursor: pointer;
 }
 
 .home {

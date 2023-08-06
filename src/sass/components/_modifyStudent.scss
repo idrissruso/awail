@@ -1,6 +1,25 @@
-.pop {
-  @include pop;
+.shown {
+  visibility: visible;
+  opacity: 1;
+}
+
+.hidden {
+  visibility: hidden;
+  opacity: 0;
 }
 
 .modifyStudent {
+  @include pop;
+  @include centralize;
+  h1 {
+    position: relative;
+  }
+
+  .close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    color: $color-primary;
+    cursor: pointer;
+  }
 }
