@@ -529,6 +529,9 @@ input[type=checkbox]:checked:after {
 }
 .editUser__content .form {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
   padding: 10rem;
   -moz-column-gap: 10rem;
        column-gap: 10rem;
@@ -614,6 +617,7 @@ input[type=checkbox]:checked:after {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
+  margin-top: 2rem;
 }
 .editUser__content .form__box-info--heading {
   font-size: 1.4rem;
@@ -761,4 +765,103 @@ input[type=checkbox]:checked:after {
 }
 .addStudent-form__btn:hover {
   background-color: #175f27;
+}
+
+.manageStudents {
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+}
+.manageStudents__container {
+  background-color: #fff;
+  box-shadow: 0 0.5rem 1rem rgba(32, 30, 64, 0.2);
+}
+.manageStudents__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem 2rem;
+  background-color: #17a2b8;
+  border-bottom: 1px solid #e7e7e7;
+}
+.manageStudents__header-btn {
+  background-color: #2d8f4a;
+  border: none;
+  padding: 1rem 1.5rem;
+  color: #fff;
+  font-size: 1.4rem;
+  font-weight: 400;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.manageStudents__header-btn:hover {
+  background-color: #216836;
+}
+.manageStudents__header-icon {
+  height: 1rem;
+  width: 1rem;
+  fill: #fff;
+}
+.manageStudents__heading {
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: #fff;
+  background-color: #17a2b8;
+}
+.manageStudents__searchbar {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 1rem 1.5rem 2rem;
+  border-bottom: 1px solid #e7e7e7;
+}
+.manageStudents__searchbar-input {
+  padding: 0.5rem 1rem;
+  font-size: 1.4rem;
+  font-weight: 400;
+  border-radius: 0.2rem;
+  border: 1px solid #e7e7e7;
+  margin: 0 5rem 0 0.5rem;
+  transition: all 0.2s;
+  width: 15rem;
+}
+.manageStudents__searchbar-input:focus {
+  outline: none;
+  border: 1px solid #201e40;
+  width: 25rem;
+}
+.manageStudents__searchbar-icon {
+  height: 1rem;
+  width: 1rem;
+  fill: #fff;
+}
+.manageStudents__content {
+  padding: 1rem 1.5rem;
+  min-height: 35rem;
+}
+.manageStudents__table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: #2c2c2c;
+  background-color: #fff;
+  border: 1px solid #e7e7e7;
+  display: flex;
+}
+.manageStudents__row--header {
+  font-weight: 600;
+  box-shadow: 0 0.5rem 2rem rgba(44, 44, 44, 0.1);
+  border-bottom: 1.3px solid rgba(32, 30, 64, 0.1);
+}
+.manageStudents__row:not(:last-child) {
+  border-bottom: 1px solid #e7e7e7;
+}
+.manageStudents__cell {
+  padding: 1.5rem 2rem;
+  text-align: center;
+}
+.manageStudents__cell:not(:last-child) {
+  border-right: 1px solid #e7e7e7;
 }/*# sourceMappingURL=main.css.map */

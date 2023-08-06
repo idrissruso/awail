@@ -1,0 +1,113 @@
+.manageStudents {
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+
+  &__container {
+    background-color: #fff;
+    box-shadow: 0 0.5rem 1rem rgba($color-primary-dark, 0.2);
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem 2rem;
+    background-color: $color-primary-light-1;
+    border-bottom: 1px solid $color-gray;
+
+    &-btn {
+      background-color: $color-green-dark;
+      border: none;
+      padding: 1rem 1.5rem;
+      color: #fff;
+      font-size: 1.4rem;
+      font-weight: 400;
+      cursor: pointer;
+      transition: all 0.2s;
+      &:hover {
+        background-color: darken($color-green-dark, 10%);
+      }
+    }
+
+    &-icon {
+      height: 1rem;
+      width: 1rem;
+      fill: #fff;
+    }
+  }
+
+  &__heading {
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: #fff;
+    background-color: $color-primary-light-1;
+  }
+
+  &__searchbar {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 1rem 1.5rem 2rem;
+    border-bottom: 1px solid $color-gray;
+
+    &-input {
+      padding: 0.5rem 1rem;
+      font-size: 1.4rem;
+      font-weight: 400;
+      border-radius: 0.2rem;
+      border: 1px solid $color-gray;
+      margin: 0 5rem 0 0.5rem;
+
+      transition: all 0.2s;
+      width: 15rem;
+      &:focus {
+        outline: none;
+        border: 1px solid $color-primary-dark;
+        width: 25rem;
+      }
+    }
+
+    &-icon {
+      height: 1rem;
+      width: 1rem;
+      fill: #fff;
+    }
+  }
+
+  &__content {
+    padding: 1rem 1.5rem;
+    min-height: 35rem;
+  }
+
+  &__table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: $color-gray-dark;
+    background-color: #fff;
+    border: 1px solid $color-gray;
+    display: flex;
+  }
+
+  &__row {
+    &--header {
+      font-weight: 600;
+      box-shadow: 0 0.5rem 2rem rgba($color-gray-dark, 0.1);
+      @include line-dark;
+    }
+    &:not(:last-child) {
+      border-bottom: 1px solid $color-gray;
+    }
+  }
+
+  &__cell {
+    padding: 1.5rem 2rem;
+    text-align: center;
+    &:not(:last-child) {
+      border-right: 1px solid $color-gray;
+    }
+  }
+}

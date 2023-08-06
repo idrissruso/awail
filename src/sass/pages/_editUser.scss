@@ -19,6 +19,9 @@
   &__content {
     .form {
       display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
       padding: 10rem;
       column-gap: 10rem;
 
@@ -111,6 +114,8 @@
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 1rem;
+        margin-top: 2rem;
+
         &--heading {
           font-size: 1.4rem;
           font-weight: 400;

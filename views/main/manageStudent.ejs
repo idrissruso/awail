@@ -1,1 +1,109 @@
-<h1>Manage student</h1>
+<div class="manageStudents">
+  <div class="manageStudents__container">
+    <div class="manageStudents__header">
+      <h1 class="manageStudents__heading">Gérer les élèves.</h1>
+      <button class="manageStudents__header-btn">
+        <span>
+          <svg class="manageStudents__header-icon">
+            <use xlink:href="#icon-plus"></use>
+          </svg> </span
+        >Ajouter un élève
+      </button>
+    </div>
+    <div class="manageStudents__searchbar">
+      <label class="manageStudents__searchbar-label" for="student"
+        >Rechercher :</label
+      >
+      <input type="text" class="manageStudents__searchbar-input" id="student" />
+    </div>
+
+    <div class="manageStudents__content">
+      <table class="manageStudents__table">
+        <tr class="manageStudents__row manageStudents__row--header">
+          <th class="manageStudents__cell manageStudents__cell--header">#</th>
+          <th class="manageStudents__cell manageStudents__cell--header">
+            Image
+          </th>
+          <th class="manageStudents__cell manageStudents__cell--header">
+            Matricule
+          </th>
+          <th class="manageStudents__cell manageStudents__cell--header">
+            Nom et Prénom
+          </th>
+          <th class="manageStudents__cell manageStudents__cell--header">
+            Téléphone
+          </th>
+          <th class="manageStudents__cell manageStudents__cell--header">
+            Nom du parent
+          </th>
+          <th class="manageStudents__cell manageStudents__cell--header">
+            Téléphone des parents
+          </th>
+          <th class="manageStudents__cell manageStudents__cell--header">
+            Adresse
+          </th>
+          <th class="manageStudents__cell manageStudents__cell--header">
+            Frais
+          </th>
+          <th class="manageStudents__cell manageStudents__cell--header">
+            Action
+          </th>
+        </tr>
+        <tr class="manageStudents__row">
+          <td class="manageStudents__cell">1</td>
+          <td class="manageStudents__cell">
+            <img src="student1.jpg" alt="Élève 1" />
+          </td>
+          <td class="manageStudents__cell">12345</td>
+          <td class="manageStudents__cell">Alice</td>
+          <td class="manageStudents__cell">555-1234</td>
+          <td class="manageStudents__cell">John Doe</td>
+          <td class="manageStudents__cell">555-9876</td>
+          <td class="manageStudents__cell">123 Main St</td>
+          <td class="manageStudents__cell">Oui</td>
+          <td class="manageStudents__cell">
+            <button class="manageStudents__btn--modify">Modifier</button>
+            <button class="manageStudents__btn--remove">Supprimer</button>
+            <button class="manageStudents__btn--courses">Cours</button>
+          </td>
+        </tr>
+        <tr class="manageStudents__row">
+          <td class="manageStudents__cell">2</td>
+          <td class="manageStudents__cell">
+            <img src="student2.jpg" alt="Élève 2" />
+          </td>
+          <td class="manageStudents__cell">67890</td>
+          <td class="manageStudents__cell">Bob</td>
+          <td class="manageStudents__cell">555-9876</td>
+          <td class="manageStudents__cell">Jane Doe</td>
+          <td class="manageStudents__cell">555-5555</td>
+          <td class="manageStudents__cell">456 Oak Ave</td>
+          <td class="manageStudents__cell">Non</td>
+          <td class="manageStudents__cell">
+            <button class="manageStudents__btn--modify">Modifier</button>
+            <button class="manageStudents__btn--remove">Supprimer</button>
+            <button class="manageStudents__btn--courses">Cours</button>
+          </td>
+        </tr>
+        <tr class="manageStudents__row">
+          <td class="manageStudents__cell">3</td>
+          <td class="manageStudents__cell">
+            <img src="student3.jpg" alt="Élève 3" />
+          </td>
+          <td class="manageStudents__cell">24680</td>
+          <td class="manageStudents__cell">Charlie</td>
+          <td class="manageStudents__cell">555-5555</td>
+          <td class="manageStudents__cell">Alex Smith</td>
+          <td class="manageStudents__cell">555-1111</td>
+          <td class="manageStudents__cell">789 Elm St</td>
+          <td class="manageStudents__cell">Oui</td>
+          <td class="manageStudents__cell">
+            <button class="manageStudents__btn--modify">Modifier</button>
+            <button class="manageStudents__btn--remove">Supprimer</button>
+            <button class="manageStudents__btn--courses">Cours</button>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
