@@ -894,7 +894,8 @@ input[type=checkbox]:checked:after {
 .manageStudents__btn--remove, .manageStudents__btn--modify, .manageStudents__btn--courses {
   background-color: #2d8f4a;
   border: none;
-  padding: 0.5rem 1rem;
+  padding: 0.7rem 1rem;
+  border-radius: 0.4rem;
   color: #fff;
   font-size: 1rem;
   font-weight: 100;
@@ -933,6 +934,8 @@ input[type=checkbox]:checked:after {
   transform: translateY(-10rem) translateX(30rem) scale(0.6);
   transition: all 0.3s;
   backface-visibility: hidden;
+  border-radius: 0.3rem;
+  overflow: hidden;
 }
 .editStudent__container--show {
   transform: translateY(0) scale(1);
@@ -941,9 +944,11 @@ input[type=checkbox]:checked:after {
   font-size: 2rem;
   text-transform: uppercase;
   font-weight: 400;
-  color: #201e40;
-  margin: 1rem 0 0 2rem;
+  color: #fff;
+  padding: 1rem 2rem;
   text-align: center;
+  background-color: #17a2b8;
+  display: block;
 }
 .editStudent__content .form {
   display: flex;

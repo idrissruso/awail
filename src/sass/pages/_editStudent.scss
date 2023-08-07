@@ -8,6 +8,8 @@
     transform: translateY(-10rem) translateX(30rem) scale(0.6);
     transition: all 0.3s;
     backface-visibility: hidden;
+    border-radius: 0.3rem;
+    overflow: hidden;
   }
 
   &__container--show {
@@ -18,9 +20,12 @@
     font-size: 2rem;
     text-transform: uppercase;
     font-weight: 400;
-    color: $color-primary-dark;
-    margin: 1rem 0 0 2rem;
+    color: #fff;
+    padding: 1rem 2rem;
     text-align: center;
+    background-color: $color-primary-light-1;
+
+    display: block;
   }
 
   &__content {
