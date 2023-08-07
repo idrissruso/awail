@@ -12,8 +12,8 @@
   }
 }
 
-.form {
-  &__group {
+.login__form {
+  &-group {
     display: flex;
     flex-direction: column;
     color: inherit;
@@ -32,10 +32,21 @@
     }
   }
 
-  &__input {
+  &-input {
+    padding: 1rem 2rem;
+    border: none;
+    border-bottom: 0.1rem solid $color-gray-1;
+    font-size: 1.4rem;
+    color: inherit;
+    background-color: transparent;
+    transition: all 0.3s;
+    &:focus {
+      outline: none;
+      border-bottom: 0.1rem solid $color-primary;
+    }
   }
 
-  &__label {
+  &-label {
     display: block;
     font-size: 1.4rem;
     font-weight: 700;
@@ -45,23 +56,23 @@
     transition: all 0.5s;
   }
 
-  &__input:focus + &__label {
+  &-input:focus + &-label {
     opacity: 1;
     transform: translateY(0);
   }
 
-  &__input::placeholder {
+  &-input::placeholder {
     color: $color-gray-1;
   }
 
-  &__btn {
+  &-btn {
     background-color: $color-primary;
     padding: 1rem 3rem;
     color: $color-gray;
     align-self: flex-start;
   }
 
-  &__checker {
+  &-checker {
     background-color: $color-primary;
   }
 }

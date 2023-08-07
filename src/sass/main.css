@@ -120,25 +120,38 @@ input[type=checkbox]:checked:after {
   cursor: pointer;
 }
 
-.form__group {
+.login__form-group {
   display: flex;
   flex-direction: column;
   color: inherit;
 }
-.form__group:not(:last-child) {
+.login__form-group:not(:last-child) {
   margin-bottom: 1rem;
 }
-.form__group-checkbox {
+.login__form-group-checkbox {
   align-self: flex-start;
   display: flex;
   flex-direction: row;
 }
-.form__group-checkbox--label {
+.login__form-group-checkbox--label {
   display: inline-block;
   margin-left: 1rem;
   font-size: 1.4rem;
 }
-.form__label {
+.login__form-input {
+  padding: 1rem 2rem;
+  border: none;
+  border-bottom: 0.1rem solid #3d3d3d;
+  font-size: 1.4rem;
+  color: inherit;
+  background-color: transparent;
+  transition: all 0.3s;
+}
+.login__form-input:focus {
+  outline: none;
+  border-bottom: 0.1rem solid #24243e;
+}
+.login__form-label {
   display: block;
   font-size: 1.4rem;
   font-weight: 700;
@@ -147,23 +160,23 @@ input[type=checkbox]:checked:after {
   opacity: 0;
   transition: all 0.5s;
 }
-.form__input:focus + .form__label {
+.login__form-input:focus + .login__form-label {
   opacity: 1;
   transform: translateY(0);
 }
-.form__input::-moz-placeholder {
+.login__form-input::-moz-placeholder {
   color: #3d3d3d;
 }
-.form__input::placeholder {
+.login__form-input::placeholder {
   color: #3d3d3d;
 }
-.form__btn {
+.login__form-btn {
   background-color: #24243e;
   padding: 1rem 3rem;
   color: #e7e7e7;
   align-self: flex-start;
 }
-.form__checker {
+.login__form-checker {
   background-color: #24243e;
 }
 
