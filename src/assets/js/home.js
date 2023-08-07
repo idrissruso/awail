@@ -55,4 +55,8 @@ $(document).ready(function () {
   $(document).on('click', '#addStudent', function () {
     main.load('main/addStudent.ejs')
   })
+
+  $(document).on('click', '.dashboard__card-button', function () {
+    main.load('main/manageStudent.ejs')
+  })
 })
