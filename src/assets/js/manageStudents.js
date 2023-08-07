@@ -4,11 +4,18 @@
 
   var modifyPopUp = document.querySelector('.modifyStudent')
   var deletePopUp = document.querySelector('.deleteStudent')
-  const attendeesPopUp = document.querySelector('.attendees')
+  const attendeesPopUp = document.querySelector('.absenteeism')
   const coursesPopUp = document.querySelector('.courses')
   const modifyBtn = document.querySelectorAll('.manageStudents__btn--modify')
   const deleteBtn = document.querySelectorAll('.manageStudents__btn--remove')
-  const attendeesBtn = document.querySelector('.manageStudents__btn--attendees')
+  const attendeesBtn = document.querySelectorAll(
+    '.manageStudents__btn--attendees'
+  )
+  const absenteeismCancel = document.querySelector(
+    '.add-attendance__cancel-button'
+  )
+
+  const absenteeismModal = document.querySelector('.absenteeism__modal')
   const coursesBtn = document.querySelector('.manageStudents__btn--courses')
   const closeBtn = document.querySelector('.close')
   const form_container = document.querySelector('.editStudent__container')
@@ -20,6 +27,10 @@
   )
 
   const modalContent = document.querySelector('.deleteModal__content')
+  const paymentBtn = document.querySelectorAll('.payment-btn')
+  const paymentModal = document.querySelector('.payment')
+  const paymentCancelBtn = document.querySelector('.payment__close-btn')
+  const paymentModalContent = document.querySelector('.payment__container')
 
   //editStudent__container--show
 
@@ -40,6 +51,7 @@
     if (e.target === modifyPopUp) {
       modifyPopUp.classList.remove('shown')
       modifyPopUp.classList.toggle('hidden')
+      form_container.classList.remove('editStudent__container--show')
     }
   })
   deleteBtn.forEach((btn) => {
@@ -69,5 +81,41 @@
   deleteMOdalConfirmBtn.addEventListener('click', () => {
     deletePopUp.classList.remove('modalShown')
     deletePopUp.classList.toggle('modalHide')
+  })
+
+  attendeesBtn.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      attendeesPopUp.classList.add('absenteeismShown')
+      attendeesPopUp.classList.toggle('absenteeismHide')
+      absenteeismModal.classList.add('absenteeism__container--show')
+    })
+  })
+
+  absenteeismCancel.addEventListener('click', () => {
+    attendeesPopUp.classList.remove('absenteeismShown')
+    attendeesPopUp.classList.toggle('absenteeismHide')
+    absenteeismModal.classList.remove('absenteeism__container--show')
+  })
+
+  attendeesPopUp.addEventListener('click', (e) => {
+    if (e.target === attendeesPopUp) {
+      attendeesPopUp.classList.remove('absenteeismShown')
+      attendeesPopUp.classList.toggle('absenteeismHide')
+      absenteeismModal.classList.remove('absenteeism__container--show')
+    }
+  })
+
+  paymentBtn.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      paymentModal.classList.add('paymentShown')
+      paymentModal.classList.toggle('paymentHidden')
+      paymentModalContent.classList.add('payment__container--show')
+    })
+  })
+
+  paymentCancelBtn.addEventListener('click', () => {
+    paymentModal.classList.remove('paymentShown')
+    paymentModal.classList.toggle('paymentHidden')
+    paymentModalContent.classList.remove('payment__container--show')
   })
 })()

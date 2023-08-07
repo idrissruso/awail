@@ -376,6 +376,288 @@ input[type=checkbox]:checked:after {
   margin-bottom: 1rem;
 }
 
+.absenteeismShown {
+  visibility: visible;
+  opacity: 1;
+}
+
+.absenteeismHide {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.absenteeism {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.absenteeism__close-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  color: #24243e;
+  cursor: pointer;
+}
+.absenteeism__modal {
+  background-color: #fff;
+  box-shadow: 0 1rem 3rem rgba(255, 255, 255, 0.2);
+  transform: translateY(-10rem) translateX(30rem) scale(0.6);
+  transition: all 0.3s;
+  backface-visibility: hidden;
+  border-radius: 0.3rem;
+  padding: 1rem 2rem;
+  backface-visibility: hidden;
+}
+.absenteeism__container--show {
+  transform: translateY(0) scale(1);
+}
+.absenteeism__title {
+  text-align: center;
+  color: #2c2c2c;
+  margin-bottom: 1rem;
+}
+
+.student-profile__name {
+  text-align: center;
+  color: #2c2c2c;
+  margin: 0;
+}
+.student-profile__absence-rate {
+  margin-top: 0.5rem;
+  color: #2c2c2c;
+}
+
+.attendance-list {
+  margin: 2rem 0;
+}
+.attendance-list__title {
+  color: #d71313;
+  margin-bottom: 2rem;
+}
+.attendance-list__table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.attendance-list th,
+.attendance-list td {
+  border: 0.1rem solid #ccc;
+  padding: 0.8rem;
+  text-align: center;
+}
+.attendance-list th {
+  background-color: #f2f2f2;
+  color: #333;
+}
+.attendance-list tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+.attendance-list tr:hover {
+  background-color: #e2e2e2;
+}
+
+.add-attendance {
+  margin-top: 2rem;
+}
+.add-attendance__title {
+  color: #d71313;
+  margin-bottom: 2rem;
+}
+.add-attendance__form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  max-width: 20rem;
+  margin-top: 1rem;
+}
+.add-attendance .input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.05rem;
+}
+.add-attendance .input-group__actions {
+  flex-direction: row;
+  margin: 1.5rem 0;
+  gap: 0.5rem;
+  grid-column: 1/span 2;
+}
+.add-attendance .input-group__input {
+  padding: 1rem 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  background-color: #e7e7e7;
+  color: #201e40;
+  font-size: 1rem;
+  font-weight: 400;
+  transition: all 0.3s;
+  display: inline-block;
+}
+.add-attendance .input-group__input:focus {
+  outline: none;
+  box-shadow: 0 0.5rem 1rem rgba(32, 30, 64, 0.2);
+}
+.add-attendance .input-group__label {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #201e40;
+  margin-bottom: 0.5rem;
+}
+.add-attendance .btn {
+  padding: 1rem 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 400;
+  cursor: pointer;
+  transition: all 0.3s;
+  flex: 1;
+}
+.add-attendance__submit-button {
+  background-color: #17a2b8;
+}
+.add-attendance__submit-button:hover {
+  background-color: #0f6674;
+}
+.add-attendance__cancel-button {
+  background-color: #d71313;
+}
+.add-attendance__cancel-button:hover {
+  background-color: #910d0d;
+}
+
+.paymentShown {
+  visibility: visible;
+  opacity: 1;
+}
+
+.paymentHidden {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.payment {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.payment__container {
+  background-color: #fff;
+  box-shadow: 0 1rem 3rem rgba(255, 255, 255, 0.2);
+  transform: translateY(-10rem) translateX(30rem) scale(0.6);
+  transition: all 0.3s;
+  backface-visibility: hidden;
+  border-radius: 0.3rem;
+  padding: 1rem 2.5rem;
+  backface-visibility: hidden;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.payment__close-btn {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  color: #24243e;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.payment__close-btn:active {
+  transform: translateY(0.2rem) scale(0.9);
+}
+.payment__container--show {
+  transform: translateY(0) scale(1);
+}
+.payment__history {
+  display: flex;
+  gap: 2rem;
+}
+.payment__history-title {
+  color: #d71313;
+  margin-bottom: 2rem;
+  margin-top: 1rem;
+}
+.payment__history-table {
+  width: 100%;
+  border-collapse: collapse;
+  height: -moz-min-content;
+  height: min-content;
+  border: 1px solid #e7e7e7;
+}
+.payment__history__row--header {
+  font-weight: 600;
+  box-shadow: 0 0.5rem 2rem rgba(44, 44, 44, 0.1);
+  border-bottom: 1.3px solid rgba(32, 30, 64, 0.1);
+}
+.payment__history__row:not(:last-child) {
+  border-bottom: 1px solid #e7e7e7;
+}
+.payment__history__cell {
+  padding: 1.5rem 2rem;
+  text-align: center;
+}
+.payment__history__cell:not(:last-child) {
+  border-right: 1px solid #e7e7e7;
+}
+.payment__new-payment--title {
+  font-size: 1.6rem;
+  color: #24243e;
+  margin-bottom: 1rem;
+}
+.payment__new-payment--group {
+  margin-bottom: 1rem;
+}
+.payment__new-payment--label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #2c2c2c;
+}
+.payment__new-payment--input {
+  display: block;
+  width: 100%;
+  padding: 1rem 1.5rem;
+  font-size: 1.2rem;
+  border-radius: 0.3rem;
+  border: none;
+  background-color: #e7e7e7;
+  color: #2c2c2c;
+  transition: all 0.5s;
+  border-bottom: 0.3rem solid transparent;
+}
+.payment__new-payment--input:focus {
+  outline: none;
+  box-shadow: 0 0.5rem 1rem rgba(255, 255, 255, 0.2);
+  border-bottom: 0.3rem solid #24243e;
+}
+.payment__new-payment--btn {
+  display: inline-block;
+  padding: 1rem 2rem;
+  border-radius: 0.3rem;
+  border: none;
+  background-color: #24243e;
+  color: #fff;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.payment__new-payment--btn:hover {
+  transform: translateY(-0.2rem);
+}
+.payment__new-payment--btn:active {
+  transform: translateY(0.2rem);
+}
+
 .home {
   background-image: linear-gradient(to right bottom, #2b2a4c, #eee2de, #eee2de, #2b2a4c);
   background-repeat: no-repeat;
@@ -993,7 +1275,7 @@ input[type=checkbox]:checked:after {
   -o-object-position: center;
      object-position: center;
 }
-.manageStudents__btn--remove, .manageStudents__btn--modify, .manageStudents__btn--courses {
+.manageStudents__btn--remove, .manageStudents__btn--modify, .manageStudents__btn--attendees {
   background-color: #2d8f4a;
   border: none;
   padding: 0.7rem 1rem;
@@ -1004,7 +1286,7 @@ input[type=checkbox]:checked:after {
   cursor: pointer;
   transition: all 0.2s;
 }
-.manageStudents__btn--remove:hover, .manageStudents__btn--modify:hover, .manageStudents__btn--courses:hover {
+.manageStudents__btn--remove:hover, .manageStudents__btn--modify:hover, .manageStudents__btn--attendees:hover {
   background-color: #216836;
 }
 .manageStudents__btn--remove {
@@ -1019,11 +1301,19 @@ input[type=checkbox]:checked:after {
 .manageStudents__btn--modify:hover {
   background-color: #216836;
 }
-.manageStudents__btn--courses {
+.manageStudents__btn--attendees {
   background-color: #17a2b8;
 }
-.manageStudents__btn--courses:hover {
+.manageStudents__btn--attendees:hover {
   background-color: #117a8b;
+}
+.manageStudents .payment-btn {
+  color: #17a2b8;
+  cursor: pointer;
+  text-decoration: underline;
+}
+.manageStudents .payment-btn:hover {
+  color: #117a8b;
 }
 
 .editStudent {

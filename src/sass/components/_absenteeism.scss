@@ -1,0 +1,175 @@
+.absenteeismShown {
+  visibility: visible;
+  opacity: 1;
+}
+.absenteeismHide {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.absenteeism {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  &__close-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    color: $color-primary;
+    cursor: pointer;
+  }
+
+  &__modal {
+    background-color: #fff;
+    box-shadow: 0 1rem 3rem rgba(#fff, 0.2);
+    transform: translateY(-10rem) translateX(30rem) scale(0.6);
+    transition: all 0.3s;
+    backface-visibility: hidden;
+    border-radius: 0.3rem;
+    padding: 1rem 2rem;
+    backface-visibility: hidden;
+  }
+
+  &__container--show {
+    transform: translateY(0) scale(1);
+  }
+
+  &__title {
+    text-align: center;
+    color: $color-gray-dark;
+    margin-bottom: 1rem;
+  }
+}
+
+.student-profile {
+  &__name {
+    text-align: center;
+    color: $color-gray-dark;
+    margin: 0;
+  }
+
+  &__absence-rate {
+    margin-top: 0.5rem;
+    color: $color-gray-dark;
+  }
+}
+
+.attendance-list {
+  margin: 2rem 0;
+
+  &__title {
+    color: $color-tertiary;
+    margin-bottom: 2rem;
+  }
+
+  &__table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  th,
+  td {
+    border: 0.1rem solid #ccc;
+    padding: 0.8rem;
+    text-align: center;
+  }
+
+  th {
+    background-color: #f2f2f2;
+    color: #333;
+  }
+
+  tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+
+  tr:hover {
+    background-color: #e2e2e2;
+  }
+}
+
+.add-attendance {
+  margin-top: 2rem;
+  &__title {
+    color: $color-tertiary;
+    margin-bottom: 2rem;
+  }
+
+  &__form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    max-width: 20rem;
+    margin-top: 1rem;
+  }
+
+  .input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.05rem;
+
+    &__actions {
+      flex-direction: row;
+      margin: 1.5rem 0;
+      gap: 0.5rem;
+      grid-column: 1 / span 2;
+    }
+
+    &__input {
+      padding: 1rem 1.5rem;
+      border: none;
+      border-radius: 0.5rem;
+      background-color: $color-gray;
+      color: $color-primary-dark;
+      font-size: 1rem;
+      font-weight: 400;
+      transition: all 0.3s;
+      display: inline-block;
+      &:focus {
+        outline: none;
+        box-shadow: 0 0.5rem 1rem rgba($color-primary-dark, 0.2);
+      }
+    }
+    &__label {
+      font-size: 1.2rem;
+      font-weight: 400;
+      color: $color-primary-dark;
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  .btn {
+    padding: 1rem 1.5rem;
+    border: none;
+    border-radius: 0.5rem;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 400;
+    cursor: pointer;
+    transition: all 0.3s;
+    flex: 1;
+  }
+
+  &__submit-button {
+    background-color: $color-primary-light-1;
+    &:hover {
+      background-color: darken($color-primary-light-1, 15%);
+    }
+  }
+
+  &__cancel-button {
+    background-color: $color-tertiary;
+    &:hover {
+      background-color: darken($color-tertiary, 15%);
+    }
+  }
+}
+
+// margin-top: 1rem;

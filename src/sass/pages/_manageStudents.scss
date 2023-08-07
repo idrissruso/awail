@@ -120,7 +120,7 @@
   &__btn {
     &--remove,
     &--modify,
-    &--courses {
+    &--attendees {
       background-color: $color-green-dark;
       border: none;
       padding: 0.7rem 1rem;
@@ -149,11 +149,20 @@
       }
     }
 
-    &--courses {
+    &--attendees {
       background-color: $color-primary-light-1;
       &:hover {
         background-color: darken($color-primary-light-1, 10%);
       }
+    }
+  }
+
+  .payment-btn {
+    color: $color-primary-light-1;
+    cursor: pointer;
+    text-decoration: underline;
+    &:hover {
+      color: darken($color-primary-light-1, 10%);
     }
   }
 }
