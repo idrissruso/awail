@@ -273,13 +273,6 @@ input[type=checkbox]:checked:after {
 .modifyStudent h1 {
   position: relative;
 }
-.modifyStudent .close {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  color: #24243e;
-  cursor: pointer;
-}
 
 .home {
   background-image: linear-gradient(to right bottom, #2b2a4c, #eee2de, #eee2de, #2b2a4c);
@@ -928,4 +921,190 @@ input[type=checkbox]:checked:after {
 }
 .manageStudents__btn--courses:hover {
   background-color: #117a8b;
+}
+
+.editStudent {
+  display: flex;
+  flex-direction: column;
+}
+.editStudent__container {
+  background-color: #fff;
+  box-shadow: 0 1rem 3rem rgba(255, 255, 255, 0.2);
+  transform: translateY(-10rem) translateX(30rem) scale(0.6);
+  transition: all 0.3s;
+  backface-visibility: hidden;
+}
+.editStudent__container--show {
+  transform: translateY(0) scale(1);
+}
+.editStudent__heading {
+  font-size: 2rem;
+  text-transform: uppercase;
+  font-weight: 400;
+  color: #201e40;
+  margin: 1rem 0 0 2rem;
+  text-align: center;
+}
+.editStudent__content .form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  -moz-column-gap: 5rem;
+       column-gap: 5rem;
+  padding: 5rem;
+}
+.editStudent__content .form__box-img {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.editStudent__content .form__box-img--img {
+  height: 100%;
+  width: 100%;
+  transform: scale(1.3);
+  transition: all 0.4s;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+.editStudent__content .form__box-img figure:hover > .form__box-img--caption {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(-5rem);
+  cursor: pointer;
+}
+.editStudent__content .form__box-img figure:hover > .form__box-img--img {
+  transform: scale(1);
+  filter: brightness(90%) blur(0.4rem);
+}
+.editStudent__content .form__box-img figure {
+  position: relative;
+  float: left;
+  width: 15rem;
+  height: 15rem;
+  -webkit-clip-path: circle(50% at 50% 50%);
+          clip-path: circle(50% at 50% 50%);
+  shape-outside: circle(50% at 50% 50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.editStudent__content .form__box-img--caption {
+  font-size: 2.5rem;
+  margin-left: 2%;
+  position: absolute;
+  top: 80%;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s;
+}
+.editStudent__content .form__box-img--name {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #201e40;
+  margin: 0.5rem 0 0.7rem;
+}
+.editStudent__content .form__box-img--email {
+  font-size: 1.4rem;
+  font-weight: 300;
+  color: #201e40;
+}
+.editStudent__content .form__box-img--file {
+  display: none;
+}
+.editStudent__content .form__box-img--btn {
+  margin-top: 1rem;
+  padding: 1rem 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  background-color: #17a2b8;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 400;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.editStudent__content .form__box-img--btn:hover {
+  background-color: #0f6674;
+}
+.editStudent__content .form__box-info {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-top: 2rem;
+}
+.editStudent__content .form__box-info--heading {
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: #201e40;
+  margin-bottom: 1rem;
+  grid-column: 1/span 2;
+  justify-self: flex-end;
+}
+.editStudent__content .form__box-info--group {
+  display: flex;
+  flex-direction: column;
+}
+.editStudent__content .form__box-info--group-action {
+  grid-column: 1/span 2;
+  flex-direction: row;
+  justify-self: flex-end;
+  gap: 1rem;
+}
+.editStudent__content .form__box-info--label {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #201e40;
+  margin-bottom: 0.5rem;
+}
+.editStudent__content .form__box-info--input {
+  padding: 1rem 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  background-color: #e7e7e7;
+  color: #201e40;
+  font-size: 1rem;
+  font-weight: 400;
+  transition: all 0.3s;
+}
+.editStudent__content .form__box-info--input:focus {
+  outline: none;
+  box-shadow: 0 0.5rem 1rem rgba(32, 30, 64, 0.2);
+}
+.editStudent__content .form__box-info--btn {
+  margin-top: 1rem;
+  padding: 1rem 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  background-color: #17a2b8;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 400;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.editStudent__content .form__box-info--btn:hover {
+  background-color: #0f6674;
+}
+.editStudent__content .form__box-info .close {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+  padding: 1rem 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  background-color: #a50b0b;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 400;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.editStudent__content .form__box-info .close:hover {
+  background-color: #5d0606;
 }/*# sourceMappingURL=main.css.map */

@@ -110,14 +110,13 @@
 
 <!--Modify Student-->
 <div class="modifyStudent hidden">
-  <div class="editUser">
-    <div class="editUser__container">
-      <h1 class="editUser__heading">
+  <div class="editStudent">
+    <div class="editStudent__container">
+      <h1 class="editStudent__heading">
         Mettre à jour le profil d'utilisateur
-        <span class="modifyStudent__close-btn close">✖️</span>
       </h1>
 
-      <div class="editUser__content">
+      <div class="editStudent__content">
         <form class="form">
           <div class="form__box-img">
             <figure>
@@ -222,7 +221,10 @@
                 required
               />
             </div>
-            <button class="form__box-info--btn">Modifier</button>
+            <div class="form__box-info--group form__box-info--group-action">
+              <button class="form__box-info--btn">Modifier</button>
+              <span class="close">annuler</span>
+            </div>
           </div>
         </form>
       </div>
