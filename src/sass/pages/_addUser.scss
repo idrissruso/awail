@@ -4,6 +4,7 @@
     display: flex;
     gap: 1rem;
     margin-bottom: 2rem;
+    flex-wrap: wrap;
 
     &__box {
       background-color: $color-primary-light-1;
@@ -161,24 +162,15 @@
   &__btn {
     &--block {
       padding: 0.7rem 1rem;
-      color: $color-primary-light-1;
+      color: $color-tertiary;
       font-size: 1.3rem;
       font-weight: 400;
       text-decoration: underline;
       cursor: pointer;
       transition: all 0.2s;
       &:hover {
-        color: darken($color-primary-light-1, 10%);
+        color: darken($color-tertiary, 10%);
       }
-    }
-  }
-
-  .payment-btn {
-    color: $color-primary-light-1;
-    cursor: pointer;
-    text-decoration: underline;
-    &:hover {
-      color: darken($color-primary-light-1, 10%);
     }
   }
 }

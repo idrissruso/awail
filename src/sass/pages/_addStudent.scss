@@ -76,7 +76,8 @@
         box-shadow: 0 0.5rem 1rem rgba($color-primary-dark, 0.2);
         border-bottom: 0.2rem solid $color-primary-light-1;
       }
-      &:invalid {
+
+      &:focus:invalid {
         border-bottom: 0.2rem solid $color-tertiary;
       }
     }

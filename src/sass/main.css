@@ -320,6 +320,7 @@ input[type=checkbox]:checked:after {
   justify-content: center;
   z-index: 9999;
   background-color: rgba(0, 0, 0, 0.5);
+  transition: all 0.3s;
   /* You can add more custom styles as needed */
 }
 .deleteModal__content {
@@ -397,6 +398,7 @@ input[type=checkbox]:checked:after {
   left: 0;
   width: 100%;
   height: 100%;
+  transition: all 0.3s;
 }
 .absenteeism__close-btn {
   position: absolute;
@@ -408,7 +410,7 @@ input[type=checkbox]:checked:after {
 .absenteeism__modal {
   background-color: #fff;
   box-shadow: 0 1rem 3rem rgba(255, 255, 255, 0.2);
-  transform: translateY(-10rem) translateX(30rem) scale(0.6);
+  transform: translateY(5rem) translateX(50rem) scale(0.6);
   transition: all 0.3s;
   backface-visibility: hidden;
   border-radius: 0.3rem;
@@ -416,7 +418,7 @@ input[type=checkbox]:checked:after {
   backface-visibility: hidden;
 }
 .absenteeism__container--show {
-  transform: translateY(0) scale(1);
+  transform: translateY(0) scale(1) translateX(0);
 }
 .absenteeism__title {
   text-align: center;
@@ -473,7 +475,6 @@ input[type=checkbox]:checked:after {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
-  max-width: 20rem;
   margin-top: 1rem;
 }
 .add-attendance .input-group {
@@ -485,7 +486,7 @@ input[type=checkbox]:checked:after {
   flex-direction: row;
   margin: 1.5rem 0;
   gap: 0.5rem;
-  grid-column: 1/span 2;
+  grid-column: 2/-1;
 }
 .add-attendance .input-group__input {
   padding: 1rem 1.5rem;
@@ -658,6 +659,204 @@ input[type=checkbox]:checked:after {
 }
 .payment__new-payment--btn:active {
   transform: translateY(0.2rem);
+}
+
+.addNewUserHide {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.addNewUserShow {
+  visibility: visible;
+  opacity: 1;
+}
+
+.addNewUser {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  transition: all 0.3s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.addNewUser__container {
+  background-color: #fff;
+  box-shadow: 0 0.5rem 1rem rgba(32, 30, 64, 0.2);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  transition: all 0.3s;
+  transform: translateY(-30%) scale(0.9);
+}
+.addNewUser__container--show {
+  transform: translateY(0) scale(1);
+}
+.addNewUser__form {
+  padding: 2rem 2.5rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  -moz-column-gap: 2rem;
+       column-gap: 2rem;
+  row-gap: 1rem;
+}
+.addNewUser__form-group {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  gap: 0.5rem;
+}
+.addNewUser__heading {
+  display: block;
+  font-size: 2rem;
+  font-weight: 400;
+  color: #d71313;
+  border-bottom: 1.3px solid rgba(32, 30, 64, 0.1);
+  margin: 1rem;
+  text-align: center;
+}
+.addNewUser__label {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #201e40;
+  margin-bottom: 0.5rem;
+}
+.addNewUser__input {
+  padding: 1rem 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  background-color: #e7e7e7;
+  color: #201e40;
+  font-size: 1rem;
+  font-weight: 400;
+  transition: all 0.3s;
+  border: 0.2rem solid transparent;
+}
+.addNewUser__input:focus {
+  outline: none;
+  box-shadow: 0 0.5rem 1rem rgba(32, 30, 64, 0.2);
+}
+.addNewUser__input:focus:invalid {
+  border-bottom: 0.2rem solid #d71313;
+}
+.addNewUser__buttons {
+  margin-top: 1.5rem;
+  grid-column: 3/-1;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.addNewUser__btn {
+  flex: 1;
+  border: none;
+  padding: 1rem 1.5em;
+  color: #fff;
+  font-size: 1.4rem;
+  font-weight: 400;
+  cursor: pointer;
+  transition: all 0.2s;
+  border-radius: 0.3rem;
+}
+.addNewUser__btn-cancel {
+  background-color: #d71313;
+}
+.addNewUser__btn-cancel:hover {
+  background-color: #a80f0f;
+}
+.addNewUser__btn-submit {
+  background-color: #17a2b8;
+}
+.addNewUser__btn-submit:hover {
+  background-color: #117a8b;
+}
+
+/* Delete Modal Styles */
+.blockUserModal-show {
+  visibility: visible;
+  opacity: 1;
+}
+
+.blockUserModal-hide {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.shaking {
+  animation: shaking 0.15s 4 ease-in-out;
+  animation-delay: 0.05s;
+  backface-visibility: hidden;
+}
+
+.blockUserModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  background-color: rgba(0, 0, 0, 0.5);
+  transition: all 0.3s;
+  /* You can add more custom styles as needed */
+}
+.blockUserModal__content {
+  /* Styles for the modal content */
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  max-width: 450px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.blockUserModal__title {
+  /* Styles for the modal title */
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+.blockUserModal__message {
+  /* Styles for the modal message */
+  margin: 0;
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+.blockUserModal__buttons {
+  /* Styles for the modal buttons container */
+  display: flex;
+  justify-content: flex-end;
+}
+.blockUserModal__btn {
+  /* Styles for the modal buttons */
+  padding: 8px 16px;
+  margin-left: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+.blockUserModal__btn--cancel {
+  /* Styles for the cancel button */
+  background-color: #ccc;
+}
+.blockUserModal__btn--confirm {
+  /* Styles for the confirm button */
+  background-color: #e74c3c;
+  color: #fff;
+}
+.blockUserModal__icon {
+  /* Temporary background color for troubleshooting */
+  fill: #d71313;
+  height: 5rem;
+  width: 5rem;
+  margin-bottom: 1rem;
 }
 
 .home {
@@ -1148,7 +1347,7 @@ input[type=checkbox]:checked:after {
   box-shadow: 0 0.5rem 1rem rgba(32, 30, 64, 0.2);
   border-bottom: 0.2rem solid #17a2b8;
 }
-.addStudent-form__input:invalid {
+.addStudent-form__input:focus:invalid {
   border-bottom: 0.2rem solid #d71313;
 }
 .addStudent-form__btn {
@@ -1325,14 +1524,14 @@ input[type=checkbox]:checked:after {
 .editStudent__container {
   background-color: #fff;
   box-shadow: 0 1rem 3rem rgba(255, 255, 255, 0.2);
-  transform: translateY(-10rem) translateX(30rem) scale(0.6);
+  transform: translateY(5rem) translateX(40rem) scale(0.6);
   transition: all 0.3s;
   backface-visibility: hidden;
   border-radius: 0.3rem;
   overflow: hidden;
 }
 .editStudent__container--show {
-  transform: translateY(0) scale(1);
+  transform: translateY(0) scale(1) translateX(0);
 }
 .editStudent__heading {
   font-size: 2rem;
@@ -1515,6 +1714,7 @@ input[type=checkbox]:checked:after {
   display: flex;
   gap: 1rem;
   margin-bottom: 2rem;
+  flex-wrap: wrap;
 }
 .addUser .header__box {
   background-color: #17a2b8;
@@ -1653,7 +1853,7 @@ input[type=checkbox]:checked:after {
 }
 .addUser__btn--block {
   padding: 0.7rem 1rem;
-  color: #17a2b8;
+  color: #d71313;
   font-size: 1.3rem;
   font-weight: 400;
   text-decoration: underline;
@@ -1661,13 +1861,5 @@ input[type=checkbox]:checked:after {
   transition: all 0.2s;
 }
 .addUser__btn--block:hover {
-  color: #117a8b;
-}
-.addUser .payment-btn {
-  color: #17a2b8;
-  cursor: pointer;
-  text-decoration: underline;
-}
-.addUser .payment-btn:hover {
-  color: #117a8b;
+  color: #a80f0f;
 }/*# sourceMappingURL=main.css.map */

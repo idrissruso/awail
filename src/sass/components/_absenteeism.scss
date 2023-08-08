@@ -17,6 +17,7 @@
   left: 0;
   width: 100%;
   height: 100%;
+  transition: all 0.3s;
 
   &__close-btn {
     position: absolute;
@@ -29,7 +30,7 @@
   &__modal {
     background-color: #fff;
     box-shadow: 0 1rem 3rem rgba(#fff, 0.2);
-    transform: translateY(-10rem) translateX(30rem) scale(0.6);
+    transform: translateY(5rem) translateX(50rem) scale(0.6);
     transition: all 0.3s;
     backface-visibility: hidden;
     border-radius: 0.3rem;
@@ -38,7 +39,7 @@
   }
 
   &__container--show {
-    transform: translateY(0) scale(1);
+    transform: translateY(0) scale(1) translateX(0);
   }
 
   &__title {
@@ -106,10 +107,8 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
-    max-width: 20rem;
     margin-top: 1rem;
   }
-
   .input-group {
     display: flex;
     flex-direction: column;
@@ -119,7 +118,7 @@
       flex-direction: row;
       margin: 1.5rem 0;
       gap: 0.5rem;
-      grid-column: 1 / span 2;
+      grid-column: 2 / -1;
     }
 
     &__input {

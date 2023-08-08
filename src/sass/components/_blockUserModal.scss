@@ -1,9 +1,9 @@
 /* Delete Modal Styles */
-.modalShown {
+.blockUserModal-show {
   visibility: visible;
   opacity: 1;
 }
-.modalHide {
+.blockUserModal-hide {
   visibility: hidden;
   opacity: 0;
 }
@@ -14,7 +14,7 @@
   backface-visibility: hidden;
 }
 
-.deleteModal {
+.blockUserModal {
   position: fixed;
   top: 0;
   left: 0;

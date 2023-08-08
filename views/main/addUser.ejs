@@ -90,4 +90,129 @@
   </div>
 </div>
 
-<div class="addNewUser addNewUserHide"></div>
+<!--add new user-->
+<div class="addNewUser addNewUserHide">
+  <div class="addNewUser__container">
+    <h1 class="addNewUser__heading">Ajouter un Utilisateur</h1>
+    <form class="addNewUser__form">
+      <div class="addNewUser__form-group">
+        <label class="addNewUser__label" for="name">Nom :</label>
+        <input
+          class="addNewUser__input"
+          type="text"
+          id="name"
+          name="name"
+          required
+        />
+      </div>
+      <div class="addNewUser__form-group">
+        <label class="addNewUser__label" for="surname">Prénom :</label>
+        <input
+          class="addNewUser__input"
+          type="text"
+          id="surname"
+          name="surname"
+          required
+        />
+      </div>
+      <div class="addNewUser__form-group">
+        <label class="addNewUser__label" for="email">E-mail :</label>
+        <input
+          class="addNewUser__input"
+          type="email"
+          id="email"
+          name="email"
+          required
+        />
+      </div>
+      <div class="addNewUser__form-group">
+        <label class="addNewUser__label" for="permission">Permission :</label>
+        <select class="addNewUser__input" id="permission" name="permission">
+          <option value="admin">Admin</option>
+          <option value="user">Utilisateur</option>
+        </select>
+      </div>
+      <div class="addNewUser__form-group">
+        <label class="addNewUser__label" for="mobile">Mobile :</label>
+        <input
+          class="addNewUser__input"
+          type="text"
+          id="mobile"
+          name="mobile"
+          required
+        />
+      </div>
+      <div class="addNewUser__form-group">
+        <label class="addNewUser__label" for="gender">Genre :</label>
+        <select class="addNewUser__input" id="gender" name="gender">
+          <option value="male">Homme</option>
+          <option value="female">Femme</option>
+        </select>
+      </div>
+
+      <div class="addNewUser__form-group">
+        <label class="addUser__label" for="password">Mot de passe :</label>
+        <input
+          class="addNewUser__input"
+          type="password"
+          id="password"
+          name="password"
+          required
+        />
+      </div>
+      <div class="addNewUser__form-group">
+        <label class="addUser__label" for="confirmPassword"
+          >Confirmer le Mot de passe :</label
+        >
+        <input
+          class="addNewUser__input"
+          type="password"
+          id="confirmPassword"
+          name="confirmPassword"
+          required
+        />
+      </div>
+      <div class="addNewUser__form-group">
+        <label class="addNewUser__label" for="image">Image :</label>
+        <input
+          class="addNewUser__input"
+          type="file"
+          id="image"
+          name="image"
+          accept="image/*"
+        />
+      </div>
+      <div class="addNewUser__buttons">
+        <button class="addNewUser__btn addNewUser__btn-submit" type="submit">
+          Ajouter
+        </button>
+        <button class="addNewUser__btn addNewUser__btn-cancel" type="button">
+          Annuler
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!--block user modal -->
+<div class="blockUserModal blockUser blockUserModal-hide">
+  <div class="blockUserModal__content">
+    <h2 class="blockUserModal__title">Confirmation de Blocage</h2>
+    <svg class="blockUserModal__icon">
+      <use xlink:href="#icon-x-circle" />
+    </svg>
+    <p class="blockUserModal__message">
+      Êtes-vous certain(e) de vouloir bloquer cet utilisateur ?
+    </p>
+    <div class="blockUserModal__buttons">
+      <button class="blockUserModal__btn blockUserModal__btn--cancel">
+        Annuler
+      </button>
+      <button class="blockUserModal__btn blockUserModal__btn--confirm">
+        Confirmer
+      </button>
+    </div>
+  </div>
+</div>
+
+<script src="addUser.js"></script>
