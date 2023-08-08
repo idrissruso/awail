@@ -215,4 +215,42 @@
   </div>
 </div>
 
+<!--blocked users modal -->
+
+<div class="blockedUsersModal blockedUsersModal-hide">
+  <div class="blockedUsersTable">
+    <h1 class="blockedUsersTable__heading">Utilisateurs Bloqués</h1>
+    <span class="blockedUsersModal__close-btn">✖️</span>
+    <table>
+      <thead>
+        <tr>
+          <th class="blockedUsersTable__header">Nom</th>
+          <th class="blockedUsersTable__header">Prénom</th>
+          <th class="blockedUsersTable__header">E-mail</th>
+          <th class="blockedUsersTable__header">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="blockedUsersTable__cell">Smith</td>
+          <td class="blockedUsersTable__cell">John</td>
+          <td class="blockedUsersTable__cell">john@example.com</td>
+          <td class="blockedUsersTable__cell">
+            <button class="blockedUsersTable__btn UnblockBtn">Débloquer</button>
+          </td>
+        </tr>
+        <tr>
+          <td class="blockedUsersTable__cell">Doe</td>
+          <td class="blockedUsersTable__cell">Jane</td>
+          <td class="blockedUsersTable__cell">jane@example.com</td>
+          <td class="blockedUsersTable__cell">
+            <button class="blockedUsersTable__btn UnblockBtn">Débloquer</button>
+          </td>
+        </tr>
+        <!-- Add more rows here for more users -->
+      </tbody>
+    </table>
+  </div>
+</div>
+
 <script src="addUser.js"></script>

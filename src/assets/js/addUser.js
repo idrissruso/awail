@@ -7,13 +7,19 @@
   const addNewUserContainer = document.querySelector('.addNewUser__container')
   const cancelBtn = document.querySelector('.addNewUser__btn-cancel')
   const blockBtn = document.querySelectorAll('.addUser__btn--block')
-  var blockedUsersModal = document.querySelector('.blockUserModal')
+  var blockageModal = document.querySelector('.blockUserModal')
   const blockUserCancelBtn = document.querySelector(
     '.blockUserModal__btn--cancel'
   )
 
   const blockedUsersContainer = document.querySelector(
     '.blockUserModal__content'
+  )
+
+  var blockedUSersModal = document.querySelector('.blockedUsersModal')
+  const blockedUsersTable = document.querySelector('.blockedUsersTable')
+  const blockedUsersCancelBtn = document.querySelector(
+    '.blockedUsersModal__close-btn'
   )
 
   addUserBtn.addEventListener('click', () => {
@@ -38,23 +44,35 @@
 
   blockBtn.forEach((btn) => {
     btn.addEventListener('click', () => {
-      blockedUsersModal.classList.add('blockUserModal-show')
-      blockedUsersModal.classList.toggle('blockUserModal-hide')
+      blockageModal.classList.add('blockUserModal-show')
+      blockageModal.classList.toggle('blockUserModal-hide')
       blockedUsersContainer.classList.toggle('shaking')
     })
   })
 
-  blockedUsersModal.addEventListener('click', (e) => {
+  blockageModal.addEventListener('click', (e) => {
     if (e.target.classList.contains('blockUserModal')) {
-      blockedUsersModal.classList.remove('blockUserModal-show')
-      blockedUsersModal.classList.add('blockUserModal-hide')
+      blockageModal.classList.remove('blockUserModal-show')
+      blockageModal.classList.add('blockUserModal-hide')
       blockedUsersContainer.classList.toggle('shaking')
     }
   })
 
   blockUserCancelBtn.addEventListener('click', () => {
-    blockedUsersModal.classList.remove('blockUserModal-show')
-    blockedUsersModal.classList.add('blockUserModal-hide')
+    blockageModal.classList.remove('blockUserModal-show')
+    blockageModal.classList.add('blockUserModal-hide')
     blockedUsersContainer.classList.toggle('shaking')
+  })
+
+  blockedUsersBtn.addEventListener('click', () => {
+    blockedUSersModal.classList.add('blockedUsersModal-show')
+    blockedUSersModal.classList.toggle('blockedUsersModal-hide')
+    blockedUsersTable.classList.toggle('blockedUsersTable-show')
+  })
+
+  blockedUsersCancelBtn.addEventListener('click', () => {
+    blockedUSersModal.classList.remove('blockedUsersModal-show')
+    blockedUSersModal.classList.add('blockedUsersModal-hide')
+    blockedUsersTable.classList.toggle('blockedUsersTable-show')
   })
 })()
