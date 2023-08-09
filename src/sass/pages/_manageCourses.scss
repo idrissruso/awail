@@ -1,0 +1,91 @@
+* {
+  backface-visibility: hidden !important;
+}
+.manageCourses {
+  padding: 2rem 5rem;
+  &__heading {
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+    font-weight: 300;
+    color: $color-gray-dark;
+  }
+
+  &__courses {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 25rem));
+    gap: 1.5rem;
+    flex-grow: 1;
+    .course {
+      border-radius: 0.7rem;
+      overflow: hidden;
+      padding: 2rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: start;
+      align-content: start;
+      flex: 0 0 25rem;
+      transition: all 0.3s;
+      &:hover {
+        transform: translateY(-0.3rem) scale(1.02);
+        box-shadow: $shadow-dark;
+      }
+      backface-visibility: hidden;
+
+      &__name {
+        font-size: 2rem;
+        font-weight: 600;
+        margin-bottom: 1.5rem;
+      }
+      &__teacher {
+        font-size: 1.5rem;
+        font-weight: 100;
+      }
+
+      .btn {
+        width: 100%;
+        padding: 0.5rem 0;
+        border-radius: 0.5rem;
+        font-size: 1.5rem;
+        font-weight: 300;
+        color: $color-gray-dark;
+        border: none;
+        cursor: pointer;
+        transition: all 0.3s;
+        flex: 0 0 5rem;
+        margin-top: 2rem;
+        max-width: 7rem;
+        &:not(:last-child) {
+          margin-right: 1rem;
+        }
+        color: $color-gray;
+        background-color: transparent;
+        text-decoration: underline;
+
+        &:hover {
+          transform: translateY(-0.3rem);
+          box-shadow: $shadow-dark;
+        }
+      }
+      &__icon-svg {
+        width: 5rem;
+        height: 5rem;
+        fill: $color-gray-dark;
+      }
+    }
+
+    .add-newCourse {
+      max-width: 20rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      border: 0.1rem solid $color-gray-dark;
+      cursor: pointer;
+      background-color: transparent;
+      &:active {
+        transform: translateY(-0.3rem);
+        box-shadow: $shadow-dark;
+      }
+    }
+  }
+}

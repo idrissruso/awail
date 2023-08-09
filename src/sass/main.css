@@ -1952,4 +1952,92 @@ input[type=checkbox]:checked:after {
 }
 .addUser__btn--block:hover {
   color: #a80f0f;
+}
+
+* {
+  backface-visibility: hidden !important;
+}
+
+.manageCourses {
+  padding: 2rem 5rem;
+}
+.manageCourses__heading {
+  margin-bottom: 2rem;
+  font-size: 2.5rem;
+  font-weight: 300;
+  color: #2c2c2c;
+}
+.manageCourses__courses {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 25rem));
+  gap: 1.5rem;
+  flex-grow: 1;
+}
+.manageCourses__courses .course {
+  border-radius: 0.7rem;
+  overflow: hidden;
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-content: start;
+  flex: 0 0 25rem;
+  transition: all 0.3s;
+  backface-visibility: hidden;
+}
+.manageCourses__courses .course:hover {
+  transform: translateY(-0.3rem) scale(1.02);
+  box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.3);
+}
+.manageCourses__courses .course__name {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+.manageCourses__courses .course__teacher {
+  font-size: 1.5rem;
+  font-weight: 100;
+}
+.manageCourses__courses .course .btn {
+  width: 100%;
+  padding: 0.5rem 0;
+  border-radius: 0.5rem;
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: #2c2c2c;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s;
+  flex: 0 0 5rem;
+  margin-top: 2rem;
+  max-width: 7rem;
+  color: #e7e7e7;
+  background-color: transparent;
+  text-decoration: underline;
+}
+.manageCourses__courses .course .btn:not(:last-child) {
+  margin-right: 1rem;
+}
+.manageCourses__courses .course .btn:hover {
+  transform: translateY(-0.3rem);
+  box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.3);
+}
+.manageCourses__courses .course__icon-svg {
+  width: 5rem;
+  height: 5rem;
+  fill: #2c2c2c;
+}
+.manageCourses__courses .add-newCourse {
+  max-width: 20rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 0.1rem solid #2c2c2c;
+  cursor: pointer;
+  background-color: transparent;
+}
+.manageCourses__courses .add-newCourse:active {
+  transform: translateY(-0.3rem);
+  box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.3);
 }/*# sourceMappingURL=main.css.map */
