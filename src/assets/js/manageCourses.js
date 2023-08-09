@@ -10,7 +10,28 @@
   const manageCourses = document.querySelector('.manageCourses')
   const coursesDiv = document.querySelector('.manageCourses__courses')
   const addNewCourseBtn = document.querySelector('.add-newCourse')
-  const coursesList = []
+  const addNewCourseModal = document.querySelector('.addNewCoursModal')
+  const addNewCourseContainer = document.querySelector(
+    '.addNewCoursModal__container'
+  )
+  const addNewCourseModalCloseBtn = document.querySelector(
+    '.addNewCoursModal__btn--cancel'
+  )
+  const addNewCourseModalForm = document.querySelector(
+    '.addNewCoursModal__form'
+  )
+
+  // Fixed query selector
+  const coursesList = [
+    {
+      name: 'MATH',
+      Enseignant: 'M. Jean',
+    },
+    {
+      name: 'PHY',
+      Enseignant: 'M. Jean Paul',
+    },
+  ]
 
   const getRandomColor = () => {
     const randomIndex = Math.floor(Math.random() * colors.length)
@@ -43,7 +64,6 @@
         <div class="course__teacher">${course.Enseignant}</div>
         <div class="course__actions">
           <button class="btn btn--edit">Details</button>
-         
         </div>
       `
 
@@ -74,22 +94,45 @@
 
   manageCourses.addEventListener('click', (event) => {
     if (event.target.matches('.add-newCourse, .add-newCourse *')) {
-      addNewCourse()
-      coursesDiv.innerHTML = ''
-      displayCourses()
+      addNewCourseModal.classList.add('addNewCoursModal--show')
+      addNewCourseModal.classList.remove('addNewCoursModal--hide')
+      addNewCourseContainer.classList.add('addNewCoursContainer--animate')
     }
   })
 
-  manageCourses.addEventListener('click', (event) => {
-    if (event.target.matches('.add-newCourse, .add-newCourse *')) {
-      coursesList.push({
-        id: 1,
-        name: 'PHS',
-        Enseignant: 'New Teacher',
-      })
-      coursesDiv.innerHTML = ''
-      displayCourses()
+  addNewCourseModalCloseBtn.addEventListener('click', (event) => {
+    addNewCourseModal.classList.remove('addNewCoursModal--show')
+    addNewCourseModal.classList.add('addNewCoursModal--hide')
+    addNewCourseContainer.classList.remove('addNewCoursContainer--animate')
+    console.log('cancel')
+  })
+
+  addNewCourseModalForm.addEventListener('submit', (event) => {
+    event.preventDefault()
+    const courseName = document.querySelector('#course-name').value
+    const courseTeacher =
+      document.querySelector('#instructor').selectedOptions[0].value
+
+    const course = {
+      name: courseName,
+      Enseignant: courseTeacher,
     }
+
+    coursesList.push(course)
+
+    addNewCourseModal.classList.remove('addNewCoursModal--show')
+    addNewCourseModal.classList.add('addNewCoursModal--hide')
+    addNewCourseContainer.classList.remove('addNewCoursContainer--animate')
+
+    // Clear the form
+    document.querySelector('#course-name').value = ''
+    document.querySelector('#instructor').value = ''
+
+    // Remove all the courses from the DOM
+    coursesDiv.innerHTML = ''
+
+    // Display the courses again
+    displayCourses()
   })
 
   displayCourses()

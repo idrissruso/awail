@@ -2,4 +2,51 @@
   <h1 class="manageCourses__heading">Gérer les cours</h1>
   <div class="manageCourses__courses"></div>
 </div>
+
+<!--add new cours modal-->
+<div class="addNewCoursModal addNewCoursModal--hide">
+  <div class="addNewCoursModal__container">
+    <h1 class="addNewCoursModal__heading">Ajouter un nouveau cours</h1>
+    <form class="addNewCoursModal__form">
+      <div class="addNewCoursModal__form-group">
+        <label for="course-name" class="addNewCoursModal__label"
+          >Nom du Cours</label
+        >
+        <input
+          type="text"
+          id="course-name"
+          class="addNewCoursModal__input"
+          placeholder="Entrez le nom du cours"
+          required
+        />
+      </div>
+      <div class="addNewCoursModal__form-group">
+        <label for="instructor" class="addNewCoursModal__label"
+          >Instructeur</label
+        >
+        <select id="instructor" class="addNewCoursModal__input">
+          <option value="Instructeur 1">Instructeur 1</option>
+          <option value="Instructeur 2">Instructeur 2</option>
+          <option value="Instructeur 3">Instructeur 3</option>
+          <option value="Instructeur 4">Instructeur 4</option>
+        </select>
+      </div>
+      <div class="addNewCoursModal__buttons">
+        <button
+          class="addNewCoursModal__btn addNewCoursModal__btn--cancel"
+          type="reset"
+        >
+          Annuler
+        </button>
+        <button
+          class="addNewCoursModal__btn addNewCoursModal__btn--add"
+          type="submit"
+        >
+          Ajouter
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
 <script src="manageCourses.js"></script>

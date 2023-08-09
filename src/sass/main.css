@@ -949,6 +949,117 @@ input[type=checkbox]:checked:after {
   background-color: #0f6674;
 }
 
+.addNewCoursModal--hide {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.addNewCoursModal--show {
+  visibility: visible;
+  opacity: 1;
+}
+
+.addNewCoursModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  transition: all 0.3s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.addNewCoursModal__container {
+  background-color: #fff;
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.3);
+  transform: translateY(-50%) scale(0.5);
+  transition: all 0.3s;
+}
+.addNewCoursModal .addNewCoursContainer--animate {
+  transform: translateY(0) scale(1);
+}
+.addNewCoursModal__heading {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 300;
+  padding-bottom: 1rem;
+  margin-bottom: 2rem;
+  color: #d71313;
+  border-bottom: 1.3px solid rgba(32, 30, 64, 0.1);
+}
+.addNewCoursModal__form-group {
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.addNewCoursModal__form-label {
+  font-size: 1.5rem;
+  font-weight: 300;
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #24243e;
+}
+.addNewCoursModal__input {
+  font-family: inherit;
+  font-size: 1.6rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  background-color: rgba(36, 36, 62, 0.2);
+  border: none;
+  border-bottom: 0.3rem solid transparent;
+  width: 90%;
+  display: block;
+  transition: all 0.3s;
+  color: #737373;
+}
+.addNewCoursModal__input:focus {
+  outline: none;
+  box-shadow: 0 1rem 2rem rgba(36, 36, 62, 0.1);
+  border-bottom: 0.3rem solid #24243e;
+}
+.addNewCoursModal__input:focus:invalid {
+  border-bottom: 0.3rem solid #d71313;
+}
+.addNewCoursModal__input::-webkit-input-placeholder {
+  color: #737373;
+}
+.addNewCoursModal__btn {
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: #24243e;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 1rem 2rem;
+  background-color: #eee2de;
+  transition: all 0.2s;
+  cursor: pointer;
+  display: inline-block;
+  margin-right: 1rem;
+}
+.addNewCoursModal__btn:hover {
+  background-color: #e9e9e9;
+}
+.addNewCoursModal__btn--cancel {
+  background-color: #d71313;
+  color: #fff;
+}
+.addNewCoursModal__btn--cancel:hover {
+  background-color: #5d0606;
+}
+.addNewCoursModal__btn--add {
+  background-color: #28a745;
+  color: #fff;
+}
+.addNewCoursModal__btn--add:hover {
+  background-color: #1b552c;
+}
+
 .home {
   background-image: linear-gradient(to right bottom, #2b2a4c, #eee2de, #eee2de, #2b2a4c);
   background-repeat: no-repeat;
@@ -1954,10 +2065,6 @@ input[type=checkbox]:checked:after {
   color: #a80f0f;
 }
 
-* {
-  backface-visibility: hidden !important;
-}
-
 .manageCourses {
   padding: 2rem 5rem;
 }
@@ -1999,6 +2106,8 @@ input[type=checkbox]:checked:after {
   font-weight: 100;
 }
 .manageCourses__courses .course .btn {
+  display: flex;
+  justify-content: flex-start;
   width: 100%;
   padding: 0.5rem 0;
   border-radius: 0.5rem;
@@ -2009,7 +2118,6 @@ input[type=checkbox]:checked:after {
   cursor: pointer;
   transition: all 0.3s;
   flex: 0 0 5rem;
-  margin-top: 2rem;
   max-width: 7rem;
   color: #e7e7e7;
   background-color: transparent;
