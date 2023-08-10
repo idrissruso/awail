@@ -29,10 +29,10 @@
   &__content {
     /* Styles for the modal content */
     background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    max-width: 450px;
+    padding: 2rem;
+    border-radius: 0.8rem;
+    box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.3);
+    max-width: 45rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -42,15 +42,15 @@
   &__title {
     /* Styles for the modal title */
     margin-top: 0;
-    margin-bottom: 10px;
-    font-size: 20px;
+    margin-bottom: 1rem;
+    font-size: 2rem;
   }
 
   &__message {
     /* Styles for the modal message */
     margin: 0;
-    margin-bottom: 20px;
-    font-size: 16px;
+    margin-bottom: 2rem;
+    font-size: 1.6rem;
   }
 
   &__buttons {
@@ -61,12 +61,12 @@
 
   &__btn {
     /* Styles for the modal buttons */
-    padding: 8px 16px;
-    margin-left: 10px;
+    padding: 0.8rem 1.6rem;
+    margin-left: 1rem;
     border: none;
-    border-radius: 4px;
+    border-radius: 0.4rem;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 1.6rem;
   }
 
   &__btn--cancel {
