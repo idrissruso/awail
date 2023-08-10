@@ -992,11 +992,16 @@ input[type=checkbox]:checked:after {
   color: #d71313;
   border-bottom: 1.3px solid rgba(32, 30, 64, 0.1);
 }
+.addNewCoursModal #program {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(5rem, 10rem));
+  gap: 1rem;
+}
 .addNewCoursModal__form-group {
   margin-bottom: 2rem;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 1rem;
 }
 .addNewCoursModal__form-label {
   font-size: 1.5rem;
@@ -1029,15 +1034,19 @@ input[type=checkbox]:checked:after {
 .addNewCoursModal__input::-webkit-input-placeholder {
   color: #737373;
 }
+.addNewCoursModal__buttons {
+  display: flex;
+  justify-content: flex-end;
+}
 .addNewCoursModal__btn {
   font-size: 1.5rem;
   font-weight: 300;
   color: #24243e;
   border: none;
   border-radius: 0.5rem;
-  padding: 1rem 2rem;
+  padding: 0.6rem 1rem;
   background-color: #eee2de;
-  transition: all 0.2s;
+  transition: all 0.3s;
   cursor: pointer;
   display: inline-block;
   margin-right: 1rem;
@@ -1058,6 +1067,101 @@ input[type=checkbox]:checked:after {
 }
 .addNewCoursModal__btn--add:hover {
   background-color: #1b552c;
+}
+.addNewCoursModal__label {
+  font-size: 1.5rem;
+  font-weight: 600;
+  display: block;
+  color: #24243e;
+}
+.addNewCoursModal__schedule-day, .addNewCoursModal__schedule-time {
+  display: flex;
+  gap: 0.5rem;
+  flex-direction: column;
+}
+
+.courseDetailsModal--show {
+  visibility: visible;
+  opacity: 1;
+}
+
+.courseDetailsModal--hide {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.courseDetailsModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  transition: all 0.3s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.courseDetailsModal__container {
+  background-color: #fff;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+  padding: 1rem 2rem;
+  transition: all 0.3s;
+  transform: translateY(-10rem) scale(0.5);
+}
+.courseDetailsModal .courseDetailsModal__container--animate {
+  transform: translateY(0) scale(1);
+}
+.courseDetailsModal__heading {
+  font-size: 2rem;
+  font-weight: 300;
+  margin-bottom: 1rem;
+  color: #d71313;
+  text-align: center;
+}
+.courseDetailsModal__info p {
+  font-size: 1.6rem;
+  font-weight: 300;
+  color: #2c2c2c;
+}
+.courseDetailsModal__info p .infoLabel {
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: #2c2c2c;
+}
+.courseDetailsModal__actions {
+  margin-top: 2rem;
+  display: flex;
+}
+.courseDetailsModal__actions .actionButton {
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.courseDetailsModal__actions .actionButton:not(:last-child) {
+  margin-right: 1rem;
+}
+.courseDetailsModal__actions .actionButton:hover {
+  transform: translateY(-0.3rem);
+}
+.courseDetailsModal__actions .actionButton:active {
+  transform: translateY(0.1rem);
+}
+.courseDetailsModal__actions .edit {
+  background-color: #17a2b8;
+}
+.courseDetailsModal__actions .delete {
+  background-color: #d71313;
+}
+.courseDetailsModal__actions .cancel {
+  background-color: #2c2c2c;
 }
 
 .home {

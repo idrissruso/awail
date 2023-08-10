@@ -21,6 +21,13 @@
     '.addNewCoursModal__form'
   )
 
+  const CoursDetailsBtn = document.querySelector('.btn--edit')
+  const CoursDetailsCloseBtn = document.querySelector('.cancel')
+  const CoursDetailsContainer = document.querySelector(
+    '.courseDetailsModal__container'
+  )
+  const CoursDetailsModal = document.querySelector('.courseDetailsModal')
+
   // Fixed query selector
   const coursesList = [
     {
@@ -97,6 +104,12 @@
       addNewCourseModal.classList.add('addNewCoursModal--show')
       addNewCourseModal.classList.remove('addNewCoursModal--hide')
       addNewCourseContainer.classList.add('addNewCoursContainer--animate')
+    } else if (event.target.matches('.btn--edit, .btn--edit *')) {
+      CoursDetailsModal.classList.add('courseDetailsModal--show')
+      CoursDetailsModal.classList.remove('courseDetailsModal--hide')
+      CoursDetailsContainer.classList.add(
+        'courseDetailsModal__container--animate'
+      )
     }
   })
 
@@ -133,6 +146,14 @@
 
     // Display the courses again
     displayCourses()
+  })
+
+  CoursDetailsCloseBtn.addEventListener('click', (event) => {
+    CoursDetailsModal.classList.remove('courseDetailsModal--show')
+    CoursDetailsModal.classList.add('courseDetailsModal--hide')
+    CoursDetailsContainer.classList.remove(
+      'courseDetailsModal__container--animate'
+    )
   })
 
   displayCourses()

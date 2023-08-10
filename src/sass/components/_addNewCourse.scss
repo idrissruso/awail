@@ -35,13 +35,17 @@
     color: $color-tertiary;
     @include line-dark;
   }
-
+  #program {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(5rem, 10rem));
+    gap: 1rem;
+  }
   &__form {
     &-group {
       margin-bottom: 2rem;
       display: flex;
       flex-direction: column;
-      gap: 0.5rem;
+      gap: 1rem;
     }
 
     &-label {
@@ -81,15 +85,20 @@
     }
   }
 
+  &__buttons {
+    display: flex;
+    justify-content: flex-end;
+  }
+
   &__btn {
     font-size: 1.5rem;
     font-weight: 300;
     color: $color-primary;
     border: none;
     border-radius: 0.5rem;
-    padding: 1rem 2rem;
+    padding: 0.6rem 1rem;
     background-color: $color-secondary;
-    transition: all 0.2s;
+    transition: all 0.3s;
     cursor: pointer;
     display: inline-block;
     margin-right: 1rem;
@@ -115,5 +124,19 @@
         background-color: darken($color-green-dark, 15%);
       }
     }
+  }
+
+  &__label {
+    font-size: 1.5rem;
+    font-weight: 600;
+    display: block;
+    color: $color-primary;
+  }
+
+  &__schedule-day,
+  &__schedule-time {
+    display: flex;
+    gap: 0.5rem;
+    flex-direction: column;
   }
 }

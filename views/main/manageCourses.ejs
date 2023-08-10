@@ -10,8 +10,8 @@
     <form class="addNewCoursModal__form">
       <div class="addNewCoursModal__form-group">
         <label for="course-name" class="addNewCoursModal__label"
-          >Nom du Cours</label
-        >
+          >Nom du Cours :
+        </label>
         <input
           type="text"
           id="course-name"
@@ -31,6 +31,104 @@
           <option value="Instructeur 4">Instructeur 4</option>
         </select>
       </div>
+      <div class="addNewCoursModal__form-group">
+        <label for="course-schedule" class="addNewCoursModal__label"
+          >Programme Hebdomadaire :
+        </label>
+        <div class="addNewCoursModal__schedule" id="program">
+          <div class="addNewCoursModal__schedule-day">
+            <label>Jour</label>
+            <select class="addNewCoursModal__input" required>
+              <option value="Lundi">Lundi</option>
+              <option value="Mardi">Mardi</option>
+              <option value="Mercredi">Mercredi</option>
+              <option value="Jeudi">Jeudi</option>
+              <option value="Vendredi">Vendredi</option>
+              <option value="Samedi">Samedi</option>
+              <option value="Dimanche">Dimanche</option>
+            </select>
+          </div>
+          <div class="addNewCoursModal__schedule-time">
+            <label>Heure de début</label>
+            <input
+              type="text"
+              class="addNewCoursModal__input"
+              placeholder="09:00"
+              required
+            />
+          </div>
+          <div class="addNewCoursModal__schedule-time">
+            <label>Heure de fin</label>
+            <input
+              type="text"
+              class="addNewCoursModal__input"
+              placeholder="11:30"
+              required
+            />
+          </div>
+        </div>
+        <div class="addNewCoursModal__schedule" id="program">
+          <div class="addNewCoursModal__schedule-day">
+            <label>Jour</label>
+            <select class="addNewCoursModal__input" required>
+              <option value="Lundi">Lundi</option>
+              <option value="Mardi">Mardi</option>
+              <option value="Mercredi">Mercredi</option>
+              <option value="Jeudi">Jeudi</option>
+              <option value="Vendredi">Vendredi</option>
+              <option value="Samedi">Samedi</option>
+              <option value="Dimanche">Dimanche</option>
+            </select>
+          </div>
+          <div class="addNewCoursModal__schedule-time">
+            <label>Heure de début</label>
+            <input
+              type="text"
+              class="addNewCoursModal__input"
+              placeholder="09:00"
+            />
+          </div>
+          <div class="addNewCoursModal__schedule-time">
+            <label>Heure de fin</label>
+            <input
+              type="text"
+              class="addNewCoursModal__input"
+              placeholder="11:30"
+            />
+          </div>
+        </div>
+        <div class="addNewCoursModal__schedule" id="program">
+          <div class="addNewCoursModal__schedule-day">
+            <label>Jour</label>
+            <select class="addNewCoursModal__input" required>
+              <option value="Lundi">Lundi</option>
+              <option value="Mardi">Mardi</option>
+              <option value="Mercredi">Mercredi</option>
+              <option value="Jeudi">Jeudi</option>
+              <option value="Vendredi">Vendredi</option>
+              <option value="Samedi">Samedi</option>
+              <option value="Dimanche">Dimanche</option>
+            </select>
+          </div>
+          <div class="addNewCoursModal__schedule-time">
+            <label>Heure de début</label>
+            <input
+              type="text"
+              class="addNewCoursModal__input"
+              placeholder="09:00"
+            />
+          </div>
+          <div class="addNewCoursModal__schedule-time">
+            <label>Heure de fin</label>
+            <input
+              type="text"
+              class="addNewCoursModal__input"
+              placeholder="11:30"
+            />
+          </div>
+        </div>
+      </div>
+
       <div class="addNewCoursModal__buttons">
         <button
           class="addNewCoursModal__btn addNewCoursModal__btn--cancel"
@@ -50,9 +148,30 @@
 </div>
 
 <!--cours details modal-->
-<div class="courseDetailsModal">
+<div class="courseDetailsModal courseDetailsModal--hide">
   <div class="courseDetailsModal__container">
     <h1 class="courseDetailsModal__heading">Détails du cours</h1>
+
+    <div class="courseDetailsModal__info">
+      <p><span class="infoLabel">Id du cours :</span> 101</p>
+      <p><span class="infoLabel">Titre du cours :</span> Mathématiques</p>
+      <p><span class="infoLabel">Instructeur :</span> John Smith</p>
+      <p><span class="infoLabel">Crédits :</span> 3</p>
+
+      <p><span class="infoLabel">Durée :</span> 4 mois</p>
+      <p>
+        <span class="infoLabel">Programme :</span> Lundi et Mercredi, 10h00 -
+        11h30
+      </p>
+
+      <p></p>
+    </div>
+
+    <div class="courseDetailsModal__actions">
+      <button class="actionButton edit">Modifier</button>
+      <button class="actionButton delete">Supprimer</button>
+      <button class="actionButton cancel">Annuler</button>
+    </div>
   </div>
 </div>
 
