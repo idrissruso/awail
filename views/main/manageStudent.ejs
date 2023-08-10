@@ -31,6 +31,9 @@
             Nom et Prénom
           </th>
           <th class="manageStudents__cell manageStudents__cell--header">
+            Date de naissance
+          </th>
+          <th class="manageStudents__cell manageStudents__cell--header">
             Téléphone
           </th>
           <th class="manageStudents__cell manageStudents__cell--header">
@@ -49,13 +52,14 @@
             Action
           </th>
         </tr>
-        <tr class="manageStudents__row">
+        <tr class="manageStudents__row manageStudents__row-content">
           <td class="manageStudents__cell">1</td>
           <td class="manageStudents__cell">
             <img src="author.JPG" alt="Élève 1" class="manageStudents__img" />
           </td>
           <td class="manageStudents__cell">12345</td>
           <td class="manageStudents__cell">Alice</td>
+          <td class="manageStudents__cell">1995-03-15</td>
           <td class="manageStudents__cell">555-1234</td>
           <td class="manageStudents__cell">John Doe</td>
           <td class="manageStudents__cell">555-9876</td>
@@ -64,51 +68,18 @@
             <span class="payment-btn">Details</span>
           </td>
           <td class="manageStudents__cell">
-            <button class="manageStudents__btn--modify">Modifier</button>
-            <button class="manageStudents__btn--remove">Supprimer</button>
-            <button class="manageStudents__btn--attendees">Absences</button>
+            <svg class="manageStudents__btn--modify">
+              <use xlink:href="#icon-edit"></use>
+            </svg>
+            <svg class="manageStudents__btn--remove">
+              <use xlink:href="#icon-bin2"></use>
+            </svg>
+            <svg class="manageStudents__btn--attendees">
+              <use xlink:href="#icon-calendar-check-o"></use>
+            </svg>
           </td>
         </tr>
-        <tr class="manageStudents__row">
-          <td class="manageStudents__cell">2</td>
-          <td class="manageStudents__cell">
-            <img src="author.JPG" alt="Élève 2" class="manageStudents__img" />
-          </td>
-          <td class="manageStudents__cell">67890</td>
-          <td class="manageStudents__cell">Bob</td>
-          <td class="manageStudents__cell">555-9876</td>
-          <td class="manageStudents__cell">Jane Doe</td>
-          <td class="manageStudents__cell">555-5555</td>
-          <td class="manageStudents__cell">456 Oak Ave</td>
-          <td class="manageStudents__cell">
-            <span class="payment-btn">Details</span>
-          </td>
-          <td class="manageStudents__cell">
-            <button class="manageStudents__btn--modify">Modifier</button>
-            <button class="manageStudents__btn--remove">Supprimer</button>
-            <button class="manageStudents__btn--attendees">Absences</button>
-          </td>
-        </tr>
-        <tr class="manageStudents__row">
-          <td class="manageStudents__cell">3</td>
-          <td class="manageStudents__cell">
-            <img src="author.JPG" alt="Élève 3" class="manageStudents__img" />
-          </td>
-          <td class="manageStudents__cell">24680</td>
-          <td class="manageStudents__cell">Charlie</td>
-          <td class="manageStudents__cell">555-5555</td>
-          <td class="manageStudents__cell">Alex Smith</td>
-          <td class="manageStudents__cell">555-1111</td>
-          <td class="manageStudents__cell">789 Elm St</td>
-          <td class="manageStudents__cell">
-            <span class="payment-btn">Details</span>
-          </td>
-          <td class="manageStudents__cell">
-            <button class="manageStudents__btn--modify">Modifier</button>
-            <button class="manageStudents__btn--remove">Supprimer</button>
-            <button class="manageStudents__btn--attendees">Absences</button>
-          </td>
-        </tr>
+        <!-- Repeat the same structure for other students -->
       </table>
     </div>
   </div>
@@ -343,16 +314,19 @@
           <tr class="payment__history__row">
             <th>Date</th>
             <th>Montant</th>
+            <th>Mois</th>
           </tr>
         </thead>
         <tbody>
           <tr class="payment__history__row">
-            <td class="payment__history__cell">08/2023</td>
+            <td class="payment__history__cell">2023-08</td>
             <td class="payment__history__cell">250 €</td>
+            <td class="payment__history__cell">Août</td>
           </tr>
           <tr class="payment__history__row">
-            <td class="payment__history__cell">07/2023</td>
+            <td class="payment__history__cell">2023-07</td>
             <td class="payment__history__cell">200 €</td>
+            <td class="payment__history__cell">Juillet</td>
           </tr>
         </tbody>
       </table>
@@ -363,13 +337,39 @@
             >Date:</label
           >
           <input
-            type="date"
+            type="month"
             name="payment-date"
             id="payment-date"
             class="payment__new-payment--input"
             required
           />
         </div>
+        <div class="payment__new-payment--group">
+          <label for="payment-month" class="payment__new-payment--label"
+            >Mois:</label
+          >
+          <select
+            name="payment-month"
+            id="payment-month"
+            class="payment__new-payment--input"
+            required
+          >
+            <option value="" disabled selected>Sélectionnez un mois</option>
+            <option value="January">Janvier</option>
+            <option value="February">Février</option>
+            <option value="March">Mars</option>
+            <option value="April">Avril</option>
+            <option value="May">Mai</option>
+            <option value="June">Juin</option>
+            <option value="July">Juillet</option>
+            <option value="August">Août</option>
+            <option value="September">Septembre</option>
+            <option value="October">Octobre</option>
+            <option value="November">Novembre</option>
+            <option value="December">Décembre</option>
+          </select>
+        </div>
+
         <div class="payment__new-payment--group">
           <label for="payment-amount" class="payment__new-payment--label"
             >Montant:</label

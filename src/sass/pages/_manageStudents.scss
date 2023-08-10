@@ -92,6 +92,13 @@
   }
 
   &__row {
+    &-content {
+      &:hover {
+        background-color: $color-gray;
+        cursor: pointer;
+        transition: all 0.2s;
+      }
+    }
     &--header {
       font-weight: 600;
       box-shadow: 0 0.5rem 2rem rgba($color-gray-dark, 0.1);
@@ -121,38 +128,42 @@
     &--remove,
     &--modify,
     &--attendees {
-      background-color: $color-green-dark;
-      border: none;
-      padding: 0.7rem 1rem;
-      border-radius: 0.4rem;
-      color: #fff;
-      font-size: 1rem;
-      font-weight: 100;
+      height: 2rem;
+      width: 2rem;
       cursor: pointer;
       transition: all 0.2s;
       &:hover {
-        background-color: darken($color-green-dark, 10%);
+        transform: translateY(-0.3rem);
+        box-shadow: 0 0.7rem 1rem rgba(#000, 0.2);
+      }
+
+      &:active {
+        transform: translateY(0);
+        box-shadow: 0 0.1rem 0.5rem rgba(#000, 0.2);
       }
     }
 
     &--remove {
-      background-color: $color-tertiary;
+      fill: $color-tertiary;
+
       &:hover {
-        background-color: darken($color-tertiary, 10%);
+        fill: darken($color-tertiary, 10%);
       }
     }
 
     &--modify {
-      background-color: $color-green-dark;
+      fill: $color-green-dark;
+
       &:hover {
-        background-color: darken($color-green-dark, 10%);
+        fill: darken($color-green-dark, 10%);
       }
     }
 
     &--attendees {
-      background-color: $color-primary-light-1;
+      fill: $color-primary-light-1;
+
       &:hover {
-        background-color: darken($color-primary-light-1, 10%);
+        fill: darken($color-primary-light-1, 10%);
       }
     }
   }
