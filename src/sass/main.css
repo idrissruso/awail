@@ -1915,11 +1915,6 @@ input[type=checkbox]:checked:after {
   color: #201e40;
   margin: 0.5rem 0 0.7rem;
 }
-.editStudent__content .form__box-img--email {
-  font-size: 1.4rem;
-  font-weight: 300;
-  color: #201e40;
-}
 .editStudent__content .form__box-img--file {
   display: none;
 }
@@ -1944,6 +1939,9 @@ input[type=checkbox]:checked:after {
   grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
   margin-top: 2rem;
+}
+.editStudent__content .form__box-info #subheading {
+  grid-column: 1/-1;
 }
 .editStudent__content .form__box-info--heading {
   font-size: 1.4rem;

@@ -93,11 +93,6 @@
           color: $color-primary-dark;
           margin: 0.5rem 0 0.7rem;
         }
-        &--email {
-          font-size: 1.4rem;
-          font-weight: 300;
-          color: $color-primary-dark;
-        }
 
         &--file {
           display: none;
@@ -125,8 +120,13 @@
         flex: 1;
         display: grid;
         grid-template-columns: repeat(2, 1fr);
+
         gap: 1rem;
         margin-top: 2rem;
+
+        #subheading {
+          grid-column: 1/-1;
+        }
 
         &--heading {
           font-size: 1.4rem;

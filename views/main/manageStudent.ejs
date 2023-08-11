@@ -104,7 +104,6 @@
             </figure>
 
             <span class="form__box-img--name">Idrissa Rusongeka</span>
-            <span class="form__box-img--email">idriss@gmail.com</span>
             <input type="file" class="form__box-img--file" id="file" />
             <label for="file" class="form__box-img--btn"
               >Modifier L'image</label
@@ -115,86 +114,110 @@
             <div class="form__box-info--group">
               <input
                 type="text"
-                name="name"
-                id="name"
+                name="matricule"
+                id="matricule"
                 class="form__box-info--input"
-                placeholder="Nom"
+                placeholder="Matricule"
                 required
               />
             </div>
             <div class="form__box-info--group">
               <input
                 type="text"
-                name="surname"
-                id="surname"
+                name="nomComplet"
+                id="nomComplet"
                 class="form__box-info--input"
-                placeholder="Prénom"
+                placeholder="Nom Complet"
                 required
               />
             </div>
             <div class="form__box-info--group">
               <input
-                type="email"
-                name="email"
-                id="email"
-                class="form__box-info--input"
-                placeholder="Email"
-                required
-              />
-            </div>
-            <div class="form__box-info--group">
-              <input
-                type="phone"
-                name="phone"
-                id="phone"
+                type="tel"
+                name="telephone"
+                id="telephone"
                 class="form__box-info--input"
                 placeholder="Téléphone"
                 required
               />
             </div>
             <div class="form__box-info--group">
-              <label for="role" class="form__box-info--label"
-                >Nom d'Utilisateur</label
-              >
               <input
-                type="text"
-                name="userName"
-                id="userName"
+                type="date"
+                name="dateNaissance"
+                id="dateNaissance"
                 class="form__box-info--input"
-                placeholder="Nom d'utilisateur"
                 required
               />
             </div>
             <div class="form__box-info--group">
-              <label for="role" class="form__box-info--label">Role</label>
-              <select name="role" id="role" class="form__box-info--input">
-                <option value="admin">Admin</option>
-                <option value="user">Utilisateur</option>
+              <label for="sex" class="form__box-info--label">Sexe</label>
+              <select name="sex" id="sex" class="form__box-info--input">
+                <option value="homme">Homme</option>
+                <option value="femme">Femme</option>
               </select>
             </div>
             <div class="form__box-info--group">
-              <label for="password" class="form__box-info--label"
-                >Mot de passe actuel</label
-              >
+              <label for="classe" class="form__box-info--label">Classe</label>
+              <select name="classe" id="classe" class="form__box-info--input">
+                <option value="option1">Option 1</option>
+                <option value="option2">Option 2</option>
+                <option value="option3">Option 3</option>
+                <option value="option4">Option 4</option>
+              </select>
+            </div>
+            <h3 class="form__box-info--subheading" id="subheading">
+              Information du Parent
+            </h3>
+            <div class="form__box-info--group">
               <input
-                type="password"
-                name="password"
-                id="password"
+                type="text"
+                name="parentName"
+                id="parentName"
                 class="form__box-info--input"
+                placeholder="Nom du Parent"
                 required
               />
             </div>
             <div class="form__box-info--group">
-              <label for="password2" class="form__box-info--label"
-                >Nouveau Mot de Passe</label
-              >
               <input
-                type="password"
-                name="password2"
-                id="password2"
+                type="text"
+                name="parentProfession"
+                id="parentProfession"
                 class="form__box-info--input"
+                placeholder="Profession du Parent"
                 required
               />
+            </div>
+            <div class="form__box-info--group">
+              <input
+                type="tel"
+                name="parentPhone"
+                id="parentPhone"
+                class="form__box-info--input"
+                placeholder="Téléphone du Parent"
+                required
+              />
+            </div>
+            <div class="form__box-info--group">
+              <input
+                type="email"
+                name="parentEmail"
+                id="parentEmail"
+                class="form__box-info--input"
+                placeholder="Email du Parent"
+                required
+              />
+            </div>
+            <div class="form__box-info--group">
+              <textarea
+                name="parentAddress"
+                id="parentAddress"
+                class="form__box-info--input"
+                placeholder="Adresse"
+                rows="3"
+                required
+              ></textarea>
             </div>
             <div class="form__box-info--group form__box-info--group-action">
               <button class="form__box-info--btn">Modifier</button>
@@ -388,7 +411,9 @@
       </form>
     </div>
   </div>
-
-  <!--scripts-->
-  <script src="manageStudents.js"></script>
 </div>
+
+<div class="viewStudent"></div>
+
+<!--scripts-->
+<script src="manageStudents.js"></script>
