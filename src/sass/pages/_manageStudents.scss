@@ -127,7 +127,8 @@
   &__btn {
     &--remove,
     &--modify,
-    &--attendees {
+    &--attendees,
+    &--eye {
       height: 2rem;
       width: 2rem;
       cursor: pointer;
@@ -156,6 +157,12 @@
 
       &:hover {
         fill: darken($color-green-dark, 10%);
+      }
+    }
+
+    &--eye {
+      &:hover {
+        fill: darken($color-primary-light-1, 10%);
       }
     }
 

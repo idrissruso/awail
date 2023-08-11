@@ -1164,6 +1164,173 @@ input[type=checkbox]:checked:after {
   background-color: #2c2c2c;
 }
 
+.viewStudent-show {
+  visibility: visible;
+  opacity: 1;
+}
+
+.viewStudent-hide {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.viewStudent {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  transition: all 0.3s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s;
+  /* Apply negative margin to create a gap effect */
+}
+.viewStudent__subheading {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #d71313;
+  margin-bottom: 2rem;
+}
+.viewStudent__title {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #fff;
+  background-color: #17a2b8;
+  margin-bottom: 1.5rem;
+  padding: 1rem 2rem;
+  text-align: center;
+}
+.viewStudent__container {
+  position: relative;
+  background-color: #fff;
+  padding: 3rem 4rem;
+  transform: translateY(-50%) scale(0.5);
+  transition: all 0.5s;
+}
+.viewStudent .viewStudent-animate {
+  transform: translateY(0) scale(1);
+}
+.viewStudent__content {
+  display: flex;
+  -moz-column-gap: 2rem;
+       column-gap: 2rem;
+  flex-wrap: wrap;
+}
+.viewStudent__close-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0.5rem;
+  color: #e7e7e7;
+  cursor: pointer;
+}
+.viewStudent__info {
+  display: flex;
+  box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.2);
+  padding: 1rem 2rem;
+  -moz-column-gap: 2rem;
+       column-gap: 2rem;
+  flex-wrap: wrap;
+}
+.viewStudent__info-box {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+  overflow: hidden;
+  flex-wrap: wrap;
+}
+.viewStudent__exams {
+  box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.2);
+  padding: 1rem 2rem;
+}
+.viewStudent__img-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 1rem;
+  width: 30%;
+  overflow: hidden;
+}
+.viewStudent__img {
+  width: 20rem;
+}
+.viewStudent__btn--remove, .viewStudent__btn--modify, .viewStudent__btn--attendees {
+  height: 2rem;
+  width: 2rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.viewStudent__btn--remove:hover, .viewStudent__btn--modify:hover, .viewStudent__btn--attendees:hover {
+  transform: translateY(-0.3rem);
+  box-shadow: 0 0.7rem 1rem rgba(0, 0, 0, 0.2);
+}
+.viewStudent__btn--remove:active, .viewStudent__btn--modify:active, .viewStudent__btn--attendees:active {
+  transform: translateY(0);
+  box-shadow: 0 0.1rem 0.5rem rgba(0, 0, 0, 0.2);
+}
+.viewStudent__btn--remove {
+  fill: #d71313;
+}
+.viewStudent__btn--remove:hover {
+  fill: #a80f0f;
+}
+.viewStudent__btn--modify {
+  fill: #2d8f4a;
+}
+.viewStudent__btn--modify:hover {
+  fill: #216836;
+}
+.viewStudent__btn--attendees {
+  fill: #17a2b8;
+}
+.viewStudent__btn--attendees:hover {
+  fill: #117a8b;
+}
+.viewStudent__row:not(:last-child) {
+  margin-bottom: 1rem;
+}
+.viewStudent__label {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #24243e;
+}
+.viewStudent__value {
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #2c2c2c;
+}
+.viewStudent__table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+.viewStudent__table th, .viewStudent__table td {
+  padding: 10px;
+  text-align: center;
+  background-color: white;
+  border: 1px solid #2c2c2c; /* Set the background color of the cells */
+}
+.viewStudent__table th {
+  background-color: #f1f1f1; /* Set the background color of the table header */
+}
+.viewStudent__table td {
+  position: relative; /* Create a positioning context for negative margin */
+}
+.viewStudent__table td::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  border: 2px solid white; /* Adjust the border width and color as needed */
+  z-index: -1;
+}
+
 .home {
   background-image: linear-gradient(to right bottom, #2b2a4c, #eee2de, #eee2de, #2b2a4c);
   background-repeat: no-repeat;
@@ -1786,17 +1953,17 @@ input[type=checkbox]:checked:after {
   -o-object-position: center;
      object-position: center;
 }
-.manageStudents__btn--remove, .manageStudents__btn--modify, .manageStudents__btn--attendees {
+.manageStudents__btn--remove, .manageStudents__btn--modify, .manageStudents__btn--attendees, .manageStudents__btn--eye {
   height: 2rem;
   width: 2rem;
   cursor: pointer;
   transition: all 0.2s;
 }
-.manageStudents__btn--remove:hover, .manageStudents__btn--modify:hover, .manageStudents__btn--attendees:hover {
+.manageStudents__btn--remove:hover, .manageStudents__btn--modify:hover, .manageStudents__btn--attendees:hover, .manageStudents__btn--eye:hover {
   transform: translateY(-0.3rem);
   box-shadow: 0 0.7rem 1rem rgba(0, 0, 0, 0.2);
 }
-.manageStudents__btn--remove:active, .manageStudents__btn--modify:active, .manageStudents__btn--attendees:active {
+.manageStudents__btn--remove:active, .manageStudents__btn--modify:active, .manageStudents__btn--attendees:active, .manageStudents__btn--eye:active {
   transform: translateY(0);
   box-shadow: 0 0.1rem 0.5rem rgba(0, 0, 0, 0.2);
 }
@@ -1811,6 +1978,9 @@ input[type=checkbox]:checked:after {
 }
 .manageStudents__btn--modify:hover {
   fill: #216836;
+}
+.manageStudents__btn--eye:hover {
+  fill: #117a8b;
 }
 .manageStudents__btn--attendees {
   fill: #17a2b8;

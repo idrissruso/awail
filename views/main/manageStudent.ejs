@@ -53,7 +53,11 @@
           </th>
         </tr>
         <tr class="manageStudents__row manageStudents__row-content">
-          <td class="manageStudents__cell">1</td>
+          <td class="manageStudents__cell">
+            <svg class="manageStudents__btn--eye">
+              <use xlink:href="#icon-eye"></use>
+            </svg>
+          </td>
           <td class="manageStudents__cell">
             <img src="author.JPG" alt="Élève 1" class="manageStudents__img" />
           </td>
@@ -413,7 +417,124 @@
   </div>
 </div>
 
-<div class="viewStudent"></div>
+<div class="viewStudent viewStudent-hide">
+  <div class="viewStudent__container">
+    <span class="viewStudent__close-btn">✖️</span>
+    <h2 class="viewStudent__title">Détails de l'élève</h2>
+    <div class="viewStudent__content">
+      <div class="viewStudent__info">
+        <figure class="viewStudent__img-box">
+          <img src="author.JPG" alt="user image" class="viewStudent__img" />
+          <figcaption class="viewStudent__img-caption">
+            <svg class="viewStudent__btn--modify">
+              <use xlink:href="#icon-edit"></use>
+            </svg>
+            <svg class="viewStudent__btn--remove">
+              <use xlink:href="#icon-bin2"></use>
+            </svg>
+            <svg class="viewStudent__btn--attendees">
+              <use xlink:href="#icon-calendar-check-o"></use>
+            </svg>
+          </figcaption>
+        </figure>
+        <div class="viewStudent__info-box">
+          <div class="viewStudent__row">
+            <span class="viewStudent__label">Matricule:</span>
+            <span class="viewStudent__value">123456</span>
+          </div>
+          <div class="viewStudent__row">
+            <span class="viewStudent__label">Nom Complet:</span>
+            <span class="viewStudent__value">John Doe</span>
+          </div>
+          <div class="viewStudent__row">
+            <span class="viewStudent__label">Téléphone:</span>
+            <span class="viewStudent__value">123-456-7890</span>
+          </div>
+          <div class="viewStudent__row">
+            <span class="viewStudent__label">Date de Naissance:</span>
+            <span class="viewStudent__value">1998-05-15</span>
+          </div>
+          <div class="viewStudent__row">
+            <span class="viewStudent__label">Sexe:</span>
+            <span class="viewStudent__value">Homme</span>
+          </div>
+          <div class="viewStudent__row">
+            <span class="viewStudent__label">Classe:</span>
+            <span class="viewStudent__value">Option 1</span>
+          </div>
+          <div class="viewStudent__divider"></div>
+          <h3 class="viewStudent__subheading">Information du Parent</h3>
+          <div class="viewStudent__row">
+            <span class="viewStudent__label">Nom du Parent:</span>
+            <span class="viewStudent__value">Jane Doe</span>
+          </div>
+          <div class="viewStudent__row">
+            <span class="viewStudent__label">Profession du Parent:</span>
+            <span class="viewStudent__value">Enseignant</span>
+          </div>
+          <div class="viewStudent__row">
+            <span class="viewStudent__label">Téléphone du Parent:</span>
+            <span class="viewStudent__value">987-654-3210</span>
+          </div>
+          <div class="viewStudent__row">
+            <span class="viewStudent__label">Adresse du Parent:</span>
+            <span class="viewStudent__value">123 Rue de Parent, Ville</span>
+          </div>
+        </div>
+      </div>
+      <div class="viewStudent__exams">
+        <h3 class="viewStudent__subheading">Résultats des Examens</h3>
+        <table class="viewStudent__table">
+          <thead>
+            <tr>
+              <th>Matière</th>
+              <th>Examen 1</th>
+              <th>Examen 2</th>
+              <th>Examen 3</th>
+              <th>Moyenne</th>
+              <th>Appréciation</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Mathématiques</td>
+              <td>90</td>
+              <td>85</td>
+              <td>92</td>
+              <td>89</td>
+              <td>Excellent</td>
+            </tr>
+            <tr>
+              <td>Sciences</td>
+              <td>75</td>
+              <td>80</td>
+              <td>78</td>
+              <td>77.67</td>
+              <td>Bien</td>
+            </tr>
+            <tr>
+              <td>Sciences</td>
+              <td>75</td>
+              <td>80</td>
+              <td>78</td>
+              <td>77.67</td>
+              <td>Bien</td>
+            </tr>
+            <tr>
+              <td>Sciences</td>
+              <td>75</td>
+              <td>80</td>
+              <td>78</td>
+              <td>77.67</td>
+              <td>Bien</td>
+            </tr>
+            <!-- Add more rows for other subjects and exam results -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
 
 <!--scripts-->
 <script src="manageStudents.js"></script>

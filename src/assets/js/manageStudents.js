@@ -31,7 +31,20 @@
   const paymentModal = document.querySelector('.payment')
   const paymentCancelBtn = document.querySelector('.payment__close-btn')
   const paymentModalContent = document.querySelector('.payment__container')
+  const viewStudentBtn = document.querySelectorAll('.manageStudents__btn--eye')
 
+  const viewStudentModalCloseBtn = document.querySelector(
+    '.viewStudent__close-btn'
+  )
+  console.log(viewStudentModalCloseBtn + 'close')
+
+  const viewStudentModal = document.querySelector('.viewStudent')
+  console.log(viewStudentModal + 'view')
+  const viewStudentModalContainer = document.querySelector(
+    '.viewStudent__container'
+  )
+
+  console.log(viewStudentModalContainer + 'viewContainer')
   //editStudent__container--show
 
   modifyBtn.forEach((btn) => {
@@ -117,5 +130,19 @@
     paymentModal.classList.remove('paymentShown')
     paymentModal.classList.toggle('paymentHidden')
     paymentModalContent.classList.remove('payment__container--show')
+  })
+
+  viewStudentBtn.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      viewStudentModal.classList.add('viewStudent-show')
+      viewStudentModal.classList.toggle('viewStudent-hide')
+      viewStudentModalContainer.classList.add('viewStudent-animate')
+    })
+  })
+
+  viewStudentModalCloseBtn.addEventListener('click', () => {
+    viewStudentModal.classList.remove('viewStudent-show')
+    viewStudentModal.classList.toggle('viewStudent-hide')
+    viewStudentModalContainer.classList.remove('viewStudent-animate')
   })
 })()
