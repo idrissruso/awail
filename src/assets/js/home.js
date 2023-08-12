@@ -8,6 +8,7 @@ $(document).ready(function () {
   const addUser = $('.add-user')
   const main = $('.dashboard-container__main')
   const manageCourses = $('.manage-courses')
+  const manageTeachers = $('.manage-teachers')
 
   // Add event listeners to the elements
   brandBox.on('click', function () {
@@ -63,5 +64,9 @@ $(document).ready(function () {
 
   $(document).on('click', '.dashboard__card-button', function () {
     main.load('main/manageStudent.ejs')
+  })
+
+  $(document).on('click', '.manage-teachers', function () {
+    main.load('main/manageTeachers.ejs')
   })
 })

@@ -1,10 +1,8 @@
 ;(function () {
   const colors = [
-    '#264653', // Dark Teal
+    // Dark Teal
     '#2a9d8f', // Teal// Burnt Sienna
-    '#374c80',
-    '#201e40',
-    '#24243e', // Navy Blue
+    '#374c80', // Navy Blue
   ]
 
   const manageCourses = document.querySelector('.manageCourses')

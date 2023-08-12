@@ -1,0 +1,238 @@
+<div class="manageTeachers">
+  <div class="manageTeachers__container">
+    <div class="manageTeachers__header">
+      <h1 class="manageTeachers__heading">Gérer les enseignants.</h1>
+      <button class="manageTeachers__header-btn" id="addTeacher">
+        <span>
+          <svg class="manageTeachers__header-icon">
+            <use xlink:href="#icon-plus"></use>
+          </svg> </span
+        >Ajouter un enseignant
+      </button>
+    </div>
+    <div class="manageTeachers__searchbar">
+      <label class="manageTeachers__searchbar-label" for="teacher"
+        >Rechercher :</label
+      >
+      <input type="text" class="manageTeachers__searchbar-input" id="teacher" />
+    </div>
+
+    <div class="manageTeachers__content">
+      <table class="manageTeachers__table">
+        <tr class="manageTeachers__row manageTeachers__row--header">
+          <th class="manageTeachers__cell manageTeachers__cell--header">#</th>
+          <th class="manageTeachers__cell manageTeachers__cell--header">
+            Photo
+          </th>
+          <th class="manageTeachers__cell manageTeachers__cell--header">ID</th>
+          <th class="manageTeachers__cell manageTeachers__cell--header">
+            Nom complet
+          </th>
+          <th class="manageTeachers__cell manageTeachers__cell--header">
+            Date de naissance
+          </th>
+          <th class="manageTeachers__cell manageTeachers__cell--header">
+            Téléphone
+          </th>
+          <th class="manageTeachers__cell manageTeachers__cell--header">
+            Email
+          </th>
+          <th class="manageTeachers__cell manageTeachers__cell--header">
+            Adresse
+          </th>
+          <th class="manageTeachers__cell manageTeachers__cell--header">
+            Matières
+          </th>
+          <th class="manageTeachers__cell manageTeachers__cell--header">
+            Actions
+          </th>
+        </tr>
+        <tr class="manageTeachers__row manageTeachers__row-content">
+          <td class="manageTeachers__cell">1</td>
+          <td class="manageTeachers__cell">
+            <img
+              src="author.JPG"
+              alt="Enseignant 1"
+              class="manageTeachers__img"
+            />
+          </td>
+          <td class="manageTeachers__cell">T12345</td>
+          <td class="manageTeachers__cell">Marie Dupont</td>
+          <td class="manageTeachers__cell">1985-09-10</td>
+          <td class="manageTeachers__cell">555-6789</td>
+          <td class="manageTeachers__cell">marie.dupont@example.com</td>
+          <td class="manageTeachers__cell">789 Oak Ave</td>
+          <td class="manageTeachers__cell">Math, Science</td>
+          <td class="manageTeachers__cell">
+            <svg class="manageTeachers__btn--modify">
+              <use xlink:href="#icon-edit"></use>
+            </svg>
+            <svg class="manageTeachers__btn--remove">
+              <use xlink:href="#icon-bin2"></use>
+            </svg>
+          </td>
+        </tr>
+        <!-- Repeat the same structure for other teachers -->
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- add new teacher -->
+<div class="addNewTeacher addNewTeacher-hide">
+  <div class="addNewTeacher__container">
+    <h1 class="addNewTeacher__heading">Ajouter un enseignant</h1>
+    <div class="addNewTeacher__content">
+      <form action="#" class="addNewTeacher-form">
+        <h3 id="heading">Détails de l'enseignant</h3>
+        <div class="teacher">
+          <div class="addNewTeacher-form__group" id="matricule">
+            <label class="addNewTeacher-form__label" for="teacher-no"
+              >Matricule</label
+            >
+            <input
+              type="text"
+              name="teacher-no"
+              id="teacher-no"
+              class="addNewTeacher-form__input"
+              placeholder="Matricule"
+              required
+            />
+          </div>
+
+          <div class="addNewTeacher-form__group">
+            <label class="addNewTeacher-form__label" for="teacher-name"
+              >Nom Complet</label
+            >
+            <input
+              type="text"
+              name="teacher-name"
+              id="teacher-name"
+              class="addNewTeacher-form__input"
+              placeholder="Nom complet"
+              required
+            />
+          </div>
+          <div class="addNewTeacher-form__group">
+            <label class="addNewTeacher-form__label" for="teacher-phone"
+              >Téléphone</label
+            >
+            <input
+              type="text"
+              name="teacher-phone"
+              id="teacher-phone"
+              class="addNewTeacher-form__input"
+              placeholder="Téléphone"
+              required
+            />
+          </div>
+          <div class="addNewTeacher-form__group" id="age">
+            <label class="addNewTeacher-form__label" for="teacher-age"
+              >Date de naissance</label
+            >
+            <input
+              type="date"
+              name="teacher-age"
+              id="teacher-age"
+              class="addNewTeacher-form__input"
+              placeholder="Date de naissance"
+              required
+            />
+          </div>
+          <div class="addNewTeacher-form__group" id="sex">
+            <label class="addNewTeacher-form__label" for="teacher-sex"
+              >Sexe</label
+            >
+            <select
+              name="teacher-sex"
+              id="teacher-sex"
+              class="addNewTeacher-form__input"
+            >
+              <option value="Masculin">Masculin</option>
+              <option value="Feminin">Féminin</option>
+            </select>
+          </div>
+          <div class="addNewTeacher-form__group" id="qualification">
+            <label class="addNewTeacher-form__label" for="teacher-qualification"
+              >Qualification</label
+            >
+            <input
+              type="text"
+              name="teacher-qualification"
+              id="teacher-qualification"
+              class="addNewTeacher-form__input"
+              placeholder="Qualification"
+              required
+            />
+          </div>
+          <div class="addNewTeacher-form__group">
+            <label class="addNewTeacher-form__label" for="teacher-email"
+              >Email</label
+            >
+            <input
+              type="email"
+              name="teacher-email"
+              id="teacher-email"
+              class="addNewTeacher-form__input"
+              placeholder="Email"
+              required
+            />
+          </div>
+          <div class="addNewTeacher-form__group" id="subjects">
+            <label class="addNewTeacher-form__label" for="teacher-subjects"
+              >Matières</label
+            >
+            <input
+              type="text"
+              name="teacher-subjects"
+              id="teacher-subjects"
+              class="addNewTeacher-form__input"
+              placeholder="Matières"
+              required
+            />
+          </div>
+          <div class="addNewTeacher-form__group">
+            <label class="addNewTeacher-form__label" for="teacher-img"
+              >Photo</label
+            >
+            <input type="file" class="addNewTeacher-form__input" />
+          </div>
+        </div>
+        <h3 id="heading">Adresse</h3>
+        <div class="adress">
+          <div class="addNewTeacher-form__group">
+            <label class="addNewTeacher-form__label" for="address"
+              >Adresse Complet</label
+            >
+            <textarea
+              name="teacher-address"
+              id="address"
+              class="addNewTeacher-form__input"
+              cols="30"
+              rows="3"
+              style="width: 30rem"
+            ></textarea>
+          </div>
+        </div>
+        <div
+          class="addNewTeacher-form__group addNewTeacher-form__group-actions"
+        >
+          <button
+            type="submit"
+            class="addNewTeacher-form__btn addNewTeacher-form__btn-submit"
+          >
+            Ajouter
+          </button>
+          <button
+            type="reset"
+            class="addNewTeacher-form__btn addNewTeacher-form__btn-cancel"
+          >
+            Annuler
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script src="manageTeachers.js"></script>
