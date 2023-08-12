@@ -2933,6 +2933,7 @@ input[type=checkbox]:checked:after {
   display: flex;
   align-items: center;
   gap: 1rem;
+  cursor: pointer;
 }
 .navbar__brand-name {
   font-size: 2rem;
