@@ -23,6 +23,10 @@ app.get('/dashboard', (req, res) => {
   res.render('root.ejs')
 })
 
+app.get('/parent', (req, res) => {
+  res.render('parent/parent.ejs')
+})
+
 app.get('/main/:file', function (req, res) {
   res.sendFile(path.join(__dirname, 'views/main', req.params.file))
 })
