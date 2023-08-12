@@ -1,3 +1,27 @@
-.x {
-  background-color: red;
+.navbar {
+  background-color: $color-primary;
+  color: #fff;
+  &__brand {
+  }
+
+  &__profile {
+    &-box {
+    }
+    &-name {
+      margin-left: 1rem;
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+    &-pic {
+      width: 3rem;
+      height: 3rem;
+      border-radius: 50%;
+    }
+  }
+
+  &__logout-icon {
+    width: 2rem;
+    height: 2rem;
+    fill: #fff;
+  }
 }
