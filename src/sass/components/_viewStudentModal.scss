@@ -53,6 +53,14 @@
     margin: 0.5rem;
     color: $color-gray;
     cursor: pointer;
+    transition: all 0.3s;
+    &:hover {
+      color: darken($color-gray, 10%);
+    }
+
+    &:active {
+      transform: translateY(0.3rem);
+    }
   }
 
   &__info {
@@ -87,6 +95,10 @@
 
   &__img {
     width: 20rem;
+    &-caption {
+      display: flex;
+      gap: 1rem;
+    }
   }
 
   &__btn {

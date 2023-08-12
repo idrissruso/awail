@@ -1227,6 +1227,13 @@ input[type=checkbox]:checked:after {
   margin: 0.5rem;
   color: #e7e7e7;
   cursor: pointer;
+  transition: all 0.3s;
+}
+.viewStudent__close-btn:hover {
+  color: #cecece;
+}
+.viewStudent__close-btn:active {
+  transform: translateY(0.3rem);
 }
 .viewStudent__info {
   display: flex;
@@ -1257,6 +1264,10 @@ input[type=checkbox]:checked:after {
 }
 .viewStudent__img {
   width: 20rem;
+}
+.viewStudent__img-caption {
+  display: flex;
+  gap: 1rem;
 }
 .viewStudent__btn--remove, .viewStudent__btn--modify, .viewStudent__btn--attendees {
   height: 2rem;
