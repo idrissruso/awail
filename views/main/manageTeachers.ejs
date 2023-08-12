@@ -67,7 +67,7 @@
             <svg class="manageTeachers__btn--modify">
               <use xlink:href="#icon-edit"></use>
             </svg>
-            <svg class="manageTeachers__btn--remove">
+            <svg class="manageTeachers__btn--remove deleteTeacherBtn">
               <use xlink:href="#icon-bin2"></use>
             </svg>
           </td>
@@ -231,6 +231,148 @@
           </button>
         </div>
       </form>
+    </div>
+  </div>
+</div>
+
+<!-- delete teacher -->
+<div class="deleteModal deleteTeacher modalHide">
+  <div class="deleteModal__content">
+    <h2 class="deleteModal__title">Confirmation de Suppression</h2>
+    <svg class="deleteModal__icon">
+      <use xlink:href="#icon-x-circle" />
+    </svg>
+    <p class="deleteModal__message">
+      Êtes-vous sûr(e) de vouloir supprimer cet Enseignant ?
+    </p>
+    <div class="deleteModal__buttons">
+      <button class="deleteModal__btn deleteModal__btn--cancel">Annuler</button>
+      <button class="deleteModal__btn deleteModal__btn--confirm">
+        Confirmer
+      </button>
+    </div>
+  </div>
+</div>
+
+<!--modify teacher-->
+<div class="modifyTeacher editTeacher-hide">
+  <div class="editTeacher">
+    <div class="editTeacher__container">
+      <h1 class="editTeacher__heading">
+        Mettre à jour le profil de l'enseignant
+      </h1>
+
+      <div class="editTeacher__content">
+        <form class="form">
+          <div class="form__box-img">
+            <figure>
+              <img
+                src="author.JPG"
+                alt="user image"
+                class="form__box-img--img"
+              />
+              <figcaption class="form__box-img--caption">🖋️</figcaption>
+            </figure>
+
+            <span class="form__box-img--name">Idrissa Rusongeka</span>
+            <input type="file" class="form__box-img--file" id="file" />
+            <label for="file" class="form__box-img--btn"
+              >Modifier L'image</label
+            >
+          </div>
+          <div class="form__box-info">
+            <h3 class="form__box-info--heading">Modifier le profil</h3>
+            <div class="form__box-info--group">
+              <input
+                type="text"
+                name="matricule"
+                id="matricule"
+                class="form__box-info--input"
+                placeholder="Matricule"
+                required
+              />
+            </div>
+            <div class="form__box-info--group">
+              <input
+                type="text"
+                name="nomComplet"
+                id="nomComplet"
+                class="form__box-info--input"
+                placeholder="Nom Complet"
+                required
+              />
+            </div>
+            <div class="form__box-info--group">
+              <input
+                type="email"
+                name="email"
+                id="email"
+                class="form__box-info--input"
+                placeholder="Email"
+                required
+              />
+            </div>
+            <div class="form__box-info--group">
+              <input
+                type="tel"
+                name="telephone"
+                id="telephone"
+                class="form__box-info--input"
+                placeholder="Téléphone"
+                required
+              />
+            </div>
+            <div class="form__box-info--group">
+              <input
+                type="date"
+                name="dateNaissance"
+                id="dateNaissance"
+                class="form__box-info--input"
+                required
+              />
+            </div>
+            <div></div>
+            <div class="form__box-info--group">
+              <label for="qualification" class="form__box-info--label"
+                >Qualification</label
+              >
+              <input
+                type="text"
+                name="qualification"
+                id="qualification"
+                class="form__box-info--input"
+                placeholder="Qualification"
+                required
+              />
+            </div>
+            <div class="form__box-info--group">
+              <label for="sex" class="form__box-info--label">Sexe</label>
+              <select name="sex" id="sex" class="form__box-info--input">
+                <option value="homme">Homme</option>
+                <option value="femme">Femme</option>
+              </select>
+            </div>
+
+            <div class="form__box-info--group">
+              <label for="subjects" class="form__box-info--label"
+                >Matières</label
+              >
+              <input
+                type="text"
+                name="subjects"
+                id="subjects"
+                class="form__box-info--input"
+                placeholder="Matières"
+                required
+              />
+            </div>
+            <div class="form__box-info--group form__box-info--group-action">
+              <button class="form__box-info--btn">Modifier</button>
+              <span class="form__box-info--btn" id="close">Annuler</span>
+            </div>
+          </div>
+        </form>
+      </div>
     </div>
   </div>
 </div>

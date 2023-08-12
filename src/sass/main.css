@@ -1479,6 +1479,204 @@ input[type=checkbox]:checked:after {
   background-color: #a80f0f;
 }
 
+.editTeacher-hide {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.editTeacher-show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modifyTeacher {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  transition: all 0.3s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modifyTeacher h1 {
+  position: relative;
+}
+
+.editTeacher {
+  transition: all 0.3s;
+  transform: scale(0.5) translateY(-50%);
+}
+.editTeacher__container {
+  background-color: #fff;
+  box-shadow: 0 0.5rem 1rem rgba(32, 30, 64, 0.2);
+}
+.editTeacher__heading {
+  padding: 1rem 1.5rem;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #fff;
+  border-bottom: 0.1rem solid #e7e7e7;
+  background-color: #17a2b8;
+  text-align: center;
+}
+.editTeacher__content .form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 5rem;
+  -moz-column-gap: 5rem;
+       column-gap: 5rem;
+}
+.editTeacher__content .form__box-img {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.editTeacher__content .form__box-img--img {
+  height: 100%;
+  width: 100%;
+  transform: scale(1.3);
+  transition: all 0.4s;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+.editTeacher__content .form__box-img figure:hover > .form__box-img--caption {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(-5rem);
+  cursor: pointer;
+}
+.editTeacher__content .form__box-img figure:hover > .form__box-img--img {
+  transform: scale(1);
+  filter: brightness(90%) blur(0.4rem);
+}
+.editTeacher__content .form__box-img figure {
+  position: relative;
+  float: left;
+  width: 15rem;
+  height: 15rem;
+  -webkit-clip-path: circle(50% at 50% 50%);
+          clip-path: circle(50% at 50% 50%);
+  shape-outside: circle(50% at 50% 50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.editTeacher__content .form__box-img--caption {
+  font-size: 2.5rem;
+  margin-left: 2%;
+  position: absolute;
+  top: 80%;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s;
+}
+.editTeacher__content .form__box-img--name {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #201e40;
+  margin: 0.5rem 0 0.7rem;
+}
+.editTeacher__content .form__box-img--file {
+  display: none;
+}
+.editTeacher__content .form__box-img--btn {
+  margin-top: 1rem;
+  padding: 1rem 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  background-color: #17a2b8;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 400;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.editTeacher__content .form__box-img--btn:hover {
+  background-color: #0f6674;
+}
+.editTeacher__content .form__box-info {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-top: 2rem;
+}
+.editTeacher__content .form__box-info--heading {
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: #201e40;
+  margin-bottom: 1rem;
+  grid-column: 1/span 2;
+  justify-self: flex-end;
+}
+.editTeacher__content .form__box-info--group {
+  display: flex;
+  flex-direction: column;
+}
+.editTeacher__content .form__box-info--group-action {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  gap: 1rem;
+  grid-column: 1/-1;
+}
+.editTeacher__content .form__box-info--label {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #201e40;
+  margin-bottom: 0.5rem;
+}
+.editTeacher__content .form__box-info--input {
+  padding: 1rem 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  background-color: #e7e7e7;
+  color: #201e40;
+  font-size: 1rem;
+  font-weight: 400;
+  transition: all 0.3s;
+}
+.editTeacher__content .form__box-info--input:focus {
+  outline: none;
+  box-shadow: 0 0.5rem 1rem rgba(32, 30, 64, 0.2);
+}
+.editTeacher__content .form__box-info--btn {
+  margin-top: 1rem;
+  padding: 1rem 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  background-color: #17a2b8;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 400;
+  cursor: pointer;
+  transition: all 0.3s;
+  justify-self: flex-end;
+}
+.editTeacher__content .form__box-info--btn:hover {
+  background-color: #0f6674;
+}
+.editTeacher__content .form__box-info #close {
+  background-color: #d71313;
+  color: #fff;
+}
+.editTeacher__content .form__box-info #close:hover {
+  background-color: #910d0d;
+}
+
+.editTeacher-animate {
+  transform: scale(1) translateY(0);
+}
+
 .home {
   background-image: linear-gradient(to right bottom, #2b2a4c, #eee2de, #eee2de, #2b2a4c);
   background-repeat: no-repeat;
