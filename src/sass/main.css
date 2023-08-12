@@ -2924,6 +2924,29 @@ input[type=checkbox]:checked:after {
 .navbar {
   background-color: #24243e;
   color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0 1rem 2rem;
+}
+.navbar__brand {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.navbar__brand-name {
+  font-size: 2rem;
+  font-weight: 700;
+}
+.navbar__brand-icon {
+  width: 5rem;
+}
+.navbar__profile-box {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  background-color: #271e91;
+  padding: 1rem 2rem;
 }
 .navbar__profile-name {
   margin-left: 1rem;
@@ -2931,12 +2954,23 @@ input[type=checkbox]:checked:after {
   font-weight: 700;
 }
 .navbar__profile-pic {
-  width: 3rem;
-  height: 3rem;
+  width: 5rem;
+  height: 5rem;
   border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
 }
 .navbar__logout-icon {
   width: 2rem;
   height: 2rem;
   fill: #fff;
+  cursor: pointer;
+}
+
+.section-parent {
+  height: 100vh;
+  display: grid;
+  grid-template-rows: minmax(5rem, 7rem) 1fr minmax(3rem, 5rem);
 }/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,5 @@
+.section-parent {
+  height: 100vh;
+  display: grid;
+  grid-template-rows: minmax(5rem, 7rem) 1fr minmax(3rem, 5rem);
+}
