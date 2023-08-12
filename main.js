@@ -5,9 +5,11 @@ import browserSync from 'browser-sync'
 
 const bs = browserSync.create()
 const PORT = 3000
+//set the view engine to ejs
 
 const app = Express()
-const __dirname = path.dirname(fileURLToPath(import.meta.url))
+app.set('view engine', 'ejs')
+const __dirname = path.dirname(fileURLToPath(import.meta.url)) //connect the views folder
 app.use(Express.static(path.join(__dirname, 'src', 'sass'))) //connect the sass folder
 app.use(Express.static(path.join(__dirname, 'src', 'assets', 'images'))) //connect the images folder
 app.use(Express.static(path.join(__dirname, 'src', 'assets', 'js'))) //connect the js folder

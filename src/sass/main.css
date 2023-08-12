@@ -2919,4 +2919,8 @@ input[type=checkbox]:checked:after {
 }
 .manageTeachers .payment-btn:hover {
   color: #117a8b;
+}
+
+.x {
+  background-color: red;
 }/*# sourceMappingURL=main.css.map */
