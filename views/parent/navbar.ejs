@@ -1,19 +1,50 @@
-<nav class="navbar">
-  <div class="navbar__brand">
-    <img src="" alt="" />
-    <img src="../logo.png" class="navbar__brand-icon" />
-    <p class="navbar__brand-name">مركز الأوائل</p>
-  </div>
-  <div class="navbar__profile-box">
-    <img
-      class="navbar__profile-pic"
-      src="../author.JPG"
-      alt="Profile Picture"
-    />
+<nav class="nav" id="nav">
+  <div class="nav__menu container" id="nav-menu">
+    <div class="nav__shape"></div>
 
-    <p class="navbar__profile-pic--name">John Doe</p>
-    <svg class="navbar__logout-icon">
-      <use xlink:href="#icon-log-out"></use>
-    </svg>
+    <div class="nav__close" id="nav-close">
+      <i class="bx bx-x"></i>
+    </div>
+
+    <div class="nav__data">
+      <div class="nav__mask">
+        <!-- Change your profile picture -->
+        <img src="../author.JPG" alt="" class="nav__img" />
+      </div>
+
+      <span class="nav__greeting">Bonjour!</span>
+      <h1 class="nav__name">
+        Idrissa <br />
+        Rusongeka
+      </h1>
+    </div>
+
+    <ul class="nav__list">
+      <li class="nav__item">
+        <a href="#home" class="nav__link active-link">
+          <i class="bx bx-home"></i> Home
+        </a>
+      </li>
+      <li class="nav__item">
+        <a href="#about" class="nav__link">
+          <i class="bx bx-user"></i> About
+        </a>
+      </li>
+      <li class="nav__item">
+        <a href="#portfolio" class="nav__link">
+          <i class="bx bx-briefcase-alt-2"></i> Portfolio
+        </a>
+      </li>
+      <li class="nav__item">
+        <a href="#skills" class="nav__link">
+          <i class="bx bx-bookmark"></i> Skills
+        </a>
+      </li>
+      <li class="nav__item">
+        <a href="#contact" class="nav__link">
+          <i class="bx bx-message-square-detail"></i> Contact
+        </a>
+      </li>
+    </ul>
   </div>
 </nav>
