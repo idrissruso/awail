@@ -190,7 +190,7 @@ input[type=checkbox]:checked:after {
 .login__form-btn {
   background-color: #24243e;
   padding: 1rem 3rem;
-  color: #e7e7e7;
+  color: #ecf2f4;
   align-self: flex-start;
 }
 .login__form-checker {
@@ -492,7 +492,7 @@ input[type=checkbox]:checked:after {
   padding: 1rem 1.5rem;
   border: none;
   border-radius: 0.5rem;
-  background-color: #e7e7e7;
+  background-color: #ecf2f4;
   color: #201e40;
   font-size: 1rem;
   font-weight: 400;
@@ -596,7 +596,7 @@ input[type=checkbox]:checked:after {
   border-collapse: collapse;
   height: -moz-min-content;
   height: min-content;
-  border: 1px solid #e7e7e7;
+  border: 1px solid #ecf2f4;
 }
 .payment__history__row--header {
   font-weight: 600;
@@ -604,14 +604,14 @@ input[type=checkbox]:checked:after {
   border-bottom: 1.3px solid rgba(32, 30, 64, 0.1);
 }
 .payment__history__row:not(:last-child) {
-  border-bottom: 1px solid #e7e7e7;
+  border-bottom: 1px solid #ecf2f4;
 }
 .payment__history__cell {
   padding: 1.5rem 2rem;
   text-align: center;
 }
 .payment__history__cell:not(:last-child) {
-  border-right: 1px solid #e7e7e7;
+  border-right: 1px solid #ecf2f4;
 }
 .payment__new-payment--title {
   font-size: 1.6rem;
@@ -633,7 +633,7 @@ input[type=checkbox]:checked:after {
   font-size: 1.2rem;
   border-radius: 0.3rem;
   border: none;
-  background-color: #e7e7e7;
+  background-color: #ecf2f4;
   color: #2c2c2c;
   transition: all 0.5s;
   border-bottom: 0.3rem solid transparent;
@@ -728,7 +728,7 @@ input[type=checkbox]:checked:after {
   padding: 1rem 1.5rem;
   border: none;
   border-radius: 0.5rem;
-  background-color: #e7e7e7;
+  background-color: #ecf2f4;
   color: #201e40;
   font-size: 1rem;
   font-weight: 400;
@@ -1225,12 +1225,12 @@ input[type=checkbox]:checked:after {
   top: 0;
   right: 0;
   margin: 0.5rem;
-  color: #e7e7e7;
+  color: #ecf2f4;
   cursor: pointer;
   transition: all 0.3s;
 }
 .viewStudent__close-btn:hover {
-  color: #cecece;
+  color: #ccdce1;
 }
 .viewStudent__close-btn:active {
   transform: translateY(0.3rem);
@@ -1383,7 +1383,7 @@ input[type=checkbox]:checked:after {
   font-weight: 400;
   color: #fff;
   background-color: #17a2b8;
-  border-bottom: 0.1rem solid #e7e7e7;
+  border-bottom: 0.1rem solid #ecf2f4;
   text-align: center;
 }
 .addNewTeacher-form {
@@ -1432,7 +1432,7 @@ input[type=checkbox]:checked:after {
   padding: 1rem 1.5rem;
   border: none;
   border-radius: 0.5rem;
-  background-color: #e7e7e7;
+  background-color: #ecf2f4;
   color: #201e40;
   font-size: 1rem;
   font-weight: 400;
@@ -1519,7 +1519,7 @@ input[type=checkbox]:checked:after {
   font-size: 1.6rem;
   font-weight: 600;
   color: #fff;
-  border-bottom: 0.1rem solid #e7e7e7;
+  border-bottom: 0.1rem solid #ecf2f4;
   background-color: #17a2b8;
   text-align: center;
 }
@@ -1639,7 +1639,7 @@ input[type=checkbox]:checked:after {
   padding: 1rem 1.5rem;
   border: none;
   border-radius: 0.5rem;
-  background-color: #e7e7e7;
+  background-color: #ecf2f4;
   color: #201e40;
   font-size: 1rem;
   font-weight: 400;
@@ -1804,7 +1804,7 @@ input[type=checkbox]:checked:after {
 }
 .dashboard-container__navbar .navbar__search-input {
   border: none;
-  background-color: #e7e7e7;
+  background-color: #ecf2f4;
   padding: 1rem 1.5rem;
   border-radius: 10rem;
   transition: all 1s;
@@ -1947,7 +1947,7 @@ input[type=checkbox]:checked:after {
   font-size: 1.6rem;
   font-weight: 600;
   color: #201e40;
-  border-bottom: 0.1rem solid #e7e7e7;
+  border-bottom: 0.1rem solid #ecf2f4;
 }
 .editUser__content .form {
   display: flex;
@@ -2063,7 +2063,7 @@ input[type=checkbox]:checked:after {
   padding: 1rem 1.5rem;
   border: none;
   border-radius: 0.5rem;
-  background-color: #e7e7e7;
+  background-color: #ecf2f4;
   color: #201e40;
   font-size: 1rem;
   font-weight: 400;
@@ -2107,7 +2107,7 @@ input[type=checkbox]:checked:after {
   font-weight: 400;
   color: #fff;
   background-color: #17a2b8;
-  border-bottom: 0.1rem solid #e7e7e7;
+  border-bottom: 0.1rem solid #ecf2f4;
 }
 .addStudent-form {
   padding: 1rem 2rem;
@@ -2153,7 +2153,7 @@ input[type=checkbox]:checked:after {
   padding: 1rem 1.5rem;
   border: none;
   border-radius: 0.5rem;
-  background-color: #e7e7e7;
+  background-color: #ecf2f4;
   color: #201e40;
   font-size: 1rem;
   font-weight: 400;
@@ -2204,7 +2204,7 @@ input[type=checkbox]:checked:after {
   align-items: center;
   padding: 1rem 1.5rem 2rem;
   background-color: #17a2b8;
-  border-bottom: 0.1rem solid #e7e7e7;
+  border-bottom: 0.1rem solid #ecf2f4;
 }
 .manageStudents__header-btn {
   background-color: #2d8f4a;
@@ -2235,14 +2235,14 @@ input[type=checkbox]:checked:after {
   justify-content: flex-end;
   align-items: center;
   padding: 1rem 1.5rem 2rem;
-  border-bottom: 0.1rem solid #e7e7e7;
+  border-bottom: 0.1rem solid #ecf2f4;
 }
 .manageStudents__searchbar-input {
   padding: 0.5rem 1rem;
   font-size: 1.4rem;
   font-weight: 400;
   border-radius: 0.2rem;
-  border: 0.1rem solid #e7e7e7;
+  border: 0.1rem solid #ecf2f4;
   margin: 0 5rem 0 0.5rem;
   transition: all 0.2s;
   width: 15rem;
@@ -2269,10 +2269,10 @@ input[type=checkbox]:checked:after {
   font-weight: 400;
   color: #2c2c2c;
   background-color: #fff;
-  border: 0.1rem solid #e7e7e7;
+  border: 0.1rem solid #ecf2f4;
 }
 .manageStudents__row-content:hover {
-  background-color: #e7e7e7;
+  background-color: #ecf2f4;
   cursor: pointer;
   transition: all 0.2s;
 }
@@ -2282,14 +2282,14 @@ input[type=checkbox]:checked:after {
   border-bottom: 1.3px solid rgba(32, 30, 64, 0.1);
 }
 .manageStudents__row:not(:last-child) {
-  border-bottom: 0.1rem solid #e7e7e7;
+  border-bottom: 0.1rem solid #ecf2f4;
 }
 .manageStudents__cell {
   padding: 1.5rem 2rem;
   text-align: center;
 }
 .manageStudents__cell:not(:last-child) {
-  border-right: 0.1rem solid #e7e7e7;
+  border-right: 0.1rem solid #ecf2f4;
 }
 .manageStudents__img {
   max-width: 5rem;
@@ -2487,7 +2487,7 @@ input[type=checkbox]:checked:after {
   padding: 1rem 1.5rem;
   border: none;
   border-radius: 0.5rem;
-  background-color: #e7e7e7;
+  background-color: #ecf2f4;
   color: #201e40;
   font-size: 1rem;
   font-weight: 400;
@@ -2568,7 +2568,7 @@ input[type=checkbox]:checked:after {
   align-items: center;
   gap: 1rem;
   padding: 1rem 1.5rem 2rem;
-  border-bottom: 0.1rem solid #e7e7e7;
+  border-bottom: 0.1rem solid #ecf2f4;
 }
 .addUser__header-btn {
   background-color: #17a2b8;
@@ -2591,7 +2591,7 @@ input[type=checkbox]:checked:after {
   font-weight: 400;
   cursor: pointer;
   transition: all 0.5s;
-  border: 0.1rem solid #e7e7e7;
+  border: 0.1rem solid #ecf2f4;
   background-color: transparent;
   margin-right: auto;
   display: flex;
@@ -2631,7 +2631,7 @@ input[type=checkbox]:checked:after {
   font-size: 1.4rem;
   font-weight: 400;
   border-radius: 0.2rem;
-  border: 0.1rem solid #e7e7e7;
+  border: 0.1rem solid #ecf2f4;
   margin: 0 5rem 0 0.5rem;
   transition: all 0.2s;
   width: 15rem;
@@ -2658,7 +2658,7 @@ input[type=checkbox]:checked:after {
   font-weight: 400;
   color: #2c2c2c;
   background-color: #fff;
-  border: 0.1rem solid #e7e7e7;
+  border: 0.1rem solid #ecf2f4;
 }
 .addUser__row--header {
   font-weight: 600;
@@ -2666,14 +2666,14 @@ input[type=checkbox]:checked:after {
   border-bottom: 1.3px solid rgba(32, 30, 64, 0.1);
 }
 .addUser__row:not(:last-child) {
-  border-bottom: 0.1rem solid #e7e7e7;
+  border-bottom: 0.1rem solid #ecf2f4;
 }
 .addUser__cell {
   padding: 1.5rem 2rem;
   text-align: center;
 }
 .addUser__cell:not(:last-child) {
-  border-right: 0.1rem solid #e7e7e7;
+  border-right: 0.1rem solid #ecf2f4;
 }
 .addUser__btn--block {
   padding: 0.7rem 1rem;
@@ -2742,7 +2742,7 @@ input[type=checkbox]:checked:after {
   transition: all 0.3s;
   flex: 0 0 5rem;
   max-width: 7rem;
-  color: #e7e7e7;
+  color: #ecf2f4;
   background-color: transparent;
   text-decoration: underline;
 }
@@ -2788,7 +2788,7 @@ input[type=checkbox]:checked:after {
   align-items: center;
   padding: 1rem 1.5rem 2rem;
   background-color: #17a2b8;
-  border-bottom: 0.1rem solid #e7e7e7;
+  border-bottom: 0.1rem solid #ecf2f4;
 }
 .manageTeachers__header-btn {
   background-color: #2d8f4a;
@@ -2819,14 +2819,14 @@ input[type=checkbox]:checked:after {
   justify-content: flex-end;
   align-items: center;
   padding: 1rem 1.5rem 2rem;
-  border-bottom: 0.1rem solid #e7e7e7;
+  border-bottom: 0.1rem solid #ecf2f4;
 }
 .manageTeachers__searchbar-input {
   padding: 0.5rem 1rem;
   font-size: 1.4rem;
   font-weight: 400;
   border-radius: 0.2rem;
-  border: 0.1rem solid #e7e7e7;
+  border: 0.1rem solid #ecf2f4;
   margin: 0 5rem 0 0.5rem;
   transition: all 0.2s;
   width: 15rem;
@@ -2853,10 +2853,10 @@ input[type=checkbox]:checked:after {
   font-weight: 400;
   color: #2c2c2c;
   background-color: #fff;
-  border: 0.1rem solid #e7e7e7;
+  border: 0.1rem solid #ecf2f4;
 }
 .manageTeachers__row-content:hover {
-  background-color: #e7e7e7;
+  background-color: #ecf2f4;
   cursor: pointer;
   transition: all 0.2s;
 }
@@ -2866,14 +2866,14 @@ input[type=checkbox]:checked:after {
   border-bottom: 1.3px solid rgba(32, 30, 64, 0.1);
 }
 .manageTeachers__row:not(:last-child) {
-  border-bottom: 0.1rem solid #e7e7e7;
+  border-bottom: 0.1rem solid #ecf2f4;
 }
 .manageTeachers__cell {
   padding: 1.5rem 2rem;
   text-align: center;
 }
 .manageTeachers__cell:not(:last-child) {
-  border-right: 0.1rem solid #e7e7e7;
+  border-right: 0.1rem solid #ecf2f4;
 }
 .manageTeachers__img {
   max-width: 5rem;
@@ -2919,4 +2919,64 @@ input[type=checkbox]:checked:after {
 }
 .manageTeachers .payment-btn:hover {
   color: #117a8b;
+}
+
+.profile {
+  margin: 2rem;
+  box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+  -moz-column-gap: 4rem;
+       column-gap: 4rem;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 3rem 5rem;
+}
+.profile__subheading {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #d71313;
+  margin: 2rem 0 1rem 0;
+}
+.profile__info-box {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  flex: 1 0 50%;
+}
+.profile__img-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 1rem;
+  width: 20rem;
+  height: 20rem;
+  overflow: hidden;
+}
+.profile__img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+.profile__row {
+  border: 0.1rem solid #ecf2f4;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.profile__label {
+  background-color: #ecf2f4;
+  padding: 0.5rem 1rem;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #24243e;
+  justify-self: center;
+}
+.profile__value {
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #2c2c2c;
+  padding: 0.5rem 1rem;
 }/*# sourceMappingURL=main.css.map */
