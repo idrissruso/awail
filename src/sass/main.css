@@ -2922,14 +2922,11 @@ input[type=checkbox]:checked:after {
 }
 
 .profile {
-  margin: 2rem;
-  box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.2);
-  background-color: #fff;
-  -moz-column-gap: 4rem;
-       column-gap: 4rem;
+  margin: 3rem 2rem 0 2rem;
+  gap: 4rem;
   display: flex;
   flex-wrap: wrap;
-  padding: 3rem 5rem;
+  padding: 1.5rem 3rem;
 }
 .profile__subheading {
   font-size: 2rem;
@@ -2937,19 +2934,27 @@ input[type=checkbox]:checked:after {
   color: #d71313;
   margin: 2rem 0 1rem 0;
 }
+.profile__info {
+  display: flex;
+  margin-right: auto;
+  flex-wrap: wrap;
+  gap: 2rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+  padding: 1rem 2rem;
+  flex: 1;
+}
 .profile__info-box {
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  flex: 1 0 50%;
+  gap: 1rem;
 }
 .profile__img-box {
   display: flex;
   flex-direction: column;
   align-items: center;
-  row-gap: 1rem;
-  width: 20rem;
-  height: 20rem;
+  width: 10rem;
+  height: 10rem;
   overflow: hidden;
 }
 .profile__img {
@@ -2963,8 +2968,6 @@ input[type=checkbox]:checked:after {
 .profile__row {
   border: 0.1rem solid #ecf2f4;
   display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
 }
 .profile__label {
   background-color: #ecf2f4;
@@ -2979,4 +2982,22 @@ input[type=checkbox]:checked:after {
   font-weight: 400;
   color: #2c2c2c;
   padding: 0.5rem 1rem;
+  text-transform: uppercase;
+}
+.profile #email {
+  text-transform: lowercase;
+}
+.profile__announcements {
+  font-size: 1rem;
+  border: 0.1rem solid #ecf2f4;
+  align-self: start;
+  padding: 0.5rem 1rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+}
+.profile .info {
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #d71313;
+  padding: 0.5rem 1rem;
+  margin: 0;
 }/*# sourceMappingURL=main.css.map */

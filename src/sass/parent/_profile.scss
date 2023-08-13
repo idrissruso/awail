@@ -1,11 +1,9 @@
 .profile {
-  margin: 2rem;
-  box-shadow: 0 1.5rem 3rem rgba(#000, 0.2);
-  background-color: #fff;
-  column-gap: 4rem;
+  margin: 3rem 2rem 0 2rem;
+  gap: 4rem;
   display: flex;
   flex-wrap: wrap;
-  padding: 3rem 5rem;
+  padding: 1.5rem 3rem;
   &__subheading {
     font-size: 2rem;
     font-weight: 600;
@@ -13,20 +11,29 @@
     margin: 2rem 0 1rem 0;
   }
 
+  &__info {
+    display: flex;
+    margin-right: auto;
+    flex-wrap: wrap;
+    gap: 2rem;
+    box-shadow: 0 0.5rem 1rem rgba(#000, 0.2);
+    padding: 1rem 2rem;
+    flex: 1;
+  }
+
   &__info-box {
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    flex: 1 0 50%;
+    gap: 1rem;
   }
 
   &__img-box {
     display: flex;
     flex-direction: column;
     align-items: center;
-    row-gap: 1rem;
-    width: 20rem;
-    height: 20rem;
+    width: 10rem;
+    height: 10rem;
     overflow: hidden;
   }
 
@@ -42,8 +49,6 @@
   &__row {
     border: 0.1rem solid $color-gray;
     display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
   }
 
   &__label {
@@ -60,5 +65,26 @@
     font-weight: 400;
     color: $color-gray-dark;
     padding: 0.5rem 1rem;
+    text-transform: uppercase;
+  }
+
+  #email {
+    text-transform: lowercase;
+  }
+
+  &__announcements {
+    font-size: 1rem;
+    border: 0.1rem solid $color-gray;
+    align-self: start;
+    padding: 0.5rem 1rem;
+    box-shadow: 0 0.5rem 1rem rgba(#000, 0.2);
+  }
+
+  .info {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: $color-tertiary;
+    padding: 0.5rem 1rem;
+    margin: 0;
   }
 }
