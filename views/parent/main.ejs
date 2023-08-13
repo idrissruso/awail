@@ -2,7 +2,7 @@
   <!--=============== HEADER ===============-->
   <header class="header" id="header">
     <nav class="header__nav container">
-      <a href="#" class="header__logo"> Bales </a>
+      <a href="#" class="header__logo">مركز الأوائل</a>
 
       <!-- Toggle button -->
       <div class="header__toggle" id="header-toggle">
@@ -14,26 +14,27 @@
   <!-- When inserting your content into sections, remove the section__height class -->
   <!--=============== HOME ===============-->
   <section class="section section__height container" id="home">
-    <h1>HOME</h1>
+    <%- include("title.ejs", {sectionTitle : "Home"}) %> <%-
+    include("./main/profile.ejs")%>
   </section>
 
   <!--=============== ABOUT ===============-->
   <section class="section section__height container" id="about">
-    <h1>ABOUT</h1>
+    <%- include("title.ejs", {sectionTitle : "About"}) %>
   </section>
 
   <!--=============== PORTFOLIO ===============-->
   <section class="section section__height container" id="portfolio">
-    <h1>PORTFOLIO</h1>
+    <%- include("title.ejs", {sectionTitle : "Portfolio"}) %>
   </section>
 
   <!--=============== SKILLS ===============-->
   <section class="section section__height container" id="skills">
-    <h1>SKILLS</h1>
+    <%- include("title.ejs", {sectionTitle : "Skills"}) %>
   </section>
 
   <!--=============== CONTACT ===============-->
   <section class="section section__height container" id="contact">
-    <h1>CONTACT</h1>
+    <%- include("title.ejs", {sectionTitle : "contact"}) %>
   </section>
 </main>

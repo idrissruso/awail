@@ -13,7 +13,8 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url)) //connect the vie
 app.use(Express.static(path.join(__dirname, 'src', 'sass'))) //connect the sass folder
 app.use(Express.static(path.join(__dirname, 'src', 'assets', 'images'))) //connect the images folder
 app.use(Express.static(path.join(__dirname, 'src', 'assets', 'js'))) //connect the js folder
-app.use(Express.static(path.join(__dirname, 'src', 'assets', 'svg'))) //connect the svg folder
+app.use(Express.static(path.join(__dirname, 'src', 'assets', 'svg')))
+app.use(Express.static(path.join(__dirname, 'src', 'css'))) //connect the svg folder
 
 //render the home page
 app.get('/', (req, res) => {
