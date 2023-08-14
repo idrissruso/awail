@@ -3140,4 +3140,38 @@ input[type=checkbox]:checked:after {
 }
 .exams-schedule__table-cell.subject {
   font-weight: bold;
+}
+
+.results {
+  padding: 4rem 6rem;
+}
+.results__subheading {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+.results__table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+.results__table th,
+.results__table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+}
+.results__table th {
+  background-color: #f9f9f9;
+  font-weight: bold;
+}
+.results__table-row:nth-child(even) {
+  background-color: #f8f8f8;
+}
+.results__table-cell.subject {
+  font-weight: bold;
+}
+.results__table-total {
+  background-color: #f9f9f9;
+  font-weight: bold;
+  color: #d71313;
 }/*# sourceMappingURL=main.css.map */
