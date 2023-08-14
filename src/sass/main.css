@@ -3107,4 +3107,37 @@ input[type=checkbox]:checked:after {
 }
 .attendance-overview__absent {
   background-color: #f2b5b5;
+}
+
+.exams-schedule {
+  padding: 3rem 6rem;
+}
+.exams-schedule__title {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+.exams-schedule__table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+.exams-schedule__table-header th {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+  background-color: #f9f9f9;
+}
+.exams-schedule__table-row:nth-child(even) {
+  background-color: #f8f8f8;
+}
+.exams-schedule__table-row td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+.exams-schedule__table-cell.date {
+  font-family: monospace;
+}
+.exams-schedule__table-cell.subject {
+  font-weight: bold;
 }/*# sourceMappingURL=main.css.map */
