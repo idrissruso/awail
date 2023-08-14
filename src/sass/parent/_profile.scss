@@ -1,9 +1,14 @@
 .profile {
-  margin: 3rem 2rem 0 2rem;
+  margin: 1.5rem 2rem 0 2rem;
   gap: 4rem;
   display: flex;
   flex-wrap: wrap;
   padding: 1.5rem 3rem;
+
+  &__logo {
+    width: 20rem;
+    display: inline-block;
+  }
   &__subheading {
     font-size: 2rem;
     font-weight: 600;
@@ -16,9 +21,11 @@
     margin-right: auto;
     flex-wrap: wrap;
     gap: 2rem;
-    box-shadow: 0 0.5rem 1rem rgba(#000, 0.2);
+    box-shadow: 0 2rem 4rem rgba(hsl(273, 80%, 14%), 0.2);
     padding: 1rem 2rem;
     flex: 1;
+    border-radius: 1rem;
+    justify-content: center;
   }
 
   &__info-box {
@@ -42,6 +49,7 @@
     height: 100%;
     object-fit: cover;
     object-position: center;
+    border: 0.2rem solid $color-primary-light-1;
   }
 
   //"profile__label"
@@ -49,6 +57,8 @@
   &__row {
     border: 0.1rem solid $color-gray;
     display: flex;
+    gap: 3rem;
+    align-items: center;
   }
 
   &__label {
@@ -58,6 +68,9 @@
     font-weight: 400;
     color: $color-primary;
     justify-self: center;
+    width: 15rem;
+    display: flex;
+    justify-content: flex-end;
   }
 
   &__value {
@@ -76,8 +89,9 @@
     font-size: 1rem;
     border: 0.1rem solid $color-gray;
     align-self: start;
-    padding: 0.5rem 1rem;
-    box-shadow: 0 0.5rem 1rem rgba(#000, 0.2);
+    padding: 1rem 2rem;
+    box-shadow: 0 2rem 4rem rgba(hsl(273, 80%, 14%), 0.2);
+    border-radius: 1rem;
   }
 
   .info {
@@ -86,5 +100,12 @@
     color: $color-tertiary;
     padding: 0.5rem 1rem;
     margin: 0;
+  }
+
+  &__side {
+    display: flex;
+    flex-direction: column;
+    row-gap: 2rem;
+    justify-content: center;
   }
 }

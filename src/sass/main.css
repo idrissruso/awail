@@ -2922,11 +2922,15 @@ input[type=checkbox]:checked:after {
 }
 
 .profile {
-  margin: 3rem 2rem 0 2rem;
+  margin: 1.5rem 2rem 0 2rem;
   gap: 4rem;
   display: flex;
   flex-wrap: wrap;
   padding: 1.5rem 3rem;
+}
+.profile__logo {
+  width: 20rem;
+  display: inline-block;
 }
 .profile__subheading {
   font-size: 2rem;
@@ -2939,9 +2943,11 @@ input[type=checkbox]:checked:after {
   margin-right: auto;
   flex-wrap: wrap;
   gap: 2rem;
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2rem 4rem rgba(39, 7, 64, 0.2);
   padding: 1rem 2rem;
   flex: 1;
+  border-radius: 1rem;
+  justify-content: center;
 }
 .profile__info-box {
   display: flex;
@@ -2964,10 +2970,13 @@ input[type=checkbox]:checked:after {
      object-fit: cover;
   -o-object-position: center;
      object-position: center;
+  border: 0.2rem solid #17a2b8;
 }
 .profile__row {
   border: 0.1rem solid #ecf2f4;
   display: flex;
+  gap: 3rem;
+  align-items: center;
 }
 .profile__label {
   background-color: #ecf2f4;
@@ -2976,6 +2985,9 @@ input[type=checkbox]:checked:after {
   font-weight: 400;
   color: #24243e;
   justify-self: center;
+  width: 15rem;
+  display: flex;
+  justify-content: flex-end;
 }
 .profile__value {
   font-size: 1.5rem;
@@ -2991,8 +3003,9 @@ input[type=checkbox]:checked:after {
   font-size: 1rem;
   border: 0.1rem solid #ecf2f4;
   align-self: start;
-  padding: 0.5rem 1rem;
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+  padding: 1rem 2rem;
+  box-shadow: 0 2rem 4rem rgba(39, 7, 64, 0.2);
+  border-radius: 1rem;
 }
 .profile .info {
   font-size: 1.5rem;
@@ -3000,4 +3013,93 @@ input[type=checkbox]:checked:after {
   color: #d71313;
   padding: 0.5rem 1rem;
   margin: 0;
+}
+.profile__side {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
+  justify-content: center;
+}
+
+#schedule {
+  margin-top: 5rem;
+}
+#schedule.section {
+  background-color: hsl(273, 80%, 14%);
+  color: #fff;
+  padding: 2rem;
+  border-radius: 1rem;
+}
+#schedule.section .section__content {
+  overflow-x: auto;
+}
+#schedule.section .section__content .class-schedule {
+  width: 100%;
+  border-collapse: collapse;
+}
+#schedule.section .section__content .class-schedule th,
+#schedule.section .section__content .class-schedule td {
+  padding: 1rem 1.5rem;
+  text-align: center;
+  border: 0.1rem solid rgba(255, 255, 255, 0.2);
+}
+#schedule.section .section__content .class-schedule thead th {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+#schedule.section .section__content .class-schedule tbody tr:nth-child(even) {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+#schedule.section .section__content .class-schedule tbody tr td:first-child {
+  text-align: left;
+}
+
+#presence-etudiant.section {
+  background-color: hsl(273, 80%, 14%);
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+}
+#presence-etudiant.section .section__content {
+  overflow-x: auto;
+}
+#presence-etudiant.section .section__content .presence-etudiant {
+  width: 100%;
+  border-collapse: collapse;
+}
+#presence-etudiant.section .section__content .presence-etudiant th,
+#presence-etudiant.section .section__content .presence-etudiant td {
+  padding: 10px 15px;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+#presence-etudiant.section .section__content .presence-etudiant th input[type=checkbox],
+#presence-etudiant.section .section__content .presence-etudiant td input[type=checkbox] {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+}
+#presence-etudiant.section .section__content .presence-etudiant th input[type=checkbox]:checked,
+#presence-etudiant.section .section__content .presence-etudiant td input[type=checkbox]:checked {
+  background-color: hsl(273, 80%, 14%);
+}
+#presence-etudiant.section .section__content .presence-etudiant thead th {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+#presence-etudiant.section .section__content .presence-etudiant tbody tr:nth-child(even) {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+@media screen and (max-width: 768px) {
+  #presence-etudiant.section .section__content {
+    overflow-x: auto;
+  }
+  #presence-etudiant.section .section__content .presence-etudiant th,
+  #presence-etudiant.section .section__content .presence-etudiant td {
+    padding: 8px 10px;
+    font-size: 14px;
+  }
 }/*# sourceMappingURL=main.css.map */

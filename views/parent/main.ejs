@@ -14,13 +14,14 @@
   <!-- When inserting your content into sections, remove the section__height class -->
   <!--=============== HOME ===============-->
   <section class="section section__height container" id="home">
-    <%- include("title.ejs", {sectionTitle : "Home"}) %> <%-
+    <%- include("title.ejs", {sectionTitle : "Profile"}) %> <%-
     include("./main/profile.ejs")%>
   </section>
 
   <!--=============== ABOUT ===============-->
   <section class="section section__height container" id="about">
-    <%- include("title.ejs", {sectionTitle : "About"}) %>
+    <%- include("title.ejs", {sectionTitle : "Programme Hebdomadaire"}) %>
+    <%-include("./main/schedule.ejs")%>
   </section>
 
   <!--=============== PORTFOLIO ===============-->
