@@ -2966,6 +2966,7 @@ input[type=checkbox]:checked:after {
 .profile__img {
   width: 100%;
   height: 100%;
+  aspect-ratio: 1/1;
   -o-object-fit: cover;
      object-fit: cover;
   -o-object-position: center;
@@ -3053,53 +3054,57 @@ input[type=checkbox]:checked:after {
   text-align: left;
 }
 
-#presence-etudiant.section {
-  background-color: hsl(273, 80%, 14%);
-  color: white;
-  padding: 20px;
-  border-radius: 10px;
+.absence-details {
+  padding: 4rem 8rem;
 }
-#presence-etudiant.section .section__content {
-  overflow-x: auto;
+.absence-details__title {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
 }
-#presence-etudiant.section .section__content .presence-etudiant {
+.absence-details__table {
   width: 100%;
   border-collapse: collapse;
+  margin-bottom: 2rem;
 }
-#presence-etudiant.section .section__content .presence-etudiant th,
-#presence-etudiant.section .section__content .presence-etudiant td {
-  padding: 10px 15px;
+.absence-details__table-header {
+  background-color: #f0f0f0;
+  padding: 1rem 2rem;
+  text-align: left;
+}
+.absence-details__table-row {
+  border: 0.2rem solid #f0f0f0;
+}
+.absence-details__table-row:nth-child(even) {
+  background-color: #f8f8f8;
+}
+.absence-details__table-cell {
+  border: 0.2rem solid #f0f0f0;
+  padding: 1rem 1.5rem;
+}
+.absence-details__table-cell.date {
+  font-family: monospace;
+}
+.absence-details__table-cell.yes {
+  color: green;
+}
+.absence-details__table-cell.no {
+  color: red;
+}
+
+.attendance-overview__title {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+.attendance-overview__current-month {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+.attendance-overview__present, .attendance-overview__absent {
+  padding: 1rem 2rem;
   text-align: center;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  background-color: #f0f0f0;
 }
-#presence-etudiant.section .section__content .presence-etudiant th input[type=checkbox],
-#presence-etudiant.section .section__content .presence-etudiant td input[type=checkbox] {
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
-  width: 20px;
-  height: 20px;
-  background-color: white;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  cursor: pointer;
-}
-#presence-etudiant.section .section__content .presence-etudiant th input[type=checkbox]:checked,
-#presence-etudiant.section .section__content .presence-etudiant td input[type=checkbox]:checked {
-  background-color: hsl(273, 80%, 14%);
-}
-#presence-etudiant.section .section__content .presence-etudiant thead th {
-  background-color: rgba(255, 255, 255, 0.1);
-}
-#presence-etudiant.section .section__content .presence-etudiant tbody tr:nth-child(even) {
-  background-color: rgba(255, 255, 255, 0.05);
-}
-@media screen and (max-width: 768px) {
-  #presence-etudiant.section .section__content {
-    overflow-x: auto;
-  }
-  #presence-etudiant.section .section__content .presence-etudiant th,
-  #presence-etudiant.section .section__content .presence-etudiant td {
-    padding: 8px 10px;
-    font-size: 14px;
-  }
+.attendance-overview__absent {
+  background-color: #f2b5b5;
 }/*# sourceMappingURL=main.css.map */

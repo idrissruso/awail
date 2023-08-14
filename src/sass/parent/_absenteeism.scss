@@ -1,0 +1,66 @@
+.absence-details {
+  padding: 4rem 8rem;
+  &__title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  &__table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 2rem;
+
+    &-header {
+      background-color: #f0f0f0;
+      padding: 1rem 2rem;
+      text-align: left;
+    }
+
+    &-row {
+      border: 0.2rem solid #f0f0f0;
+      &:nth-child(even) {
+        background-color: #f8f8f8;
+      }
+    }
+
+    &-cell {
+      border: 0.2rem solid #f0f0f0;
+      padding: 1rem 1.5rem;
+
+      &.date {
+        font-family: monospace;
+      }
+
+      &.yes {
+        color: green;
+      }
+
+      &.no {
+        color: red;
+      }
+    }
+  }
+}
+
+.attendance-overview {
+  &__title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  &__current-month {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  &__present,
+  &__absent {
+    padding: 1rem 2rem;
+    text-align: center;
+    background-color: #f0f0f0;
+  }
+  &__absent {
+    background-color: $color-tertiary-light;
+  }
+}
