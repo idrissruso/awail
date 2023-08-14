@@ -19,26 +19,30 @@
   </section>
 
   <!--=============== ABOUT ===============-->
-  <section class="section section__height container" id="about">
+  <section class="section section__height container" id="schedule">
     <%- include("title.ejs", {sectionTitle : "Programme Hebdomadaire"}) %>
     <%-include("./main/schedule.ejs")%>
   </section>
 
   <!--=============== PORTFOLIO ===============-->
-  <section class="section section__height container" id="portfolio">
+  <section class="section section__height container" id="presenses">
     <%- include("title.ejs", {sectionTitle : "Presences"}) %>
     <%-include("./main/absenteeism.ejs")%>
   </section>
 
   <!--=============== SKILLS ===============-->
-  <section class="section section__height container" id="skills">
+  <section class="section section__height container" id="calendar">
     <%- include("title.ejs", {sectionTitle : "Calendrier des Examens"}) %>
     <%-include("./main/examsCalendar.ejs")%>
   </section>
 
   <!--=============== CONTACT ===============-->
-  <section class="section section__height container" id="contact">
+  <section class="section section__height container" id="results">
     <%- include("title.ejs", {sectionTitle : "Résultats des Examens"}) %>
     <%-include("./main/results.ejs")%>
+  </section>
+  <section class="section section__height container" id="fees">
+    <%- include("title.ejs", {sectionTitle : "Frais Scholaire"}) %>
+    <%-include("./main/fees.ejs")%>
   </section>
 </main>
