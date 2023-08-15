@@ -30,9 +30,18 @@ app.get('/parent', (req, res) => {
   res.render('parent/parent.ejs')
 })
 
+app.get('/teacher', (req, res) => {
+  res.render('teacher/teacher.ejs')
+})
+
 app.get('/main/:file', function (req, res) {
   res.sendFile(path.join(__dirname, 'views/main', req.params.file))
 })
+
+app.get('/teacher/main/:file', function (req, res) {
+  res.sendFile(path.join(__dirname, 'views/teacher/main', req.params.file))
+})
+
 app.listen(PORT, () => {
   console.log('Server running on port 3000' + ' ' + 'http://localhost:3000/')
   bs.init({

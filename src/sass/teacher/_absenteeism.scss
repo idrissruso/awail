@@ -1,0 +1,131 @@
+$primary-color: #3498db;
+$secondary-color: #2980b9;
+$border-color: #ccc;
+$form-element-padding: 1rem;
+$checkbox-group-margin-bottom: 1rem;
+
+.manageAbsenteeism {
+  margin: 4rem 6rem;
+  background-color: #fff;
+  border-radius: 0.1rem;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+  .header {
+    background-color: $color-primary-light-1;
+    color: #fff;
+    padding: 2rem 3rem;
+  }
+}
+
+.form {
+  padding: 20px;
+  text-align: left;
+
+  &__group {
+    display: flex;
+    column-gap: 2rem;
+    flex-wrap: wrap;
+  }
+
+  &__label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  &__select {
+    &-group {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  &__select,
+  &__input {
+    width: 100%;
+    padding: $form-element-padding;
+    margin-bottom: 15px;
+    border: 1px solid $border-color;
+    border-radius: 5px;
+  }
+
+  &__button {
+    margin-top: 2rem;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: #fff;
+    background-color: $color-green-darker;
+    border: none;
+    border-radius: 0.5rem;
+    transition: all 0.3s;
+    box-shadow: 0 0.5rem 1rem rgba($color-primary-dark, 0.2);
+    margin-bottom: 1rem;
+    cursor: pointer;
+    backface-visibility: hidden;
+    animation: fadeOut 0.5s ease-in-out infinite alternate;
+    &:hover {
+      background-color: darken($color-green-darker, 10%);
+    }
+  }
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+
+  &__head {
+    .table__row {
+      .table__header {
+        background-color: $color-primary-light-1;
+        color: #fff;
+        padding: 1rem 2rem;
+      }
+    }
+  }
+
+  &__body {
+    .table__row {
+      .table__cell {
+        padding: $form-element-padding;
+        border: 1px solid $border-color;
+
+        &:first-child {
+          width: 40%;
+        }
+
+        &:nth-child(2) {
+          width: 30%;
+        }
+
+        &:last-child {
+          width: 30%;
+          text-align: center;
+        }
+      }
+    }
+  }
+
+  &__checkbox {
+  }
+}
+
+.checkbox-group {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  align-content: center;
+
+  &__label {
+    &-absent {
+      color: $color-tertiary;
+    }
+
+    &-present {
+      color: $color-green;
+    }
+  }
+
+  &__checkbox {
+    margin-right: 5px;
+  }
+}
