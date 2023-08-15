@@ -3225,11 +3225,11 @@ input[type=checkbox]:checked:after {
   background-color: #17a2b8;
   color: #fff;
   padding: 2rem 3rem;
+  text-align: center;
 }
 
 .form {
   padding: 20px;
-  text-align: left;
 }
 .form__group {
   display: flex;
@@ -3241,10 +3241,6 @@ input[type=checkbox]:checked:after {
   font-weight: bold;
   display: block;
   margin-bottom: 8px;
-}
-.form__select-group {
-  display: flex;
-  flex-direction: column;
 }
 .form__select, .form__input {
   padding: 1rem 1.5rem;
@@ -3289,38 +3285,158 @@ input[type=checkbox]:checked:after {
 .table {
   width: 100%;
   border-collapse: collapse;
+  border-spacing: 0;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+  margin-bottom: 3rem;
+  border-radius: 0.5rem;
+  overflow: hidden;
 }
-.table__head .table__row .table__header {
+.table__head {
   background-color: #17a2b8;
   color: #fff;
-  padding: 1rem 2rem;
 }
-.table__body .table__row .table__cell {
-  padding: 1rem;
-  border: 1px solid #eee2de;
-}
-.table__body .table__row .table__cell:first-child {
-  width: 40%;
-}
-.table__body .table__row .table__cell:nth-child(2) {
-  width: 30%;
-}
-.table__body .table__row .table__cell:last-child {
-  width: 30%;
+.table__header {
+  font-size: 1.2rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  padding: 1.5rem;
   text-align: center;
+  white-space: nowrap;
 }
-.checkbox-group {
+.table .checkbox-group {
   display: flex;
   justify-content: space-evenly;
+}
+.table .checkbox-group__label {
+  display: block;
+  font-weight: bold;
+}
+.table .checkbox-group__label.checkbox-group__label-absent {
+  display: flex;
   align-items: center;
-  align-content: center;
+  color: red;
 }
-.checkbox-group__label-absent {
-  color: #d71313;
+.table .checkbox-group__label.checkbox-group__label-present {
+  display: flex;
+  align-items: center;
+  color: green;
 }
-.checkbox-group__label-present {
-  color: #28a745;
+.table__cell {
+  font-size: 1.2rem;
+  font-weight: 300;
+  padding: 1rem 2rem;
+  text-align: center;
+  border: 1px solid #bdbdbd;
 }
-.checkbox-group__checkbox {
-  margin-right: 5px;
+.table__body tr:nth-child(odd) {
+  background-color: #ecf2f4;
+}
+
+.results-container {
+  margin: 4rem 6rem;
+  background-color: #fff;
+  border-radius: 0.1rem;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+}
+.results-container .header {
+  background-color: #17a2b8;
+  color: #fff;
+  padding: 2rem 3rem;
+  text-align: center;
+}
+
+.result-form {
+  padding: 20px;
+}
+.result-form-group {
+  display: flex;
+  -moz-column-gap: 2rem;
+       column-gap: 2rem;
+  flex-wrap: wrap;
+}
+.result-form-label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 8px;
+}
+.result-form-select, .result-form-input {
+  padding: 1rem 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  background-color: #ecf2f4;
+  color: #201e40;
+  font-size: 1rem;
+  font-weight: 400;
+  transition: all 0.3s;
+  border-bottom: 0.2rem solid transparent;
+}
+.result-form-select:focus, .result-form-input:focus {
+  outline: none;
+  box-shadow: 0 0.5rem 1rem rgba(32, 30, 64, 0.2);
+  border-bottom: 0.2rem solid #17a2b8;
+}
+.result-form-select:focus:invalid, .result-form-input:focus:invalid {
+  border-bottom: 0.2rem solid #d71313;
+}
+.result-form-button {
+  margin-top: 2rem;
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #fff;
+  background-color: #218838;
+  border: none;
+  border-radius: 0.5rem;
+  transition: all 0.3s;
+  box-shadow: 0 0.5rem 1rem rgba(32, 30, 64, 0.2);
+  margin-bottom: 1rem;
+  cursor: pointer;
+  backface-visibility: hidden;
+  animation: fadeOut 0.5s ease-in-out infinite alternate;
+}
+.result-form-button:hover {
+  background-color: #175f27;
+}
+
+.result-table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+  margin-bottom: 3rem;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  margin-top: 2rem;
+}
+.result-table-row {
+  border: 1px solid #fff;
+}
+.result-table-head {
+  background-color: #17a2b8;
+  color: #fff;
+}
+.result-table-header {
+  font-size: 1.2rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  padding: 1.5rem;
+  text-align: center;
+  white-space: nowrap;
+}
+.result-table-header#number {
+  width: 1%;
+}
+.result-table-body tr:nth-child(odd) {
+  background-color: #e9e9e9;
+}
+.result-table .result-table-cell--number {
+  width: 1%;
+  white-space: nowrap;
+}
+.result-table-cell {
+  font-size: 1.2rem;
+  font-weight: 300;
+  padding: 0.5rem 0 0 0.5rem;
+  text-align: center;
+  border: 1px solid #bdbdbd;
 }/*# sourceMappingURL=main.css.map */

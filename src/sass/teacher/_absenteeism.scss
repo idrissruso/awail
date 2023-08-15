@@ -3,16 +3,17 @@
   background-color: #fff;
   border-radius: 0.1rem;
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+
   .header {
     background-color: $color-primary-light-1;
     color: #fff;
     padding: 2rem 3rem;
+    text-align: center;
   }
 }
 
 .form {
   padding: 20px;
-  text-align: left;
 
   &__group {
     display: flex;
@@ -24,13 +25,6 @@
     font-weight: bold;
     display: block;
     margin-bottom: 8px;
-  }
-
-  &__select {
-    &-group {
-      display: flex;
-      flex-direction: column;
-    }
   }
 
   &__select,
@@ -45,6 +39,7 @@
     transition: all 0.3s;
     border-bottom: 0.2rem solid transparent;
     margin-bottom: 2rem;
+
     &:focus {
       outline: none;
       box-shadow: 0 0.5rem 1rem rgba($color-primary-dark, 0.2);
@@ -71,6 +66,7 @@
     cursor: pointer;
     backface-visibility: hidden;
     animation: fadeOut 0.5s ease-in-out infinite alternate;
+
     &:hover {
       background-color: darken($color-green-darker, 10%);
     }
@@ -80,60 +76,58 @@
 .table {
   width: 100%;
   border-collapse: collapse;
+  border-spacing: 0;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+  margin-bottom: 3rem;
+  border-radius: 0.5rem;
+  overflow: hidden;
 
   &__head {
-    .table__row {
-      .table__header {
-        background-color: $color-primary-light-1;
-        color: #fff;
-        padding: 1rem 2rem;
+    background-color: $color-primary-light-1;
+    color: #fff;
+  }
+
+  &__header {
+    font-size: 1.2rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    padding: 1.5rem;
+    text-align: center;
+    white-space: nowrap;
+  }
+  .checkbox-group {
+    display: flex;
+    justify-content: space-evenly;
+
+    &__label {
+      display: block;
+      font-weight: bold;
+
+      &.checkbox-group__label-absent {
+        display: flex;
+        align-items: center;
+        color: red;
+      }
+
+      &.checkbox-group__label-present {
+        display: flex;
+        align-items: center;
+        color: green;
       }
     }
+  }
+
+  &__cell {
+    font-size: 1.2rem;
+    font-weight: 300;
+    padding: 1rem 2rem;
+    text-align: center;
+    border: 1px solid lighten($color-gray-1, 50%);
   }
 
   &__body {
-    .table__row {
-      .table__cell {
-        padding: 1rem;
-        border: 1px solid $color-secondary;
-
-        &:first-child {
-          width: 40%;
-        }
-
-        &:nth-child(2) {
-          width: 30%;
-        }
-
-        &:last-child {
-          width: 30%;
-          text-align: center;
-        }
-      }
+    tr:nth-child(odd) {
+      background-color: $color-gray;
     }
-  }
-
-  &__checkbox {
-  }
-}
-
-.checkbox-group {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  align-content: center;
-
-  &__label {
-    &-absent {
-      color: $color-tertiary;
-    }
-
-    &-present {
-      color: $color-green;
-    }
-  }
-
-  &__checkbox {
-    margin-right: 5px;
   }
 }

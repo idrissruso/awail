@@ -1,1 +1,124 @@
+.results-container {
+  margin: 4rem 6rem;
+  background-color: #fff;
+  border-radius: 0.1rem;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
 
+  .header {
+    background-color: $color-primary-light-1;
+    color: #fff;
+    padding: 2rem 3rem;
+    text-align: center;
+  }
+}
+
+.result-form {
+  padding: 20px;
+
+  &-group {
+    display: flex;
+    column-gap: 2rem;
+    flex-wrap: wrap;
+  }
+
+  &-label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  &-select,
+  &-input {
+    padding: 1rem 1.5rem;
+    border: none;
+    border-radius: 0.5rem;
+    background-color: $color-gray;
+    color: $color-primary-dark;
+    font-size: 1rem;
+    font-weight: 400;
+    transition: all 0.3s;
+    border-bottom: 0.2rem solid transparent;
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 0.5rem 1rem rgba($color-primary-dark, 0.2);
+      border-bottom: 0.2rem solid $color-primary-light-1;
+    }
+
+    &:focus:invalid {
+      border-bottom: 0.2rem solid $color-tertiary;
+    }
+  }
+
+  &-button {
+    margin-top: 2rem;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: #fff;
+    background-color: $color-green-darker;
+    border: none;
+    border-radius: 0.5rem;
+    transition: all 0.3s;
+    box-shadow: 0 0.5rem 1rem rgba($color-primary-dark, 0.2);
+    margin-bottom: 1rem;
+    cursor: pointer;
+    backface-visibility: hidden;
+    animation: fadeOut 0.5s ease-in-out infinite alternate;
+
+    &:hover {
+      background-color: darken($color-green-darker, 10%);
+    }
+  }
+}
+
+.result-table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+  margin-bottom: 3rem;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  margin-top: 2rem;
+  &-row {
+    border: 1px solid #fff;
+  }
+
+  &-head {
+    background-color: $color-primary-light-1;
+    color: #fff;
+  }
+
+  &-header {
+    font-size: 1.2rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    padding: 1.5rem;
+    text-align: center;
+    white-space: nowrap;
+
+    &#number {
+      width: 1%; // Adjust this width as needed
+    }
+  }
+
+  &-body {
+    tr:nth-child(odd) {
+      background-color: $color-secondary-dark;
+    }
+  }
+
+  .result-table-cell--number {
+    width: 1%; // Adjust this width as needed
+    white-space: nowrap;
+  }
+
+  &-cell {
+    font-size: 1.2rem;
+    font-weight: 300;
+    padding: 0.5rem 0 0 0.5rem;
+    text-align: center;
+    border: 1px solid lighten($color-gray-1, 50%);
+  }
+}

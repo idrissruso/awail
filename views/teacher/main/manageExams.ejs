@@ -1,28 +1,31 @@
-<div class="manageAbsenteeism">
+<div class="results-container" id="resultsContainer">
   <div class="header">
-    <h1 class="header__title">Gestion des absences de classe</h1>
+    <h1 class="header-title">Gestion des Résultats</h1>
   </div>
-  <form class="form">
-    <div class="form__group">
-      <div class="form__select-group">
-        <label class="form__label" for="class-select"
+  <form class="result-form">
+    <div class="result-form-group">
+      <div class="result-form-select-group">
+        <label class="result-form-label" for="class-select"
           >Sélectionner la classe :</label
         >
-        <select class="form__select" id="class-select">
+        <select class="result-form-select" id="class-select">
           <option value="class1">Classe 1</option>
           <option value="class2">Classe 2</option>
         </select>
       </div>
-      <div class="form__select-group">
-        <label class="form__label" for="date-select"
-          >Sélectionner la date :</label
+      <div class="result-form-select-group">
+        <label class="result-form-label" for="cours-select"
+          >Sélectionner le Cours :</label
         >
-        <input class="form__input" type="date" id="date-select" />
+        <select class="result-form-select" id="cours-select">
+          <option value="class1">Mathematiques</option>
+          <option value="class2">Physique</option>
+        </select>
       </div>
-      <div class="form__select-group">
-        <label class="form__label" for="search-student">Recherche</label>
+      <div class="result-form-select-group">
+        <label class="result-form-label" for="search-student">Rechercher</label>
         <input
-          class="form__input"
+          class="result-form-input"
           type="search"
           placeholder="Rechercher un étudiant..."
           id="search-student"
@@ -30,101 +33,65 @@
       </div>
     </div>
 
-    <table class="table">
-      <thead class="table__head">
-        <tr class="table__row">
-          <th class="table__header">Nom de l'étudiant</th>
-          <th class="table__header">Numéro de l'étudiant</th>
-          <th class="table__header">Présence</th>
+    <table class="result-table">
+      <thead class="result-table-head">
+        <tr class="result-table-row">
+          <th class="result-table-header" id="number">#</th>
+          <th class="result-table-header">Nom de l'élève</th>
+          <th class="result-table-header">Numéro de l'élève</th>
+          <th class="result-table-header">Points</th>
         </tr>
       </thead>
-      <tbody class="table__body">
-        <tr class="table__row">
-          <td class="table__cell">Étudiant 1</td>
-          <td class="table__cell">12345</td>
-          <td class="table__cell">
+      <tbody class="result-table-body">
+        <tr class="result-table-row">
+          <td class="result-table-cell">1</td>
+          <td class="result-table-cell">Étudiant 1</td>
+          <td class="result-table-cell">12345</td>
+          <td class="result-table-cell">
             <div class="checkbox-group">
-              <label class="checkbox-group__label checkbox-group__label-absent">
-                <input
-                  type="radio"
-                  name="attendance1"
-                  class="checkbox-group__checkbox"
-                  value="Absent"
-                />
-                Absent
-              </label>
-              <label
-                class="checkbox-group__label checkbox-group__label-present"
-              >
-                <input
-                  type="radio"
-                  name="attendance1"
-                  class="checkbox-group__checkbox"
-                  value="Présent"
-                />
-                Présent
-              </label>
+              <input
+                type="number"
+                name="points1"
+                class="result-form-input"
+                placeholder="00"
+              />
             </div>
           </td>
         </tr>
-        <tr class="table__row">
-          <td class="table__cell">Étudiant 2</td>
-          <td class="table__cell">67890</td>
-          <td class="table__cell">
+        <tr class="result-table-row">
+          <td class="result-table-cell">2</td>
+          <td class="result-table-cell">Étudiant 2</td>
+          <td class="result-table-cell">67890</td>
+          <td class="result-table-cell">
             <div class="checkbox-group">
-              <label class="checkbox-group__label checkbox-group__label-absent">
-                <input
-                  type="radio"
-                  name="attendance2"
-                  class="checkbox-group__checkbox"
-                  value="Absent"
-                />
-                Absent
-              </label>
-              <label
-                class="checkbox-group__label checkbox-group__label-present"
-              >
-                <input
-                  type="radio"
-                  name="attendance2"
-                  class="checkbox-group__checkbox"
-                  value="Présent"
-                />
-                Présent
-              </label>
+              <input
+                type="number"
+                name="points1"
+                class="result-form-input"
+                placeholder="00"
+              />
             </div>
           </td>
         </tr>
-        <tr class="table__row">
-          <td class="table__cell">Étudiant 3</td>
-          <td class="table__cell">67891</td>
-          <td class="table__cell">
+        <tr class="result-table-row">
+          <td class="result-table-cell">3</td>
+          <td class="result-table-cell">Étudiant 3</td>
+          <td class="result-table-cell">67891</td>
+          <td class="result-table-cell">
             <div class="checkbox-group">
-              <label class="checkbox-group__label checkbox-group__label-absent">
-                <input
-                  type="radio"
-                  name="attendance3"
-                  class="checkbox-group__checkbox"
-                  value="Absent"
-                />
-                Absent
-              </label>
-              <label
-                class="checkbox-group__label checkbox-group__label-present"
-              >
-                <input
-                  type="radio"
-                  name="attendance3"
-                  class="checkbox-group__checkbox"
-                  value="Présent"
-                />
-                Présent
-              </label>
+              <input
+                type="number"
+                name="points1"
+                class="result-form-input"
+                placeholder="00"
+              />
             </div>
           </td>
         </tr>
       </tbody>
     </table>
-    <button class="form__button" type="submit">Marquer la présence</button>
+    <button class="result-form-button" type="submit">
+      Marquer la présence
+    </button>
   </form>
 </div>
