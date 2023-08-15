@@ -1,9 +1,3 @@
-$primary-color: #3498db;
-$secondary-color: #2980b9;
-$border-color: #ccc;
-$form-element-padding: 1rem;
-$checkbox-group-margin-bottom: 1rem;
-
 .manageAbsenteeism {
   margin: 4rem 6rem;
   background-color: #fff;
@@ -41,11 +35,25 @@ $checkbox-group-margin-bottom: 1rem;
 
   &__select,
   &__input {
-    width: 100%;
-    padding: $form-element-padding;
-    margin-bottom: 15px;
-    border: 1px solid $border-color;
-    border-radius: 5px;
+    padding: 1rem 1.5rem;
+    border: none;
+    border-radius: 0.5rem;
+    background-color: $color-gray;
+    color: $color-primary-dark;
+    font-size: 1rem;
+    font-weight: 400;
+    transition: all 0.3s;
+    border-bottom: 0.2rem solid transparent;
+    margin-bottom: 2rem;
+    &:focus {
+      outline: none;
+      box-shadow: 0 0.5rem 1rem rgba($color-primary-dark, 0.2);
+      border-bottom: 0.2rem solid $color-primary-light-1;
+    }
+
+    &:focus:invalid {
+      border-bottom: 0.2rem solid $color-tertiary;
+    }
   }
 
   &__button {
@@ -86,8 +94,8 @@ $checkbox-group-margin-bottom: 1rem;
   &__body {
     .table__row {
       .table__cell {
-        padding: $form-element-padding;
-        border: 1px solid $border-color;
+        padding: 1rem;
+        border: 1px solid $color-secondary;
 
         &:first-child {
           width: 40%;

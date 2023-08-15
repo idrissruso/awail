@@ -3247,11 +3247,24 @@ input[type=checkbox]:checked:after {
   flex-direction: column;
 }
 .form__select, .form__input {
-  width: 100%;
-  padding: 1rem;
-  margin-bottom: 15px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  padding: 1rem 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  background-color: #ecf2f4;
+  color: #201e40;
+  font-size: 1rem;
+  font-weight: 400;
+  transition: all 0.3s;
+  border-bottom: 0.2rem solid transparent;
+  margin-bottom: 2rem;
+}
+.form__select:focus, .form__input:focus {
+  outline: none;
+  box-shadow: 0 0.5rem 1rem rgba(32, 30, 64, 0.2);
+  border-bottom: 0.2rem solid #17a2b8;
+}
+.form__select:focus:invalid, .form__input:focus:invalid {
+  border-bottom: 0.2rem solid #d71313;
 }
 .form__button {
   margin-top: 2rem;
@@ -3284,7 +3297,7 @@ input[type=checkbox]:checked:after {
 }
 .table__body .table__row .table__cell {
   padding: 1rem;
-  border: 1px solid #ccc;
+  border: 1px solid #eee2de;
 }
 .table__body .table__row .table__cell:first-child {
   width: 40%;

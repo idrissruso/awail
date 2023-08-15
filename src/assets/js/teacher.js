@@ -19,6 +19,11 @@ $(document).ready(function () {
     main.load('/teacher/main/manageAbsenteeism.ejs')
   })
 
+  manageExams.on('click', function () {
+    // Load the content of the dashboard page into the main element
+    main.load('/teacher/main/manageExams.ejs')
+  })
+
   //userBox.on('click', function () {
   //  // Load the content of the editUser page into the main element
   //  main.load('main/editUser.ejs')
