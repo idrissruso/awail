@@ -2,6 +2,7 @@ import Express from 'express'
 import path from 'path'
 import { fileURLToPath } from 'url'
 import browserSync from 'browser-sync'
+import webRoutes from './web/index.js'
 
 const bs = browserSync.create()
 const PORT = 3000
@@ -16,23 +17,7 @@ app.use(Express.static(path.join(__dirname, 'src', 'assets', 'js'))) //connect t
 app.use(Express.static(path.join(__dirname, 'src', 'assets', 'svg')))
 app.use(Express.static(path.join(__dirname, 'src', 'css'))) //connect the svg folder
 
-//render the home page
-app.get('/', (req, res) => {
-  res.render('index.ejs')
-})
-
-//render the dashboard page
-app.get('/dashboard', (req, res) => {
-  res.render('root.ejs')
-})
-
-app.get('/parent', (req, res) => {
-  res.render('parent/parent.ejs')
-})
-
-app.get('/teacher', (req, res) => {
-  res.render('teacher/teacher.ejs')
-})
+app.use('/', webRoutes)
 
 app.get('/main/:file', function (req, res) {
   res.sendFile(path.join(__dirname, 'views/main', req.params.file))
