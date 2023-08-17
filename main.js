@@ -7,19 +7,28 @@ import apiRoutes from './api/index.js'
 import mongoose from 'mongoose'
 
 const bs = browserSync.create()
-const PORT = 8000
+const PORT = 3000
 
 const app = express()
 app.set('view engine', 'ejs')
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
+
+//static files
 app.use(express.static(path.join(__dirname, 'src', 'sass')))
 app.use(express.static(path.join(__dirname, 'src', 'assets', 'images')))
 app.use(express.static(path.join(__dirname, 'src', 'assets', 'js')))
 app.use(express.static(path.join(__dirname, 'src', 'assets', 'svg')))
 app.use(express.static(path.join(__dirname, 'src', 'css')))
 
+//body parser
+app.use(express.urlencoded({ extended: false }))
+app.use(express.json())
+
+//routes
 app.use('/', webRoutes)
 app.use('/api', apiRoutes)
+
+//ajax
 
 app.get('/main/:file', function (req, res) {
   res.sendFile(path.join(__dirname, 'views/main', req.params.file))
