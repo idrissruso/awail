@@ -24,7 +24,9 @@
   "homepage": "https://github.com/idrissruso/awail#readme",
   "dependencies": {
     "ejs": "^3.1.9",
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "mongodb": "^5.7.0",
+    "mongoose": "^7.4.3"
   },
   "devDependencies": {
     "browser-sync": "^2.29.3",

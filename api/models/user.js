@@ -1,4 +1,5 @@
 import mongoose from 'mongoose'
+import { Schema } from 'mongoose'
 
 const userSchema = new mongoose.Schema({
   username: {
@@ -12,7 +13,11 @@ const userSchema = new mongoose.Schema({
     enum: ['Admin', 'Teacher', 'Student', 'Parent'],
     required: true,
   },
-  parent: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
+  roleData: {
+    type: Schema.Types.ObjectId,
+    refPath: 'role',
+  },
+
   profileImage: {
     type: String,
   },

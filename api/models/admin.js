@@ -8,10 +8,6 @@ const adminSchema = new mongoose.Schema({
     type: String,
     required: [true, 'Please Provide a Email'],
   },
-  Password: {
-    type: String,
-    required: [true, 'Please Provide a Password'],
-  },
   Role: {
     type: String,
     required: [true, 'Please Provide a Role'],
