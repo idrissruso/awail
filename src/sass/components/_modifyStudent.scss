@@ -1,0 +1,17 @@
+.shown {
+  visibility: visible;
+  opacity: 1;
+}
+
+.hidden {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.modifyStudent {
+  @include pop;
+  @include centralize;
+  h1 {
+    position: relative;
+  }
+}

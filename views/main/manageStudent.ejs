@@ -1,0 +1,540 @@
+<div class="manageStudents">
+  <div class="manageStudents__container">
+    <div class="manageStudents__header">
+      <h1 class="manageStudents__heading">Gérer les élèves.</h1>
+      <button class="manageStudents__header-btn" id="addStudent">
+        <span>
+          <svg class="manageStudents__header-icon">
+            <use xlink:href="#icon-plus"></use>
+          </svg> </span
+        >Ajouter un élève
+      </button>
+    </div>
+    <div class="manageStudents__searchbar">
+      <label class="manageStudents__searchbar-label" for="student"
+        >Rechercher :</label
+      >
+      <input type="text" class="manageStudents__searchbar-input" id="student" />
+    </div>
+
+    <div class="manageStudents__content">
+      <table class="manageStudents__table">
+        <tr class="manageStudents__row manageStudents__row--header">
+          <th class="manageStudents__cell manageStudents__cell--header">#</th>
+          <th class="manageStudents__cell manageStudents__cell--header">
+            Image
+          </th>
+          <th class="manageStudents__cell manageStudents__cell--header">
+            Matricule
+          </th>
+          <th class="manageStudents__cell manageStudents__cell--header">
+            Nom et Prénom
+          </th>
+          <th class="manageStudents__cell manageStudents__cell--header">
+            Date de naissance
+          </th>
+          <th class="manageStudents__cell manageStudents__cell--header">
+            Téléphone
+          </th>
+          <th class="manageStudents__cell manageStudents__cell--header">
+            Nom du parent
+          </th>
+          <th class="manageStudents__cell manageStudents__cell--header">
+            Téléphone des parents
+          </th>
+          <th class="manageStudents__cell manageStudents__cell--header">
+            Adresse
+          </th>
+          <th class="manageStudents__cell manageStudents__cell--header">
+            Frais
+          </th>
+          <th class="manageStudents__cell manageStudents__cell--header">
+            Action
+          </th>
+        </tr>
+        <tr class="manageStudents__row manageStudents__row-content">
+          <td class="manageStudents__cell">
+            <svg class="manageStudents__btn--eye">
+              <use xlink:href="#icon-eye"></use>
+            </svg>
+          </td>
+          <td class="manageStudents__cell">
+            <img src="author.JPG" alt="Élève 1" class="manageStudents__img" />
+          </td>
+          <td class="manageStudents__cell">12345</td>
+          <td class="manageStudents__cell">Alice</td>
+          <td class="manageStudents__cell">1995-03-15</td>
+          <td class="manageStudents__cell">555-1234</td>
+          <td class="manageStudents__cell">John Doe</td>
+          <td class="manageStudents__cell">555-9876</td>
+          <td class="manageStudents__cell">123 Main St</td>
+          <td class="manageStudents__cell">
+            <span class="payment-btn">Details</span>
+          </td>
+          <td class="manageStudents__cell">
+            <svg class="manageStudents__btn--modify">
+              <use xlink:href="#icon-edit"></use>
+            </svg>
+            <svg class="manageStudents__btn--remove">
+              <use xlink:href="#icon-bin2"></use>
+            </svg>
+            <svg class="manageStudents__btn--attendees">
+              <use xlink:href="#icon-calendar-check-o"></use>
+            </svg>
+          </td>
+        </tr>
+        <!-- Repeat the same structure for other students -->
+      </table>
+    </div>
+  </div>
+</div>
+
+<!--Modify Student-->
+<div class="modifyStudent hidden">
+  <div class="editStudent">
+    <div class="editStudent__container">
+      <h1 class="editStudent__heading">Mettre à jour le profil de l'élève</h1>
+
+      <div class="editStudent__content">
+        <form class="form">
+          <div class="form__box-img">
+            <figure>
+              <img
+                src="author.JPG"
+                alt="user image"
+                class="form__box-img--img"
+              />
+              <figcaption class="form__box-img--caption">🖋️</figcaption>
+            </figure>
+
+            <span class="form__box-img--name">Idrissa Rusongeka</span>
+            <input type="file" class="form__box-img--file" id="file" />
+            <label for="file" class="form__box-img--btn"
+              >Modifier L'image</label
+            >
+          </div>
+          <div class="form__box-info">
+            <h3 class="form__box-info--heading">Modifier le profil</h3>
+            <div class="form__box-info--group">
+              <input
+                type="text"
+                name="matricule"
+                id="matricule"
+                class="form__box-info--input"
+                placeholder="Matricule"
+                required
+              />
+            </div>
+            <div class="form__box-info--group">
+              <input
+                type="text"
+                name="nomComplet"
+                id="nomComplet"
+                class="form__box-info--input"
+                placeholder="Nom Complet"
+                required
+              />
+            </div>
+            <div class="form__box-info--group">
+              <input
+                type="tel"
+                name="telephone"
+                id="telephone"
+                class="form__box-info--input"
+                placeholder="Téléphone"
+                required
+              />
+            </div>
+            <div class="form__box-info--group">
+              <input
+                type="date"
+                name="dateNaissance"
+                id="dateNaissance"
+                class="form__box-info--input"
+                required
+              />
+            </div>
+            <div class="form__box-info--group">
+              <label for="sex" class="form__box-info--label">Sexe</label>
+              <select name="sex" id="sex" class="form__box-info--input">
+                <option value="homme">Homme</option>
+                <option value="femme">Femme</option>
+              </select>
+            </div>
+            <div class="form__box-info--group">
+              <label for="classe" class="form__box-info--label">Classe</label>
+              <select name="classe" id="classe" class="form__box-info--input">
+                <option value="option1">Option 1</option>
+                <option value="option2">Option 2</option>
+                <option value="option3">Option 3</option>
+                <option value="option4">Option 4</option>
+              </select>
+            </div>
+            <h3 class="form__box-info--subheading" id="subheading">
+              Information du Parent
+            </h3>
+            <div class="form__box-info--group">
+              <input
+                type="text"
+                name="parentName"
+                id="parentName"
+                class="form__box-info--input"
+                placeholder="Nom du Parent"
+                required
+              />
+            </div>
+            <div class="form__box-info--group">
+              <input
+                type="text"
+                name="parentProfession"
+                id="parentProfession"
+                class="form__box-info--input"
+                placeholder="Profession du Parent"
+                required
+              />
+            </div>
+            <div class="form__box-info--group">
+              <input
+                type="tel"
+                name="parentPhone"
+                id="parentPhone"
+                class="form__box-info--input"
+                placeholder="Téléphone du Parent"
+                required
+              />
+            </div>
+            <div class="form__box-info--group">
+              <input
+                type="email"
+                name="parentEmail"
+                id="parentEmail"
+                class="form__box-info--input"
+                placeholder="Email du Parent"
+                required
+              />
+            </div>
+            <div class="form__box-info--group">
+              <textarea
+                name="parentAddress"
+                id="parentAddress"
+                class="form__box-info--input"
+                placeholder="Adresse"
+                rows="3"
+                required
+              ></textarea>
+            </div>
+            <div class="form__box-info--group form__box-info--group-action">
+              <button class="form__box-info--btn">Modifier</button>
+              <span class="close">annuler</span>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--delete modal-->
+
+<div class="deleteModal deleteStudent modalHide">
+  <div class="deleteModal__content">
+    <h2 class="deleteModal__title">Confirmation de Suppression</h2>
+    <svg class="deleteModal__icon">
+      <use xlink:href="#icon-x-circle" />
+    </svg>
+    <p class="deleteModal__message">
+      Êtes-vous sûr(e) de vouloir supprimer cet élève ?
+    </p>
+    <div class="deleteModal__buttons">
+      <button class="deleteModal__btn deleteModal__btn--cancel">Annuler</button>
+      <button class="deleteModal__btn deleteModal__btn--confirm">
+        Confirmer
+      </button>
+    </div>
+  </div>
+</div>
+
+<!--Absenteeism-->
+
+<div class="absenteeism absenteeismHide">
+  <div class="absenteeism__modal">
+    <h2 class="absenteeism__title">Suivi de Présence</h2>
+    <section class="student-profile">
+      <p class="student-profile__absence-rate">
+        Taux d'Absence Non Excusée: <span id="absence-rate">15%</span>
+      </p>
+      <p class="student-profile__absence-rate">
+        Taux d'Absence Excusée: <span id="absence-rate">45%</span>
+      </p>
+    </section>
+    <section class="attendance-list">
+      <h3 class="attendance-list__title">Historique d'Absence</h3>
+      <table class="attendance-list__table">
+        <thead>
+          <tr>
+            <th>Matricule</th>
+            <th>Nom</th>
+            <th>Date d'Absence</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>123456</td>
+            <td>Ahmet Yılmaz</td>
+            <td>2023-08-01</td>
+            <td>Non Excusée</td>
+          </tr>
+          <tr>
+            <td>123456</td>
+            <td>Ahmet Yılmaz</td>
+            <td>2023-08-03</td>
+            <td>Excusée</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <section class="add-attendance">
+      <h3 class="add-attendance__title">Ajouter une Nouvelle Absence</h3>
+      <form class="add-attendance__form">
+        <div class="input-group">
+          <label for="absence-date" class="input-group__label"
+            >Date d'Absence:</label
+          >
+          <input
+            type="date"
+            id="absence-date"
+            name="absence-date"
+            required
+            class="input-group__input"
+          />
+        </div>
+        <div class="input-group">
+          <label for="status" class="input-group__label">Statut:</label>
+          <select id="status" name="status" required class="input-group__input">
+            <option value="unexcused">Non Excusée</option>
+            <option value="excused">Excusée</option>
+          </select>
+        </div>
+        <div class="input-group input-group__actions">
+          <button type="reset" class="add-attendance__cancel-button btn">
+            Annuler
+          </button>
+          <button type="submit" class="add-attendance__submit-button btn">
+            Ajouter
+          </button>
+        </div>
+      </form>
+    </section>
+  </div>
+</div>
+
+<!--payment-->
+
+<div class="payment paymentHidden">
+  <div class="payment__container">
+    <p class="payment__close-btn">✖️</p>
+    <h2 class="payment__history-title">Historique des paiements</h2>
+    <div class="payment__history">
+      <table class="payment__history-table">
+        <thead class="payment__history__row--header">
+          <tr class="payment__history__row">
+            <th>Date</th>
+            <th>Montant</th>
+            <th>Mois</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="payment__history__row">
+            <td class="payment__history__cell">2023-08</td>
+            <td class="payment__history__cell">250 €</td>
+            <td class="payment__history__cell">Août</td>
+          </tr>
+          <tr class="payment__history__row">
+            <td class="payment__history__cell">2023-07</td>
+            <td class="payment__history__cell">200 €</td>
+            <td class="payment__history__cell">Juillet</td>
+          </tr>
+        </tbody>
+      </table>
+      <form action="#" class="payment__new-payment">
+        <h3 class="payment__new-payment--title">Nouveau Paiement</h3>
+        <div class="payment__new-payment--group">
+          <label for="payment-date" class="payment__new-payment--label"
+            >Date:</label
+          >
+          <input
+            type="month"
+            name="payment-date"
+            id="payment-date"
+            class="payment__new-payment--input"
+            required
+          />
+        </div>
+        <div class="payment__new-payment--group">
+          <label for="payment-month" class="payment__new-payment--label"
+            >Mois:</label
+          >
+          <select
+            name="payment-month"
+            id="payment-month"
+            class="payment__new-payment--input"
+            required
+          >
+            <option value="" disabled selected>Sélectionnez un mois</option>
+            <option value="January">Janvier</option>
+            <option value="February">Février</option>
+            <option value="March">Mars</option>
+            <option value="April">Avril</option>
+            <option value="May">Mai</option>
+            <option value="June">Juin</option>
+            <option value="July">Juillet</option>
+            <option value="August">Août</option>
+            <option value="September">Septembre</option>
+            <option value="October">Octobre</option>
+            <option value="November">Novembre</option>
+            <option value="December">Décembre</option>
+          </select>
+        </div>
+
+        <div class="payment__new-payment--group">
+          <label for="payment-amount" class="payment__new-payment--label"
+            >Montant:</label
+          >
+          <input
+            type="number"
+            name="payment-amount"
+            id="payment-amount"
+            class="payment__new-payment--input"
+            required
+          />
+        </div>
+        <div class="payment__new-payment--group">
+          <button class="payment__new-payment--btn">Ajouter</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div class="viewStudent viewStudent-hide">
+  <div class="viewStudent__container">
+    <span class="viewStudent__close-btn">✖️</span>
+    <h2 class="viewStudent__title">Détails de l'élève</h2>
+    <div class="viewStudent__content">
+      <div class="viewStudent__info">
+        <figure class="viewStudent__img-box">
+          <img src="author.JPG" alt="user image" class="viewStudent__img" />
+          <figcaption class="viewStudent__img-caption">
+            <svg class="viewStudent__btn--modify">
+              <use xlink:href="#icon-edit"></use>
+            </svg>
+            <svg class="viewStudent__btn--remove">
+              <use xlink:href="#icon-bin2"></use>
+            </svg>
+            <svg class="viewStudent__btn--attendees">
+              <use xlink:href="#icon-calendar-check-o"></use>
+            </svg>
+          </figcaption>
+        </figure>
+        <div class="viewStudent__info-box">
+          <div class="viewStudent__row">
+            <span class="viewStudent__label">Matricule:</span>
+            <span class="viewStudent__value">123456</span>
+          </div>
+          <div class="viewStudent__row">
+            <span class="viewStudent__label">Nom Complet:</span>
+            <span class="viewStudent__value">John Doe</span>
+          </div>
+          <div class="viewStudent__row">
+            <span class="viewStudent__label">Téléphone:</span>
+            <span class="viewStudent__value">123-456-7890</span>
+          </div>
+          <div class="viewStudent__row">
+            <span class="viewStudent__label">Date de Naissance:</span>
+            <span class="viewStudent__value">1998-05-15</span>
+          </div>
+          <div class="viewStudent__row">
+            <span class="viewStudent__label">Sexe:</span>
+            <span class="viewStudent__value">Homme</span>
+          </div>
+          <div class="viewStudent__row">
+            <span class="viewStudent__label">Classe:</span>
+            <span class="viewStudent__value">Option 1</span>
+          </div>
+          <div class="viewStudent__divider"></div>
+          <h3 class="viewStudent__subheading">Information du Parent</h3>
+          <div class="viewStudent__row">
+            <span class="viewStudent__label">Nom du Parent:</span>
+            <span class="viewStudent__value">Jane Doe</span>
+          </div>
+          <div class="viewStudent__row">
+            <span class="viewStudent__label">Profession du Parent:</span>
+            <span class="viewStudent__value">Enseignant</span>
+          </div>
+          <div class="viewStudent__row">
+            <span class="viewStudent__label">Téléphone du Parent:</span>
+            <span class="viewStudent__value">987-654-3210</span>
+          </div>
+          <div class="viewStudent__row">
+            <span class="viewStudent__label">Adresse du Parent:</span>
+            <span class="viewStudent__value">123 Rue de Parent, Ville</span>
+          </div>
+        </div>
+      </div>
+      <div class="viewStudent__exams">
+        <h3 class="viewStudent__subheading">Résultats des Examens</h3>
+        <table class="viewStudent__table">
+          <thead>
+            <tr>
+              <th>Matière</th>
+              <th>Examen 1</th>
+              <th>Examen 2</th>
+              <th>Examen 3</th>
+              <th>Moyenne</th>
+              <th>Appréciation</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Mathématiques</td>
+              <td>90</td>
+              <td>85</td>
+              <td>92</td>
+              <td>89</td>
+              <td>Excellent</td>
+            </tr>
+            <tr>
+              <td>Sciences</td>
+              <td>75</td>
+              <td>80</td>
+              <td>78</td>
+              <td>77.67</td>
+              <td>Bien</td>
+            </tr>
+            <tr>
+              <td>Sciences</td>
+              <td>75</td>
+              <td>80</td>
+              <td>78</td>
+              <td>77.67</td>
+              <td>Bien</td>
+            </tr>
+            <tr>
+              <td>Sciences</td>
+              <td>75</td>
+              <td>80</td>
+              <td>78</td>
+              <td>77.67</td>
+              <td>Bien</td>
+            </tr>
+            <!-- Add more rows for other subjects and exam results -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--scripts-->
+<script src="manageStudents.js"></script>

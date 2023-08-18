@@ -1,0 +1,133 @@
+.paymentShown {
+  visibility: visible;
+  opacity: 1;
+}
+
+.paymentHidden {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.payment {
+  @include pop;
+  @include centralize;
+
+  &__container {
+    background-color: #fff;
+    box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.3);
+    transform: translateY(-10rem) translateX(30rem) scale(0.6);
+    transition: all 0.3s;
+    backface-visibility: hidden;
+    border-radius: 0.3rem;
+    padding: 1rem 2.5rem;
+    backface-visibility: hidden;
+    width: fit-content;
+  }
+
+  &__close-btn {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    color: $color-primary;
+    cursor: pointer;
+    transition: all 0.2s;
+
+    &:active {
+      transform: translateY(0.2rem) scale(0.9);
+    }
+  }
+  &__container--show {
+    transform: translateY(0) scale(1);
+  }
+
+  &__history {
+    display: flex;
+    gap: 2rem;
+    &-title {
+      color: $color-tertiary;
+      margin-bottom: 2rem;
+      margin-top: 1rem;
+    }
+    &-table {
+      width: 100%;
+      border-collapse: collapse;
+      height: min-content;
+      border: 1px solid $color-gray;
+    }
+
+    &__row {
+      &--header {
+        font-weight: 600;
+        box-shadow: 0 0.5rem 2rem rgba($color-gray-dark, 0.1);
+        @include line-dark;
+      }
+      &:not(:last-child) {
+        border-bottom: 1px solid $color-gray;
+      }
+    }
+
+    &__cell {
+      padding: 1.5rem 2rem;
+      text-align: center;
+      &:not(:last-child) {
+        border-right: 1px solid $color-gray;
+      }
+    }
+  }
+
+  &__new-payment {
+    &--title {
+      font-size: 1.6rem;
+      color: $color-primary;
+      margin-bottom: 1rem;
+    }
+
+    &--group {
+      margin-bottom: 1rem;
+    }
+    &--label {
+      display: block;
+      margin-bottom: 0.5rem;
+      color: $color-gray-dark;
+    }
+
+    &--input {
+      display: block;
+      width: 100%;
+      padding: 1rem 1.5rem;
+      font-size: 1.2rem;
+      border-radius: 0.3rem;
+      border: none;
+      background-color: $color-gray;
+      color: $color-gray-dark;
+      transition: all 0.5s;
+      border-bottom: 0.3rem solid transparent;
+
+      &:focus {
+        outline: none;
+        box-shadow: 0 0.5rem 1rem rgba(#fff, 0.2);
+        border-bottom: 0.3rem solid $color-primary;
+      }
+    }
+
+    &--btn {
+      display: inline-block;
+      padding: 1rem 2rem;
+      border-radius: 0.3rem;
+      border: none;
+      background-color: $color-primary;
+      color: #fff;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: all 0.2s;
+
+      &:hover {
+        transform: translateY(-0.2rem);
+      }
+
+      &:active {
+        transform: translateY(0.2rem);
+      }
+    }
+  }
+}

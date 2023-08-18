@@ -1,0 +1,112 @@
+.addNewUserHide {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.addNewUserShow {
+  visibility: visible;
+  opacity: 1;
+}
+
+.addNewUser {
+  @include pop;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &__container {
+    background-color: #fff;
+    box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.3);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    transition: all 0.3s;
+    transform: translateY(-30%) scale(0.9);
+  }
+
+  &__container--show {
+    transform: translateY(0) scale(1);
+  }
+
+  &__form {
+    padding: 2rem 2.5rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 2rem;
+    row-gap: 1rem;
+    &-group {
+      display: flex;
+      flex-direction: column;
+      justify-content: end;
+      gap: 0.5rem;
+    }
+  }
+
+  &__heading {
+    display: block;
+    font-size: 2rem;
+    font-weight: 400;
+    color: $color-tertiary;
+    @include line-dark;
+    margin: 1rem;
+    text-align: center;
+  }
+
+  &__label {
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: $color-primary-dark;
+    margin-bottom: 0.5rem;
+  }
+
+  &__input {
+    padding: 1rem 1.5rem;
+    border: none;
+    border-radius: 0.5rem;
+    background-color: $color-gray;
+    color: $color-primary-dark;
+    font-size: 1rem;
+    font-weight: 400;
+    transition: all 0.3s;
+    border: 0.2rem solid transparent;
+    &:focus {
+      outline: none;
+      box-shadow: 0 0.5rem 1rem rgba($color-primary-dark, 0.2);
+    }
+
+    &:focus:invalid {
+      border-bottom: 0.2rem solid $color-tertiary;
+    }
+  }
+
+  &__buttons {
+    margin-top: 1.5rem;
+    grid-column: 3/-1;
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+  &__btn {
+    flex: 1;
+    border: none;
+    padding: 1rem 1.5em;
+    color: #fff;
+    font-size: 1.4rem;
+    font-weight: 400;
+    cursor: pointer;
+    transition: all 0.2s;
+    border-radius: 0.3rem;
+
+    &-cancel {
+      background-color: $color-tertiary;
+      &:hover {
+        background-color: darken($color-tertiary, 10%);
+      }
+    }
+
+    &-submit {
+      background-color: $color-primary-light-1;
+      &:hover {
+        background-color: darken($color-primary-light-1, 10%);
+      }
+    }
+  }
+}

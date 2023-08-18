@@ -1,0 +1,28 @@
+//colors
+$primary-color: hsl(273, 80%, 14%);
+$color-primary: #24243e;
+$color-primary-lighter: #33337b;
+$color-primary-light: #271e91;
+$color-primary-light-1: #17a2b8;
+$color-primary-dark: #201e40;
+$color-secondary: #eee2de;
+$color-secondary-light: #f7f6f1;
+$color-secondary-dark: #e9e9e9;
+$color-tertiary: #d71313;
+$color-tertiary-light: #f2b5b5;
+$color-tertiary-dark: #a50b0b;
+$color-quaternary: #f0de36;
+$color-quaternary-light: #f2e572;
+$color-quaternary-dark: #c4b22b;
+$color-gray: #ecf2f4;
+$color-gray-1: #3d3d3d;
+$color-gray-2: #737373;
+$color-gray-dark: #2c2c2c;
+$color-green: #28a745;
+$color-green-darker: #218838;
+$color-green-dark: #2d8f4a;
+
+//box shadows
+
+$shadow-dark: 0 2rem 4rem rgba(0, 0, 0, 0.3);
+$shadow-light: 0 2rem 4rem rgba($color-primary, 0.5);

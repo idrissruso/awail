@@ -1,0 +1,39 @@
+/* Base Styles */
+.payment-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.payment-table__header-cell,
+.payment-table__cell {
+  padding: 10px;
+  text-align: left;
+  border: 1px solid #ccc;
+}
+
+.payment-table__header-cell {
+  background-color: #f0f0f0;
+  font-weight: bold;
+}
+
+/* Modifier Styles */
+.payment-table__cell--month {
+  color: #007bff;
+}
+
+.payment-table__cell--date {
+  font-style: italic;
+}
+
+.payment-table__cell--amount {
+  color: #00c851;
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+  .payment-table__header-cell,
+  .payment-table__cell {
+    padding: 8px;
+  }
+}

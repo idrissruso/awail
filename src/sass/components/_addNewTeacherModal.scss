@@ -1,0 +1,140 @@
+.addNewTeacher-show {
+  visibility: visible;
+  opacity: 1;
+}
+.addNewTeacher-hide {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.addNewTeacher {
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  @include pop;
+  @include centralize;
+
+  &__container {
+    background-color: #fff;
+    box-shadow: 0 0.5rem 1rem rgba($color-primary-dark, 0.2);
+    transform: translateY(-20rem) translateX(60rem) scale(0.25);
+    transition: all 0.3s;
+  }
+
+  .addNewTeacher-animate {
+    transform: translateY(0) scale(1);
+  }
+
+  &__heading {
+    padding: 1rem 1.5rem;
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: #fff;
+    background-color: $color-primary-light-1;
+    border-bottom: 0.1rem solid $color-gray;
+    text-align: center;
+  }
+
+  //&__content {
+  //}
+
+  &-form {
+    padding: 1rem 2rem;
+    #heading {
+      padding: 1rem 1.5rem;
+      font-size: 1.6rem;
+      font-weight: 400;
+      color: $color-tertiary;
+      @include line-dark;
+    }
+
+    .teacher {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-bottom: 1rem;
+      align-items: center;
+      @include line-dark;
+      padding: 2rem 0;
+    }
+
+    #subjects {
+      grid-column: 2/3;
+      width: 100%;
+    }
+
+    &__group {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 100%;
+
+      &-actions {
+        display: flex;
+        gap: 1rem;
+        justify-content: end;
+        flex-direction: row;
+      }
+    }
+    &__label {
+      display: block;
+      font-size: 1.2rem;
+      font-weight: 400;
+      color: $color-primary-dark;
+      margin-bottom: 0.5rem;
+    }
+    &__input {
+      padding: 1rem 1.5rem;
+      border: none;
+      border-radius: 0.5rem;
+      background-color: $color-gray;
+      color: $color-primary-dark;
+      font-size: 1rem;
+      font-weight: 400;
+      transition: all 0.3s;
+      border-bottom: 0.2rem solid transparent;
+      &:focus {
+        outline: none;
+        box-shadow: 0 0.5rem 1rem rgba($color-primary-dark, 0.2);
+        border-bottom: 0.2rem solid $color-primary-light-1;
+      }
+
+      &:focus:invalid {
+        border-bottom: 0.2rem solid $color-tertiary;
+      }
+    }
+
+    &__btn {
+      margin-top: 2rem;
+      padding: 1rem 2rem;
+      font-size: 1.2rem;
+      font-weight: 400;
+      color: #fff;
+      background-color: $color-green-darker;
+      border: none;
+      border-radius: 0.5rem;
+      transition: all 0.3s;
+      box-shadow: 0 0.5rem 1rem rgba($color-primary-dark, 0.2);
+      margin-bottom: 1rem;
+      cursor: pointer;
+      backface-visibility: hidden;
+      animation: fadeOut 0.5s ease-in-out infinite alternate;
+      &:hover {
+        background-color: darken($color-green-darker, 10%);
+      }
+      &-submit {
+        background-color: $color-green-darker;
+        &:hover {
+          background-color: darken($color-green-darker, 10%);
+        }
+      }
+
+      &-cancel {
+        background-color: $color-tertiary;
+        &:hover {
+          background-color: darken($color-tertiary, 10%);
+        }
+      }
+    }
+  }
+}

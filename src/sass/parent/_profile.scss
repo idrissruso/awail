@@ -1,0 +1,112 @@
+.profile {
+  margin: 1.5rem 2rem 0 2rem;
+  gap: 4rem;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 1.5rem 3rem;
+
+  &__logo {
+    width: 20rem;
+    display: inline-block;
+  }
+  &__subheading {
+    font-size: 2rem;
+    font-weight: 600;
+    color: $color-tertiary;
+    margin: 2rem 0 1rem 0;
+  }
+
+  &__info {
+    display: flex;
+    margin-right: auto;
+    flex-wrap: wrap;
+    gap: 2rem;
+    box-shadow: 0 2rem 4rem rgba(hsl(273, 80%, 14%), 0.2);
+    padding: 1rem 2rem;
+    flex: 1;
+    border-radius: 1rem;
+    justify-content: center;
+  }
+
+  &__info-box {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    gap: 1rem;
+  }
+
+  &__img-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 10rem;
+    height: 10rem;
+    overflow: hidden;
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    object-position: center;
+    border: 0.2rem solid $color-primary-light-1;
+  }
+
+  //"profile__label"
+
+  &__row {
+    border: 0.1rem solid $color-gray;
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+  }
+
+  &__label {
+    background-color: $color-gray;
+    padding: 0.5rem 1rem;
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: $color-primary;
+    justify-self: center;
+    width: 15rem;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__value {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: $color-gray-dark;
+    padding: 0.5rem 1rem;
+    text-transform: uppercase;
+  }
+
+  #email {
+    text-transform: lowercase;
+  }
+
+  &__announcements {
+    font-size: 1rem;
+    border: 0.1rem solid $color-gray;
+    align-self: start;
+    padding: 1rem 2rem;
+    box-shadow: 0 2rem 4rem rgba(hsl(273, 80%, 14%), 0.2);
+    border-radius: 1rem;
+  }
+
+  .info {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: $color-tertiary;
+    padding: 0.5rem 1rem;
+    margin: 0;
+  }
+
+  &__side {
+    display: flex;
+    flex-direction: column;
+    row-gap: 2rem;
+    justify-content: center;
+  }
+}
