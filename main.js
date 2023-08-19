@@ -1,4 +1,4 @@
-import express from 'express'
+import express, { json } from 'express'
 import path from 'path'
 import { fileURLToPath } from 'url'
 import browserSync from 'browser-sync'
@@ -80,18 +80,26 @@ app.use(passport.initialize())
 app.use(passport.session())
 
 import './config/passport.js'
+import axios from 'axios'
 
 //routes
 app.use('/', webRoutes)
 app.use('/api', apiRoutes)
 
 //ajax
-app.get('/main/:file', function (req, res) {
-  res.sendFile(path.join(__dirname, 'views/main', req.params.file))
+
+app.get('/main/:file', async function (req, res) {
+  const filePath = path.join(__dirname, 'views/main', req.params.file)
+  const user = await getUserById(req.user.roleData, req.user.role)
+  res.render(filePath, { user: user })
 })
+//app.get('/main/:file', function (req, res) {
+//  res.sendFile(path.join(__dirname, 'views/main', req.params.file))
+//})
 
 app.get('/teacher/main/:file', function (req, res) {
-  res.sendFile(path.join(__dirname, 'views/teacher/main', req.params.file))
+  const filePath = path.join(__dirname, 'views/teacher/main', req.params.file)
+  res.render(filePath, { user: req.user })
 })
 
 //error handling
@@ -107,3 +115,16 @@ app.use((err, req, res, next) => {
     errorName: err.name,
   })
 })
+
+// functions
+
+const getUserById = async (id, role) => {
+  return await axios
+    .get(`http://localhost:3000/api/get${role}/${id}`)
+    .then((res) => {
+      return res.data
+    })
+    .catch((err) => {
+      console.log(err)
+    })
+}
