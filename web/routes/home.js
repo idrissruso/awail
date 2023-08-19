@@ -10,8 +10,6 @@ router.get('/', (req, res) => {
 })
 
 function checkRole(req, res, next) {
-  console.log(req.body.role)
-  console.log(req.user.role)
   if (req.body.role.toUpperCase() !== req.user.role.toUpperCase()) {
     req.logout(() => {
       req.flash('message', {
@@ -20,7 +18,21 @@ function checkRole(req, res, next) {
       res.redirect('/')
     })
   } else {
-    next()
+    const user = req.user
+    if (user.role === 'Admin') {
+      res.redirect('/admin')
+    } else if (user.role === 'Parent') {
+      res.redirect('/parent')
+    } else if (user.role === 'Teacher') {
+      res.redirect('/teacher')
+    } else {
+      req.logout(() => {
+        req.flash('message', {
+          message: 'Invalid path. Please choose a convenient role.',
+        })
+        res.redirect('/')
+      })
+    }
   }
 }
 
@@ -32,6 +44,7 @@ router.post('/', (req, res, next) => {
     req.body.role,
     { maxAge: 1000 * 60 } // 1 minute
   )
+
   passport.authenticate('local', (err, user, info) => {
     if (err) {
       return next(err)
