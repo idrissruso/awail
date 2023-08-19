@@ -1,0 +1,97 @@
+<div class="results-container" id="resultsContainer">
+  <div class="header">
+    <h1 class="header-title">Gestion des Résultats</h1>
+  </div>
+  <form class="result-form">
+    <div class="result-form-group">
+      <div class="result-form-select-group">
+        <label class="result-form-label" for="class-select"
+          >Sélectionner la classe :</label
+        >
+        <select class="result-form-select" id="class-select">
+          <option value="class1">Classe 1</option>
+          <option value="class2">Classe 2</option>
+        </select>
+      </div>
+      <div class="result-form-select-group">
+        <label class="result-form-label" for="cours-select"
+          >Sélectionner le Cours :</label
+        >
+        <select class="result-form-select" id="cours-select">
+          <option value="class1">Mathematiques</option>
+          <option value="class2">Physique</option>
+        </select>
+      </div>
+      <div class="result-form-select-group">
+        <label class="result-form-label" for="search-student">Rechercher</label>
+        <input
+          class="result-form-input"
+          type="search"
+          placeholder="Rechercher un étudiant..."
+          id="search-student"
+        />
+      </div>
+    </div>
+
+    <table class="result-table">
+      <thead class="result-table-head">
+        <tr class="result-table-row">
+          <th class="result-table-header" id="number">#</th>
+          <th class="result-table-header">Nom de l'élève</th>
+          <th class="result-table-header">Numéro de l'élève</th>
+          <th class="result-table-header">Points</th>
+        </tr>
+      </thead>
+      <tbody class="result-table-body">
+        <tr class="result-table-row">
+          <td class="result-table-cell">1</td>
+          <td class="result-table-cell">Étudiant 1</td>
+          <td class="result-table-cell">12345</td>
+          <td class="result-table-cell">
+            <div class="checkbox-group">
+              <input
+                type="number"
+                name="points1"
+                class="result-form-input"
+                placeholder="00"
+              />
+            </div>
+          </td>
+        </tr>
+        <tr class="result-table-row">
+          <td class="result-table-cell">2</td>
+          <td class="result-table-cell">Étudiant 2</td>
+          <td class="result-table-cell">67890</td>
+          <td class="result-table-cell">
+            <div class="checkbox-group">
+              <input
+                type="number"
+                name="points1"
+                class="result-form-input"
+                placeholder="00"
+              />
+            </div>
+          </td>
+        </tr>
+        <tr class="result-table-row">
+          <td class="result-table-cell">3</td>
+          <td class="result-table-cell">Étudiant 3</td>
+          <td class="result-table-cell">67891</td>
+          <td class="result-table-cell">
+            <div class="checkbox-group">
+              <input
+                type="number"
+                name="points1"
+                class="result-form-input"
+                placeholder="00"
+              />
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <button class="result-form-button" type="submit">
+      Marquer la présence
+    </button>
+  </form>
+</div>

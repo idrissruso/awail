@@ -1,0 +1,174 @@
+.editUser {
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+
+  &__container {
+    background-color: #fff;
+    box-shadow: 0 0.5rem 1rem rgba($color-primary-dark, 0.2);
+  }
+
+  &__heading {
+    padding: 1rem 1.5rem;
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: $color-primary-dark;
+    border-bottom: 0.1rem solid $color-gray;
+  }
+
+  &__content {
+    .form {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      padding: 10rem;
+      column-gap: 10rem;
+
+      &__box-img {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        &--img {
+          height: 100%;
+          width: 100%;
+          transform: scale(1.3);
+          transition: all 0.4s;
+          object-fit: cover;
+          object-position: center;
+        }
+
+        figure:hover > .form__box-img--caption {
+          opacity: 1;
+          visibility: visible;
+          transform: translateY(-5rem);
+          cursor: pointer;
+        }
+
+        figure:hover {
+          & > .form__box-img--img {
+            transform: scale(1);
+            filter: brightness(90%) blur(0.4rem);
+          }
+        }
+        //from__box-img--caption
+
+        figure {
+          position: relative;
+          float: left;
+          width: 15rem;
+          height: 15rem;
+          clip-path: circle(50% at 50% 50%);
+          -webkit-shape-outside: circle(50% to 50% 50%);
+          shape-outside: circle(50% at 50% 50%);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+        &--caption {
+          font-size: 2.5rem;
+          margin-left: 2%;
+          position: absolute;
+          top: 80%;
+          opacity: 0;
+          visibility: hidden;
+          transition: all 0.3s;
+        }
+        &--name {
+          font-size: 1.5rem;
+          font-weight: 600;
+          color: $color-primary-dark;
+          margin: 0.5rem 0 0.7rem;
+        }
+        &--email {
+          font-size: 1.4rem;
+          font-weight: 300;
+          color: $color-primary-dark;
+        }
+
+        &--file {
+          display: none;
+        }
+
+        &--btn {
+          margin-top: 1rem;
+          padding: 1rem 1.5rem;
+          border: none;
+          border-radius: 0.5rem;
+          background-color: $color-primary-light-1;
+          color: #fff;
+          font-size: 1rem;
+
+          font-weight: 400;
+          cursor: pointer;
+          transition: all 0.3s;
+          &:hover {
+            background-color: darken($color-primary-light-1, 15%);
+          }
+        }
+      }
+
+      &__box-info {
+        flex: 1;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+        margin-top: 2rem;
+
+        &--heading {
+          font-size: 1.4rem;
+          font-weight: 400;
+          color: $color-primary-dark;
+          margin-bottom: 1rem;
+          grid-column: 1 / span 2;
+          justify-self: flex-end;
+        }
+        &--group {
+          display: flex;
+          flex-direction: column;
+        }
+        &--label {
+          font-size: 1.2rem;
+          font-weight: 400;
+          color: $color-primary-dark;
+          margin-bottom: 0.5rem;
+        }
+        &--input {
+          padding: 1rem 1.5rem;
+          border: none;
+          border-radius: 0.5rem;
+          background-color: $color-gray;
+          color: $color-primary-dark;
+          font-size: 1rem;
+          font-weight: 400;
+          transition: all 0.3s;
+          &:focus {
+            outline: none;
+            box-shadow: 0 0.5rem 1rem rgba($color-primary-dark, 0.2);
+          }
+        }
+
+        &--btn {
+          margin-top: 1rem;
+          padding: 1rem 1.5rem;
+          border: none;
+          border-radius: 0.5rem;
+          background-color: $color-primary-light-1;
+          color: #fff;
+          font-size: 1rem;
+
+          font-weight: 400;
+          cursor: pointer;
+          transition: all 0.3s;
+          grid-column: 2 / -1;
+          width: 50%;
+          justify-self: flex-end;
+          &:hover {
+            background-color: darken($color-primary-light-1, 15%);
+          }
+        }
+      }
+    }
+  }
+}

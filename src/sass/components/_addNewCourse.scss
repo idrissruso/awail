@@ -1,0 +1,142 @@
+.addNewCoursModal--hide {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.addNewCoursModal--show {
+  visibility: visible;
+  opacity: 1;
+}
+
+.addNewCoursModal {
+  @include pop;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__container {
+    background-color: #fff;
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.3);
+    transform: translateY(-50%) scale(0.5);
+    transition: all 0.3s;
+  }
+  .addNewCoursContainer--animate {
+    transform: translateY(0) scale(1);
+  }
+
+  &__heading {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 300;
+    padding-bottom: 1rem;
+    margin-bottom: 2rem;
+    color: $color-tertiary;
+    @include line-dark;
+  }
+  #program {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(5rem, 10rem));
+    gap: 1rem;
+  }
+  &__form {
+    &-group {
+      margin-bottom: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    &-label {
+      font-size: 1.5rem;
+      font-weight: 300;
+      display: block;
+      margin-bottom: 0.5rem;
+      color: $color-primary;
+    }
+  }
+
+  &__input {
+    font-family: inherit;
+    font-size: 1.6rem;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    background-color: rgba($color-primary, 0.2);
+    border: none;
+    border-bottom: 0.3rem solid transparent;
+    width: 90%;
+    display: block;
+    transition: all 0.3s;
+    color: $color-gray-2;
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 1rem 2rem rgba($color-primary, 0.1);
+      border-bottom: 0.3rem solid $color-primary;
+    }
+
+    &:focus:invalid {
+      border-bottom: 0.3rem solid $color-tertiary;
+    }
+
+    &::-webkit-input-placeholder {
+      color: $color-gray-2;
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__btn {
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: $color-primary;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.6rem 1rem;
+    background-color: $color-secondary;
+    transition: all 0.3s;
+    cursor: pointer;
+    display: inline-block;
+    margin-right: 1rem;
+
+    &:hover {
+      background-color: $color-secondary-dark;
+    }
+
+    &--cancel {
+      background-color: $color-tertiary;
+      color: #fff;
+
+      &:hover {
+        background-color: darken($color-tertiary-dark, 15%);
+      }
+    }
+
+    &--add {
+      background-color: $color-green;
+      color: #fff;
+
+      &:hover {
+        background-color: darken($color-green-dark, 15%);
+      }
+    }
+  }
+
+  &__label {
+    font-size: 1.5rem;
+    font-weight: 600;
+    display: block;
+    color: $color-primary;
+  }
+
+  &__schedule-day,
+  &__schedule-time {
+    display: flex;
+    gap: 0.5rem;
+    flex-direction: column;
+  }
+}

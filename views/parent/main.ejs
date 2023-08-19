@@ -1,0 +1,48 @@
+<main class="main" id="main">
+  <!--=============== HEADER ===============-->
+  <header class="header" id="header">
+    <nav class="header__nav container">
+      <a href="#" class="header__logo">مركز الأوائل</a>
+
+      <!-- Toggle button -->
+      <div class="header__toggle" id="header-toggle">
+        <i class="bx bx-grid-alt"></i>
+      </div>
+    </nav>
+  </header>
+
+  <!-- When inserting your content into sections, remove the section__height class -->
+  <!--=============== HOME ===============-->
+  <section class="section section__height container" id="home">
+    <%- include("title.ejs", {sectionTitle : "Profile"}) %> <%-
+    include("./main/profile.ejs")%>
+  </section>
+
+  <!--=============== ABOUT ===============-->
+  <section class="section section__height container" id="weekly-schedule">
+    <%- include("title.ejs", {sectionTitle : "Programme Hebdomadaire"}) %>
+    <%-include("./main/schedule.ejs")%>
+  </section>
+
+  <!--=============== PORTFOLIO ===============-->
+  <section class="section section__height container" id="presenses">
+    <%- include("title.ejs", {sectionTitle : "Presences"}) %>
+    <%-include("./main/absenteeism.ejs")%>
+  </section>
+
+  <!--=============== SKILLS ===============-->
+  <section class="section section__height container" id="calendar">
+    <%- include("title.ejs", {sectionTitle : "Calendrier des Examens"}) %>
+    <%-include("./main/examsCalendar.ejs")%>
+  </section>
+
+  <!--=============== CONTACT ===============-->
+  <section class="section section__height container" id="results">
+    <%- include("title.ejs", {sectionTitle : "Résultats des Examens"}) %>
+    <%-include("./main/results.ejs")%>
+  </section>
+  <section class="section section__height container" id="fees">
+    <%- include("title.ejs", {sectionTitle : "Frais Scholaire"}) %>
+    <%-include("./main/fees.ejs")%>
+  </section>
+</main>

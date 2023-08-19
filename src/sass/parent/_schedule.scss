@@ -1,0 +1,45 @@
+#schedule {
+  margin-top: 5rem;
+  &.section {
+    background-color: $primary-color;
+    color: #fff;
+    padding: 2rem;
+    border-radius: 1rem;
+
+    .section__content {
+      overflow-x: auto;
+
+      .class-schedule {
+        width: 100%;
+        border-collapse: collapse;
+
+        th,
+        td {
+          padding: 1rem 1.5rem;
+          text-align: center;
+          border: 0.1rem solid rgba(255, 255, 255, 0.2);
+        }
+
+        thead {
+          th {
+            background-color: rgba(255, 255, 255, 0.1);
+          }
+        }
+
+        tbody {
+          tr {
+            &:nth-child(even) {
+              background-color: rgba(255, 255, 255, 0.05);
+            }
+
+            td {
+              &:first-child {
+                text-align: left;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

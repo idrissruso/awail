@@ -1,0 +1,186 @@
+.manageStudents {
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+
+  &__container {
+    background-color: #fff;
+    box-shadow: 0 0.5rem 1rem rgba($color-primary-dark, 0.2);
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem 2rem;
+    background-color: $color-primary-light-1;
+    border-bottom: 0.1rem solid $color-gray;
+
+    &-btn {
+      background-color: $color-green-dark;
+      border: none;
+      padding: 1rem 1.5rem;
+      color: #fff;
+      font-size: 1.4rem;
+      font-weight: 400;
+      cursor: pointer;
+      transition: all 0.2s;
+      &:hover {
+        background-color: darken($color-green-dark, 10%);
+      }
+    }
+
+    &-icon {
+      height: 1rem;
+      width: 1rem;
+      fill: #fff;
+    }
+  }
+
+  &__heading {
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: #fff;
+    background-color: $color-primary-light-1;
+  }
+
+  &__searchbar {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 1rem 1.5rem 2rem;
+    border-bottom: 0.1rem solid $color-gray;
+
+    &-input {
+      padding: 0.5rem 1rem;
+      font-size: 1.4rem;
+      font-weight: 400;
+      border-radius: 0.2rem;
+      border: 0.1rem solid $color-gray;
+      margin: 0 5rem 0 0.5rem;
+
+      transition: all 0.2s;
+      width: 15rem;
+      &:focus {
+        outline: none;
+        border: 0.1rem solid $color-primary-dark;
+        width: 25rem;
+      }
+    }
+
+    &-icon {
+      height: 1rem;
+      width: 1rem;
+      fill: #fff;
+    }
+  }
+
+  &__content {
+    padding: 1rem 1.5rem;
+    min-height: 35rem;
+  }
+
+  &__table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: $color-gray-dark;
+    background-color: #fff;
+    border: 0.1rem solid $color-gray;
+  }
+
+  &__row {
+    &-content {
+      &:hover {
+        background-color: $color-gray;
+        cursor: pointer;
+        transition: all 0.2s;
+      }
+    }
+    &--header {
+      font-weight: 600;
+      box-shadow: 0 0.5rem 2rem rgba($color-gray-dark, 0.1);
+      @include line-dark;
+    }
+    &:not(:last-child) {
+      border-bottom: 0.1rem solid $color-gray;
+    }
+  }
+
+  &__cell {
+    padding: 1.5rem 2rem;
+    text-align: center;
+    &:not(:last-child) {
+      border-right: 0.1rem solid $color-gray;
+    }
+  }
+
+  &__img {
+    max-width: 5rem;
+    min-height: 5rem;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  &__btn {
+    &--remove,
+    &--modify,
+    &--attendees,
+    &--eye {
+      height: 2rem;
+      width: 2rem;
+      cursor: pointer;
+      transition: all 0.2s;
+      &:hover {
+        transform: translateY(-0.3rem);
+        box-shadow: 0 0.7rem 1rem rgba(#000, 0.2);
+      }
+
+      &:active {
+        transform: translateY(0);
+        box-shadow: 0 0.1rem 0.5rem rgba(#000, 0.2);
+      }
+    }
+
+    &--remove {
+      fill: $color-tertiary;
+
+      &:hover {
+        fill: darken($color-tertiary, 10%);
+      }
+    }
+
+    &--modify {
+      fill: $color-green-dark;
+
+      &:hover {
+        fill: darken($color-green-dark, 10%);
+      }
+    }
+
+    &--eye {
+      &:hover {
+        fill: darken($color-primary-light-1, 10%);
+      }
+    }
+
+    &--attendees {
+      fill: $color-primary-light-1;
+
+      &:hover {
+        fill: darken($color-primary-light-1, 10%);
+      }
+    }
+  }
+
+  .payment-btn {
+    color: $color-primary-light-1;
+    cursor: pointer;
+    text-decoration: underline;
+    &:hover {
+      color: darken($color-primary-light-1, 10%);
+    }
+  }
+}

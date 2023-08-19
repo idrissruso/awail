@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('header.ejs') %>
+
+  <body class="home">
+    <div class="logo-box">
+      <img class="logo__img" src="logo.png" alt="logo" />
+    </div>
+    <!--option cards-->
+    <div class="options-container">
+      <div class="card" id="parent-option-card">
+        <div class="card-box">
+          <img src="family.png" alt="option image " class="card-box__img" />
+        </div>
+        <div class="card__content">
+          <p>Accès parents</p>
+        </div>
+      </div>
+
+      <div class="card" id="student-option-card">
+        <div class="card-box">
+          <img src="student.png" alt="option image " class="card-box__img" />
+        </div>
+        <div class="card__content">
+          <p>Accès Enseignants</p>
+        </div>
+      </div>
+      <div class="card" id="admin-option-card">
+        <div class="card-box">
+          <img src="admin.png" alt="option image " class="card-box__img" />
+        </div>
+        <div class="card__content">
+          <p>Accès administrateur</p>
+        </div>
+      </div>
+    </div>
+  </body>
+  <!--login pop-up-->
+  <section class="section-login hidden">
+    <div class="section-login__container">
+      <div class="section-login__container-sidebar">
+        <div class="section-login__container-sidebar--title">
+          <h1 class="heading-primary">مركز الأوائل</h1>
+          <h3 class="heading-tertiary" id="login__caption">Accès des élèves</h3>
+        </div>
+        <div class="section-login__container-sidebar--logo">
+          <img
+            src="student.png"
+            alt="option image "
+            class="card-box__img"
+            id="login-box__logo"
+          />
+        </div>
+      </div>
+      <form action="/" class="login__form" id="userForm" method="post">
+        <span class="login__form-close">✖️</span>
+        <div class="login__form-group">
+          <input
+            required
+            name="username"
+            type="text"
+            class="login__form-input"
+            placeholder="Nom d'utilisateur"
+            id="username"
+          />
+          <label for="username" class="login__form-label"
+            >Nom d'utilisateur</label
+          >
+        </div>
+        <div class="login__form-group">
+          <input
+            required
+            name="password"
+            type="password"
+            class="login__form-input"
+            placeholder="Mot de Passe"
+            id="password"
+          />
+          <label for="password" class="login__form-label">Mot de Passe</label>
+        </div>
+        <div class="login__form-group login__form-group--checkbox">
+          <input type="checkbox" class="form__checker" id="checker" />
+          <label for="checker" class="login__form-group-checkbox--label"
+            >Afficher Le mot de Passe</label
+          >
+        </div>
+        <div class="form__group">
+          <input
+            type="hidden"
+            id="role"
+            name="role"
+            value=""
+            style="display: none"
+          />
+          <button class="login__form-btn">Connexion</button>
+        </div>
+
+        <% if (message) { %>
+        <div class="login__form-group">
+          <p class="login__form-message visible"><%= message %></p>
+        </div>
+        <script>
+          const sectionLogin_ = document.querySelector('.section-login')
+          const loginForm_ = document.querySelector('.section-login__container')
+
+          const hideLoginPopUp_ = () => {
+            sectionLogin_.classList.add('visible')
+            sectionLogin_.classList.remove('hidden')
+            loginForm_.style.transform = 'scale(1)'
+          }
+          hideLoginPopUp_()
+        </script>
+        <% } %>
+      </form>
+    </div>
+  </section>
+  <!--scripts-->
+  <script src="index.js"></script>
+</html>

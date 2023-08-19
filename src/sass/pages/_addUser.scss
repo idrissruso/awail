@@ -1,0 +1,176 @@
+.addUser {
+  padding: 1rem 2rem;
+  .header {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+
+    &__box {
+      background-color: $color-primary-light-1;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      padding: 2rem 1rem;
+      gap: 1rem;
+      flex: 1;
+      &-value {
+        font-size: 3rem;
+        font-weight: 600;
+      }
+
+      &-label {
+        font-size: 2rem;
+        font-weight: 100;
+      }
+    }
+  }
+
+  &__container {
+    background-color: #fff;
+    box-shadow: 0 0.5rem 1rem rgba($color-primary-dark, 0.2);
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.5rem 2rem;
+    border-bottom: 0.1rem solid $color-gray;
+
+    &-btn {
+      background-color: $color-primary-light-1;
+      border: none;
+      padding: 1rem 1.5rem;
+      color: #fff;
+      font-size: 1.4rem;
+      font-weight: 400;
+      cursor: pointer;
+      transition: all 0.2s;
+      &:hover {
+        background-color: darken($color-primary-light-1, 10%);
+      }
+    }
+
+    #blockedUsers {
+      border: none;
+      padding: 1rem 1.5rem;
+      color: $color-gray-dark;
+      font-size: 1.4rem;
+      font-weight: 400;
+      cursor: pointer;
+      transition: all 0.5s;
+      border: 0.1rem solid $color-gray;
+      background-color: transparent;
+      margin-right: auto;
+      &:hover {
+        background-color: $color-tertiary;
+        color: #fff;
+      }
+
+      &:hover #block-icon {
+        fill: #fff;
+      }
+      display: flex;
+      align-items: center;
+      column-gap: 1rem;
+      position: relative;
+    }
+
+    #block-icon {
+      height: 2rem;
+      width: 2rem;
+      position: absolute;
+      fill: red;
+      top: 0.7rem;
+      left: 0.3rem;
+    }
+
+    &-icon {
+      height: 1rem;
+      width: 1rem;
+      fill: #fff;
+    }
+  }
+
+  &__searchbar {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 1rem 1.5rem 2rem;
+    &-input {
+      padding: 0.5rem 1rem;
+      font-size: 1.4rem;
+      font-weight: 400;
+      border-radius: 0.2rem;
+      border: 0.1rem solid $color-gray;
+      margin: 0 5rem 0 0.5rem;
+
+      transition: all 0.2s;
+      width: 15rem;
+      &:focus {
+        outline: none;
+        border: 0.1rem solid $color-primary-dark;
+        width: 25rem;
+      }
+    }
+
+    &-icon {
+      height: 1rem;
+      width: 1rem;
+      fill: #fff;
+    }
+  }
+
+  &__content {
+    padding: 1rem 1.5rem;
+    min-height: 35rem;
+  }
+
+  &__table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: $color-gray-dark;
+    background-color: #fff;
+    border: 0.1rem solid $color-gray;
+  }
+
+  &__row {
+    &--header {
+      font-weight: 600;
+      box-shadow: 0 0.5rem 2rem rgba($color-gray-dark, 0.1);
+      @include line-dark;
+    }
+    &:not(:last-child) {
+      border-bottom: 0.1rem solid $color-gray;
+    }
+  }
+
+  &__cell {
+    padding: 1.5rem 2rem;
+    text-align: center;
+    &:not(:last-child) {
+      border-right: 0.1rem solid $color-gray;
+    }
+  }
+
+  &__btn {
+    &--block {
+      padding: 0.7rem 1rem;
+      color: $color-tertiary;
+      font-size: 1.3rem;
+      font-weight: 400;
+      text-decoration: underline;
+      cursor: pointer;
+      transition: all 0.2s;
+      &:hover {
+        color: darken($color-tertiary, 10%);
+      }
+    }
+  }
+}

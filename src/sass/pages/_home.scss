@@ -1,0 +1,59 @@
+.home {
+  background-image: linear-gradient(
+    to right bottom,
+    #2b2a4c,
+    #eee2de,
+    #eee2de,
+    #2b2a4c
+  );
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  padding: 16rem;
+}
+
+.options-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  gap: 2rem;
+}
+.section-login {
+  background-color: rgba($color-primary, 0.5);
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s;
+
+  &__container {
+    position: relative;
+    background-color: $color-secondary;
+    display: grid;
+    grid-template-columns: max-content minmax(max-content, 45rem);
+    box-shadow: $shadow-light;
+    transform: scale(0.5);
+    transition: all 0.3s 0.1s;
+    &-sidebar {
+      color: #fff;
+      padding: 1rem 2rem;
+      background-color: $color-primary-dark;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+}
+.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+.visible {
+  opacity: 1;
+  visibility: visible;
+}

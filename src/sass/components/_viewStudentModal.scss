@@ -1,0 +1,199 @@
+.viewStudent-show {
+  visibility: visible;
+  opacity: 1;
+}
+
+.viewStudent-hide {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.viewStudent {
+  @include pop;
+  @include centralize;
+  transition: all 0.3s;
+  &__subheading {
+    font-size: 2rem;
+    font-weight: 600;
+    color: $color-tertiary;
+    margin-bottom: 2rem;
+  }
+
+  &__title {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #fff;
+    background-color: $color-primary-light-1;
+    margin-bottom: 1.5rem;
+    padding: 1rem 2rem;
+    text-align: center;
+  }
+
+  &__container {
+    position: relative;
+    background-color: #fff;
+    padding: 3rem 4rem;
+    transform: translateY(-50%) scale(0.5);
+    transition: all 0.5s;
+  }
+  .viewStudent-animate {
+    transform: translateY(0) scale(1);
+  }
+
+  &__content {
+    display: flex;
+    column-gap: 2rem;
+    flex-wrap: wrap;
+  }
+
+  &__close-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0.5rem;
+    color: $color-gray;
+    cursor: pointer;
+    transition: all 0.3s;
+    &:hover {
+      color: darken($color-gray, 10%);
+    }
+
+    &:active {
+      transform: translateY(0.3rem);
+    }
+  }
+
+  &__info {
+    display: flex;
+    box-shadow: 0 1.5rem 3rem rgba(#000, 0.2);
+    padding: 1rem 2rem;
+    column-gap: 2rem;
+    flex-wrap: wrap;
+  }
+
+  &__info-box {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+    overflow: hidden;
+    flex-wrap: wrap;
+  }
+
+  &__exams {
+    box-shadow: 0 1.5rem 3rem rgba(#000, 0.2);
+    padding: 1rem 2rem;
+  }
+
+  &__img-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 1rem;
+    width: 30%;
+    overflow: hidden;
+  }
+
+  &__img {
+    width: 20rem;
+    &-caption {
+      display: flex;
+      gap: 1rem;
+    }
+  }
+
+  &__btn {
+    &--remove,
+    &--modify,
+    &--attendees {
+      height: 2rem;
+      width: 2rem;
+      cursor: pointer;
+      transition: all 0.2s;
+      &:hover {
+        transform: translateY(-0.3rem);
+        box-shadow: 0 0.7rem 1rem rgba(#000, 0.2);
+      }
+
+      &:active {
+        transform: translateY(0);
+        box-shadow: 0 0.1rem 0.5rem rgba(#000, 0.2);
+      }
+    }
+
+    &--remove {
+      fill: $color-tertiary;
+
+      &:hover {
+        fill: darken($color-tertiary, 10%);
+      }
+    }
+
+    &--modify {
+      fill: $color-green-dark;
+
+      &:hover {
+        fill: darken($color-green-dark, 10%);
+      }
+    }
+
+    &--attendees {
+      fill: $color-primary-light-1;
+
+      &:hover {
+        fill: darken($color-primary-light-1, 10%);
+      }
+    }
+  }
+
+  &__row {
+    &:not(:last-child) {
+      margin-bottom: 1rem;
+    }
+  }
+
+  &__label {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: $color-primary;
+  }
+
+  &__value {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: $color-gray-dark;
+  }
+
+  &__table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+  }
+
+  &__table th,
+  &__table td {
+    padding: 10px;
+    text-align: center;
+    background-color: white;
+    border: 1px solid $color-gray-dark; /* Set the background color of the cells */
+  }
+
+  &__table th {
+    background-color: #f1f1f1; /* Set the background color of the table header */
+  }
+
+  &__table td {
+    position: relative; /* Create a positioning context for negative margin */
+  }
+
+  /* Apply negative margin to create a gap effect */
+  &__table td::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    border: 2px solid white; /* Adjust the border width and color as needed */
+    z-index: -1;
+  }
+}

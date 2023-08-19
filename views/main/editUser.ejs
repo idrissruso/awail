@@ -1,0 +1,108 @@
+<div class="editUser">
+  <div class="editUser__container">
+    <h1 class="editUser__heading">Mettre à jour le profil d'utilisateur</h1>
+    <div class="editUser__content">
+      <form class="form">
+        <div class="form__box-img">
+          <figure>
+            <img src="author.JPG" alt="user image" class="form__box-img--img" />
+            <figcaption class="form__box-img--caption">🖋️</figcaption>
+          </figure>
+
+          <span class="form__box-img--name">Idrissa Rusongeka</span>
+          <span class="form__box-img--email">idriss@gmail.com</span>
+          <input type="file" class="form__box-img--file" id="file" />
+          <label for="file" class="form__box-img--btn">Modifier L'image</label>
+        </div>
+        <div class="form__box-info">
+          <h3 class="form__box-info--heading">Modifier le profil</h3>
+          <div class="form__box-info--group">
+            <input
+              type="text"
+              name="name"
+              id="name"
+              class="form__box-info--input"
+              placeholder="Nom"
+              required
+            />
+          </div>
+          <div class="form__box-info--group">
+            <input
+              type="text"
+              name="surname"
+              id="surname"
+              class="form__box-info--input"
+              placeholder="Prénom"
+              required
+            />
+          </div>
+          <div class="form__box-info--group">
+            <input
+              type="email"
+              name="email"
+              id="email"
+              class="form__box-info--input"
+              placeholder="Email"
+              required
+            />
+          </div>
+          <div class="form__box-info--group">
+            <input
+              type="phone"
+              name="phone"
+              id="phone"
+              class="form__box-info--input"
+              placeholder="Téléphone"
+              required
+            />
+          </div>
+          <div class="form__box-info--group">
+            <label for="role" class="form__box-info--label"
+              >Nom d'Utilisateur</label
+            >
+            <input
+              type="text"
+              name="userName"
+              id="userName"
+              class="form__box-info--input"
+              placeholder="Nom d'utilisateur"
+              required
+            />
+          </div>
+          <div class="form__box-info--group">
+            <label for="role" class="form__box-info--label">Role</label>
+            <select name="role" id="role" class="form__box-info--input">
+              <option value="admin">Admin</option>
+              <option value="user">Utilisateur</option>
+            </select>
+          </div>
+          <div class="form__box-info--group">
+            <label for="password" class="form__box-info--label"
+              >Mot de passe actuel</label
+            >
+            <input
+              type="password"
+              name="password"
+              id="password"
+              class="form__box-info--input"
+              required
+            />
+          </div>
+          <div class="form__box-info--group">
+            <label for="password2" class="form__box-info--label"
+              >Nouveau Mot de Passe</label
+            >
+            <input
+              type="password"
+              name="password2"
+              id="password2"
+              class="form__box-info--input"
+              required
+            />
+          </div>
+          <button class="form__box-info--btn">Modifier</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

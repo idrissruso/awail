@@ -1,0 +1,44 @@
+.exams-schedule {
+  padding: 3rem 6rem;
+
+  &__title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  &__table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+
+    &-header {
+      th {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: center;
+        background-color: #f9f9f9;
+      }
+    }
+
+    &-row {
+      &:nth-child(even) {
+        background-color: #f8f8f8;
+      }
+      td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: center;
+      }
+    }
+
+    &-cell {
+      &.date {
+        font-family: monospace;
+      }
+
+      &.subject {
+        font-weight: bold;
+      }
+    }
+  }
+}

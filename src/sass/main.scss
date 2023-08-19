@@ -1,0 +1,62 @@
+//abstracts
+
+@import './abstracts/functions';
+@import './abstracts/variables';
+@import './abstracts/mixins';
+
+//base
+
+@import './base/animations';
+@import './base/base';
+@import './base/typography';
+@import './base/utilities';
+
+//components
+
+@import './components/card';
+@import './components/logo';
+@import './components/form';
+@import './components/dashboardCards';
+@import './components/modifyStudent';
+@import './components/deleteModal';
+@import './components/absenteeism';
+@import './components/payment';
+@import './components/addNewUserModal';
+@import './components/blockUSerModal';
+@import './components/blockedUsersModal';
+@import './components/addNewCourse';
+@import './components/courseDetailsModal';
+@import './components/viewStudentModal';
+@import './components/addNewTeacherModal';
+@import './components/editTeacher';
+//layout
+
+//pages
+
+@import './pages/home';
+@import './pages/dashboard';
+@import './pages/root';
+@import './pages/editUser';
+@import './pages/addStudent';
+@import './pages/manageStudents';
+@import './pages/editStudent';
+@import './pages/addUser';
+@import './pages/manageCourses';
+@import './pages/manageTeachers';
+//themes
+
+//vendors
+
+//parent
+
+@import './parent/profile';
+@import './parent/schedule';
+@import './parent/absenteeism';
+@import './parent/examsCalendar';
+@import './parent/results';
+@import './parent/fees';
+
+//teacher
+
+@import './teacher/absenteeism';
+@import './teacher/results';

@@ -1,0 +1,207 @@
+.dashboard-container {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  grid-template-rows: minmax(100vh, 1fr);
+  overflow: auto;
+
+  &__content {
+    display: grid;
+    grid-template-rows: 6.1rem 1fr 6.1rem;
+    background-color: $color-secondary-light;
+  }
+
+  &__footer {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    color: $color-primary;
+    font-size: 1.5rem;
+
+    span {
+      color: $color-primary-light-1;
+      font-weight: 600;
+    }
+  }
+
+  &__main {
+    @include line;
+    background-color: $color-secondary-dark;
+  }
+
+  &__sidebar {
+    & > * {
+      cursor: pointer;
+    }
+    background-color: rgba($color-primary-dark, 0.9);
+    @include line;
+    grid-row: 1/-1;
+  }
+
+  &__navbar {
+    border-bottom: 0.13rem solid rgba($color-primary-dark, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1rem;
+
+    button {
+      border: none;
+      cursor: pointer;
+    }
+    .navbar {
+      &__toggle {
+        &-icon {
+          height: 2.5rem;
+          width: 2.5rem;
+          fill: $color-gray-dark;
+        }
+      }
+      &__search {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex: 0 0 40%;
+
+        &-input {
+          border: none;
+          background-color: $color-gray;
+          padding: 1rem 1.5rem;
+          border-radius: 10rem;
+          transition: all 1s;
+          width: 80%;
+
+          &:focus {
+            outline: none;
+            background-color: $color-secondary-dark;
+            width: 100%;
+          }
+        }
+        button {
+          background-color: transparent;
+          border: none;
+        }
+        &-icon {
+          height: 1.5rem;
+          width: 1.5rem;
+          fill: $color-gray-dark;
+          display: block;
+          transform: translateX(-3rem);
+          background-color: transparent;
+          color: transparent;
+        }
+      }
+      &__setting {
+        &-icon {
+          height: 2rem;
+          width: 2rem;
+          fill: $color-gray-dark;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+.sidebar {
+  &__brand {
+    display: flex;
+    padding: 0.5rem 1rem;
+    align-items: center;
+    height: 6.1rem;
+    @include line;
+    &-box {
+      height: 4rem;
+      width: 4rem;
+      border-radius: 50%;
+      padding: 0.3rem;
+      box-shadow: $shadow-dark;
+    }
+    &-logo {
+      height: 3rem;
+      width: 3.5rem;
+      object-fit: cover;
+    }
+    &-name {
+      color: $color-secondary-dark;
+      font-weight: 300;
+    }
+  }
+
+  &__user {
+    padding: 1rem;
+    @include line;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    &-img--box {
+      height: 4rem;
+      width: 4rem;
+      border-radius: 50%;
+
+      box-shadow: $shadow-dark;
+    }
+    &-profile {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 50%;
+    }
+    &-name {
+      color: $color-secondary-dark;
+      font-weight: 600;
+
+      transition: all 0.2s;
+      &:hover {
+        color: $color-secondary-light;
+      }
+    }
+  }
+}
+
+.navigation {
+  padding: 0.5rem;
+  margin-top: 1.5rem;
+
+  &__item {
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    border-radius: 0.5rem;
+    gap: 1rem;
+    color: $color-secondary-dark;
+    transition: all 0.2s;
+    font-size: 1.4rem;
+    font-weight: 400;
+    &:hover {
+      color: $color-secondary-light;
+      background-color: $color-primary-dark;
+    }
+    &--active {
+      color: $color-secondary-light;
+    }
+    &-icon {
+      display: block;
+      height: 2.5rem;
+      width: 2.5rem;
+      fill: $color-secondary-light;
+    }
+    &:first-child {
+      background-color: darken($color-primary-light-1, 10%);
+      color: #fff;
+    }
+  }
+
+  .parametre_securite {
+    margin-top: 5rem;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    font-size: 1.19rem;
+    text-align: center;
+    color: $color-secondary-dark;
+    letter-spacing: 0.2rem;
+    cursor: auto;
+  }
+}
+
+// dashboard main content
