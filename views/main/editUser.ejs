@@ -5,12 +5,25 @@
       <form class="form">
         <div class="form__box-img">
           <figure>
-            <img src="author.JPG" alt="user image" class="form__box-img--img" />
+            <img
+              src="profile.png"
+              alt="user image"
+              class="form__box-img--img"
+            />
             <figcaption class="form__box-img--caption">🖋️</figcaption>
           </figure>
+          <script>
+            var FullName = `<%- admin.FullName %>`
+            var name = FullName.split(' ')[0]
+            var surname = FullName.split(' ')[1]
+            var userId = `<%- loggedInUser._id %>`
+            var adminId = `<%- admin._id %>`
+            document.getElementById('name').placeholder = name
+            document.getElementById('surname').placeholder = surname
+          </script>
 
-          <span class="form__box-img--name"><%- user.FullName %></span>
-          <span class="form__box-img--email"><%- user.Email %></span>
+          <span class="form__box-img--name"><%- admin.FullName %></span>
+          <span class="form__box-img--email"><%- admin.Email %></span>
           <input type="file" class="form__box-img--file" id="file" />
           <label for="file" class="form__box-img--btn">Modifier L'image</label>
         </div>
@@ -42,7 +55,7 @@
               name="email"
               id="email"
               class="form__box-info--input"
-              placeholder="Email"
+              placeholder="<%- admin.Email %>"
               required
             />
           </div>
@@ -65,7 +78,7 @@
               name="userName"
               id="userName"
               class="form__box-info--input"
-              placeholder="Nom d'utilisateur"
+              placeholder="<%- loggedInUser.username %>"
               required
             />
           </div>
@@ -76,33 +89,13 @@
               <option value="user">Utilisateur</option>
             </select>
           </div>
-          <div class="form__box-info--group">
-            <label for="password" class="form__box-info--label"
-              >Mot de passe actuel</label
-            >
-            <input
-              type="password"
-              name="password"
-              id="password"
-              class="form__box-info--input"
-              required
-            />
-          </div>
-          <div class="form__box-info--group">
-            <label for="password2" class="form__box-info--label"
-              >Nouveau Mot de Passe</label
-            >
-            <input
-              type="password"
-              name="password2"
-              id="password2"
-              class="form__box-info--input"
-              required
-            />
-          </div>
+
           <button class="form__box-info--btn">Modifier</button>
         </div>
       </form>
     </div>
   </div>
 </div>
+<!--script-->
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script type="module" src="editUser.js"></script>
