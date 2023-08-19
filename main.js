@@ -9,6 +9,8 @@ import session from 'express-session'
 import MongoStore from 'connect-mongo'
 import passport from 'passport'
 import 'dotenv/config'
+import flash from 'connect-flash'
+import cookieParser from 'cookie-parser'
 
 const secret = process.env.SESSION_SECRET
 const url = process.env.MONGODB_URI
@@ -54,6 +56,10 @@ app.use(express.static(path.join(__dirname, 'src', 'css')))
 //body parser
 app.use(express.urlencoded({ extended: false }))
 app.use(express.json())
+
+app.use(cookieParser())
+
+app.use(flash())
 
 //session config
 app.use(

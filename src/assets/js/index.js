@@ -1,4 +1,16 @@
 'use strict'
+
+function getCookie(name) {
+  const cookies = document.cookie.split('; ')
+  for (let i = 0; i < cookies.length; i++) {
+    const cookie = cookies[i].split('=')
+    if (cookie[0] === name) {
+      return cookie[1]
+    }
+  }
+  return null
+}
+
 const parentLog = document.querySelector('#parent-option-card')
 const studentLog = document.querySelector('#student-option-card')
 const adminLog = document.querySelector('#admin-option-card')
@@ -14,7 +26,13 @@ const loginButton = document.querySelector('.login__form-btn')
 const message = document.querySelector('.login__form-message')
 const roleInput = document.querySelector('#role')
 
-let currentUser = ''
+let currentUser = getCookie('role') ? getCookie('role') : roleInput.value
+if (getCookie('role')) {
+  roleInput.value = getCookie('role')
+  currentUser = getCookie('role')
+  const card = currentUser.charAt(0).toUpperCase() + currentUser.slice(1)
+  caption.textContent = `Accès ${card}`
+}
 
 // Display login pop up
 const showLoginPopUp = () => {
@@ -37,8 +55,6 @@ const hideLoginPopUp = () => {
   sectionLogin.classList.remove('visible')
   sectionLogin.classList.add('hidden')
   loginForm.style.transform = 'scale(0.5)'
-  message.classList.add('hidden')
-  message.classList.remove('visible')
 }
 
 // Event listeners
@@ -58,6 +74,11 @@ const hideLoginPopUp = () => {
       caption.textContent = 'Accès administrateur'
       currentUser = 'admin'
     }
+    if (message) {
+      message.classList.add('hidden')
+      message.classList.remove('visible')
+    }
+
     showLoginPopUp()
   })
 })
