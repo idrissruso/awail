@@ -11,6 +11,7 @@ import passport from 'passport'
 import 'dotenv/config'
 import flash from 'connect-flash'
 import cookieParser from 'cookie-parser'
+import getUserById from './utils/getUSer.js'
 
 const secret = process.env.SESSION_SECRET
 const url = process.env.MONGODB_URI
@@ -118,14 +119,3 @@ app.use((err, req, res, next) => {
 })
 
 // functions
-
-const getUserById = async (id, role) => {
-  return await axios
-    .get(`http://localhost:3000/api/get${role}/${id}`)
-    .then((res) => {
-      return res.data
-    })
-    .catch((err) => {
-      console.log(err)
-    })
-}

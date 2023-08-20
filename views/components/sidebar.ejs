@@ -9,7 +9,7 @@
     <div class="sidebar__user-img--box">
       <img src="profile.png" alt="user profile" class="sidebar__user-profile" />
     </div>
-    <p class="sidebar__user-name"><%=user.username%></p>
+    <p class="sidebar__user-name"><%=admin.FullName%></p>
   </div>
   <ul class="navigation">
     <li class="navigation__item dashboard">
@@ -57,3 +57,14 @@
     </li>
   </ul>
 </aside>
+
+<script>
+  const profileImg = document.querySelector('.sidebar__user-profile')
+  const user = <%-JSON.stringify(user)%>;
+
+  if (user.profileImage) {
+    profileImg.src = `data:${user.profileImageType};base64,${user.profileImage}`
+  } else {
+    profileImg.src = 'profile.png'
+  }
+</script>
