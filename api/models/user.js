@@ -22,6 +22,9 @@ const userSchema = new mongoose.Schema({
   profileImage: {
     type: String,
   },
+  profileImageType: {
+    type: String,
+  },
 })
 
 userSchema.pre('save', function (next) {

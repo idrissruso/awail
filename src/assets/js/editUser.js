@@ -3,57 +3,71 @@ const editImage = document.querySelector('.form__box-img--caption')
 const editImageInput = document.querySelector('#file')
 const updateForm = document.querySelector('.form')
 let imageFile
+const urlAdmin = 'http://localhost:3000/api/updateAdmin/' + adminId
+const urlUser = 'http://localhost:3000/api/updateUser/' + userId
 
+// Event listener for form submission
 updateForm.addEventListener('submit', async (e) => {
   e.preventDefault()
+
   const dataAdmin = {
-    name: updateForm.name.value + ' ' + updateForm.surname.value,
-    email: updateForm.email.value,
-    telephone: updateForm.telephone.value,
+    FullName: updateForm.name.value + ' ' + updateForm.surname.value,
+    Email: updateForm.email.value,
+    Telephone: updateForm.phone.value,
+    Role: updateForm.role.value,
   }
 
   const dataUser = {
-    username: updateForm.username.value,
+    username: updateForm.userName.value,
   }
 
   if (imageFile) {
     const base64 = await codeImageToBase64(imageFile)
-    const image = decodeBase64Image(base64)
-    dataUser.profileImage = image.data
-    dataUser.type = image.type
+    dataUser.profileImage = base64
+    dataUser.profileImageType = imageFile.type
   }
 
+  const commonHeaders = {
+    'Content-Type': 'application/json',
+  }
+
+  let adminUpdated = false
+  let userUpdated = false
+
   try {
-    const resAdmin = await fetch('/api/editAdmin', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
+    const resAdmin = await fetch(urlAdmin, {
+      method: 'PATCH',
+      headers: commonHeaders,
       body: JSON.stringify(dataAdmin),
     })
-    console.log(await resAdmin.json())
+    adminUpdated = resAdmin.ok
   } catch (err) {
-    console.log(err)
+    console.log('Error updating admin:', err)
   }
 
   try {
-    const resUser = await fetch('/api/editUser', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
+    const resUser = await fetch(urlUser, {
+      method: 'PATCH',
+      headers: commonHeaders,
       body: JSON.stringify(dataUser),
     })
-    console.log(await resUser.json())
+    userUpdated = resUser.ok
   } catch (err) {
-    console.log(err)
+    console.log('Error updating user:', err)
+  }
+
+  if (adminUpdated && userUpdated) {
+    alert('Profile updated successfully!')
+    location.reload()
   }
 })
 
+// Event listener for clicking the image caption
 editImage.addEventListener('click', () => {
   editImageInput.click()
 })
 
+// Event listener for image selection
 editImageInput.addEventListener('change', (e) => {
   imageFile = e.target.files[0]
   const reader = new FileReader()
@@ -63,6 +77,7 @@ editImageInput.addEventListener('change', (e) => {
   reader.readAsDataURL(imageFile)
 })
 
+// Utility function to convert image to base64
 const codeImageToBase64 = (file) => {
   return new Promise((resolve, reject) => {
     const reader = new FileReader()
@@ -80,15 +95,7 @@ const codeImageToBase64 = (file) => {
   })
 }
 
-const decodeBase64Image = (dataString) => {
-  const matches = dataString.match(/^data:([A-Za-z-+\/]+);base64,(.+)$/)
-
-  if (matches.length !== 3) {
-    return new Error('Invalid input string')
-  }
-
-  return {
-    type: matches[1],
-    data: Buffer.from(matches[2], 'base64'),
-  }
+// Display profile image if available
+if (loggedInUser.profileImage) {
+  profileImage.src = `data:${loggedInUser.profileImageType};base64,${loggedInUser.profileImage}`
 }

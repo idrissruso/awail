@@ -18,6 +18,9 @@
             var surname = FullName.split(' ')[1]
             var userId = `<%- loggedInUser._id %>`
             var adminId = `<%- admin._id %>`
+            var loggedInUser = <%- JSON.stringify(loggedInUser) %>;
+
+
             document.getElementById('name').placeholder = name
             document.getElementById('surname').placeholder = surname
           </script>
@@ -65,7 +68,7 @@
               name="phone"
               id="phone"
               class="form__box-info--input"
-              placeholder="Téléphone"
+              placeholder="<%- admin.Telephone %>"
               required
             />
           </div>
