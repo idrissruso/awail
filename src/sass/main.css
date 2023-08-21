@@ -2285,7 +2285,7 @@ input[type=checkbox]:checked:after {
   width: 100%;
   border-collapse: collapse;
   border-spacing: 0;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   font-weight: 400;
   color: #2c2c2c;
   background-color: #fff;
@@ -2300,16 +2300,20 @@ input[type=checkbox]:checked:after {
   font-weight: 600;
   box-shadow: 0 0.5rem 2rem rgba(44, 44, 44, 0.1);
   border-bottom: 1.3px solid rgba(32, 30, 64, 0.1);
+  background-color: #17a2b8;
+  color: #fff;
 }
 .manageStudents__row:not(:last-child) {
   border-bottom: 0.1rem solid #ecf2f4;
 }
 .manageStudents__cell {
-  padding: 1.5rem 2rem;
   text-align: center;
 }
 .manageStudents__cell:not(:last-child) {
   border-right: 0.1rem solid #ecf2f4;
+}
+.manageStudents__cell--header {
+  padding: 1rem 0.5rem;
 }
 .manageStudents__img {
   max-width: 5rem;
@@ -2320,8 +2324,8 @@ input[type=checkbox]:checked:after {
      object-position: center;
 }
 .manageStudents__btn--remove, .manageStudents__btn--modify, .manageStudents__btn--attendees, .manageStudents__btn--eye {
-  height: 2rem;
-  width: 2rem;
+  height: 1.3rem;
+  width: 1.3rem;
   cursor: pointer;
   transition: all 0.2s;
 }
