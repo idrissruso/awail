@@ -16,7 +16,11 @@ const userSchema = new mongoose.Schema({
     enum: ['Admin', 'Teacher', 'Student', 'Parent'],
     required: true,
   },
-  roleData: { type: mongoose.Schema.Types.ObjectId, refPath: 'role' },
+  roleData: {
+    type: mongoose.Schema.Types.ObjectId,
+    refPath: 'role',
+    required: [true, 'please enter a user role'],
+  },
   profileImage: { type: String },
   profileImageType: { type: String },
 })

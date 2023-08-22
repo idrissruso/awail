@@ -56,6 +56,8 @@ const StudentSchema = new mongoose.Schema({
   class: {
     type: String,
   },
+  profileImage: { type: String },
+  profileImageType: { type: String },
 })
 
 export default mongoose.models.Student ||

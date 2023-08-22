@@ -1207,6 +1207,7 @@ input[type=checkbox]:checked:after {
   justify-content: center;
   align-items: center;
   transition: all 0.3s;
+  overflow-y: auto;
   /* Apply negative margin to create a gap effect */
 }
 .viewStudent__subheading {
@@ -1279,11 +1280,18 @@ input[type=checkbox]:checked:after {
   flex-direction: column;
   align-items: center;
   row-gap: 1rem;
-  width: 30%;
+  width: 17rem;
+  height: 25rem;
   overflow: hidden;
 }
 .viewStudent__img {
-  width: 20rem;
+  border: 0.1rem solid #2c2c2c;
+  width: 100%;
+  height: 80%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
 }
 .viewStudent__img-caption {
   display: flex;
@@ -2307,6 +2315,7 @@ input[type=checkbox]:checked:after {
   border-bottom: 0.1rem solid #ecf2f4;
 }
 .manageStudents__cell {
+  padding: 0.5rem 1rem;
   text-align: center;
 }
 .manageStudents__cell:not(:last-child) {
@@ -2315,9 +2324,23 @@ input[type=checkbox]:checked:after {
 .manageStudents__cell--header {
   padding: 1rem 0.5rem;
 }
+.manageStudents__cell figure {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto;
+  box-shadow: 0 0.5rem 1rem rgba(32, 30, 64, 0.2);
+  transition: all 0.2s;
+  backface-visibility: hidden;
+}
+.manageStudents__cell figure:hover {
+  cursor: pointer;
+  transform: translateY(-0.3rem) scale(1.5);
+}
 .manageStudents__img {
-  max-width: 5rem;
-  min-height: 5rem;
+  width: 100%;
+  height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
   -o-object-position: center;

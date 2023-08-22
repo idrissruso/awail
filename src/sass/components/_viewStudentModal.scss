@@ -12,6 +12,7 @@
   @include pop;
   @include centralize;
   transition: all 0.3s;
+  overflow-y: auto;
   &__subheading {
     font-size: 2rem;
     font-weight: 600;
@@ -89,12 +90,18 @@
     flex-direction: column;
     align-items: center;
     row-gap: 1rem;
-    width: 30%;
+    width: 17rem;
+    height: 25rem;
     overflow: hidden;
   }
 
   &__img {
-    width: 20rem;
+    border: 0.1rem solid $color-gray-dark;
+    width: 100%;
+    height: 80%;
+    object-fit: cover;
+    object-position: center;
+
     &-caption {
       display: flex;
       gap: 1rem;

@@ -44,7 +44,10 @@
         },
         profession: parentProfession,
       },
-      class: selectedClass,
+      profileImage: profileImage
+        ? await codeImageToBase64(profileImage)
+        : undefined,
+      profileImageType: profileImage ? profileImage.type : undefined,
     }
 
     try {
@@ -57,37 +60,41 @@
       })
 
       if (response.ok) {
-        const userData = {
-          username: 'aa',
-          password: matricule,
-          role: 'Parent',
-          roleData: response._id,
-          profileImage: profileImage
-            ? await codeImageToBase64(profileImage)
-            : undefined,
-          profileImageType: profileImage ? profileImage.type : undefined,
-        }
+        console.log('Successful')
+        console.log(
+          response.json().then(async (data) => {
+            const userData = {
+              username: 'aa',
+              password: matricule,
+              role: 'Parent',
+              roleData: data._id,
+              profileImage: profileImage
+                ? await codeImageToBase64(profileImage)
+                : undefined,
+              profileImageType: profileImage ? profileImage.type : undefined,
+            }
+            try {
+              const response = await fetch(addUserUrl, {
+                method: 'POST',
+                headers: {
+                  'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(userData),
+              })
 
-        try {
-          const response = await fetch(addUserUrl, {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(userData),
+              if (response.ok) {
+                alert('Student added successfully!')
+                location.reload()
+              } else {
+                console.log(response.message)
+                console.log('Not successful')
+                alert('Error adding student')
+              }
+            } catch (error) {
+              console.error('Error:', error)
+            }
           })
-
-          if (response.ok) {
-            alert('Student added successfully!')
-            location.reload()
-          } else {
-            console.log(response.message)
-            console.log('Not successful')
-            alert('Error adding student')
-          }
-        } catch (error) {
-          console.error('Error:', error)
-        }
+        )
       } else {
         console.log('Not successful')
         alert('Error adding student')
