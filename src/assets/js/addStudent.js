@@ -44,6 +44,7 @@
         },
         profession: parentProfession,
       },
+      class: selectedClass,
       profileImage: profileImage
         ? await codeImageToBase64(profileImage)
         : undefined,

@@ -64,10 +64,11 @@
 <div class="modifyStudent hidden">
   <div class="editStudent">
     <div class="editStudent__container">
+      <div class=""></div>
       <h1 class="editStudent__heading">Mettre à jour le profil de l'élève</h1>
 
       <div class="editStudent__content">
-        <form class="form">
+        <form class="form" id="modifyForm">
           <div class="form__box-img">
             <figure>
               <img
@@ -75,7 +76,9 @@
                 alt="user image"
                 class="form__box-img--img"
               />
-              <figcaption class="form__box-img--caption">🖋️</figcaption>
+              <figcaption class="form__box-img--caption" id="editImageBtn">
+                🖋️
+              </figcaption>
             </figure>
 
             <span class="form__box-img--name">Idrissa Rusongeka</span>
@@ -508,3 +511,5 @@
 <!--scripts-->
 <script src="manageStudents.js"></script>
 <script src="fees.js"></script>
+<script src="editStudent.js"></script>
+<script src="deleteStudent.js"></script>

@@ -1,20 +1,9 @@
 ;(function () {
-  let modifyPopUp = document.querySelector('.modifyStudent')
-  let deletePopUp = document.querySelector('.deleteStudent')
   const attendeesPopUp = document.querySelector('.absenteeism')
   const absenteeismCancel = document.querySelector(
     '.add-attendance__cancel-button'
   )
   const absenteeismModal = document.querySelector('.absenteeism__modal')
-  const closeBtn = document.querySelector('.close')
-  const form_container = document.querySelector('.editStudent__container')
-  const deleteModalCancelBtn = document.querySelector(
-    '.deleteModal__btn--cancel'
-  )
-  const deleteMOdalConfirmBtn = document.querySelector(
-    '.deleteModal__btn--confirm'
-  )
-  const modalContent = document.querySelector('.deleteModal__content')
 
   const viewStudentModal = document.querySelector('.viewStudent')
 
@@ -36,48 +25,6 @@
       viewStudentModalContainer.classList.add('viewStudent-animate')
       showStudent(e.target.dataset.student)
     }
-  })
-
-  table.addEventListener('click', (e) => {
-    if (e.target.classList.contains('manageStudents__btn--modify')) {
-      modifyPopUp.classList.add('shown')
-      modifyPopUp.classList.toggle('hidden')
-      form_container.classList.add('editStudent__container--show')
-    }
-  })
-
-  closeBtn.addEventListener('click', () => {
-    modifyPopUp.classList.remove('shown')
-    modifyPopUp.classList.toggle('hidden')
-    form_container.classList.remove('editStudent__container--show')
-  })
-  modifyPopUp.addEventListener('click', (e) => {
-    if (e.target === modifyPopUp) {
-      modifyPopUp.classList.remove('shown')
-      modifyPopUp.classList.toggle('hidden')
-      form_container.classList.remove('editStudent__container--show')
-    }
-  })
-
-  modalContent.addEventListener('animationend', () => {
-    modalContent.classList.remove('shaking')
-  })
-
-  deleteModalCancelBtn.addEventListener('click', () => {
-    deletePopUp.classList.remove('modalShown')
-    deletePopUp.classList.toggle('modalHide')
-  })
-
-  deletePopUp.addEventListener('click', (e) => {
-    if (e.target === deletePopUp) {
-      deletePopUp.classList.remove('modalShown')
-      deletePopUp.classList.toggle('modalHide')
-    }
-  })
-
-  deleteMOdalConfirmBtn.addEventListener('click', () => {
-    deletePopUp.classList.remove('modalShown')
-    deletePopUp.classList.toggle('modalHide')
   })
 
   table.addEventListener('click', (e) => {
@@ -167,28 +114,24 @@
             <span class="payment-btn" data-student=${student._id}>Details</span>
           </td>
           <td class="manageStudents__cell">
-            <svg class="manageStudents__btn--modify">
+            <svg class="manageStudents__btn--modify" data-student=${
+              student._id
+            }>
               <use xlink:href="#icon-edit"></use>
             </svg>
-            <svg class="manageStudents__btn--remove">
-              <use xlink:href="#icon-bin2" class="bin"></use>
+            <svg class="manageStudents__btn--remove" data-student=${
+              student._id
+            }>
+              <use xlink:href="#icon-bin2" class="bin" data-student=${
+                student._id
+              }></use>
             </svg>
             <svg class="manageStudents__btn--attendees">
               <use xlink:href="#icon-calendar-check-o"></use>
             </svg>
           </td>
         </tr>`
-      const deleteBtn = document.querySelectorAll(
-        '.manageStudents__btn--remove'
-      )
       table.insertAdjacentHTML('beforeend', row)
-      deleteBtn.forEach((btn) => {
-        btn.addEventListener('click', (e) => {
-          deletePopUp.classList.add('modalShown')
-          deletePopUp.classList.toggle('modalHide')
-          modalContent.classList.add('shaking')
-        })
-      })
     })
   }
 

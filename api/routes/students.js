@@ -11,7 +11,7 @@ const router = express.Router()
 router.get('/getStudents', getStudents)
 router.get('/getStudent/:id', getStudent)
 router.post('/createStudent', createStudent)
-router.put('/updateStudent/:id', updateStudent)
+router.patch('/updateStudent/:id', updateStudent)
 router.delete('/deleteStudent/:id', deleteStudent)
 
 export default router
