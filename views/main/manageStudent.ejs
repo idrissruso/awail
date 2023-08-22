@@ -316,18 +316,7 @@
               <th>Mois</th>
             </tr>
           </thead>
-          <tbody id="payment__table-body">
-            <tr class="payment__history__row">
-              <td class="payment__history__cell">2023-08</td>
-              <td class="payment__history__cell">250 €</td>
-              <td class="payment__history__cell">Août</td>
-            </tr>
-            <tr class="payment__history__row">
-              <td class="payment__history__cell">2023-07</td>
-              <td class="payment__history__cell">200 €</td>
-              <td class="payment__history__cell">Juillet</td>
-            </tr>
-          </tbody>
+          <tbody id="payment__table-body"></tbody>
         </table>
         <form action="#" class="payment__new-payment">
           <h3 class="payment__new-payment--title">Nouveau Paiement</h3>
@@ -336,10 +325,11 @@
               >Date:</label
             >
             <input
-              type="month"
+              type="date"
               name="payment-date"
               id="payment-date"
               class="payment__new-payment--input"
+              name="payment_date"
               required
             />
           </div>
@@ -351,21 +341,22 @@
               name="payment-month"
               id="payment-month"
               class="payment__new-payment--input"
+              name="month"
               required
             >
               <option value="" disabled selected>Sélectionnez un mois</option>
-              <option value="January">Janvier</option>
-              <option value="February">Février</option>
-              <option value="March">Mars</option>
-              <option value="April">Avril</option>
-              <option value="May">Mai</option>
-              <option value="June">Juin</option>
-              <option value="July">Juillet</option>
-              <option value="August">Août</option>
-              <option value="September">Septembre</option>
-              <option value="October">Octobre</option>
-              <option value="November">Novembre</option>
-              <option value="December">Décembre</option>
+              <option value="Janvier">Janvier</option>
+              <option value="Février">Février</option>
+              <option value="Mars">Mars</option>
+              <option value="Avril">Avril</option>
+              <option value="Mai">Mai</option>
+              <option value="Juin">Juin</option>
+              <option value="Juillet">Juillet</option>
+              <option value="Août">Août</option>
+              <option value="Septembre">Septembre</option>
+              <option value="Octobre">Octobre</option>
+              <option value="Novembre">Novembre</option>
+              <option value="Décembre">Décembre</option>
             </select>
           </div>
 
@@ -378,6 +369,7 @@
               name="payment-amount"
               id="payment-amount"
               class="payment__new-payment--input"
+              name="amount"
               required
             />
           </div>

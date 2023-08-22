@@ -4,14 +4,18 @@
   const paymentCancelBtn = document.querySelector('.payment__close-btn')
   const paymentModalContent = document.querySelector('.payment__container')
   const table = document.querySelector('table')
+  const addFeeForm = document.querySelector('.payment__new-payment')
   const getFeesUrl = 'http://localhost:3000/api/getStudentFees/'
+  const createFeeUrl = 'http://localhost:3000/api/createFee'
+  let studentId
 
   table.addEventListener('click', (e) => {
     if (e.target.classList.contains('payment-btn')) {
       paymentModal.classList.add('paymentShown')
       paymentModal.classList.toggle('paymentHidden')
       paymentModalContent.classList.add('payment__container--show')
-      getStudentFees(e.target.dataset.student)
+      studentId = e.target.dataset.student
+      getStudentFees(studentId)
     }
   })
 
@@ -51,4 +55,40 @@
       tbody.insertAdjacentHTML('beforeend', tr)
     })
   }
+  function getDataFromForm(formElement) {
+    const formData = new FormData(formElement)
+    const data = {}
+
+    for (const [key, value] of formData.entries()) {
+      data[key] = value
+    }
+
+    return data
+  }
+  addFeeForm.addEventListener('submit', async (e) => {
+    e.preventDefault()
+    const data = getDataFromForm(addFeeForm)
+    const fee = {
+      student: studentId,
+      amount: data['payment-amount'],
+      month: data['payment-month'],
+      payment_date: data['payment-date'],
+    }
+    console.log(fee)
+    try {
+      const response = await fetch(createFeeUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(fee), // Use the 'fee' object here
+      })
+      if (response.ok) {
+        alert('Paiement effectué avec succès')
+        getStudentFees(studentId)
+      }
+    } catch (err) {
+      alert(err)
+    }
+  })
 })()
