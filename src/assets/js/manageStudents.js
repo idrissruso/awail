@@ -15,9 +15,6 @@
     '.deleteModal__btn--confirm'
   )
   const modalContent = document.querySelector('.deleteModal__content')
-  const paymentModal = document.querySelector('.payment')
-  const paymentCancelBtn = document.querySelector('.payment__close-btn')
-  const paymentModalContent = document.querySelector('.payment__container')
 
   const viewStudentModal = document.querySelector('.viewStudent')
 
@@ -97,20 +94,6 @@
     absenteeismModal.classList.remove('absenteeism__container--show')
   })
 
-  table.addEventListener('click', (e) => {
-    if (e.target.classList.contains('payment-btn')) {
-      paymentModal.classList.add('paymentShown')
-      paymentModal.classList.toggle('paymentHidden')
-      paymentModalContent.classList.add('payment__container--show')
-    }
-  })
-
-  paymentCancelBtn.addEventListener('click', () => {
-    paymentModal.classList.remove('paymentShown')
-    paymentModal.classList.toggle('paymentHidden')
-    paymentModalContent.classList.remove('payment__container--show')
-  })
-
   viewStudentModal.addEventListener('click', (e) => {
     if (e.target.classList.contains('viewStudent__close-btn')) {
       viewStudentModal.classList.remove('viewStudent-show')
@@ -181,7 +164,7 @@
           }</td>
           <td class="manageStudents__cell">${student.contact_info.address}</td>
           <td class="manageStudents__cell">
-            <span class="payment-btn">Details</span>
+            <span class="payment-btn" data-student=${student._id}>Details</span>
           </td>
           <td class="manageStudents__cell">
             <svg class="manageStudents__btn--modify">

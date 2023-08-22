@@ -5,6 +5,7 @@ import students from './routes/students.js'
 import courses from './routes/courses.js'
 import teachers from './routes/teachers.js'
 import admins from './routes/admins.js'
+import fees from './routes/fees.js'
 
 const router = express.Router()
 
@@ -14,5 +15,6 @@ router.use('/', students)
 router.use('/', courses)
 router.use('/', teachers)
 router.use('/', admins)
+router.use('/', fees)
 
 export default router

@@ -5,8 +5,8 @@ const feeSchema = new mongoose.Schema({
     ref: 'Student',
     required: [true, 'Please provide a student'],
   },
-  month: { type: String, required: true },
-  amount: { type: Number, required: true },
+  month: { type: String, required: [true, 'Please provide month'] },
+  amount: { type: Number, required: [true, 'Please provide amount'] },
   payment_date: { type: Date, default: Date.now },
 })
 

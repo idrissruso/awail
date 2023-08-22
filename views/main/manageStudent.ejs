@@ -304,89 +304,93 @@
 
 <div class="payment paymentHidden">
   <div class="payment__container">
-    <p class="payment__close-btn">✖️</p>
-    <h2 class="payment__history-title">Historique des paiements</h2>
-    <div class="payment__history">
-      <table class="payment__history-table">
-        <thead class="payment__history__row--header">
-          <tr class="payment__history__row">
-            <th>Date</th>
-            <th>Montant</th>
-            <th>Mois</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr class="payment__history__row">
-            <td class="payment__history__cell">2023-08</td>
-            <td class="payment__history__cell">250 €</td>
-            <td class="payment__history__cell">Août</td>
-          </tr>
-          <tr class="payment__history__row">
-            <td class="payment__history__cell">2023-07</td>
-            <td class="payment__history__cell">200 €</td>
-            <td class="payment__history__cell">Juillet</td>
-          </tr>
-        </tbody>
-      </table>
-      <form action="#" class="payment__new-payment">
-        <h3 class="payment__new-payment--title">Nouveau Paiement</h3>
-        <div class="payment__new-payment--group">
-          <label for="payment-date" class="payment__new-payment--label"
-            >Date:</label
-          >
-          <input
-            type="month"
-            name="payment-date"
-            id="payment-date"
-            class="payment__new-payment--input"
-            required
-          />
-        </div>
-        <div class="payment__new-payment--group">
-          <label for="payment-month" class="payment__new-payment--label"
-            >Mois:</label
-          >
-          <select
-            name="payment-month"
-            id="payment-month"
-            class="payment__new-payment--input"
-            required
-          >
-            <option value="" disabled selected>Sélectionnez un mois</option>
-            <option value="January">Janvier</option>
-            <option value="February">Février</option>
-            <option value="March">Mars</option>
-            <option value="April">Avril</option>
-            <option value="May">Mai</option>
-            <option value="June">Juin</option>
-            <option value="July">Juillet</option>
-            <option value="August">Août</option>
-            <option value="September">Septembre</option>
-            <option value="October">Octobre</option>
-            <option value="November">Novembre</option>
-            <option value="December">Décembre</option>
-          </select>
-        </div>
+    <div class="payment__container-content">
+      <p class="payment__close-btn">✖️</p>
+      <h2 class="payment__history-title">Historique des paiements</h2>
+      <div class="payment__history">
+        <table class="payment__history-table">
+          <thead class="payment__history__row--header">
+            <tr class="payment__history__row">
+              <th>Date</th>
+              <th>Montant</th>
+              <th>Mois</th>
+            </tr>
+          </thead>
+          <tbody id="payment__table-body">
+            <tr class="payment__history__row">
+              <td class="payment__history__cell">2023-08</td>
+              <td class="payment__history__cell">250 €</td>
+              <td class="payment__history__cell">Août</td>
+            </tr>
+            <tr class="payment__history__row">
+              <td class="payment__history__cell">2023-07</td>
+              <td class="payment__history__cell">200 €</td>
+              <td class="payment__history__cell">Juillet</td>
+            </tr>
+          </tbody>
+        </table>
+        <form action="#" class="payment__new-payment">
+          <h3 class="payment__new-payment--title">Nouveau Paiement</h3>
+          <div class="payment__new-payment--group">
+            <label for="payment-date" class="payment__new-payment--label"
+              >Date:</label
+            >
+            <input
+              type="month"
+              name="payment-date"
+              id="payment-date"
+              class="payment__new-payment--input"
+              required
+            />
+          </div>
+          <div class="payment__new-payment--group">
+            <label for="payment-month" class="payment__new-payment--label"
+              >Mois:</label
+            >
+            <select
+              name="payment-month"
+              id="payment-month"
+              class="payment__new-payment--input"
+              required
+            >
+              <option value="" disabled selected>Sélectionnez un mois</option>
+              <option value="January">Janvier</option>
+              <option value="February">Février</option>
+              <option value="March">Mars</option>
+              <option value="April">Avril</option>
+              <option value="May">Mai</option>
+              <option value="June">Juin</option>
+              <option value="July">Juillet</option>
+              <option value="August">Août</option>
+              <option value="September">Septembre</option>
+              <option value="October">Octobre</option>
+              <option value="November">Novembre</option>
+              <option value="December">Décembre</option>
+            </select>
+          </div>
 
-        <div class="payment__new-payment--group">
-          <label for="payment-amount" class="payment__new-payment--label"
-            >Montant:</label
-          >
-          <input
-            type="number"
-            name="payment-amount"
-            id="payment-amount"
-            class="payment__new-payment--input"
-            required
-          />
-        </div>
-        <div class="payment__new-payment--group">
-          <button class="payment__new-payment--btn">Ajouter</button>
-        </div>
-      </form>
+          <div class="payment__new-payment--group">
+            <label for="payment-amount" class="payment__new-payment--label"
+              >Montant:</label
+            >
+            <input
+              type="number"
+              name="payment-amount"
+              id="payment-amount"
+              class="payment__new-payment--input"
+              required
+            />
+          </div>
+          <div class="payment__new-payment--group">
+            <button class="payment__new-payment--btn">Ajouter</button>
+          </div>
+        </form>
+      </div>
     </div>
   </div>
 </div>
+
+<!-- view student-->
 
 <div class="viewStudent viewStudent-hide">
   <div class="viewStudent__container">
@@ -511,3 +515,4 @@
 
 <!--scripts-->
 <script src="manageStudents.js"></script>
+<script src="fees.js"></script>
