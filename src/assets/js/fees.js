@@ -29,7 +29,6 @@
     try {
       const response = await fetch(`${getFeesUrl}${studentId}`)
       const data = await response.json()
-      console.log(data)
       displayFees(data)
     } catch (err) {
       alert(err)
@@ -74,7 +73,6 @@
       month: data['payment-month'],
       payment_date: data['payment-date'],
     }
-    console.log(fee)
     try {
       const response = await fetch(createFeeUrl, {
         method: 'POST',

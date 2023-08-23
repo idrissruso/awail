@@ -41,6 +41,8 @@ const teacherSchema = new mongoose.Schema({
       ref: 'Course',
     },
   ],
+  profileImage: { type: String },
+  profileImageType: { type: String },
 })
 
 export default mongoose.models.Teacher ||

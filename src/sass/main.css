@@ -224,13 +224,22 @@ input[type=checkbox]:checked:after {
   color: #fff;
 }
 .dashboard__card #second__card {
-  background-color: #28a745;
+  background-color: #218838;
+}
+.dashboard__card #third-card {
+  background-color: hsl(273, 80%, 14%);
+}
+.dashboard__card #third__card-btn {
+  background-color: #1e0632;
+}
+.dashboard__card #third__card-btn:hover {
+  background-color: #190529;
 }
 .dashboard__card #second__card-btn {
-  background-color: #259b40;
+  background-color: #1e7c33;
 }
 .dashboard__card #second__card-btn:hover {
-  background-color: #23923d;
+  background-color: #1c7330;
 }
 .dashboard__card-content {
   padding: 1rem;
@@ -2896,7 +2905,7 @@ input[type=checkbox]:checked:after {
   width: 100%;
   border-collapse: collapse;
   border-spacing: 0;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   font-weight: 400;
   color: #2c2c2c;
   background-color: #fff;
@@ -2911,28 +2920,38 @@ input[type=checkbox]:checked:after {
   font-weight: 600;
   box-shadow: 0 0.5rem 2rem rgba(44, 44, 44, 0.1);
   border-bottom: 1.3px solid rgba(32, 30, 64, 0.1);
+  background-color: #17a2b8;
+  color: #fff;
+  position: relative;
+  z-index: 1;
 }
 .manageTeachers__row:not(:last-child) {
   border-bottom: 0.1rem solid #ecf2f4;
 }
 .manageTeachers__cell {
-  padding: 1.5rem 2rem;
+  padding: 0.5rem 1rem;
   text-align: center;
 }
 .manageTeachers__cell:not(:last-child) {
   border-right: 0.1rem solid #ecf2f4;
 }
 .manageTeachers__img {
-  max-width: 5rem;
-  min-height: 5rem;
+  max-width: 4rem;
+  min-height: 4rem;
+  border-radius: 50%;
   -o-object-fit: cover;
      object-fit: cover;
   -o-object-position: center;
      object-position: center;
+  box-shadow: 0 0.5rem 1rem rgba(32, 30, 64, 0.2);
+  transition: all 0.3s;
+}
+.manageTeachers__img:hover {
+  transform: translateY(-0.3rem) scale(1.4);
 }
 .manageTeachers__btn--remove, .manageTeachers__btn--modify, .manageTeachers__btn--eye {
-  height: 2rem;
-  width: 2rem;
+  height: 1.5rem;
+  width: 1.5rem;
   cursor: pointer;
   transition: all 0.2s;
 }

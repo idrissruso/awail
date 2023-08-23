@@ -47,31 +47,7 @@
             Actions
           </th>
         </tr>
-        <tr class="manageTeachers__row manageTeachers__row-content">
-          <td class="manageTeachers__cell">1</td>
-          <td class="manageTeachers__cell">
-            <img
-              src="author.JPG"
-              alt="Enseignant 1"
-              class="manageTeachers__img"
-            />
-          </td>
-          <td class="manageTeachers__cell">T12345</td>
-          <td class="manageTeachers__cell">Marie Dupont</td>
-          <td class="manageTeachers__cell">1985-09-10</td>
-          <td class="manageTeachers__cell">555-6789</td>
-          <td class="manageTeachers__cell">marie.dupont@example.com</td>
-          <td class="manageTeachers__cell">789 Oak Ave</td>
-          <td class="manageTeachers__cell">Math, Science</td>
-          <td class="manageTeachers__cell">
-            <svg class="manageTeachers__btn--modify">
-              <use xlink:href="#icon-edit"></use>
-            </svg>
-            <svg class="manageTeachers__btn--remove deleteTeacherBtn">
-              <use xlink:href="#icon-bin2"></use>
-            </svg>
-          </td>
-        </tr>
+        <tbody id="teachers__tBody"></tbody>
         <!-- Repeat the same structure for other teachers -->
       </table>
     </div>
@@ -182,20 +158,27 @@
             <label class="addNewTeacher-form__label" for="teacher-subjects"
               >Matières</label
             >
-            <input
-              type="text"
+            <select
               name="teacher-subjects"
               id="teacher-subjects"
               class="addNewTeacher-form__input"
-              placeholder="Matières"
               required
-            />
+            >
+              <option value="" name="teacher-course" disabled selected>
+                Choisissez une cours
+              </option>
+            </select>
           </div>
+
           <div class="addNewTeacher-form__group">
             <label class="addNewTeacher-form__label" for="teacher-img"
               >Photo</label
             >
-            <input type="file" class="addNewTeacher-form__input" />
+            <input
+              type="file"
+              class="addNewTeacher-form__input"
+              id="profileImg"
+            />
           </div>
         </div>
         <h3 id="heading">Adresse</h3>
@@ -267,7 +250,7 @@
           <div class="form__box-img">
             <figure>
               <img
-                src="author.JPG"
+                src="profile.png"
                 alt="user image"
                 class="form__box-img--img"
               />

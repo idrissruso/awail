@@ -5,13 +5,24 @@
   color: #fff;
 
   #second__card {
-    background-color: $color-green;
+    background-color: $color-green-darker;
+  }
+
+  #third-card {
+    background-color: $primary-color;
+  }
+
+  #third__card-btn {
+    background-color: darken($primary-color, 3%);
+    &:hover {
+      background-color: darken($primary-color, 5%);
+    }
   }
 
   #second__card-btn {
-    background-color: darken($color-green, 3%);
+    background-color: darken($color-green-darker, 3%);
     &:hover {
-      background-color: darken($color-green, 5%);
+      background-color: darken($color-green-darker, 5%);
     }
   }
 

@@ -92,7 +92,7 @@ app.use('/api', apiRoutes)
 
 app.get('/main/:file', async function (req, res) {
   const filePath = path.join(__dirname, 'views/main', req.params.file)
-  const user = await getUserById(req.user.roleData, req.user.role)
+  const user = await getUserById(req.user?.roleData, req.user?.role)
   res.render(filePath, { admin: user, loggedInUser: req.user })
 })
 //app.get('/main/:file', function (req, res) {
