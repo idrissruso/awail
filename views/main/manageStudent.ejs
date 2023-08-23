@@ -235,10 +235,10 @@
     <h2 class="absenteeism__title">Suivi de Présence</h2>
     <section class="student-profile">
       <p class="student-profile__absence-rate">
-        Taux d'Absence Non Excusée: <span id="absence-rate">15%</span>
+        Taux d'Absence Non Excusée: <span id="ex_absence-rate">15%</span>
       </p>
       <p class="student-profile__absence-rate">
-        Taux d'Absence Excusée: <span id="absence-rate">45%</span>
+        Taux d'Absence Excusée: <span id="nex_absence-rate">45%</span>
       </p>
     </section>
     <section class="attendance-list">
@@ -252,7 +252,7 @@
             <th>Status</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody id="absenteeism__tbody">
           <tr>
             <td>123456</td>
             <td>Ahmet Yılmaz</td>
@@ -395,7 +395,7 @@
       <div class="viewStudent__content">
         <div class="viewStudent__info">
           <figure class="viewStudent__img-box">
-            <img src="author.JPG" alt="user image" class="viewStudent__img" />
+            <img src="profile.png" alt="user image" class="viewStudent__img" />
             <figcaption class="viewStudent__img-caption">
               <svg class="viewStudent__btn--modify">
                 <use xlink:href="#icon-edit"></use>
@@ -513,3 +513,4 @@
 <script src="fees.js"></script>
 <script src="editStudent.js"></script>
 <script src="deleteStudent.js"></script>
+<script src="absenteeisme.js"></script>

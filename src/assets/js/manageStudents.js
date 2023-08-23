@@ -1,10 +1,4 @@
 ;(function () {
-  const attendeesPopUp = document.querySelector('.absenteeism')
-  const absenteeismCancel = document.querySelector(
-    '.add-attendance__cancel-button'
-  )
-  const absenteeismModal = document.querySelector('.absenteeism__modal')
-
   const viewStudentModal = document.querySelector('.viewStudent')
 
   const viewStudentModalContainer = document.querySelector(
@@ -25,20 +19,6 @@
       viewStudentModalContainer.classList.add('viewStudent-animate')
       showStudent(e.target.dataset.student)
     }
-  })
-
-  table.addEventListener('click', (e) => {
-    if (e.target.classList.contains('manageStudents__btn--attendees')) {
-      attendeesPopUp.classList.add('absenteeismShown')
-      attendeesPopUp.classList.toggle('absenteeismHide')
-      absenteeismModal.classList.add('absenteeism__container--show')
-    }
-  })
-
-  absenteeismCancel.addEventListener('click', () => {
-    attendeesPopUp.classList.remove('absenteeismShown')
-    attendeesPopUp.classList.toggle('absenteeismHide')
-    absenteeismModal.classList.remove('absenteeism__container--show')
   })
 
   viewStudentModal.addEventListener('click', (e) => {
@@ -126,7 +106,9 @@
                 student._id
               }></use>
             </svg>
-            <svg class="manageStudents__btn--attendees">
+            <svg class="manageStudents__btn--attendees" data-student=${
+              student._id
+            }>
               <use xlink:href="#icon-calendar-check-o"></use>
             </svg>
           </td>

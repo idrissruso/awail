@@ -5,11 +5,6 @@ const attendanceSchema = new mongoose.Schema({
     ref: 'Student',
     required: [true, 'Please provide a student'],
   },
-  class: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'Class',
-    required: [true, 'Please provide class'],
-  },
   date: {
     type: Date,
     default: Date.now,
@@ -18,6 +13,10 @@ const attendanceSchema = new mongoose.Schema({
     type: String,
     enum: ['Present', 'Absent'],
     required: [true, 'Please provide a status'],
+  },
+  explanation: {
+    type: String,
+    enum: ['Justified', 'Non-Justified'],
   },
 })
 
