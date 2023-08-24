@@ -26,6 +26,7 @@
   const searchInput = document.querySelector('#teacher')
   const profileImageInput = document.querySelector('#profileImg')
   let profileImage
+  let teacherId
 
   // Event listeners
 
@@ -95,26 +96,32 @@
     addNewTeacherContainer.classList.remove('addNewTeacher-animate')
   })
 
-  deleteTeacherBtn.forEach((btn) => {
-    btn.addEventListener('click', () => {
-      deleteTeacherModal.classList.add('modalShown')
-      deleteTeacherModal.classList.toggle('modalHide')
+  tBody.addEventListener('click', (e) => {
+    let target = e.target
+    if (target.tagName === 'use') {
+      target = target.parentNode
+    }
+    if (
+      target.classList.contains('manageTeachers__btn--remove') ||
+      target.classList.contains('bin')
+    ) {
+      deleteTeacherPopUp.classList.add('modalShown')
+      deleteTeacherPopUp.classList.toggle('modalHide')
       deleteTeacherContainer.classList.add('shaking')
-    })
+      teacherId = target.dataset.teacher
+    }
+    if (target.classList.contains('manageTeachers__btn--modify')) {
+      modifyPopUp.classList.add('editTeacher-show')
+      modifyPopUp.classList.toggle('editTeacher-hide')
+      modifyTeacherForm.classList.add('editTeacher-animate')
+      teacherId = target.dataset.teacher
+    }
   })
 
   deleteTeacherModalCancelBtn.addEventListener('click', () => {
     deleteTeacherModal.classList.remove('modalShown')
     deleteTeacherModal.classList.toggle('modalHide')
     deleteTeacherContainer.classList.remove('shaking')
-  })
-
-  modifyBtn.forEach((btn) => {
-    btn.addEventListener('click', () => {
-      modifyPopUp.classList.add('editTeacher-show')
-      modifyPopUp.classList.toggle('editTeacher-hide')
-      modifyTeacherForm.classList.add('editTeacher-animate')
-    })
   })
 
   modifyTeacherCancelBtn.addEventListener('click', () => {
@@ -181,11 +188,15 @@
               teacher.courses ? teacher.courses.join(', ') : ''
             }</td>
             <td class="manageTeachers__cell">
-              <svg class="manageTeachers__btn--modify">
+              <svg class="manageTeachers__btn--modify" teacher = "${
+                teacher._id
+              }">
                 <use xlink:href="#icon-edit"></use>
               </svg>
-              <svg class="manageTeachers__btn--remove deleteTeacherBtn">
-                <use xlink:href="#icon-bin2"></use>
+              <svg class="manageTeachers__btn--remove deleteTeacherBtn" teacher = "${
+                teacher._id
+              }">
+                <use xlink:href="#icon-bin2" class = "bin"></use>
               </svg>
             </td>
           </tr>`
