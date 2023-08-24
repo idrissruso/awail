@@ -1,7 +1,6 @@
 ;(function () {
   const tBody = document.querySelector('#teachers__tBody')
-  const modifyPopUp = document.querySelector('.modifyTeacher')
-  const deleteTeacherPopUp = document.querySelector('.deleteTeacher')
+
   const addNewTeacherBtn = document.querySelector('#addTeacher')
   const addNewTeacherPopUp = document.querySelector('.addNewTeacher')
   const addNewTeacherForm = document.querySelector('.addNewTeacher-form')
@@ -12,15 +11,6 @@
     '.addNewTeacher__container'
   )
 
-  const deleteTeacherBtn = document.querySelectorAll('.deleteTeacherBtn')
-  const deleteTeacherModal = document.querySelector('.deleteTeacher')
-  const deleteTeacherModalCancelBtn = document.querySelector(
-    '.deleteModal__btn--cancel'
-  )
-  const deleteTeacherContainer = document.querySelector('.deleteModal__content')
-  const modifyBtn = document.querySelectorAll('.manageTeachers__btn--modify')
-  const modifyTeacherCancelBtn = document.querySelector('#close')
-  const modifyTeacherForm = document.querySelector('.editTeacher')
   const getTeachersUrl = 'http://localhost:3000/api/getTeachers'
   let teachers = []
   const searchInput = document.querySelector('#teacher')
@@ -96,40 +86,6 @@
     addNewTeacherContainer.classList.remove('addNewTeacher-animate')
   })
 
-  tBody.addEventListener('click', (e) => {
-    let target = e.target
-    if (target.tagName === 'use') {
-      target = target.parentNode
-    }
-    if (
-      target.classList.contains('manageTeachers__btn--remove') ||
-      target.classList.contains('bin')
-    ) {
-      deleteTeacherPopUp.classList.add('modalShown')
-      deleteTeacherPopUp.classList.toggle('modalHide')
-      deleteTeacherContainer.classList.add('shaking')
-      teacherId = target.dataset.teacher
-    }
-    if (target.classList.contains('manageTeachers__btn--modify')) {
-      modifyPopUp.classList.add('editTeacher-show')
-      modifyPopUp.classList.toggle('editTeacher-hide')
-      modifyTeacherForm.classList.add('editTeacher-animate')
-      teacherId = target.dataset.teacher
-    }
-  })
-
-  deleteTeacherModalCancelBtn.addEventListener('click', () => {
-    deleteTeacherModal.classList.remove('modalShown')
-    deleteTeacherModal.classList.toggle('modalHide')
-    deleteTeacherContainer.classList.remove('shaking')
-  })
-
-  modifyTeacherCancelBtn.addEventListener('click', () => {
-    modifyPopUp.classList.remove('editTeacher-show')
-    modifyPopUp.classList.toggle('editTeacher-hide')
-    modifyTeacherForm.classList.remove('editTeacher-animate')
-  })
-
   const getTeachers = async () => {
     try {
       const response = await fetch(getTeachersUrl)
@@ -188,15 +144,19 @@
               teacher.courses ? teacher.courses.join(', ') : ''
             }</td>
             <td class="manageTeachers__cell">
-              <svg class="manageTeachers__btn--modify" teacher = "${
+              <svg class="manageTeachers__btn--modify" data-teacher = "${
                 teacher._id
               }">
-                <use xlink:href="#icon-edit"></use>
+                <use xlink:href="#icon-edit" data-teacher = "${
+                  teacher._id
+                }"></use>
               </svg>
-              <svg class="manageTeachers__btn--remove deleteTeacherBtn" teacher = "${
+              <svg class="manageTeachers__btn--remove deleteTeacherBtn" data-teacher = "${
                 teacher._id
               }">
-                <use xlink:href="#icon-bin2" class = "bin"></use>
+                <use xlink:href="#icon-bin2" class = "bin" data-teacher = "${
+                  teacher._id
+                }"></use>
               </svg>
             </td>
           </tr>`

@@ -23,6 +23,14 @@
   let student
   let profileImg
 
+  const deFormateDate = (date) => {
+    const date_ = new Date(date)
+    const year = date_.getFullYear()
+    const month = (date_.getMonth() + 1).toString().padStart(2, '0')
+    const day = date_.getDate().toString().padStart(2, '0')
+    return `${year}-${month}-${day}`
+  }
+
   table.addEventListener('click', async (e) => {
     if (e.target.classList.contains('manageStudents__btn--modify')) {
       modifyPopUp.classList.add('shown')
@@ -32,7 +40,7 @@
       matriculeInput.value = student.serial_number
       nomCompletInput.value = student.fullName
       telephoneInput.value = student.contact_info.phone
-      dateNaissanceInput.value = student.dateOfBirth
+      dateNaissanceInput.value = deFormateDate(student.dateOfBirth)
       sexInput.value = student.gender.gender
       classeInput.value = student.class
       parentNameInput.value = student.parent.fullName
