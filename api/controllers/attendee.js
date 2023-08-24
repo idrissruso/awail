@@ -1,4 +1,5 @@
 import attendee from '../models/attendee.js'
+import mongoose from 'mongoose'
 
 // Get all attendees
 export const getAttendees = async (req, res) => {
@@ -11,7 +12,9 @@ export const getAttendees = async (req, res) => {
 }
 export const getStudentAttendees = async (req, res) => {
   try {
-    const attendees = await attendee.find({ student: req.params.id })
+    const attendees = await attendee.find({
+      student: new mongoose.Types.ObjectId(req.params.id),
+    })
     res.status(200).json(attendees)
   } catch (err) {
     res.status(500).json({ message: err.message })
@@ -20,7 +23,10 @@ export const getStudentAttendees = async (req, res) => {
 
 // Create a new attendee
 export const createAttendee = async (req, res) => {
-  const newAttendee = new attendee(req.body)
+  const newAttendee = new attendee({
+    ...req.body,
+    student: new mongoose.Types.ObjectId(req.body.student),
+  })
 
   try {
     await newAttendee.save()
@@ -57,12 +63,16 @@ export const deleteAttendee = async (req, res) => {
 // Update a specific attendee by ID
 export const updateAttendee = async (req, res) => {
   try {
-    const attendee = await attendee.findByIdAndUpdate(req.params.id, req.body, {
-      new: true,
-    })
-    if (!attendee)
+    const attendee_ = await attendee.findByIdAndUpdate(
+      req.params.id,
+      req.body,
+      {
+        new: true,
+      }
+    )
+    if (!attendee_)
       return res.status(404).json({ message: 'attendee not found' })
-    res.status(200).json(attendee)
+    res.status(200).json(attendee_)
   } catch (err) {
     res.status(400).json({ message: err.message })
   }

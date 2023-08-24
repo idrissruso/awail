@@ -8,10 +8,9 @@
     try {
       const response = await fetch(getStudentsUrl)
       const students = await response.json()
-      console.log(students)
       return students
     } catch (error) {
-      console.log(error)
+      alert('Une erreur est survenue')
     }
   }
 

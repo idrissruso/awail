@@ -233,61 +233,40 @@
 <div class="absenteeism absenteeismHide">
   <div class="absenteeism__modal">
     <h2 class="absenteeism__title">Suivi de Présence</h2>
-    <section class="student-profile">
-      <p class="student-profile__absence-rate">
-        Taux d'Absence Non Excusée: <span id="ex_absence-rate">15%</span>
-      </p>
-      <p class="student-profile__absence-rate">
-        Taux d'Absence Excusée: <span id="nex_absence-rate">45%</span>
-      </p>
-    </section>
+    <section class="student-profile"></section>
     <section class="attendance-list">
       <h3 class="attendance-list__title">Historique d'Absence</h3>
       <table class="attendance-list__table">
         <thead>
           <tr>
-            <th>Matricule</th>
-            <th>Nom</th>
             <th>Date d'Absence</th>
             <th>Status</th>
           </tr>
         </thead>
         <tbody id="absenteeism__tbody">
-          <tr>
-            <td>123456</td>
-            <td>Ahmet Yılmaz</td>
-            <td>2023-08-01</td>
-            <td>Non Excusée</td>
-          </tr>
-          <tr>
-            <td>123456</td>
-            <td>Ahmet Yılmaz</td>
-            <td>2023-08-03</td>
-            <td>Excusée</td>
-          </tr>
+          <!-- Add more rows for other dates -->
         </tbody>
       </table>
     </section>
     <section class="add-attendance">
-      <h3 class="add-attendance__title">Ajouter une Nouvelle Absence</h3>
+      <h3 class="add-attendance__title">Modifier le Status</h3>
       <form class="add-attendance__form">
         <div class="input-group">
           <label for="absence-date" class="input-group__label"
             >Date d'Absence:</label
           >
-          <input
-            type="date"
+          <select
             id="absence-date"
             name="absence-date"
             required
             class="input-group__input"
-          />
+          ></select>
         </div>
         <div class="input-group">
           <label for="status" class="input-group__label">Statut:</label>
           <select id="status" name="status" required class="input-group__input">
-            <option value="unexcused">Non Excusée</option>
-            <option value="excused">Excusée</option>
+            <option value="Non Excusée">Non Excusée</option>
+            <option value="Excusée">Excusée</option>
           </select>
         </div>
         <div class="input-group input-group__actions">
@@ -295,7 +274,7 @@
             Annuler
           </button>
           <button type="submit" class="add-attendance__submit-button btn">
-            Ajouter
+            Modifier
           </button>
         </div>
       </form>
