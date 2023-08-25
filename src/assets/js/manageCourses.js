@@ -4,7 +4,8 @@
     '#2a9d8f', // Teal// Burnt Sienna
     '#374c80', // Navy Blue
   ]
-
+  const getCoursesUrl = 'http://localhost:3000/api/getCourses'
+  const createCourseUrl = 'http://localhost:3000/api/createCourse'
   const manageCourses = document.querySelector('.manageCourses')
   const coursesDiv = document.querySelector('.manageCourses__courses')
   const addNewCourseBtn = document.querySelector('.add-newCourse')
@@ -25,18 +26,38 @@
     '.courseDetailsModal__container'
   )
   const CoursDetailsModal = document.querySelector('.courseDetailsModal')
+  let coursesList = []
+
+  // Get all courses from the database
+  const getCourses = async () => {
+    try {
+      const response = await fetch(getCoursesUrl)
+        .then((res) => res.json())
+        .then((data) => {
+          coursesList = [...data]
+        })
+    } catch (err) {
+      alert('une erreur est survenue')
+      console.error(err)
+    }
+  }
+
+  const addNewCourse = async (course) => {
+    try {
+      const response = await fetch(createCourseUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(course),
+      })
+    } catch (err) {
+      alert('une erreur est survenue')
+      console.error(err)
+    }
+  }
 
   // Fixed query selector
-  const coursesList = [
-    {
-      name: 'MATH',
-      Enseignant: 'M. Jean',
-    },
-    {
-      name: 'PHY',
-      Enseignant: 'M. Jean Paul',
-    },
-  ]
 
   const getRandomColor = () => {
     const randomIndex = Math.floor(Math.random() * colors.length)
@@ -61,14 +82,15 @@
   }
 
   const displayCourses = () => {
+    getCourses()
     coursesList.forEach((course) => {
       const courseDiv = document.createElement('div')
       courseDiv.classList.add('course')
       courseDiv.innerHTML = `
-        <div class="course__name">${course.name}</div>
-        <div class="course__teacher">${course.Enseignant}</div>
+        <div class="course__name">${course.course_name}</div>
+        <div class="course__teacher">${course.teacher}</div>
         <div class="course__actions">
-          <button class="btn btn--edit">Details</button>
+          <button class="btn btn--edit" data-id ="${course._id}">Details</button>
         </div>
       `
 
@@ -115,7 +137,6 @@
     addNewCourseModal.classList.remove('addNewCoursModal--show')
     addNewCourseModal.classList.add('addNewCoursModal--hide')
     addNewCourseContainer.classList.remove('addNewCoursContainer--animate')
-    console.log('cancel')
   })
 
   addNewCourseModalForm.addEventListener('submit', (event) => {
@@ -125,11 +146,11 @@
       document.querySelector('#instructor').selectedOptions[0].value
 
     const course = {
-      name: courseName,
-      Enseignant: courseTeacher,
+      course_name: courseName,
+      teacher: courseTeacher,
     }
 
-    coursesList.push(course)
+    addNewCourse(course)
 
     addNewCourseModal.classList.remove('addNewCoursModal--show')
     addNewCourseModal.classList.add('addNewCoursModal--hide')
@@ -143,7 +164,14 @@
     coursesDiv.innerHTML = ''
 
     // Display the courses again
-    displayCourses()
+    getCourses()
+      .then(() => {
+        console.log(coursesList)
+        displayCourses()
+      })
+      .catch((err) => {
+        console.error(err)
+      })
   })
 
   CoursDetailsCloseBtn.addEventListener('click', (event) => {
@@ -154,5 +182,11 @@
     )
   })
 
-  displayCourses()
+  getCourses()
+    .then(() => {
+      displayCourses()
+    })
+    .catch((err) => {
+      console.error(err)
+    })
 })()

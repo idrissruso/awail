@@ -1,12 +1,6 @@
 import mongoose from 'mongoose'
 import crypto from 'crypto'
-
-const counterSchema = new mongoose.Schema({
-  _id: { type: String, required: true },
-  sequence_value: { type: Number, default: 1 },
-})
-
-const Counter = mongoose.model('Counter', counterSchema)
+import Counter from './counter.js'
 
 const userSchema = new mongoose.Schema({
   username: { type: String, required: true, unique: true },
