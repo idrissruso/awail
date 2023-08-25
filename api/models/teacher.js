@@ -35,12 +35,7 @@ const teacherSchema = new mongoose.Schema({
     type: String,
     required: [true, 'Please provide a qualification'],
   },
-  courses: [
-    {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: 'Course',
-    },
-  ],
+
   profileImage: { type: String },
   profileImageType: { type: String },
 })

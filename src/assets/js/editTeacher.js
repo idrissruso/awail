@@ -11,10 +11,12 @@
     '.deleteModal__btn--cancel'
   )
   const deleteTeacherContainer = document.querySelector('.deleteModal__content')
-  const getTeachersUrl = 'http://localhost:3000/api/getTeacher'
+  const getTeacherUrl = 'http://localhost:3000/api/getTeacher'
+  const updateTeacherUrl = 'http://localhost:3000/api/updateTeacher'
   const profilImg = document.querySelector('.form__box-img--img')
   const imgInput = document.querySelector('#profileImg')
   const imgLabel = document.querySelector('.form__box-img--caption')
+  let imgFile
 
   imgLabel.addEventListener('click', () => {
     imgInput.click()
@@ -27,22 +29,72 @@
     reader.onload = () => {
       profilImg.src = reader.result
     }
+    imgFile = file
   })
 
-  const encodeImage64base = (file) => {
+  const codeImageToBase64 = (file) => {
     return new Promise((resolve, reject) => {
       const reader = new FileReader()
+
       reader.onload = () => {
-        const base64EncodedData = reader.result.split(',')[1]
-        resolve(base64EncodedData)
+        if (reader.result.startsWith('data:image/')) {
+          const base64EncodedData = reader.result.split(',')[1]
+          resolve(base64EncodedData)
+        } else {
+          reject(new Error('Invalid data URL format'))
+        }
       }
+
       reader.onerror = (error) => {
         reject(error)
       }
+
       reader.readAsDataURL(file)
     })
   }
 
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault()
+
+    var teacherData = {
+      fullName: form.nomComplet.value,
+      serial_number: form.matricule.value,
+      contact_info: {
+        email: form.email.value,
+        phone: form.telephone.value,
+        address: form.address.value,
+      },
+      dateOfBirth: form.dateNaissance.value,
+      qualification: form.qualification.value,
+      profileImage: imgInput.files[0]
+        ? await codeImageToBase64(imgInput.files[0])
+        : undefined,
+      profilImgType: imgInput.files[0] ? imgInput.files[0].type : undefined,
+    }
+
+    try {
+      const response = await fetch(`${updateTeacherUrl}/${teacherId}`, {
+        method: 'PATCH',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(teacherData),
+      })
+
+      if (response.ok) {
+        alert('teacher updated successfully')
+        window.location.reload()
+      } else {
+        alert('une erreur est survenue')
+        const error = await response.json().then((data) => {
+          console.log(data)
+        })
+      }
+    } catch (err) {
+      alert('une erreur est survenue' + err)
+      console.error(err)
+    }
+  })
   // Event listeners
 
   deleteTeacherModalCancelBtn.addEventListener('click', () => {
@@ -50,6 +102,7 @@
     deleteTeacherModal.classList.toggle('modalHide')
     deleteTeacherContainer.classList.remove('shaking')
   })
+
   tBody.addEventListener('click', async (e) => {
     let target = e.target
     if (target.tagName === 'use') {
@@ -68,6 +121,7 @@
       modifyPopUp.classList.add('editTeacher-show')
       modifyPopUp.classList.toggle('editTeacher-hide')
       modifyTeacherForm.classList.add('editTeacher-animate')
+      teacherId = target.dataset.teacher
 
       try {
         const teacher = await getTeacher(target.dataset.teacher)
@@ -90,7 +144,7 @@
 
   const getTeacher = async (id) => {
     try {
-      const res = await fetch(`${getTeachersUrl}/${id}`)
+      const res = await fetch(`${getTeacherUrl}/${id}`)
       const data = await res.json()
       if (res.ok) {
         const teacher = data
@@ -100,6 +154,8 @@
         form.dateNaissance.value = deFormateDate(teacher.dateOfBirth)
         form.matricule.value = teacher.serial_number
         profilImg.src = displayImg(teacher)
+        form.qualification.value = teacher.qualification
+        form.address.value = teacher.contact_info.address
       }
     } catch (err) {
       alert('une erreur est survenue' + err + 'form second')

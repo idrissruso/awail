@@ -140,9 +140,7 @@
             <td class="manageTeachers__cell">${
               teacher.contact_info.address
             }</td>
-            <td class="manageTeachers__cell">${
-              teacher.courses ? teacher.courses.join(', ') : ''
-            }</td>
+            <td class="manageTeachers__cell">${teacher.qualification}</td>
             <td class="manageTeachers__cell">
               <svg class="manageTeachers__btn--modify" data-teacher = "${
                 teacher._id
