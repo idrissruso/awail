@@ -2,10 +2,13 @@
   const colors = [
     // Dark Teal
     '#2a9d8f', // Teal// Burnt Sienna
-    '#374c80', // Navy Blue
+    '#374c80',
+    // Navy Blue
   ]
   const getCoursesUrl = 'http://localhost:3000/api/getCourses'
   const createCourseUrl = 'http://localhost:3000/api/createCourse'
+  const getTeachersUrl = 'http://localhost:3000/api/getTeachers'
+  const getTeacherByIdUrl = 'http://localhost:3000/api/getTeacher/'
   const manageCourses = document.querySelector('.manageCourses')
   const coursesDiv = document.querySelector('.manageCourses__courses')
   const addNewCourseBtn = document.querySelector('.add-newCourse')
@@ -26,6 +29,10 @@
     '.courseDetailsModal__container'
   )
   const CoursDetailsModal = document.querySelector('.courseDetailsModal')
+  const selectTeacher = document.querySelector('#instructor')
+  const editBtn = document.querySelector('#editBtn')
+  const deleteBtn = document.querySelector('#deleteBtn')
+
   let coursesList = []
 
   // Get all courses from the database
@@ -35,6 +42,40 @@
         .then((res) => res.json())
         .then((data) => {
           coursesList = [...data]
+        })
+    } catch (err) {
+      alert('une erreur est survenue')
+      console.error(err)
+    }
+  }
+
+  const getTeacherById = async (id) => {
+    try {
+      const response = await fetch(getTeacherByIdUrl + id)
+        .then((res) => res.json())
+        .then((data) => {
+          return data
+        })
+      return response
+    } catch (err) {
+      alert('une erreur est survenue')
+      console.error(err)
+    }
+  }
+
+  // Get all teachers from the database
+  const getTeachers = async () => {
+    try {
+      const response = await fetch(getTeachersUrl)
+        .then((res) => res.json())
+        .then((data) => {
+          teachersList = [...data]
+          data.forEach((teacher) => {
+            const option = document.createElement('option')
+            option.value = teacher._id
+            option.textContent = teacher.fullName
+            selectTeacher.appendChild(option)
+          })
         })
     } catch (err) {
       alert('une erreur est survenue')
@@ -81,16 +122,29 @@
     return luminance > 128 ? '#333' : '#fff'
   }
 
-  const displayCourses = () => {
-    getCourses()
-    coursesList.forEach((course) => {
+  const displayCourses = async () => {
+    await getCourses()
+    for (const course of coursesList) {
       const courseDiv = document.createElement('div')
       courseDiv.classList.add('course')
+      let teacherName = 'teacher'
+      if (course.teacher) {
+        try {
+          const teacherData = await getTeacherById(course.teacher)
+          console.log(teacherData)
+          teacherName = teacherData.fullName
+        } catch (err) {
+          console.error(err)
+        }
+      }
+
+      console.log(teacherName)
+
       courseDiv.innerHTML = `
         <div class="course__name">${course.course_name}</div>
-        <div class="course__teacher">${course.teacher}</div>
+        <div class="course__teacher">${teacherName}</div>
         <div class="course__actions">
-          <button class="btn btn--edit" data-id ="${course._id}">Details</button>
+          <button class="btn btn--edit" data-id="${course._id}">Details</button>
         </div>
       `
 
@@ -103,7 +157,7 @@
       courseDiv.style.color = textColor
 
       coursesDiv.appendChild(courseDiv)
-    })
+    }
 
     // Add the "Add new" div element as the last child of coursesDiv
     const addNewDiv = document.createElement('div')
@@ -124,6 +178,7 @@
       addNewCourseModal.classList.add('addNewCoursModal--show')
       addNewCourseModal.classList.remove('addNewCoursModal--hide')
       addNewCourseContainer.classList.add('addNewCoursContainer--animate')
+      getTeachers()
     } else if (event.target.matches('.btn--edit, .btn--edit *')) {
       CoursDetailsModal.classList.add('courseDetailsModal--show')
       CoursDetailsModal.classList.remove('courseDetailsModal--hide')
@@ -141,6 +196,7 @@
 
   addNewCourseModalForm.addEventListener('submit', (event) => {
     event.preventDefault()
+
     const courseName = document.querySelector('#course-name').value
     const courseTeacher =
       document.querySelector('#instructor').selectedOptions[0].value
@@ -189,4 +245,6 @@
     .catch((err) => {
       console.error(err)
     })
+
+  deleteBtn.addEventListener('click', (event) => {})
 })()
