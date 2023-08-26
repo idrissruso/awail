@@ -13,6 +13,10 @@ const courseSchema = new mongoose.Schema({
   code: {
     type: String,
   },
+  credits: {
+    type: Number,
+    required: [true, 'Please Provide a course credits'],
+  },
 })
 
 courseSchema.pre('save', async function (next) {

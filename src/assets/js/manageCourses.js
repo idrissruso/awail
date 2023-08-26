@@ -9,9 +9,12 @@
   const createCourseUrl = 'http://localhost:3000/api/createCourse'
   const getTeachersUrl = 'http://localhost:3000/api/getTeachers'
   const getTeacherByIdUrl = 'http://localhost:3000/api/getTeacher/'
+  const getCourseByIdUrl = 'http://localhost:3000/api/getCourse/'
+  const deleteCourseByIdUrl = 'http://localhost:3000/api/deleteCourse/'
+  const updateCoursUrl = 'http://localhost:3000/api/updateCourse/'
   const manageCourses = document.querySelector('.manageCourses')
   const coursesDiv = document.querySelector('.manageCourses__courses')
-  const addNewCourseBtn = document.querySelector('.add-newCourse')
+  const submitBtn = document.querySelector('.addNewCoursModal__btn--add')
   const addNewCourseModal = document.querySelector('.addNewCoursModal')
   const addNewCourseContainer = document.querySelector(
     '.addNewCoursModal__container'
@@ -32,7 +35,11 @@
   const selectTeacher = document.querySelector('#instructor')
   const editBtn = document.querySelector('#editBtn')
   const deleteBtn = document.querySelector('#deleteBtn')
+  const detail = document.querySelector(
+    '.courseDetailsModal__container-content'
+  )
 
+  let editCourseId
   let coursesList = []
 
   // Get all courses from the database
@@ -63,9 +70,26 @@
     }
   }
 
+  // delete course by id
+
+  const deleteCourseById = async (id) => {
+    try {
+      const response = await fetch(deleteCourseByIdUrl + id, {
+        method: 'DELETE',
+      })
+      if (response.ok) {
+        alert('le cours a été supprimé avec succès')
+      }
+    } catch (err) {
+      alert('une erreur est survenue')
+      console.error(err)
+    }
+  }
+
   // Get all teachers from the database
   const getTeachers = async () => {
     try {
+      selectTeacher.innerHTML = ''
       const response = await fetch(getTeachersUrl)
         .then((res) => res.json())
         .then((data) => {
@@ -98,6 +122,52 @@
     }
   }
 
+  const updateCourse = async (course, id) => {
+    try {
+      const response = await fetch(updateCoursUrl + id, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(course),
+      })
+    } catch (err) {
+      alert('une erreur est survenue')
+      console.error(err)
+    }
+  }
+
+  const displayCourseDetails = async (id) => {
+    try {
+      const response = await fetch(getCourseByIdUrl + id)
+        .then((res) => res.json())
+        .then(async (data) => {
+          detail.innerHTML = `<div class="courseDetailsModal__info">
+        <p><span class="infoLabel">Id du cours :</span> ${data.code}</p>
+        <p><span class="infoLabel">Titre du cours :</span> ${
+          data.course_name
+        }</p>
+        <p><span class="infoLabel">Instructeur :</span> ${await getTeacherById(
+          data.teacher
+        ).then((data) => data.fullName)}</p>
+        <p><span class="infoLabel">Crédits :</span> ${data.credits}</p>
+         
+        </p>
+
+        <p></p>
+      </div>
+
+      <div class="courseDetailsModal__actions">
+        <button class="actionButton edit" id="editBtn" data-id = "${id}">Modifier</button>
+        <button class="actionButton delete" id="deleteBtn" data-id = "${id}">Supprimer</button>
+        <button class="actionButton cancel" id="cancelBtn" data-id = "${id}">Annuler</button>
+      </div>`
+        })
+    } catch (err) {
+      alert('une erreur est survenue')
+      console.error(err)
+    }
+  }
   // Fixed query selector
 
   const getRandomColor = () => {
@@ -131,14 +201,11 @@
       if (course.teacher) {
         try {
           const teacherData = await getTeacherById(course.teacher)
-          console.log(teacherData)
           teacherName = teacherData.fullName
         } catch (err) {
           console.error(err)
         }
       }
-
-      console.log(teacherName)
 
       courseDiv.innerHTML = `
         <div class="course__name">${course.course_name}</div>
@@ -175,6 +242,7 @@
 
   manageCourses.addEventListener('click', (event) => {
     if (event.target.matches('.add-newCourse, .add-newCourse *')) {
+      submitBtn.textContent = 'Ajouter'
       addNewCourseModal.classList.add('addNewCoursModal--show')
       addNewCourseModal.classList.remove('addNewCoursModal--hide')
       addNewCourseContainer.classList.add('addNewCoursContainer--animate')
@@ -185,6 +253,35 @@
       CoursDetailsContainer.classList.add(
         'courseDetailsModal__container--animate'
       )
+      displayCourseDetails(event.target.dataset.id)
+    }
+  })
+
+  detail.addEventListener('click', (event) => {
+    if (event.target.matches('.cancel, .cancel *')) {
+      CoursDetailsModal.classList.remove('courseDetailsModal--show')
+      CoursDetailsModal.classList.add('courseDetailsModal--hide')
+      CoursDetailsContainer.classList.remove(
+        'courseDetailsModal__container--animate'
+      )
+    } else if (event.target.matches('.edit, .edit *')) {
+      submitBtn.textContent = 'Modifier'
+      selectTeacher.innerHTML = ''
+      editCourseId = event.target.dataset.id
+      CoursDetailsModal.classList.remove('courseDetailsModal--show')
+      CoursDetailsModal.classList.add('courseDetailsModal--hide')
+      CoursDetailsContainer.classList.remove(
+        'courseDetailsModal__container--animate'
+      )
+      addNewCourseModal.classList.add('addNewCoursModal--show')
+      addNewCourseModal.classList.remove('addNewCoursModal--hide')
+      addNewCourseContainer.classList.add('addNewCoursContainer--animate')
+      getTeachers()
+    } else if (event.target.matches('.delete, .delete *')) {
+      const id = event.target.dataset.id
+      deleteCourseById(id)
+      //reload the page
+      location.reload()
     }
   })
 
@@ -200,13 +297,21 @@
     const courseName = document.querySelector('#course-name').value
     const courseTeacher =
       document.querySelector('#instructor').selectedOptions[0].value
+    const courseCredits = document.querySelector('#credits').value
 
     const course = {
       course_name: courseName,
       teacher: courseTeacher,
+      credits: courseCredits,
     }
 
-    addNewCourse(course)
+    const action = submitBtn.textContent
+    if (action === 'Modifier') {
+      const id = editCourseId
+      updateCourse(course, id)
+    } else if (action === 'Ajouter') {
+      addNewCourse(course)
+    }
 
     addNewCourseModal.classList.remove('addNewCoursModal--show')
     addNewCourseModal.classList.add('addNewCoursModal--hide')
@@ -230,14 +335,6 @@
       })
   })
 
-  CoursDetailsCloseBtn.addEventListener('click', (event) => {
-    CoursDetailsModal.classList.remove('courseDetailsModal--show')
-    CoursDetailsModal.classList.add('courseDetailsModal--hide')
-    CoursDetailsContainer.classList.remove(
-      'courseDetailsModal__container--animate'
-    )
-  })
-
   getCourses()
     .then(() => {
       displayCourses()
@@ -245,6 +342,4 @@
     .catch((err) => {
       console.error(err)
     })
-
-  deleteBtn.addEventListener('click', (event) => {})
 })()
