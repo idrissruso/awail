@@ -5,7 +5,7 @@
   const modifyTeacherForm = document.querySelector('.editTeacher')
   const form = document.querySelector('#editForm')
   const deleteTeacherPopUp = document.querySelector('.deleteTeacher')
-  const deleteTeacherBtn = document.querySelectorAll('.deleteTeacherBtn')
+  const deleteTeacherBtn = document.querySelector('.deleteModal__btn--confirm')
   const deleteTeacherModal = document.querySelector('.deleteTeacher')
   const deleteTeacherModalCancelBtn = document.querySelector(
     '.deleteModal__btn--cancel'
@@ -13,6 +13,8 @@
   const deleteTeacherContainer = document.querySelector('.deleteModal__content')
   const getTeacherUrl = 'http://localhost:3000/api/getTeacher'
   const updateTeacherUrl = 'http://localhost:3000/api/updateTeacher'
+  const deleteTeacherUrl = 'http://localhost:3000/api/deleteTeacher'
+  const deleteUserByRoleData = 'http://localhost:3000/api/deleteUserByRoleData'
   const profilImg = document.querySelector('.form__box-img--img')
   const imgInput = document.querySelector('#profileImg')
   const imgLabel = document.querySelector('.form__box-img--caption')
@@ -30,6 +32,32 @@
       profilImg.src = reader.result
     }
     imgFile = file
+  })
+
+  const deleteTeacher = async (id) => {
+    try {
+      const res = await fetch(`${deleteTeacherUrl}/${id}`, {
+        method: 'DELETE',
+      })
+      if (res.ok) {
+        const response = await fetch(`${deleteUserByRoleData}/${id}`, {
+          method: 'DELETE',
+        })
+        if (response.ok) {
+          alert('teacher deleted successfully')
+          window.location.reload()
+        }
+      } else {
+        alert('une erreur est survenue')
+      }
+    } catch (err) {
+      alert('une erreur est survenue' + err)
+      console.error(err)
+    }
+  }
+
+  deleteTeacherBtn.addEventListener('click', () => {
+    deleteTeacher(teacherId)
   })
 
   const codeImageToBase64 = (file) => {
