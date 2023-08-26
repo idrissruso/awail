@@ -4,7 +4,7 @@
   const totalUsers = document.querySelector('#totalUsers')
   const maleUsers = document.querySelector('#maleUsers')
   const FemaleUsers = document.querySelector('#FemaleUsers')
-
+  const activeUsers = document.querySelector('#actifUsers')
   const addUserBtn = document.querySelector('#addUser')
   const blockedUsersBtn = document.querySelector('#blockedUsers')
   var addNewUserModal = document.querySelector('.addNewUser')
@@ -27,16 +27,36 @@
   )
   const getUsersUrl = 'http://localhost:3000/api/getUsers'
   const searchInput = document.querySelector('#user')
+  const tableBody = document.querySelector('#tableBody')
+  const imgInput = document.querySelector('#image')
   let femaleUsers = 0
   let male = 0
   let total = 0
   let users = []
+
+  const codeImageToBase64 = (file) => {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader()
+
+      reader.onload = () => {
+        const base64EncodedData = reader.result.split(',')[1]
+        resolve(base64EncodedData)
+      }
+
+      reader.onerror = (error) => {
+        reject(error)
+      }
+
+      reader.readAsDataURL(file)
+    })
+  }
 
   const getUsersStatistics = async () => {
     try {
       const response = await fetch(getUsersUrl)
       const data = await response.json()
       total = data.length
+
       for (const user of data) {
         try {
           const response = await fetch(
@@ -60,6 +80,7 @@
       totalUsers.textContent = total
       maleUsers.textContent = male
       FemaleUsers.textContent = femaleUsers
+      activeUsers.textContent = total
     }
   }
 
@@ -98,7 +119,6 @@
   }
 
   async function updateTable(users) {
-    const tableBody = document.querySelector('#tableBody')
     let tableContent = ''
     const role = (role) => {
       switch (role) {
@@ -125,9 +145,6 @@
           user.role === 'Admin' ? 'Admin' : 'Utilisateur'
         }</td>
         <td class="addUser__cell">${role(user.role)}</td>
-        <td class="addUser__cell">
-          <span class="addUser__btn--block" data-user=${user._id}>Bloquer</span>
-        </td>
       </tr>`
     }
     tableBody.innerHTML = tableContent
@@ -135,10 +152,78 @@
 
   getUsers()
 
-  addUserBtn.addEventListener('click', () => {
+  addUserBtn.addEventListener('click', async () => {
     addNewUserModal.classList.add('addNewUserShow')
     addNewUserModal.classList.toggle('addNewUserHide')
     addNewUserContainer.classList.toggle('addNewUser__container--show')
+
+    const addUserForm = document.querySelector('#addUserForm')
+    addUserForm.addEventListener('submit', async (e) => {
+      e.preventDefault()
+      const formData = new FormData(addUserForm)
+      const name = formData.get('name')
+      const surname = formData.get('surname')
+      const gender = formData.get('gender')
+      const serialNumber = formData.get('matricule')
+      const email = formData.get('email')
+      const telephone = formData.get('mobile')
+      const role = formData.get('permission')
+
+      const admin = {
+        FullName: `${name} ${surname}`,
+        Email: email,
+        Telephone: telephone,
+        Role: role,
+        gender: gender,
+        serial_number: serialNumber,
+      }
+
+      const user = {
+        username: email,
+        password: serialNumber,
+        role: 'Admin',
+        roleData: '',
+        profileImage: imgInput.files[0]
+          ? await codeImageToBase64(imgInput.files[0])
+          : undefined,
+        profileImageType: imgInput.files[0]
+          ? imgInput.files[0].type
+          : undefined,
+      }
+
+      try {
+        const response = await fetch('http://localhost:3000/api/createAdmin', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(admin),
+        })
+
+        if (response.ok) {
+          const adminData = await response.json()
+          user.roleData = adminData._id
+
+          const res = await fetch('http://localhost:3000/api/createUser', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(user),
+          })
+          const userData = await res.json()
+          console.log(userData)
+          if (res.ok) {
+            alert('Utilisateur ajouté avec succès')
+            location.reload()
+          }
+        }
+      } catch (err) {
+        alert(
+          `An error occurred while adding the user. Error message: ${err.message}`
+        )
+      }
+    })
   })
 
   addNewUserModal.addEventListener('click', (e) => {
@@ -175,12 +260,6 @@
     blockageModal.classList.remove('blockUserModal-show')
     blockageModal.classList.add('blockUserModal-hide')
     blockedUsersContainer.classList.toggle('shaking')
-  })
-
-  blockedUsersBtn.addEventListener('click', () => {
-    blockedUSersModal.classList.add('blockedUsersModal-show')
-    blockedUSersModal.classList.toggle('blockedUsersModal-hide')
-    blockedUsersTable.classList.toggle('blockedUsersTable-show')
   })
 
   blockedUsersCancelBtn.addEventListener('click', () => {

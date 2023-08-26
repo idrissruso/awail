@@ -1,19 +1,19 @@
 <div class="addUser">
   <div class="header">
     <div class="header__box header__box--total-users">
-      <span class="header__box-value" id="totalUsers">10</span>
+      <span class="header__box-value" id="totalUsers">🔃</span>
       <span class="header__box-label">Utilisateurs Totals</span>
     </div>
     <div class="header__box header__box--male-users">
-      <span class="header__box-value" id="maleUsers">6</span>
+      <span class="header__box-value" id="maleUsers">🔃</span>
       <span class="header__box-label">Utilisateurs Masculins</span>
     </div>
     <div class="header__box header__box--female-users">
-      <span class="header__box-value" id="FemaleUsers">4</span>
+      <span class="header__box-value" id="FemaleUsers">🔃</span>
       <span class="header__box-label">Utilisatrices Féminines</span>
     </div>
     <div class="header__box header__box--active-users">
-      <span class="header__box-value" id="actifUsers">2</span>
+      <span class="header__box-value" id="actifUsers">🔃</span>
       <span class="header__box-label">Utilisateurs Actifs</span>
     </div>
   </div>
@@ -27,14 +27,14 @@
         </span>
         Ajouter un utilisateur
       </button>
-      <button class="addUser__header-blockedUsers" id="blockedUsers">
+      <!--<button class="addUser__header-blockedUsers" id="blockedUsers">
         <span>
           <svg class="addUser__header-icon--block" id="block-icon">
             <use xlink:href="#icon-x-circle"></use>
           </svg>
         </span>
         Les Utilisateurs Bloqués
-      </button>
+      </button>-->
       <div class="addUser__searchbar">
         <label class="addUser__searchbar-label" for="user">Rechercher :</label>
         <input type="text" class="addUser__searchbar-input" id="user" />
@@ -49,7 +49,6 @@
           <th class="addUser__cell addUser__cell--header">Nom Complet</th>
           <th class="addUser__cell addUser__cell--header">Permission</th>
           <th class="addUser__cell addUser__cell--header">Statut</th>
-          <th class="addUser__cell addUser__cell--header">Action</th>
         </tr>
         <tbody id="tableBody"></tbody>
       </table>
@@ -61,7 +60,7 @@
 <div class="addNewUser addNewUserHide">
   <div class="addNewUser__container">
     <h1 class="addNewUser__heading">Ajouter un Utilisateur</h1>
-    <form class="addNewUser__form">
+    <form class="addNewUser__form" id="addUserForm">
       <div class="addNewUser__form-group">
         <label class="addNewUser__label" for="name">Nom :</label>
         <input
@@ -118,27 +117,16 @@
       </div>
 
       <div class="addNewUser__form-group">
-        <label class="addUser__label" for="password">Mot de passe :</label>
+        <label class="addUser__label" for="matricule"> Matricule : </label>
         <input
           class="addNewUser__input"
-          type="password"
-          id="password"
-          name="password"
+          type="text"
+          id="matricule"
+          name="matricule"
           required
         />
       </div>
-      <div class="addNewUser__form-group">
-        <label class="addUser__label" for="confirmPassword"
-          >Confirmer le Mot de passe :</label
-        >
-        <input
-          class="addNewUser__input"
-          type="password"
-          id="confirmPassword"
-          name="confirmPassword"
-          required
-        />
-      </div>
+
       <div class="addNewUser__form-group">
         <label class="addNewUser__label" for="image">Image :</label>
         <input
@@ -149,6 +137,8 @@
           accept="image/*"
         />
       </div>
+      <div class="addNewUser__form-group"></div>
+
       <div class="addNewUser__buttons">
         <button class="addNewUser__btn addNewUser__btn-submit" type="submit">
           Ajouter

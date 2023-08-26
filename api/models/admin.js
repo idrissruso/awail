@@ -4,6 +4,10 @@ const adminSchema = new mongoose.Schema({
     type: String,
     required: [true, 'Please Provide a Full Name'],
   },
+  serial_number: {
+    type: String,
+    required: [true, 'Please Provide a serial number'],
+  },
   Email: {
     type: String,
     required: [true, 'Please Provide a Email'],
