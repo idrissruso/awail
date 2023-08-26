@@ -141,13 +141,25 @@
   }
 
   &__row {
+    transition: all 0.2s;
     &--header {
       font-weight: 600;
       box-shadow: 0 0.5rem 2rem rgba($color-gray-dark, 0.1);
+      background-color: $color-primary-light-1;
+      color: #fff;
       @include line-dark;
+      &:hover {
+        background-color: $color-primary-light-1 !important;
+        cursor: default !important;
+      }
     }
     &:not(:last-child) {
       border-bottom: 0.1rem solid $color-gray;
+    }
+
+    &:hover {
+      cursor: pointer;
+      background-color: darken(#fff, $amount: 15%);
     }
   }
 

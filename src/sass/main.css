@@ -2716,13 +2716,26 @@ input[type=checkbox]:checked:after {
   background-color: #fff;
   border: 0.1rem solid #ecf2f4;
 }
+.addUser__row {
+  transition: all 0.2s;
+}
 .addUser__row--header {
   font-weight: 600;
   box-shadow: 0 0.5rem 2rem rgba(44, 44, 44, 0.1);
+  background-color: #17a2b8;
+  color: #fff;
   border-bottom: 1.3px solid rgba(32, 30, 64, 0.1);
+}
+.addUser__row--header:hover {
+  background-color: #17a2b8 !important;
+  cursor: default !important;
 }
 .addUser__row:not(:last-child) {
   border-bottom: 0.1rem solid #ecf2f4;
+}
+.addUser__row:hover {
+  cursor: pointer;
+  background-color: #d9d9d9;
 }
 .addUser__cell {
   padding: 1.5rem 2rem;

@@ -1,19 +1,19 @@
 <div class="addUser">
   <div class="header">
     <div class="header__box header__box--total-users">
-      <span class="header__box-value">10</span>
+      <span class="header__box-value" id="totalUsers">10</span>
       <span class="header__box-label">Utilisateurs Totals</span>
     </div>
     <div class="header__box header__box--male-users">
-      <span class="header__box-value">6</span>
+      <span class="header__box-value" id="maleUsers">6</span>
       <span class="header__box-label">Utilisateurs Masculins</span>
     </div>
     <div class="header__box header__box--female-users">
-      <span class="header__box-value">4</span>
+      <span class="header__box-value" id="FemaleUsers">4</span>
       <span class="header__box-label">Utilisatrices Féminines</span>
     </div>
     <div class="header__box header__box--active-users">
-      <span class="header__box-value">2</span>
+      <span class="header__box-value" id="actifUsers">2</span>
       <span class="header__box-label">Utilisateurs Actifs</span>
     </div>
   </div>
@@ -45,46 +45,13 @@
       <table class="addUser__table">
         <tr class="addUser__row addUser__row--header">
           <th class="addUser__cell addUser__cell--header">#</th>
-          <th class="addUser__cell addUser__cell--header">Nom</th>
-          <th class="addUser__cell addUser__cell--header">Prénom</th>
-          <th class="addUser__cell addUser__cell--header">E-mail</th>
-          <th class="addUser__cell addUser__cell--header">Mobile</th>
+          <th class="addUser__cell addUser__cell--header">Nom d'utilisateur</th>
+          <th class="addUser__cell addUser__cell--header">Nom Complet</th>
           <th class="addUser__cell addUser__cell--header">Permission</th>
+          <th class="addUser__cell addUser__cell--header">Statut</th>
           <th class="addUser__cell addUser__cell--header">Action</th>
         </tr>
-        <tr class="addUser__row">
-          <td class="addUser__cell">1</td>
-          <td class="addUser__cell">Alice</td>
-          <td class="addUser__cell">Example</td>
-          <td class="addUser__cell">alice@example.com</td>
-          <td class="addUser__cell">1234567890</td>
-          <td class="addUser__cell">Admin</td>
-          <td class="addUser__cell">
-            <span class="addUser__btn--block">Bloquer</span>
-          </td>
-        </tr>
-        <tr class="addUser__row">
-          <td class="addUser__cell">2</td>
-          <td class="addUser__cell">Bob</td>
-          <td class="addUser__cell">Example</td>
-          <td class="addUser__cell">bob@example.com</td>
-          <td class="addUser__cell">9876543210</td>
-          <td class="addUser__cell">User</td>
-          <td class="addUser__cell">
-            <span class="addUser__btn--block">Bloquer</span>
-          </td>
-        </tr>
-        <tr class="addUser__row">
-          <td class="addUser__cell">3</td>
-          <td class="addUser__cell">Charlie</td>
-          <td class="addUser__cell">Example</td>
-          <td class="addUser__cell">charlie@example.com</td>
-          <td class="addUser__cell">4567890123</td>
-          <td class="addUser__cell">User</td>
-          <td class="addUser__cell">
-            <span class="addUser__btn--block">Bloquer</span>
-          </td>
-        </tr>
+        <tbody id="tableBody"></tbody>
       </table>
     </div>
   </div>

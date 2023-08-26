@@ -7,6 +7,7 @@ import {
   deleteUser,
   updateUser,
   getUserByUsername,
+  deleteUserByRoleData,
 } from '../controllers/users.js'
 
 const router = express.Router()
@@ -16,5 +17,6 @@ router.get('/getUser/:id', getUser)
 router.get('/getUserByUsername/:username', getUserByUsername)
 router.delete('/deleteUser/:id', deleteUser)
 router.patch('/updateUser/:id', updateUser)
+router.delete('/deleteUserByRoleData/:roleData', deleteUserByRoleData)
 
 export default router

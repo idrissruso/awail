@@ -70,3 +70,12 @@ export const updateUser = async (req, res) => {
     res.status(400).json({ message: err.message })
   }
 }
+export const deleteUserByRoleData = async (req, res) => {
+  try {
+    const user = await User.findOneAndDelete({ roleData: req.params.roleData })
+    if (!user) return res.status(404).json({ message: 'User not found' })
+    res.status(204).json(user)
+  } catch (err) {
+    res.status(400).json({ message: err.message })
+  }
+}

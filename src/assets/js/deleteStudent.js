@@ -50,16 +50,41 @@
     }
   })
 
-  confirmBtn.addEventListener('click', async () => {
-    const deleteStudentUrl = `http://localhost:3000/api/deleteStudent/${studentId}`
+  const deleteUser = async (id) => {
+    const deleteUserUrl = `http://localhost:3000/api/deleteUserByRoleData/${id}`
+
     try {
-      const response = await fetch(deleteStudentUrl, {
+      const response = await fetch(deleteUserUrl, {
         method: 'DELETE',
       })
 
       if (response.status === 204) {
         alert('Eleve supprimé avec succès')
         window.location.reload()
+      }
+    } catch (err) {
+      console.log(err)
+    }
+  }
+
+  confirmBtn.addEventListener('click', async () => {
+    const deleteStudentUrl = `http://localhost:3000/api/deleteStudent/${studentId}`
+    const deleteUserUrl = `http://localhost:3000/api/deleteUserByRoleData/${studentId}`
+
+    try {
+      const response = await fetch(deleteStudentUrl, {
+        method: 'DELETE',
+      })
+
+      if (response.status === 204) {
+        const userResponse = await fetch(deleteUserUrl, {
+          method: 'DELETE',
+        })
+
+        if (userResponse.status === 204) {
+          alert('Eleve supprimé avec succès')
+          window.location.reload()
+        }
       }
     } catch (err) {
       console.log(err)
