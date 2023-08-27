@@ -61,4 +61,11 @@ router.post('/', (req, res, next) => {
   })(req, res, next)
 })
 
+// logout route
+router.get('/logout', (req, res) => {
+  req.logout(() => {
+    res.redirect('/')
+  })
+})
+
 export default router

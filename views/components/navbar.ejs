@@ -23,9 +23,16 @@
   </form>
   <div class="navbar__setting">
     <svg class="navbar__setting-icon">
-      <use xlink:href="#icon-cog"></use>
+      <use xlink:href="#icon-log-out"></use>
     </svg>
   </div>
 
   <!-- Navbar right section -->
 </nav>
+
+<script>
+  const logout = document.querySelector('.navbar__setting')
+  logout.addEventListener('click', () => {
+    window.location.href = '/logout'
+  })
+</script>
