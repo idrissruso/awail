@@ -6,7 +6,6 @@
   const FemaleUsers = document.querySelector('#FemaleUsers')
   const activeUsers = document.querySelector('#actifUsers')
   const addUserBtn = document.querySelector('#addUser')
-  const blockedUsersBtn = document.querySelector('#blockedUsers')
   var addNewUserModal = document.querySelector('.addNewUser')
   const addNewUserContainer = document.querySelector('.addNewUser__container')
   const cancelBtn = document.querySelector('.addNewUser__btn-cancel')
@@ -104,7 +103,7 @@
     updateTable(filteredUsers)
   })
 
-  const getUserName = async (user) => {
+  const getUserInfo = async (user) => {
     try {
       const response = await fetch(
         `http://localhost:3000/api/get${
@@ -112,7 +111,8 @@
         }/${user.roleData}`
       )
       const userData = await response.json()
-      return userData.fullName
+
+      return userData
     } catch (err) {
       console.error(err)
     }
@@ -135,12 +135,23 @@
       }
     }
     for (const [i, user] of users.entries()) {
-      const fullName = await getUserName(user)
+      const userInfo = await getUserInfo(user)
+
       tableContent += `
       <tr class="addUser__row">
         <td class="addUser__cell">${i + 1}</td>
         <td class="addUser__cell">${user.username}</td>
-        <td class="addUser__cell">${fullName}</td>
+        <td class="addUser__cell">${userInfo.serial_number}</td>
+          <td class="addUser__cell">${
+            userInfo.Role ? userInfo.FullName : userInfo.fullName
+          }</td>
+        <td class="addUser__cell">${
+          userInfo.Role ? userInfo.Email : userInfo.contact_info.email
+        }</td>
+        <td class="addUser__cell">${
+          userInfo.Role ? userInfo.Telephone : userInfo.contact_info.phone
+        }</td>
+      
         <td class="addUser__cell">${
           user.role === 'Admin' ? 'Admin' : 'Utilisateur'
         }</td>
