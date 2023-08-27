@@ -9,6 +9,12 @@ $(document).ready(function () {
   const main = $('.dashboard-container__main')
   const manageCourses = $('.manage-courses')
   const manageTeachers = $('.manage-teachers')
+  const sidebarToggler = $('.navbar__toggle')
+
+  sidebarToggler.on('click', function () {
+    $('#dashBoardRoot').toggleClass('sideBarHidden')
+    $('.dashboard-container__sidebar').toggleClass('toggleSidebar')
+  })
 
   // Add event listeners to the elements
   brandBox.on('click', function () {

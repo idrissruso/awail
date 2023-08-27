@@ -1,13 +1,37 @@
-.dashboard-container {
-  display: grid;
-  grid-template-columns: max-content 1fr;
-  grid-template-rows: minmax(100vh, 1fr);
+.sideBarHidden {
   overflow: auto;
+  transition: all 0.5s;
+}
+.dashboard-container {
+  display: flex;
+  min-height: 100vh;
+  overflow: auto;
+  transition: all 0.5s;
+
+  &__sidebar {
+    width: 21rem;
+    transition: transform 0.5s;
+    z-index: 1000;
+    & > * {
+      cursor: pointer;
+    }
+    background-color: rgba($color-primary-dark, 0.9);
+    @include line;
+  }
+
+  .toggleSidebar {
+    width: 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-100%);
+  }
 
   &__content {
+    flex: 1 0 auto;
     display: grid;
     grid-template-rows: 6.1rem 1fr 6.1rem;
     background-color: $color-secondary-light;
+    transition: all 0.5s;
   }
 
   &__footer {
@@ -26,15 +50,6 @@
   &__main {
     @include line;
     background-color: $color-secondary-dark;
-  }
-
-  &__sidebar {
-    & > * {
-      cursor: pointer;
-    }
-    background-color: rgba($color-primary-dark, 0.9);
-    @include line;
-    grid-row: 1/-1;
   }
 
   &__navbar {
