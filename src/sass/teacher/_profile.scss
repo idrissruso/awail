@@ -1,0 +1,68 @@
+.tProfile {
+  &__subheading {
+    font-size: 2rem;
+    font-weight: 600;
+    color: $color-tertiary;
+    margin: 1rem 0;
+  }
+
+  &__title {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #fff;
+    background-color: $color-primary-light-1;
+    margin-bottom: 1.5rem;
+    padding: 1rem 2rem;
+    text-align: center;
+  }
+
+  &__container {
+    padding: 1rem 2rem;
+  }
+
+  &__content {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__info {
+    box-shadow: 0 1.5rem 3rem rgba(#000, 0.2);
+    padding: 1rem 2rem;
+    column-gap: 2rem;
+  }
+
+  &__img-box {
+    margin-bottom: 2rem;
+    border: 0.1rem solid $color-gray-dark;
+    width: 17rem;
+    height: 17rem;
+    overflow: hidden;
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  &__label {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: $color-primary;
+  }
+
+  &__value {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: $color-gray-dark;
+  }
+
+  &__row {
+    display: flex;
+    column-gap: 2rem;
+    margin-bottom: 1rem;
+  }
+}

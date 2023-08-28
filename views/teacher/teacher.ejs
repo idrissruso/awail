@@ -7,15 +7,14 @@
     <!-- Dashboard container -->
     <div class="dashboard-container">
       <!-- Sidebar -->
-      <%-include('components/sidebar.ejs',{teacher : teacher})%>
+      <%-include('components/sidebar.ejs',{teacher : teacher,loggedInTeacher :
+      loggedInTeacher})%>
       <!-- Dashboard content section -->
       <div class="dashboard-container__content">
         <!-- Navbar section -->
         <%-include('components/navbar.ejs')%>
         <!-- Main content section -->
-        <main class="dashboard-container__main">
-          <h1>merhaba</h1>
-        </main>
+        <main class="dashboard-container__main">"herhaba"</main>
         <!-- Footer section -->
         <%-include("../components/footer.ejs") %>
       </div>
