@@ -2,15 +2,16 @@
 <html lang="en">
   <!-- Include header.ejs file -->
   <%-include ('./components/head.ejs')%>
+
   <body>
     <!-- Dashboard container -->
     <div class="dashboard-container">
       <!-- Sidebar -->
-      <%-include('components/sidebar.ejs')%>
+      <%-include('components/sidebar.ejs',{teacher : teacher})%>
       <!-- Dashboard content section -->
       <div class="dashboard-container__content">
         <!-- Navbar section -->
-        <%-include('../components/navbar.ejs')%>
+        <%-include('components/navbar.ejs')%>
         <!-- Main content section -->
         <main class="dashboard-container__main">
           <h1>merhaba</h1>

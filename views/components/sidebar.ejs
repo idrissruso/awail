@@ -59,14 +59,14 @@
 </aside>
 
 <script>
-  ;(function(){
+  ;(function () {
     const profileImg = document.querySelector('.sidebar__user-profile')
-  const user = <%-JSON.stringify(user)%>;
+    const user = JSON.parse('<%- JSON.stringify(admin) %>')
 
-  if (user.profileImage) {
-    profileImg.src = `data:${user.profileImageType};base64,${user.profileImage}`
-  } else {
-    profileImg.src = 'profile.png'
-  }
-  })();
+    if (user.profileImage) {
+      profileImg.src = `data:${user.profileImageType};base64,${user.profileImage}`
+    } else {
+      profileImg.src = 'profile.png'
+    }
+  })()
 </script>

@@ -24,13 +24,13 @@
     </li>
     <li class="navigation__item M_absenteeism">
       <svg class="navigation__item-icon">
-        <use xlink:href="#icon-user-plus"></use>
+        <use xlink:href="#icon-calendar"></use>
       </svg>
       <p class="navigation__item-title">Gérer les absences</p>
     </li>
     <li class="navigation__item manageExams">
       <svg class="navigation__item-icon">
-        <use xlink:href="#icon-clipboard-edit"></use>
+        <use xlink:href="#icon-params"></use>
       </svg>
       <p class="navigation__item-title">Gérer les résultats</p>
     </li>
@@ -42,3 +42,18 @@
     </li>
   </ul>
 </aside>
+
+<script>
+  ;(function () {
+    const teacher = JSON.parse('<%- JSON.stringify(teacher) %>')
+    const loggedInTeacher = JSON.parse('<%- JSON.stringify(loggedInTeacher) %>')
+    const profileImg = document.querySelector('.sidebar__user-profile')
+    if (teacher.profileImage) {
+      profileImg.src = `data:${teacher.profileImageType};base64,${teacher.profileImage}`
+    } else {
+      profileImg.src = '../profile.png'
+    }
+    const name = document.querySelector('.sidebar__user-name')
+    name.textContent = loggedInTeacher.fullName
+  })()
+</script>
