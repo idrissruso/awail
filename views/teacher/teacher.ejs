@@ -14,7 +14,10 @@
         <!-- Navbar section -->
         <%-include('components/navbar.ejs')%>
         <!-- Main content section -->
-        <main class="dashboard-container__main">"herhaba"</main>
+        <main class="dashboard-container__main">
+          <%-include('main/profile.ejs',{loggedInTeacher :
+          loggedInTeacher,teacher : teacher})%>
+        </main>
         <!-- Footer section -->
         <%-include("../components/footer.ejs") %>
       </div>
@@ -23,5 +26,5 @@
 
   <!-- Include the jQuery library -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="../teacher.js"></script>
+  <script src="../teacher/teacher.js"></script>
 </html>

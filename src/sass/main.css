@@ -3370,7 +3370,6 @@ input[type=checkbox]:checked:after {
   margin-bottom: 1rem;
   cursor: pointer;
   backface-visibility: hidden;
-  animation: fadeOut 0.5s ease-in-out infinite alternate;
 }
 .form__button:hover {
   background-color: #175f27;
@@ -3486,7 +3485,6 @@ input[type=checkbox]:checked:after {
   margin-bottom: 1rem;
   cursor: pointer;
   backface-visibility: hidden;
-  animation: fadeOut 0.5s ease-in-out infinite alternate;
 }
 .result-form-button:hover {
   background-color: #175f27;

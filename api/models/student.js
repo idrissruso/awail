@@ -54,7 +54,8 @@ const StudentSchema = new mongoose.Schema({
     },
   },
   class: {
-    type: String,
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Class',
     required: [true, 'Please provide a class'],
   },
   profileImage: { type: String },

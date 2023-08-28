@@ -55,7 +55,7 @@
 
 <script>
   ;(function () {
-    const teacher = JSON.parse('<%- JSON.stringify(loggedInUser) %>')
+    const teacher = JSON.parse('<%- JSON.stringify(loggedInTeacher) %>')
     const profileImg = document.querySelector('.tProfile__img')
     if (teacher.profileImage) {
       profileImg.src = `data:${teacher.profileImageType};base64,${teacher.profileImage}`

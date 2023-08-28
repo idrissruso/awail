@@ -23,6 +23,44 @@
   let student
   let profileImg
 
+  const getClassesUrl = 'http://localhost:3000/api/getClasses'
+
+  const getClasses = async () => {
+    try {
+      const response = await fetch(getClassesUrl, {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      })
+
+      if (response.ok) {
+        const data = await response.json()
+        return data
+      } else {
+        console.log('Not successful')
+      }
+    } catch (error) {
+      console.error('Error:', error)
+    }
+  }
+
+  const populateClasses = async (classes) => {
+    const classesSelect = document.querySelector('#classe')
+    classesSelect.innerHTML = ''
+
+    classes.forEach((classe) => {
+      const option = document.createElement('option')
+      option.value = classe._id
+      option.textContent = classe.class_name
+      classesSelect.appendChild(option)
+    })
+  }
+
+  getClasses().then((classes) => {
+    populateClasses(classes)
+  })
+
   const deFormateDate = (date) => {
     const date_ = new Date(date)
     const year = date_.getFullYear()
@@ -41,7 +79,7 @@
       nomCompletInput.value = student.fullName
       telephoneInput.value = student.contact_info.phone
       dateNaissanceInput.value = deFormateDate(student.dateOfBirth)
-      sexInput.value = student.gender.gender
+      sexInput.default = student.gender.gender
       classeInput.value = student.class
       parentNameInput.value = student.parent.fullName
       parentProfessionInput.value = student.parent.profession

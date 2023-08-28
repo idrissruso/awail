@@ -61,8 +61,7 @@
 <script>
   ;(function () {
     const profileImg = document.querySelector('.sidebar__user-profile')
-    const user = JSON.parse('<%- JSON.stringify(admin) %>')
-
+    const user = JSON.parse('<%- JSON.stringify(user) %>')
     if (user.profileImage) {
       profileImg.src = `data:${user.profileImageType};base64,${user.profileImage}`
     } else {

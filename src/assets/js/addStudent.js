@@ -1,10 +1,48 @@
+'use strict'
 ;(function () {
+  const getClassesUrl = 'http://localhost:3000/api/getClasses'
   const addButton = document.querySelector('.addStudent-form__btn')
   const imageFileInput = document.querySelector('#image')
   let profileImage = null
 
   imageFileInput.addEventListener('change', (e) => {
     profileImage = e.target.files[0]
+  })
+
+  const getClasses = async () => {
+    try {
+      const response = await fetch(getClassesUrl, {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      })
+
+      if (response.ok) {
+        const data = await response.json()
+        return data
+      } else {
+        console.log('Not successful')
+      }
+    } catch (error) {
+      console.error('Error:', error)
+    }
+  }
+
+  const populateClasses = async (classes) => {
+    const classesSelect = document.querySelector('#student-class')
+    classesSelect.innerHTML = ''
+
+    classes.forEach((classe) => {
+      const option = document.createElement('option')
+      option.value = classe._id
+      option.textContent = classe.class_name
+      classesSelect.appendChild(option)
+    })
+  }
+
+  getClasses().then((classes) => {
+    populateClasses(classes)
   })
 
   addButton.addEventListener('click', async (event) => {
@@ -89,7 +127,9 @@
               } else {
                 console.log(response.message)
                 console.log('Not successful')
-                alert('Error adding student')
+                alert(
+                  'Une erreur est survenue, veuillez réessayer de remplir tous les champs correctement'
+                )
               }
             } catch (error) {
               console.error('Error:', error)
@@ -98,7 +138,9 @@
         )
       } else {
         console.log('Not successful')
-        alert('Error adding student')
+        alert(
+          'Une erreur est survenue, veuillez réessayer de remplir tous les champs correctement'
+        )
       }
     } catch (error) {
       console.error('Error:', error)
