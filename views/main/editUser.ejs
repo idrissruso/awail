@@ -21,8 +21,8 @@
             var loggedInUser = <%- JSON.stringify(loggedInUser) %>;
 
 
-            document.getElementById('name').placeholder = name
-            document.getElementById('surname').placeholder = surname
+            document.getElementById('name').value = name
+            document.getElementById('surname').value = surname
           </script>
 
           <span class="form__box-img--name"><%- admin.FullName %></span>
@@ -58,7 +58,7 @@
               name="email"
               id="email"
               class="form__box-info--input"
-              placeholder="<%- admin.Email %>"
+              value="<%- admin.Email %>"
               required
             />
           </div>
@@ -68,7 +68,7 @@
               name="phone"
               id="phone"
               class="form__box-info--input"
-              placeholder="<%- admin.Telephone %>"
+              value="<%- admin.Telephone %>"
               required
             />
           </div>
@@ -81,7 +81,7 @@
               name="userName"
               id="userName"
               class="form__box-info--input"
-              placeholder="<%- loggedInUser.username %>"
+              value="<%- loggedInUser.username %>"
               required
             />
           </div>

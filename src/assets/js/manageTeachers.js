@@ -183,8 +183,7 @@
         ? await codeImageToBase64(profileImage)
         : undefined,
       profileImageType: profileImage ? profileImage.type : undefined,
-
-      courses: formData.get('teacher-course'),
+      course: formData.get('teacher-subjects'),
     }
 
     try {
@@ -221,7 +220,8 @@
             body: JSON.stringify(userData),
           }
         )
-        console.log(userResponse)
+        const userRes = await userResponse.json()
+        console.log(userRes)
 
         if (userResponse.ok) {
           // User created successfully

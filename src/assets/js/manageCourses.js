@@ -7,7 +7,6 @@
   ]
   const getCoursesUrl = 'http://localhost:3000/api/getCourses'
   const createCourseUrl = 'http://localhost:3000/api/createCourse'
-  const getTeachersUrl = 'http://localhost:3000/api/getTeachers'
   const getTeacherByIdUrl = 'http://localhost:3000/api/getTeacher/'
   const getCourseByIdUrl = 'http://localhost:3000/api/getCourse/'
   const deleteCourseByIdUrl = 'http://localhost:3000/api/deleteCourse/'
@@ -26,15 +25,11 @@
     '.addNewCoursModal__form'
   )
 
-  const CoursDetailsBtn = document.querySelector('.btn--edit')
-  const CoursDetailsCloseBtn = document.querySelector('.cancel')
   const CoursDetailsContainer = document.querySelector(
     '.courseDetailsModal__container'
   )
   const CoursDetailsModal = document.querySelector('.courseDetailsModal')
-  const selectTeacher = document.querySelector('#instructor')
-  const editBtn = document.querySelector('#editBtn')
-  const deleteBtn = document.querySelector('#deleteBtn')
+
   const detail = document.querySelector(
     '.courseDetailsModal__container-content'
   )
@@ -87,25 +82,6 @@
   }
 
   // Get all teachers from the database
-  const getTeachers = async () => {
-    try {
-      selectTeacher.innerHTML = ''
-      const response = await fetch(getTeachersUrl)
-        .then((res) => res.json())
-        .then((data) => {
-          teachersList = [...data]
-          data.forEach((teacher) => {
-            const option = document.createElement('option')
-            option.value = teacher._id
-            option.textContent = teacher.fullName
-            selectTeacher.appendChild(option)
-          })
-        })
-    } catch (err) {
-      alert('une erreur est survenue')
-      console.error(err)
-    }
-  }
 
   const addNewCourse = async (course) => {
     try {
@@ -246,7 +222,6 @@
       addNewCourseModal.classList.add('addNewCoursModal--show')
       addNewCourseModal.classList.remove('addNewCoursModal--hide')
       addNewCourseContainer.classList.add('addNewCoursContainer--animate')
-      getTeachers()
     } else if (event.target.matches('.btn--edit, .btn--edit *')) {
       CoursDetailsModal.classList.add('courseDetailsModal--show')
       CoursDetailsModal.classList.remove('courseDetailsModal--hide')
@@ -276,7 +251,6 @@
       addNewCourseModal.classList.add('addNewCoursModal--show')
       addNewCourseModal.classList.remove('addNewCoursModal--hide')
       addNewCourseContainer.classList.add('addNewCoursContainer--animate')
-      getTeachers()
     } else if (event.target.matches('.delete, .delete *')) {
       const id = event.target.dataset.id
       deleteCourseById(id)
@@ -295,13 +269,10 @@
     event.preventDefault()
 
     const courseName = document.querySelector('#course-name').value
-    const courseTeacher =
-      document.querySelector('#instructor').selectedOptions[0].value
     const courseCredits = document.querySelector('#credits').value
 
     const course = {
       course_name: courseName,
-      teacher: courseTeacher,
       credits: courseCredits,
     }
 
@@ -319,7 +290,6 @@
 
     // Clear the form
     document.querySelector('#course-name').value = ''
-    document.querySelector('#instructor').value = ''
 
     // Remove all the courses from the DOM
     coursesDiv.innerHTML = ''
@@ -327,7 +297,6 @@
     // Display the courses again
     getCourses()
       .then(() => {
-        console.log(coursesList)
         displayCourses()
       })
       .catch((err) => {

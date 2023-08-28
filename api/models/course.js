@@ -6,10 +6,6 @@ const courseSchema = new mongoose.Schema({
     type: String,
     required: [true, 'Please Provide a course name'],
   },
-  teacher: {
-    type: mongoose.Schema.Types.ObjectId,
-    required: [true, 'Please Provide a teacher name'],
-  },
   code: {
     type: String,
   },
