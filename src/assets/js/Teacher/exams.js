@@ -3,10 +3,11 @@
   const getClassesUrl = 'http://localhost:3000/api/getClasses'
   const getStudentsUrl = 'http://localhost:3000/api/getStudents'
   const getUserUrl = 'http://localhost:3000/api/getUserByRoleData'
+  const getCoursesUrl = 'http://localhost:3000/api/getCourses'
   const tbody = document.querySelector('#tbody')
   const searchBtn = document.querySelector('#search-student')
   const classesSelect = document.querySelector('#class-select')
-
+  const selectCourse = document.querySelector('#cours-select')
   // function to get all the classes
   const getClasses = async () => {
     try {
@@ -37,6 +38,37 @@
       option.value = classe._id
       option.textContent = classe.class_name
       classesSelect.appendChild(option)
+    })
+  }
+
+  const getCourses = async () => {
+    try {
+      const response = await fetch(getCoursesUrl, {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      })
+
+      if (response.ok) {
+        const data = await response.json()
+        return data
+      } else {
+        console.log('Not successful')
+      }
+    } catch (error) {
+      console.error('Error:', error)
+    }
+  }
+
+  const populateCourses = async (courses) => {
+    selectCourse.innerHTML = ''
+
+    courses.forEach((course) => {
+      const option = document.createElement('option')
+      option.value = course._id
+      option.textContent = course.course_name
+      selectCourse.appendChild(option)
     })
   }
 
@@ -90,32 +122,18 @@
       const tr = document.createElement('tr')
       const user = await getUserByRoleData(student._id)
       tr.innerHTML = `
-      <tr class="table__row">
-          <td class="table__cell">${i + 1}</td>
-          <td class="table__cell">${user.username}</td>
-          <td class="table__cell">${student.fullName}</td>
-          <td class="table__cell">
+      <tr class="result-table-row">
+          <td class="result-table-cell">${i + 1}</td>
+          <td class="result-table-cell">${user.username}</td>
+          <td class="result-table-cell">${student.fullName}</td>
+          <td class="result-table-cell">
             <div class="checkbox-group">
-              <label class="checkbox-group__label checkbox-group__label-absent">
-                <input
-                  type="radio"
-                  name="attendance1"
-                  class="checkbox-group__checkbox"
-                  value="Absent"
-                />
-                Absent
-              </label>
-              <label
-                class="checkbox-group__label checkbox-group__label-present"
-              >
-                <input
-                  type="radio"
-                  name="attendance1"
-                  class="checkbox-group__checkbox"
-                  value="Présent"
-                />
-                Présent
-              </label>
+              <input
+                type="number"
+                name="points1"
+                class="result-form-input"
+                placeholder="00"
+              />
             </div>
           </td>
         </tr>`
@@ -131,6 +149,11 @@
   // populate the classes select element on page load
   getClasses().then((classes) => {
     populateClasses(classes)
+  })
+
+  // populate the courses select element on page load
+  getCourses().then((courses) => {
+    populateCourses(courses)
   })
 
   // display all students on page load and add event listener for search input

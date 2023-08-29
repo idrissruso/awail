@@ -8,19 +8,13 @@
         <label class="result-form-label" for="class-select"
           >Sélectionner la classe :</label
         >
-        <select class="result-form-select" id="class-select">
-          <option value="class1">Classe 1</option>
-          <option value="class2">Classe 2</option>
-        </select>
+        <select class="result-form-select" id="class-select"></select>
       </div>
       <div class="result-form-select-group">
         <label class="result-form-label" for="cours-select"
           >Sélectionner le Cours :</label
         >
-        <select class="result-form-select" id="cours-select">
-          <option value="class1">Mathematiques</option>
-          <option value="class2">Physique</option>
-        </select>
+        <select class="result-form-select" id="cours-select"></select>
       </div>
       <div class="result-form-select-group">
         <label class="result-form-label" for="search-student">Rechercher</label>
@@ -42,56 +36,12 @@
           <th class="result-table-header">Points</th>
         </tr>
       </thead>
-      <tbody class="result-table-body">
-        <tr class="result-table-row">
-          <td class="result-table-cell">1</td>
-          <td class="result-table-cell">Étudiant 1</td>
-          <td class="result-table-cell">12345</td>
-          <td class="result-table-cell">
-            <div class="checkbox-group">
-              <input
-                type="number"
-                name="points1"
-                class="result-form-input"
-                placeholder="00"
-              />
-            </div>
-          </td>
-        </tr>
-        <tr class="result-table-row">
-          <td class="result-table-cell">2</td>
-          <td class="result-table-cell">Étudiant 2</td>
-          <td class="result-table-cell">67890</td>
-          <td class="result-table-cell">
-            <div class="checkbox-group">
-              <input
-                type="number"
-                name="points1"
-                class="result-form-input"
-                placeholder="00"
-              />
-            </div>
-          </td>
-        </tr>
-        <tr class="result-table-row">
-          <td class="result-table-cell">3</td>
-          <td class="result-table-cell">Étudiant 3</td>
-          <td class="result-table-cell">67891</td>
-          <td class="result-table-cell">
-            <div class="checkbox-group">
-              <input
-                type="number"
-                name="points1"
-                class="result-form-input"
-                placeholder="00"
-              />
-            </div>
-          </td>
-        </tr>
-      </tbody>
+      <tbody class="result-table-body" id="tbody"></tbody>
     </table>
     <button class="result-form-button" type="submit">
       Marquer la présence
     </button>
   </form>
 </div>
+
+<script src="../teacher/exams.js"></script>

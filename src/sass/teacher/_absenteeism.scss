@@ -17,6 +17,7 @@
 
   &__group {
     display: flex;
+
     column-gap: 2rem;
     flex-wrap: wrap;
   }
@@ -30,6 +31,7 @@
   &__select,
   &__input {
     padding: 1rem 1.5rem;
+    flex: 1 0 100%;
     border: none;
     border-radius: 0.5rem;
     background-color: $color-gray;
@@ -80,6 +82,7 @@
   margin-bottom: 3rem;
   border-radius: 0.5rem;
   overflow: hidden;
+  transition: all 0.5s;
 
   &__head {
     background-color: $color-primary-light-1;

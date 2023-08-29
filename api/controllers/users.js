@@ -79,3 +79,13 @@ export const deleteUserByRoleData = async (req, res) => {
     res.status(400).json({ message: err.message })
   }
 }
+
+export const getUserByRoleData = async (req, res) => {
+  try {
+    const user = await User.findOne({ roleData: req.params.roleData })
+    if (!user) return res.status(404).json({ message: 'User not found' })
+    res.status(200).json(user)
+  } catch (err) {
+    res.status(400).json({ message: err.message })
+  }
+}

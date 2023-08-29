@@ -3338,6 +3338,7 @@ input[type=checkbox]:checked:after {
 }
 .form__select, .form__input {
   padding: 1rem 1.5rem;
+  flex: 1 0 100%;
   border: none;
   border-radius: 0.5rem;
   background-color: #ecf2f4;
@@ -3383,6 +3384,7 @@ input[type=checkbox]:checked:after {
   margin-bottom: 3rem;
   border-radius: 0.5rem;
   overflow: hidden;
+  transition: all 0.5s;
 }
 .table__head {
   background-color: #17a2b8;
@@ -3499,6 +3501,7 @@ input[type=checkbox]:checked:after {
   border-radius: 0.5rem;
   overflow: hidden;
   margin-top: 2rem;
+  transition: all 0.5s;
 }
 .result-table-row {
   border: 1px solid #fff;
