@@ -1,9 +1,17 @@
 'use strict'
 ;(function () {
-  const getClassesUrl = 'http://localhost:3000/api/getClasses/'
-  const getStudentsUrl = 'http://localhost:3000/api/getStudents/'
-  const getUserUrl = 'http://localhost:3000/api/getUserByRoleData/'
-  const getCoursesUrl = 'http://localhost:3000/api/getCourses/'
+  const baseUrl = 'http://localhost:3000/api/'
+
+  const apiUrls = {
+    getClasses: `${baseUrl}getClasses/`,
+    getStudents: `${baseUrl}getStudents/`,
+    getUserByRoleData: `${baseUrl}getUserByRoleData/`,
+    getCourses: `${baseUrl}getCourses/`,
+    updateGrade: `${baseUrl}updateGrade/`,
+    createGrade: `${baseUrl}createGrade/`,
+    getStudentGrades: `${baseUrl}getStudentGrades/`,
+  }
+
   const tbody = document.querySelector('#tbody')
   const searchBtn = document.querySelector('#search-student')
   const classesSelect = document.querySelector('#class-select')
@@ -11,13 +19,15 @@
   const examSelect = document.querySelector('#exam-select')
   const form = document.querySelector('#form')
   const action = document.querySelector('#action')
+
+  let action_ = 'Add'
   // function to get all the classes
 
-  async function postData(url, data) {
+  async function postData(url, data, method = 'POST', id = '') {
     console.log(data)
     try {
-      const response = await fetch(url, {
-        method: 'POST',
+      const response = await fetch(`${url}${id}`, {
+        method: method,
         headers: {
           'Content-Type': 'application/json',
         },
@@ -55,8 +65,17 @@
       throw error
     }
   }
+
+  // function to update a grade
+
+  // function to get all the classes
   const getClasses = async () => {
-    return await fetchData(getClassesUrl)
+    return await fetchData(apiUrls.getClasses)
+  }
+
+  // function to get all the grades
+  const getStudentGrades = async (id) => {
+    return await fetchData(apiUrls.getStudentGrades, id)
   }
 
   // function to populate the classes select element
@@ -72,7 +91,7 @@
   }
 
   const getCourses = async () => {
-    return await fetchData(getCoursesUrl)
+    return await fetchData(apiUrls.getCourses)
   }
 
   const populateCourses = async (courses) => {
@@ -85,55 +104,108 @@
       selectCourse.appendChild(option)
     })
   }
-  const sendData = async () => {
+
+  // manage action select element
+
+  // Outside of the action event listener
+  form.addEventListener('submit', (e) => {
+    e.preventDefault()
+    if (action_ === 'Add') {
+      sendData()
+    } else if (action_ === 'Update') {
+      sendData(true)
+    }
+  })
+
+  // Inside the action event listener
+  action.addEventListener('change', async (e) => {
+    action_ = e.target.value
+    const classId = classesSelect.value // Assuming you also want to consider the selected class
+    try {
+      const students = await getStudentsByClass(await getStudents(), classId)
+      displayStudents(students)
+    } catch (error) {
+      console.error('Error fetching and displaying students:', error)
+    }
+  })
+
+  const sendData = async (update = false) => {
     const rows = tbody.querySelectorAll('tr')
     let data = {}
+    let success = true
 
     for (const row of rows) {
       const studentId = row.querySelector('td:nth-child(2)').dataset.studentId
+      console.log(studentId)
       const pointsInput = row.querySelector('input[name="points1"]')
+      const gradeId = pointsInput.dataset.gradeId
       const points = pointsInput.value
-      data = {
-        student: studentId,
-        course: selectCourse.value,
-        marks: points,
-      }
+
       try {
-        const response = await postData(createGradeUrl, data)
-        console.log(response)
-        if (response.status === 'success') {
-          alert('Data sent successfully')
-          document.location.reload()
+        let response
+        if (update) {
+          data = {
+            marks: points,
+          }
+          response = await postData(apiUrls.updateGrade, data, 'PATCH', gradeId)
         } else {
-          alert('Error sending data')
+          data = {
+            student: studentId,
+            course: selectCourse.value,
+            exam: examSelect.value,
+            marks: points,
+          }
+          response = await postData(apiUrls.createGrade, data)
         }
       } catch (error) {
         console.error('Error:', error)
+        success = false
       }
+    }
+
+    if (success) {
+      alert('Enregistrement effectué avec succès')
+      document.location.reload()
+    } else {
+      alert(
+        `Impossible d'enregistrer les points plusieurs fois, veillez changer l'action a ${
+          update ? 'Metre a jour' : 'Enregistrer'
+        } pour modifier les points`
+      )
     }
   }
 
   // function to get all the students
   const getStudents = async () => {
-    return await fetchData(getStudentsUrl)
+    return await fetchData(apiUrls.getStudents)
   }
 
   // function to get a student by id
 
   const getUserByRoleData = async (id) => {
-    return await fetchData(getUserUrl, id)
+    return await fetchData(apiUrls.getUserByRoleData, id)
   }
 
   // function to display students in the table
   const displayStudents = async (students) => {
     tbody.innerHTML = ''
     for (const [i, student] of students.entries()) {
+      const grades =
+        action_ === 'Update' ? await getStudentGrades(student._id) : []
+      const grade = await grades.filter(
+        (grade) => grade.exam === examSelect.value
+      )[0]
+      console.log(grade)
+      console.log(action_)
+      console.log(examSelect.value)
       const tr = document.createElement('tr')
       const user = await getUserByRoleData(student._id)
       tr.innerHTML = `
       <tr class="result-table-row">
           <td class="result-table-cell">${i + 1}</td>
-          <td class="result-table-cell">${user.username}</td>
+          <td class="result-table-cell" data-student-id = "${student._id}">${
+        user.username
+      }</td>
           <td class="result-table-cell">${student.fullName}</td>
           <td class="result-table-cell">
             <div class="checkbox-group">
@@ -144,6 +216,8 @@
                 placeholder="00"
                 min="0"
                 max="20"
+                value="${grade ? grade.marks : ''}"
+                data-grade-id = "${grade ? grade._id : ''}"
               />
             </div>
           </td>
@@ -192,5 +266,14 @@
         displayStudents(filteredStudents)
       })
     })
+  })
+  examSelect.addEventListener('change', async () => {
+    const classId = classesSelect.value // Assuming you also want to consider the selected class
+    try {
+      const students = await getStudentsByClass(await getStudents(), classId)
+      displayStudents(students)
+    } catch (error) {
+      console.error('Error fetching and displaying students:', error)
+    }
   })
 })()

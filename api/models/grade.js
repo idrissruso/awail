@@ -17,7 +17,9 @@ const gradeSchema = new mongoose.Schema({
     ref: 'Course',
     required: [true, 'Please provide a course'],
   },
-  marks: [{ type: Number, min: 0, max: 20 }],
+  marks: { type: Number, min: 0, max: 20 },
 })
+
+gradeSchema.index({ student: 1, exam: 1 }, { unique: true })
 
 export default mongoose.models.Grade || mongoose.model('Grade', gradeSchema)
