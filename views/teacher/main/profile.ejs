@@ -10,41 +10,41 @@
           <div class="tProfile__info-box">
             <div class="tProfile__row">
               <span class="tProfile__label">Matricule:</span>
-              <span class="tProfile__value">123456</span>
+              <span class="tProfile__value" id="matricule">123456</span>
             </div>
             <div class="tProfile__row">
               <span class="tProfile__label">Nom Complet:</span>
-              <span class="tProfile__value">John Doe</span>
+              <span class="tProfile__value" id="fullName">John Doe</span>
             </div>
             <div class="tProfile__row">
               <span class="tProfile__label">Téléphone:</span>
-              <span class="tProfile__value">123-456-7890</span>
+              <span class="tProfile__value" id="phone">123-456-7890</span>
             </div>
             <div class="tProfile__row">
               <span class="tProfile__label">Date de Naissance:</span>
-              <span class="tProfile__value">1998-05-15</span>
+              <span class="tProfile__value" id="dateOfBirth">1998-05-15</span>
             </div>
             <div class="tProfile__row">
               <span class="tProfile__label">Gendre:</span>
-              <span class="tProfile__value">Homme</span>
+              <span class="tProfile__value" id="gender">Homme</span>
             </div>
             <div class="tProfile__row">
               <span class="tProfile__label">Cours:</span>
-              <span class="tProfile__value">MAth</span>
+              <span class="tProfile__value" id="course">MAth</span>
             </div>
             <div class="tProfile__divider"></div>
             <h3 class="tProfile__subheading">Programme Hebdomadaire</h3>
             <div class="tProfile__row">
               <span class="tProfile__label">Lundi:</span>
-              <span class="tProfile__value">9:00-11:00</span>
+              <span class="tProfile__value" id="fDay">9:00-11:00</span>
             </div>
             <div class="tProfile__row">
               <span class="tProfile__label">Mardi:</span>
-              <span class="tProfile__value">1:00-3:00</span>
+              <span class="tProfile__value" id="sDay">1:00-3:00</span>
             </div>
             <div class="tProfile__row">
               <span class="tProfile__label">Vendredi:</span>
-              <span class="tProfile__value">9:00-11:00</span>
+              <span class="tProfile__value" id="tDay">9:00-11:00</span>
             </div>
           </div>
         </div>
@@ -54,7 +54,9 @@
 </div>
 
 <script>
-  ;(function () {
+  ;(function async() {
+    const getCourseUrl = 'http://localhost:3000/api/getCourse'
+    const getUserByRoleDataUrl = 'http://localhost:3000/api/getUserByRoleData'
     const teacher = JSON.parse('<%- JSON.stringify(loggedInTeacher) %>')
     const profileImg = document.querySelector('.tProfile__img')
     if (teacher.profileImage) {
@@ -62,5 +64,49 @@
     } else {
       profileImg.src = '../profile.png'
     }
+
+    const getCourse = async (id) => {
+      try {
+        const res = await fetch(`${getCourseUrl}/${id}`)
+        const data = await res.json()
+        return data
+      } catch (err) {
+        console.log(err)
+      }
+    }
+
+    const formateDate = (date) => {
+      const d = new Date(date)
+      const year = d.getFullYear()
+      const month = d.getMonth() + 1
+      const day = d.getDate()
+      return `${year}-${month < 10 ? '0' + month : month}-${
+        day < 10 ? '0' + day : day
+      }`
+    }
+
+    const displayInfo = async (teacher) => {
+      const courseName = await getCourse(teacher.course).then(
+        (data) => data.course_name
+      )
+      const matricule = document.querySelector('#matricule')
+      const fullName = document.querySelector('#fullName')
+      const phone = document.querySelector('#phone')
+      const gender = document.querySelector('#gender')
+      const birthDate = document.querySelector('#dateOfBirth')
+      const course = document.querySelector('#course')
+      const fDay = document.querySelector('#fDay')
+      const sDay = document.querySelector('#sDay')
+      const tDay = document.querySelector('#tDay')
+
+      matricule.textContent = teacher.serial_number
+      fullName.textContent = teacher.fullName
+      phone.textContent = teacher.contact_info.phone
+      birthDate.textContent = formateDate(teacher.dateOfBirth)
+      gender.textContent = teacher.gender
+      course.textContent = courseName
+    }
+
+    displayInfo(teacher)
   })()
 </script>

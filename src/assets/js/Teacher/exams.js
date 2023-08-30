@@ -133,6 +133,8 @@
                 name="points1"
                 class="result-form-input"
                 placeholder="00"
+                min="0"
+                max="20"
               />
             </div>
           </td>

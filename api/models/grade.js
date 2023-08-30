@@ -11,8 +11,7 @@ const gradeSchema = new mongoose.Schema({
     ref: 'Course',
     required: [true, 'Please provide a course'],
   },
-  marks: [{ type: Number, min: 0, max: 100 }],
-  grade_date: { type: Date, default: Date.now },
+  marks: [{ type: Number, min: 0, max: 20 }],
 })
 
 export default mongoose.models.Grade || mongoose.model('Grade', gradeSchema)

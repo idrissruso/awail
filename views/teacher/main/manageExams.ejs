@@ -5,16 +5,20 @@
   <form class="result-form">
     <div class="result-form-group">
       <div class="result-form-select-group">
-        <label class="result-form-label" for="class-select"
-          >Sélectionner la classe :</label
-        >
+        <label class="result-form-label" for="class-select">classe :</label>
         <select class="result-form-select" id="class-select"></select>
       </div>
       <div class="result-form-select-group">
-        <label class="result-form-label" for="cours-select"
-          >Sélectionner le Cours :</label
-        >
+        <label class="result-form-label" for="cours-select">Cours :</label>
         <select class="result-form-select" id="cours-select"></select>
+      </div>
+      <div class="result-form-select-group">
+        <label class="result-form-label" for="cours-select">Examen :</label>
+        <select class="result-form-select" id="cours-select">
+          <option value="1">Examen 1</option>
+          <option value="2">Examen 2</option>
+          <option value="3">Examen 3</option>
+        </select>
       </div>
       <div class="result-form-select-group">
         <label class="result-form-label" for="search-student">Rechercher</label>
@@ -39,7 +43,7 @@
       <tbody class="result-table-body" id="tbody"></tbody>
     </table>
     <button class="result-form-button" type="submit">
-      Marquer la présence
+      Enregistrer les résultats
     </button>
   </form>
 </div>

@@ -2,19 +2,15 @@
   <div class="header">
     <h1 class="header__title">Gestion des absences de classe</h1>
   </div>
-  <form class="form">
+  <form class="form" id="form">
     <div class="form__group">
       <div class="form__select-group">
-        <label class="form__label" for="class-select"
-          >Sélectionner la classe :</label
-        >
-        <select class="form__select" id="class-select"></select>
+        <label class="form__label" for="class-select">classe :</label>
+        <select class="form__select" id="class-select" required></select>
       </div>
       <div class="form__select-group">
-        <label class="form__label" for="date-select"
-          >Sélectionner la date :</label
-        >
-        <input class="form__input" type="date" id="date-select" />
+        <label class="form__label" for="date-select">date :</label>
+        <input class="form__input" type="date" id="date-select" required />
       </div>
       <div class="form__select-group">
         <label class="form__label" for="search-student">Rechercher</label>

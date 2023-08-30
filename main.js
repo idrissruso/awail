@@ -102,8 +102,8 @@ app.get('/teacher/main/:file', async function (req, res) {
   const filePath = path.join(__dirname, 'views/teacher/main', req.params.file)
   const user = await getUserById(req.user?.roleData, req.user?.role)
   res.render(filePath, {
-    teacher: user,
-    loggedInTeacher: req.user,
+    loggedInTeacher: user,
+    teacher: req.user,
     messages: 'merhaba',
   })
 })
