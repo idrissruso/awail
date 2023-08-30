@@ -2,7 +2,7 @@
   <div class="header">
     <h1 class="header-title">Gestion des Résultats</h1>
   </div>
-  <form class="result-form">
+  <form class="result-form" id="form">
     <div class="result-form-group">
       <div class="result-form-select-group">
         <label class="result-form-label" for="class-select">classe :</label>
@@ -13,11 +13,18 @@
         <select class="result-form-select" id="cours-select"></select>
       </div>
       <div class="result-form-select-group">
-        <label class="result-form-label" for="cours-select">Examen :</label>
-        <select class="result-form-select" id="cours-select">
-          <option value="1">Examen 1</option>
-          <option value="2">Examen 2</option>
-          <option value="3">Examen 3</option>
+        <label class="result-form-label" for="exam-select">Examen :</label>
+        <select class="result-form-select" id="exam-select" required>
+          <option value="Exam 1">1er Examen</option>
+          <option value="Exam 2">2e Examen</option>
+          <option value="Exam 3">3e Examen</option>
+        </select>
+      </div>
+      <div class="result-form-select-group">
+        <label class="result-form-label" for="action">Action :</label>
+        <select class="result-form-select" id="action" required>
+          <option value="Update">Metre a jours</option>
+          <option value="Add">Ajouter</option>
         </select>
       </div>
       <div class="result-form-select-group">

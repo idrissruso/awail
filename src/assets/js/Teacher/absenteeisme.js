@@ -20,7 +20,6 @@
   // function to get all the classes
 
   async function postData(url, data) {
-    console.log(data)
     try {
       const response = await fetch(url, {
         method: 'POST',
@@ -69,6 +68,7 @@
   const sendData = async () => {
     const rows = tbody.querySelectorAll('tr')
     let data = {}
+    let success = true
 
     for (const row of rows) {
       const studentId = row.querySelector('td:nth-child(2)').dataset.studentId
@@ -87,16 +87,18 @@
       }
       try {
         const response = await postData(createAttendanceUrl, data)
-        console.log(response)
-        if (response.status === 'success') {
-          alert('Data sent successfully')
-          document.location.reload()
-        } else {
-          alert('Error sending data')
-        }
       } catch (error) {
         console.error('Error:', error)
+        success = false
       }
+    }
+
+    if (success) {
+      alert('Enregistrement effectué avec succès')
+      document.location.reload()
+    } else {
+      alert("Impossible d'enregistrer les absences plusieurs fois")
+      document.location.reload()
     }
   }
 

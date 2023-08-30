@@ -5,6 +5,12 @@ const gradeSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Student',
     required: [true, 'Please provide a student'],
+    unique: true,
+  },
+  exam: {
+    type: String,
+    enum: ['Exam 1', 'Exam 2', 'Exam 3'],
+    required: [true, 'Please provide an exam'],
   },
   course: {
     type: mongoose.Schema.Types.ObjectId,

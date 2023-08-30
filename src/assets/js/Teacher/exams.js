@@ -1,32 +1,62 @@
 'use strict'
 ;(function () {
-  const getClassesUrl = 'http://localhost:3000/api/getClasses'
-  const getStudentsUrl = 'http://localhost:3000/api/getStudents'
-  const getUserUrl = 'http://localhost:3000/api/getUserByRoleData'
-  const getCoursesUrl = 'http://localhost:3000/api/getCourses'
+  const getClassesUrl = 'http://localhost:3000/api/getClasses/'
+  const getStudentsUrl = 'http://localhost:3000/api/getStudents/'
+  const getUserUrl = 'http://localhost:3000/api/getUserByRoleData/'
+  const getCoursesUrl = 'http://localhost:3000/api/getCourses/'
   const tbody = document.querySelector('#tbody')
   const searchBtn = document.querySelector('#search-student')
   const classesSelect = document.querySelector('#class-select')
   const selectCourse = document.querySelector('#cours-select')
+  const examSelect = document.querySelector('#exam-select')
+  const form = document.querySelector('#form')
+  const action = document.querySelector('#action')
   // function to get all the classes
-  const getClasses = async () => {
+
+  async function postData(url, data) {
+    console.log(data)
     try {
-      const response = await fetch(getClassesUrl, {
+      const response = await fetch(url, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      })
+
+      if (!response.ok) {
+        throw new Error('Network response was not ok')
+      } else {
+        console.log('Data sent successfully')
+      }
+
+      return await response.json()
+    } catch (error) {
+      console.error('Error:', error)
+      throw error
+    }
+  }
+
+  async function fetchData(url, id = '') {
+    try {
+      const response = await fetch(`${url}${id}`, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
         },
       })
-
-      if (response.ok) {
-        const data = await response.json()
-        return data
-      } else {
-        console.log('Not successful')
+      const data = await response.json()
+      if (!response.ok) {
+        throw new Error('Network response was not ok')
       }
+      return data
     } catch (error) {
       console.error('Error:', error)
+      throw error
     }
+  }
+  const getClasses = async () => {
+    return await fetchData(getClassesUrl)
   }
 
   // function to populate the classes select element
@@ -42,23 +72,7 @@
   }
 
   const getCourses = async () => {
-    try {
-      const response = await fetch(getCoursesUrl, {
-        method: 'GET',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      })
-
-      if (response.ok) {
-        const data = await response.json()
-        return data
-      } else {
-        console.log('Not successful')
-      }
-    } catch (error) {
-      console.error('Error:', error)
-    }
+    return await fetchData(getCoursesUrl)
   }
 
   const populateCourses = async (courses) => {
@@ -71,48 +85,43 @@
       selectCourse.appendChild(option)
     })
   }
+  const sendData = async () => {
+    const rows = tbody.querySelectorAll('tr')
+    let data = {}
+
+    for (const row of rows) {
+      const studentId = row.querySelector('td:nth-child(2)').dataset.studentId
+      const pointsInput = row.querySelector('input[name="points1"]')
+      const points = pointsInput.value
+      data = {
+        student: studentId,
+        course: selectCourse.value,
+        marks: points,
+      }
+      try {
+        const response = await postData(createGradeUrl, data)
+        console.log(response)
+        if (response.status === 'success') {
+          alert('Data sent successfully')
+          document.location.reload()
+        } else {
+          alert('Error sending data')
+        }
+      } catch (error) {
+        console.error('Error:', error)
+      }
+    }
+  }
 
   // function to get all the students
   const getStudents = async () => {
-    try {
-      const response = await fetch(getStudentsUrl, {
-        method: 'GET',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      })
-
-      if (response.ok) {
-        const data = await response.json()
-        return data
-      } else {
-        console.log('Not successful')
-      }
-    } catch (error) {
-      console.error('Error:', error)
-    }
+    return await fetchData(getStudentsUrl)
   }
 
   // function to get a student by id
 
   const getUserByRoleData = async (id) => {
-    try {
-      const response = await fetch(`${getUserUrl}/${id}`, {
-        method: 'GET',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      })
-
-      if (response.ok) {
-        const data = await response.json()
-        return data
-      } else {
-        console.log('Not successful')
-      }
-    } catch (error) {
-      console.error('Error:', error)
-    }
+    return await fetchData(getUserUrl, id)
   }
 
   // function to display students in the table
