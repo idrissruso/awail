@@ -1,9 +1,14 @@
 'use strict'
 ;(function () {
-  const getClassesUrl = 'http://localhost:3000/api/getClasses/'
-  const getStudentsUrl = 'http://localhost:3000/api/getStudents/'
-  const getUserUrl = 'http://localhost:3000/api/getUserByRoleData/'
-  const createAttendanceUrl = 'http://localhost:3000/api/createAttendee/'
+  const baseUrl = 'http://localhost:3000/api/'
+
+  const apiUrls = {
+    getClasses: `${baseUrl}getClasses/`,
+    getStudents: `${baseUrl}getStudents/`,
+    getUserByRoleData: `${baseUrl}getUserByRoleData/`,
+    createAttendance: `${baseUrl}createAttendee/`,
+  }
+
   const tbody = document.querySelector('#tbody')
   const searchBtn = document.querySelector('#search-student')
   const classesSelect = document.querySelector('#class-select')
@@ -62,7 +67,7 @@
     }
   }
   const getClasses = async () => {
-    return await fetchData(getClassesUrl)
+    return await fetchData(apiUrls.getClasses)
   }
 
   const sendData = async () => {
@@ -86,7 +91,7 @@
         status: attendance,
       }
       try {
-        const response = await postData(createAttendanceUrl, data)
+        const response = await postData(apiUrls.createAttendance, data)
       } catch (error) {
         console.error('Error:', error)
         success = false
@@ -117,13 +122,13 @@
 
   // function to get all the students
   const getStudents = async () => {
-    return await fetchData(getStudentsUrl)
+    return await fetchData(apiUrls.getStudents)
   }
 
   // function to get a student by id
 
   const getUserByRoleData = async (id) => {
-    return await fetchData(getUserUrl, id)
+    return await fetchData(apiUrls.getUserByRoleData, id)
   }
 
   // function to display students in the table

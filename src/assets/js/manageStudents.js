@@ -1,11 +1,12 @@
 ;(function () {
+  const baseUrl = 'http://localhost:3000/api/'
   const viewStudentModal = document.querySelector('.viewStudent')
 
   const viewStudentModalContainer = document.querySelector(
     '.viewStudent__container'
   )
   const table = document.querySelector('#table-body')
-  const getStudentsUrl = 'http://localhost:3000/api/getStudents'
+  const getStudentsUrl = `${baseUrl}getStudents`
   let students = []
   const searchInput = document.querySelector('#student')
   const studentInfo = document.querySelector('.viewStudent__container-content')
@@ -119,7 +120,7 @@
 
   getStudents()
   const showStudent = async (id) => {
-    const response = await fetch(`http://localhost:3000/api/getStudent/${id}`)
+    const response = await fetch(`${baseUrl}getStudent/${id}`)
       .then((res) => res.json())
       .then((data) => {
         const student = data

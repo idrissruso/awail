@@ -1,4 +1,6 @@
 ;(function () {
+  const baseUrl = 'http://localhost:3000/api/'
+
   const tBody = document.querySelector('#teachers__tBody')
   const modifyPopUp = document.querySelector('.modifyTeacher')
   const modifyTeacherCancelBtn = document.querySelector('#close')
@@ -11,10 +13,10 @@
     '.deleteModal__btn--cancel'
   )
   const deleteTeacherContainer = document.querySelector('.deleteModal__content')
-  const getTeacherUrl = 'http://localhost:3000/api/getTeacher'
-  const updateTeacherUrl = 'http://localhost:3000/api/updateTeacher'
-  const deleteTeacherUrl = 'http://localhost:3000/api/deleteTeacher'
-  const deleteUserByRoleData = 'http://localhost:3000/api/deleteUserByRoleData'
+  const getTeacherUrl = `${baseUrl}getTeacher`
+  const updateTeacherUrl = `${baseUrl}updateTeacher`
+  const deleteTeacherUrl = `${baseUrl}deleteTeacher`
+  const deleteUserByRoleData = `${baseUrl}deleteUserByRoleData`
   const profilImg = document.querySelector('.form__box-img--img')
   const imgInput = document.querySelector('#profileImg')
   const imgLabel = document.querySelector('.form__box-img--caption')

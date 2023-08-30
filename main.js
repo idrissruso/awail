@@ -12,6 +12,7 @@ import 'dotenv/config'
 import flash from 'connect-flash'
 import cookieParser from 'cookie-parser'
 import getUserById from './utils/getUSer.js'
+import './config/passport.js'
 
 const secret = process.env.SESSION_SECRET
 const url = process.env.MONGODB_URI
@@ -80,8 +81,6 @@ app.use(
 
 app.use(passport.initialize())
 app.use(passport.session())
-
-import './config/passport.js'
 
 //routes
 app.use('/', webRoutes)

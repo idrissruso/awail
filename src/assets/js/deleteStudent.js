@@ -1,4 +1,6 @@
 ;(function () {
+  const baseUrl = 'http://localhost:3000/api/'
+
   let studentId
   let deletePopUp = document.querySelector('.deleteStudent')
   const confirmBtn = document.querySelector('.deleteModal__btn--confirm')
@@ -51,7 +53,7 @@
   })
 
   const deleteUser = async (id) => {
-    const deleteUserUrl = `http://localhost:3000/api/deleteUserByRoleData/${id}`
+    const deleteUserUrl = `${baseUrl}deleteUserByRoleData/${id}`
 
     try {
       const response = await fetch(deleteUserUrl, {
@@ -68,8 +70,8 @@
   }
 
   confirmBtn.addEventListener('click', async () => {
-    const deleteStudentUrl = `http://localhost:3000/api/deleteStudent/${studentId}`
-    const deleteUserUrl = `http://localhost:3000/api/deleteUserByRoleData/${studentId}`
+    const deleteStudentUrl = `${baseUrl}deleteStudent/${studentId}`
+    const deleteUserUrl = `${baseUrl}deleteUserByRoleData/${studentId}`
 
     try {
       const response = await fetch(deleteStudentUrl, {

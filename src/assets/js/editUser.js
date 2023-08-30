@@ -1,11 +1,13 @@
 ;(function () {
+  const baseUrl = 'http://localhost:3000/api/'
+
   const profileImage = document.querySelector('.form__box-img--img')
   const editImage = document.querySelector('.form__box-img--caption')
   const editImageInput = document.querySelector('#file')
   const updateForm = document.querySelector('.form')
   let imageFile
-  const urlAdmin = 'http://localhost:3000/api/updateAdmin/' + adminId
-  const urlUser = 'http://localhost:3000/api/updateUser/' + userId
+  const urlAdmin = `${baseUrl}updateAdmin/` + adminId
+  const urlUser = `${baseUrl}updateUser/` + userId
 
   // Event listener for form submission
   updateForm.addEventListener('submit', async (e) => {

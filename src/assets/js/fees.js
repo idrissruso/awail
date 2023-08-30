@@ -1,12 +1,14 @@
 ;(function () {
+  const baseUrl = 'http://localhost:3000/api/'
+
   const tbody = document.querySelector('#payment__table-body')
   const paymentModal = document.querySelector('.payment')
   const paymentCancelBtn = document.querySelector('.payment__close-btn')
   const paymentModalContent = document.querySelector('.payment__container')
   const table = document.querySelector('table')
   const addFeeForm = document.querySelector('.payment__new-payment')
-  const getFeesUrl = 'http://localhost:3000/api/getStudentFees/'
-  const createFeeUrl = 'http://localhost:3000/api/createFee'
+  const getFeesUrl = `${baseUrl}getStudentFees/`
+  const createFeeUrl = `${baseUrl}createFee/`
   let studentId
 
   table.addEventListener('click', (e) => {

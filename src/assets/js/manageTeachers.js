@@ -1,6 +1,7 @@
+'use strict'
 ;(function () {
+  const baseUrl = 'http://localhost:3000/api/'
   const tBody = document.querySelector('#teachers__tBody')
-
   const addNewTeacherBtn = document.querySelector('#addTeacher')
   const addNewTeacherPopUp = document.querySelector('.addNewTeacher')
   const addNewTeacherForm = document.querySelector('.addNewTeacher-form')
@@ -11,7 +12,7 @@
     '.addNewTeacher__container'
   )
 
-  const getTeachersUrl = 'http://localhost:3000/api/getTeachers'
+  const getTeachersUrl = `${baseUrl}getTeachers`
   let teachers = []
   const searchInput = document.querySelector('#teacher')
   const profileImageInput = document.querySelector('#profileImg')
@@ -26,7 +27,7 @@
 
   async function fetchCourses() {
     try {
-      const response = await fetch('http://localhost:3000/api/getCourses') // Replace with your API endpoint
+      const response = await fetch(`${baseUrl}getCourses`) // Replace with your API endpoint
       const courses = await response.json()
       return courses
     } catch (error) {
@@ -187,7 +188,7 @@
     }
 
     try {
-      const response = await fetch('http://localhost:3000/api/createTeacher', {
+      const response = await fetch(`${baseUrl}createTeacher`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -210,16 +211,13 @@
           profileImageType: profileImage ? profileImage.type : undefined, // Assuming teacher._id is the MongoDB ObjectId
         }
 
-        const userResponse = await fetch(
-          'http://localhost:3000/api/createUser',
-          {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(userData),
-          }
-        )
+        const userResponse = await fetch(`${baseUrl}createUser`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(userData),
+        })
         const userRes = await userResponse.json()
         console.log(userRes)
 
