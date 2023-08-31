@@ -13,6 +13,7 @@ import flash from 'connect-flash'
 import cookieParser from 'cookie-parser'
 import getUserById from './utils/getUSer.js'
 import './config/passport.js'
+import cors from 'cors'
 
 const secret = process.env.SESSION_SECRET
 const url = process.env.MONGODB_URI
@@ -22,6 +23,11 @@ const bs = browserSync.create()
 const PORT = 3000
 
 const app = express()
+const corsOptions = {
+  origin: '*',
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+}
+app.use(cors(corsOptions))
 
 //connect to db
 mongoose
@@ -65,11 +71,6 @@ app.use(cookieParser())
 app.use(flash())
 
 //cors
-app.use((req, res, next) => {
-  res.setHeader('Access-Control-Allow-Origin', '*')
-
-  next()
-})
 
 //session config
 app.use(
