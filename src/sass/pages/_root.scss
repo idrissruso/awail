@@ -3,13 +3,14 @@
   transition: all 0.5s;
 }
 .dashboard-container {
-  display: flex;
+  display: grid;
+  grid-template-columns: 21rem 1fr;
   min-height: 100vh;
   overflow: auto;
   transition: all 0.5s;
 
   &__sidebar {
-    width: 21rem;
+    min-width: 21rem;
     transition: transform 0.5s;
     z-index: 1000;
     & > * {
