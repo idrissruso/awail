@@ -13,6 +13,7 @@ import flash from 'connect-flash'
 import cookieParser from 'cookie-parser'
 import getUserById from './utils/getUSer.js'
 import './config/passport.js'
+import serverless from 'serverless-http'
 
 const secret = process.env.SESSION_SECRET
 const url = process.env.MONGODB_URI
@@ -122,3 +123,4 @@ app.use((err, req, res, next) => {
 })
 
 // functions
+export const handler = serverless(app)
