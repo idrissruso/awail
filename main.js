@@ -19,6 +19,7 @@ const secret = process.env.SESSION_SECRET
 const url = process.env.MONGODB_URI
 console.log(url)
 
+const bs = browserSync.create()
 const PORT = 3000
 
 const app = express()
@@ -44,6 +45,11 @@ mongoose
       console.log(
         `Server running on port ${PORT}` + ' ' + `http://localhost:${PORT}/`
       )
+      bs.init({
+        proxy: `localhost:${PORT}`,
+        open: false,
+        files: ['./**/*.{html,js,css}'],
+      })
     })
   })
   .catch((err) => {
