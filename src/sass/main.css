@@ -28,6 +28,11 @@ html {
   box-sizing: border-box;
   font-size: 62.5%;
 }
+@media screen and (max-width: 75em) {
+  html {
+    font-size: 50%;
+  }
+}
 
 *,
 *:before,
@@ -1720,6 +1725,10 @@ input[type=checkbox]:checked:after {
   background-size: cover;
   height: 100vh;
   padding: 16rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .options-container {
