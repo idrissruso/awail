@@ -26,8 +26,15 @@ const app = express()
 
 app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Origin', '*')
+  if (req.header('Access-Control-Request-Headers')) {
+    res.setHeader(
+      'Access-Control-Allow-Headers',
+      req.header('Access-Control-Request-Headers')
+    )
+  }
   next()
 })
+
 //connect to db
 mongoose
   .connect(url)
