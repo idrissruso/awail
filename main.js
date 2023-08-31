@@ -64,6 +64,13 @@ app.use(cookieParser())
 
 app.use(flash())
 
+//cors
+app.use((req, res, next) => {
+  res.setHeader('Access-Control-Allow-Origin', '*')
+
+  next()
+})
+
 //session config
 app.use(
   session({
