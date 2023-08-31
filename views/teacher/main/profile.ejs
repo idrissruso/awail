@@ -55,8 +55,9 @@
 
 <script>
   ;(function async() {
-    const getCourseUrl = 'http://localhost:3000/api/getCourse'
-    const getUserByRoleDataUrl = 'http://localhost:3000/api/getUserByRoleData'
+    const baseUrs = 'http://localhost:3000/api/'
+    const getCourseUrl = `${baseUrl}getCourse`
+    const getUserByRoleDataUrl = `${baseUrl}getUserByRoleData`
     const teacher = JSON.parse('<%- JSON.stringify(loggedInTeacher) %>')
     const profileImg = document.querySelector('.tProfile__img')
     if (teacher.profileImage) {

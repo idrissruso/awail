@@ -1,4 +1,6 @@
 ;(function () {
+  const baseUrl = 'http://localhost:3000/api/'
+
   let modifyPopUp = document.querySelector('.modifyStudent')
   const inputs = document.querySelectorAll('.form__box-info--input')
   const imgInput = document.querySelector('.form__box-img--file')
@@ -23,7 +25,7 @@
   let student
   let profileImg
 
-  const getClassesUrl = 'http://localhost:3000/api/getClasses'
+  const getClassesUrl = `${baseUrl}getClasses`
 
   const getClasses = async () => {
     try {
@@ -125,7 +127,7 @@
 
   const getStudent = async (id) => {
     try {
-      const res = await fetch(`http://localhost:3000/api/getStudent/${id}`)
+      const res = await fetch(`${baseUrl}getStudent/${id}`)
       const data = await res.json() // Await the JSON parsing
       return data
     } catch (err) {
@@ -191,16 +193,13 @@
     }
 
     try {
-      const response = await fetch(
-        `http://localhost:3000/api/updateStudent/${student._id}`,
-        {
-          method: 'PATCH',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(formData),
-        }
-      )
+      const response = await fetch(`${baseUrl}updateStudent/${student._id}`, {
+        method: 'PATCH',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      })
       const data = await response.json()
       alert("L'élève a été modifié avec succès")
       window.location.reload()

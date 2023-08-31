@@ -5,12 +5,14 @@
     '#374c80',
     // Navy Blue
   ]
-  const getCoursesUrl = 'http://localhost:3000/api/getCourses'
-  const createCourseUrl = 'http://localhost:3000/api/createCourse'
-  const getTeacherByIdUrl = 'http://localhost:3000/api/getTeacher/'
-  const getCourseByIdUrl = 'http://localhost:3000/api/getCourse/'
-  const deleteCourseByIdUrl = 'http://localhost:3000/api/deleteCourse/'
-  const updateCoursUrl = 'http://localhost:3000/api/updateCourse/'
+
+  const baseUrl = 'http://localhost:3000/api/'
+  const getCoursesUrl = `${baseUrl}getCourses`
+  const createCourseUrl = `${baseUrl}createCourse`
+  const getTeacherByIdUrl = `${baseUrl}getTeacher/`
+  const getCourseByIdUrl = `${baseUrl}getCourse/`
+  const deleteCourseByIdUrl = `${baseUrl}deleteCourse/`
+  const updateCoursUrl = `${baseUrl}updateCourse/`
   const manageCourses = document.querySelector('.manageCourses')
   const coursesDiv = document.querySelector('.manageCourses__courses')
   const submitBtn = document.querySelector('.addNewCoursModal__btn--add')

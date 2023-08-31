@@ -1,4 +1,10 @@
 ;(function () {
+  const baseUrl = 'http://localhost:3000/api/'
+
+  const apiUrls = {
+    absenteeUrl: `${baseUrl}getStudentAttendees/`,
+    updateUrl: `${baseUrl}updateAttendee/`,
+  }
   const table = document.querySelector('#table-body')
   const form = document.querySelector('.add-attendance__form')
   const excusedA = document.querySelector('#ex_absence-rate')
@@ -9,8 +15,6 @@
     '.add-attendance__cancel-button'
   )
   const absenteeismModal = document.querySelector('.absenteeism__modal')
-  const absenteeUrl = 'http://localhost:3000/api/getStudentAttendees/'
-  const updateUrl = 'http://localhost:3000/api/updateAttendee/'
   const select = document.querySelector('#absence-date')
 
   table.addEventListener('click', async (e) => {
@@ -35,7 +39,7 @@
 
   const getStudentAbsenteeism = async (studentId) => {
     try {
-      const response = await fetch(`${absenteeUrl}${studentId}`)
+      const response = await fetch(`${apiUrls.absenteeUrl}${studentId}`)
       const data = await response.json()
 
       select.innerHTML = ''
@@ -70,7 +74,7 @@
 
     // Update the absence explanation in the database
     try {
-      const response = await fetch(`${updateUrl}${absenceDate}`, {
+      const response = await fetch(`${apiUrls.updateUrl}${absenceDate}`, {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',

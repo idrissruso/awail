@@ -1,5 +1,12 @@
 ;(function () {
   if (typeof addNewUserModal !== 'undefined') delete addNewUserModal
+  const baseUrl = 'http://localhost:3000/api/'
+
+  const apiUrls = {
+    getUsers: `${baseUrl}getUsers`,
+    createAdmin: `${baseUrl}createAdmin`,
+    createUser: `${baseUrl}createUser`,
+  }
 
   const totalUsers = document.querySelector('#totalUsers')
   const maleUsers = document.querySelector('#maleUsers')
@@ -24,7 +31,7 @@
   const blockedUsersCancelBtn = document.querySelector(
     '.blockedUsersModal__close-btn'
   )
-  const getUsersUrl = 'http://localhost:3000/api/getUsers'
+
   const searchInput = document.querySelector('#user')
   const tableBody = document.querySelector('#tableBody')
   const imgInput = document.querySelector('#image')
@@ -52,16 +59,16 @@
 
   const getUsersStatistics = async () => {
     try {
-      const response = await fetch(getUsersUrl)
+      const response = await fetch(apiUrls.getUsers)
       const data = await response.json()
       total = data.length
 
       for (const user of data) {
         try {
           const response = await fetch(
-            `http://localhost:3000/api/get${
-              user.role === 'Parent' ? 'Student' : user.role
-            }/${user.roleData}`
+            `${baseUrl}get${user.role === 'Parent' ? 'Student' : user.role}/${
+              user.roleData
+            }`
           )
           const userData = await response.json()
           if (userData.gender === 'Female' || userData.gender === 'Feminin') {
@@ -86,7 +93,7 @@
   getUsersStatistics()
 
   const getUsers = async () => {
-    const response = await fetch(getUsersUrl)
+    const response = await fetch(apiUrls.getUsers)
       .then((res) => res.json())
       .then((data) => {
         users.push(...data)
@@ -106,9 +113,9 @@
   const getUserInfo = async (user) => {
     try {
       const response = await fetch(
-        `http://localhost:3000/api/get${
-          user.role === 'Parent' ? 'Student' : user.role
-        }/${user.roleData}`
+        `${baseUrl}get${user.role === 'Parent' ? 'Student' : user.role}/${
+          user.roleData
+        }`
       )
       const userData = await response.json()
 
@@ -203,7 +210,7 @@
       }
 
       try {
-        const response = await fetch('http://localhost:3000/api/createAdmin', {
+        const response = await fetch(apiUrls.createAdmin, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -215,7 +222,7 @@
           const adminData = await response.json()
           user.roleData = adminData._id
 
-          const res = await fetch('http://localhost:3000/api/createUser', {
+          const res = await fetch(apiUrls.createUser, {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',

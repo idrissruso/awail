@@ -12,6 +12,8 @@ import 'dotenv/config'
 import flash from 'connect-flash'
 import cookieParser from 'cookie-parser'
 import getUserById from './utils/getUSer.js'
+import './config/passport.js'
+import serverless from 'serverless-http'
 
 const secret = process.env.SESSION_SECRET
 const url = process.env.MONGODB_URI
@@ -81,8 +83,6 @@ app.use(
 app.use(passport.initialize())
 app.use(passport.session())
 
-import './config/passport.js'
-
 //routes
 app.use('/', webRoutes)
 app.use('/api', apiRoutes)
@@ -123,3 +123,4 @@ app.use((err, req, res, next) => {
 })
 
 // functions
+export const handler = serverless(app)

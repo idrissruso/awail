@@ -1,6 +1,13 @@
 'use strict'
 ;(function () {
-  const getClassesUrl = 'http://localhost:3000/api/getClasses'
+  const baseUrl = 'http://localhost:3000/api/'
+
+  const apiUrls = {
+    getClasses: `${baseUrl}getClasses/`,
+    addStudent: `${baseUrl}createStudent/`,
+    addUser: `${baseUrl}createUser/`,
+  }
+
   const addButton = document.querySelector('.addStudent-form__btn')
   const imageFileInput = document.querySelector('#image')
   let profileImage = null
@@ -11,7 +18,7 @@
 
   const getClasses = async () => {
     try {
-      const response = await fetch(getClassesUrl, {
+      const response = await fetch(apiUrls.getClasses, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
@@ -61,9 +68,6 @@
     const parentEmail = document.querySelector('#parent-email').value
     const address = document.querySelector('#adress').value
 
-    const addStudentUrl = 'http://localhost:3000/api/createStudent'
-    const addUserUrl = 'http://localhost:3000/api/createUser'
-
     const formData = {
       serial_number: matricule,
       fullName: fullName,
@@ -90,7 +94,7 @@
     }
 
     try {
-      const response = await fetch(addStudentUrl, {
+      const response = await fetch(apiUrls.addStudent, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -113,7 +117,7 @@
               profileImageType: profileImage ? profileImage.type : undefined,
             }
             try {
-              const response = await fetch(addUserUrl, {
+              const response = await fetch(apiUrls.addUser, {
                 method: 'POST',
                 headers: {
                   'Content-Type': 'application/json',
