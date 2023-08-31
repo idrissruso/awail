@@ -1,6 +1,7 @@
 import express, { json } from 'express'
 import path from 'path'
 import { fileURLToPath } from 'url'
+import browserSync from 'browser-sync'
 import webRoutes from './web/index.js'
 import apiRoutes from './api/index.js'
 import mongoose from 'mongoose'
@@ -43,11 +44,6 @@ mongoose
       console.log(
         `Server running on port ${PORT}` + ' ' + `http://localhost:${PORT}/`
       )
-      bs.init({
-        proxy: `localhost:${PORT}`,
-        open: false,
-        files: ['./**/*.{html,js,css}'],
-      })
     })
   })
   .catch((err) => {
