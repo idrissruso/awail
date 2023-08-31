@@ -23,12 +23,11 @@ const bs = browserSync.create()
 const PORT = 3000
 
 const app = express()
-const corsOptions = {
-  origin: '*',
-  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-}
-app.use(cors(corsOptions))
 
+app.use((req, res, next) => {
+  res.setHeader('Access-Control-Allow-Origin', '*')
+  next()
+})
 //connect to db
 mongoose
   .connect(url)

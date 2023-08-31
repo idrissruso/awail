@@ -8,6 +8,12 @@ $(document).ready(function () {
   const dashboard = $('.dashboard')
   const manageAbsenteeismBtn = $('.M_absenteeism')
   const manageExams = $('.manageExams')
+  const sidebarToggler = $('.navbar__toggle')
+
+  sidebarToggler.on('click', function () {
+    $('.dashBoardRoot').toggleClass('sideBarHidden')
+    $('.dashboard-container__sidebar').toggleClass('toggleSidebar')
+  })
 
   // Add event listeners to the elements
   brandBox.on('click', function () {

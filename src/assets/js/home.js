@@ -12,7 +12,7 @@ $(document).ready(function () {
   const sidebarToggler = $('.navbar__toggle')
 
   sidebarToggler.on('click', function () {
-    $('#dashBoardRoot').toggleClass('sideBarHidden')
+    $('.dashBoardRoot').toggleClass('sideBarHidden')
     $('.dashboard-container__sidebar').toggleClass('toggleSidebar')
   })
 
