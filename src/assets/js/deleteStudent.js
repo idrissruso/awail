@@ -1,5 +1,5 @@
 ;(function () {
-  const baseUrl = 'http://localhost:3000/api/'
+  const baseUrl = 'https://awail.onrender.com/api/'
 
   let studentId
   let deletePopUp = document.querySelector('.deleteStudent')

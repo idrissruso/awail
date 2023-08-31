@@ -1,6 +1,6 @@
 'use strict'
 ;(function () {
-  const baseUrl = 'http://localhost:3000/api/'
+  const baseUrl = 'https://awail.onrender.com/api/'
   const tBody = document.querySelector('#teachers__tBody')
   const addNewTeacherBtn = document.querySelector('#addTeacher')
   const addNewTeacherPopUp = document.querySelector('.addNewTeacher')

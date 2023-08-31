@@ -6,7 +6,7 @@
     // Navy Blue
   ]
 
-  const baseUrl = 'http://localhost:3000/api/'
+  const baseUrl = 'https://awail.onrender.com/api/'
   const getCoursesUrl = `${baseUrl}getCourses`
   const createCourseUrl = `${baseUrl}createCourse`
   const getTeacherByIdUrl = `${baseUrl}getTeacher/`

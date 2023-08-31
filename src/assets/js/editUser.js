@@ -1,5 +1,5 @@
 ;(function () {
-  const baseUrl = 'http://localhost:3000/api/'
+  const baseUrl = 'https://awail.onrender.com/api/'
 
   const profileImage = document.querySelector('.form__box-img--img')
   const editImage = document.querySelector('.form__box-img--caption')

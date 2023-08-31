@@ -2,7 +2,7 @@
   const maleStudents = document.querySelector('#male-students')
   const femaleStudents = document.querySelector('#female-students')
   const totalStudents = document.querySelector('#total-students')
-  const getStudentsUrl = 'http://localhost:3000/api/getStudents'
+  const getStudentsUrl = 'https://awail.onrender.com/api/getStudents'
 
   const getStudents = async () => {
     try {

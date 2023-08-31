@@ -1,5 +1,5 @@
 ;(function () {
-  const baseUrl = 'http://localhost:3000/api/'
+  const baseUrl = 'https://awail.onrender.com/api/'
 
   const tbody = document.querySelector('#payment__table-body')
   const paymentModal = document.querySelector('.payment')

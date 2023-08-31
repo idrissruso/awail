@@ -1,5 +1,5 @@
 ;(function () {
-  const baseUrl = 'http://localhost:3000/api/'
+  const baseUrl = 'https://awail.onrender.com/api/'
   const viewStudentModal = document.querySelector('.viewStudent')
 
   const viewStudentModalContainer = document.querySelector(
