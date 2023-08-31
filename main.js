@@ -1,7 +1,6 @@
 import express, { json } from 'express'
 import path from 'path'
 import { fileURLToPath } from 'url'
-import browserSync from 'browser-sync'
 import webRoutes from './web/index.js'
 import apiRoutes from './api/index.js'
 import mongoose from 'mongoose'
@@ -19,7 +18,6 @@ const secret = process.env.SESSION_SECRET
 const url = process.env.MONGODB_URI
 console.log(url)
 
-const bs = browserSync.create()
 const PORT = 3000
 
 const app = express()
