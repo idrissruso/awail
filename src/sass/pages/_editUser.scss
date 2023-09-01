@@ -3,6 +3,10 @@
   display: flex;
   flex-direction: column;
 
+  @media screen and (max-width: $bp-smallest) {
+    padding: 2rem 0.5rem;
+  }
+
   &__container {
     background-color: #fff;
     box-shadow: 0 0.5rem 1rem rgba($color-primary-dark, 0.2);
@@ -24,6 +28,10 @@
       align-items: center;
       padding: 10rem;
       column-gap: 10rem;
+
+      @media screen and (max-width: $bp-small) {
+        padding: 5rem;
+      }
 
       &__box-img {
         display: flex;

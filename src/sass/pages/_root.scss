@@ -77,6 +77,12 @@
         align-items: center;
         justify-content: center;
         flex: 0 0 40%;
+        @media screen and (max-width: $bp-medium) {
+          flex: 0 0 45%;
+        }
+        @media screen and (max-width: $bp-smallest) {
+          flex: 0 0 55%;
+        }
 
         &-input {
           border: none;

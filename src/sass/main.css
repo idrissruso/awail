@@ -33,6 +33,11 @@ html {
     font-size: 50%;
   }
 }
+@media screen and (max-width: 31.25em) {
+  html {
+    font-size: 40%;
+  }
+}
 
 *,
 *:before,
@@ -1864,6 +1869,16 @@ input[type=checkbox]:checked:after {
   justify-content: center;
   flex: 0 0 40%;
 }
+@media screen and (max-width: 56.25em) {
+  .dashboard-container__navbar .navbar__search {
+    flex: 0 0 45%;
+  }
+}
+@media screen and (max-width: 31.25em) {
+  .dashboard-container__navbar .navbar__search {
+    flex: 0 0 55%;
+  }
+}
 .dashboard-container__navbar .navbar__search-input {
   border: none;
   background-color: #ecf2f4;
@@ -2000,6 +2015,11 @@ input[type=checkbox]:checked:after {
   display: flex;
   flex-direction: column;
 }
+@media screen and (max-width: 31.25em) {
+  .editUser {
+    padding: 2rem 0.5rem;
+  }
+}
 .editUser__container {
   background-color: #fff;
   box-shadow: 0 0.5rem 1rem rgba(32, 30, 64, 0.2);
@@ -2019,6 +2039,11 @@ input[type=checkbox]:checked:after {
   padding: 10rem;
   -moz-column-gap: 10rem;
        column-gap: 10rem;
+}
+@media screen and (max-width: 37.5em) {
+  .editUser__content .form {
+    padding: 5rem;
+  }
 }
 .editUser__content .form__box-img {
   display: flex;

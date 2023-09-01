@@ -5,6 +5,9 @@ html {
   @media screen and (max-width: $bp-largest) {
     font-size: 50%;
   }
+  @media screen and (max-width: $bp-smallest) {
+    font-size: 40%;
+  }
 }
 *,
 *:before,
