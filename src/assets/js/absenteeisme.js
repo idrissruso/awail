@@ -1,5 +1,5 @@
 ;(function () {
-  const baseUrl = 'https://awail.onrender.com/api/'
+  const baseUrl = window.API_URLS.apiUrl
 
   const apiUrls = {
     absenteeUrl: `${baseUrl}getStudentAttendees/`,

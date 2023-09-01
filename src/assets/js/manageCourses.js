@@ -6,7 +6,7 @@
     // Navy Blue
   ]
 
-  const baseUrl = 'https://awail.onrender.com/api/'
+  const baseUrl = window.API_URLS.apiUrl
   const getCoursesUrl = `${baseUrl}getCourses`
   const createCourseUrl = `${baseUrl}createCourse`
   const getTeacherByIdUrl = `${baseUrl}getTeacher/`

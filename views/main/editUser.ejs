@@ -18,8 +18,7 @@
             var surname = FullName.split(' ')[1]
             var userId = `<%- loggedInUser._id %>`
             var adminId = `<%- admin._id %>`
-            var loggedInUser = <%- JSON.stringify(loggedInUser) %>;
-
+            var loggedInUser = JSON.parse(`<%- JSON.stringify(loggedInUser) %>`)
 
             document.getElementById('name').value = name
             document.getElementById('surname').value = surname
@@ -100,6 +99,7 @@
   </div>
 </div>
 <!--script-->
+<script src="apiConfig.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script>
   ;(function () {
@@ -108,8 +108,8 @@
     const editImageInput = document.querySelector('#file')
     const updateForm = document.querySelector('.form')
     let imageFile
-    const urlAdmin = 'http://localhost:3000/api/updateAdmin/' + adminId
-    const urlUser = 'http://localhost:3000/api/updateUser/' + userId
+    const urlAdmin = window.API_URLS.apiUrl + 'updateAdmin/' + adminId
+    const urlUser = window.API_URLS.apiUrl + 'updateUser/' + userId
 
     // Event listener for form submission
     updateForm.addEventListener('submit', async (e) => {

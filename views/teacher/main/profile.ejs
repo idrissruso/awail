@@ -52,10 +52,11 @@
     </div>
   </div>
 </div>
-
+<script src="../apiConfig.js"></script>
 <script>
+  'use strict'
   ;(function async() {
-    const baseUrl = 'https://awail.onrender.com/api/'
+    const baseUrl = window.API_URLS.apiUrl
     const getCourseUrl = `${baseUrl}getCourse`
     const getUserByRoleDataUrl = `${baseUrl}getUserByRoleData`
     const teacher = JSON.parse('<%- JSON.stringify(loggedInTeacher) %>')

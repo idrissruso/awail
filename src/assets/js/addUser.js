@@ -1,6 +1,6 @@
 ;(function () {
   if (typeof addNewUserModal !== 'undefined') delete addNewUserModal
-  const baseUrl = 'https://awail.onrender.com/api/'
+  const baseUrl = window.API_URLS.apiUrl
 
   const apiUrls = {
     getUsers: `${baseUrl}getUsers`,

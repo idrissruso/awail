@@ -1,5 +1,5 @@
 ;(function () {
-  const baseUrl = 'https://awail.onrender.com/api/'
+  const baseUrl = window.API_URLS.apiUrl
 
   const tBody = document.querySelector('#teachers__tBody')
   const modifyPopUp = document.querySelector('.modifyTeacher')
