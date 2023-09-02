@@ -1876,7 +1876,7 @@ input[type=checkbox]:checked:after {
 }
 @media screen and (max-width: 31.25em) {
   .dashboard-container__navbar .navbar__search {
-    flex: 0 0 55%;
+    flex: 0 0 65%;
   }
 }
 .dashboard-container__navbar .navbar__search-input {
