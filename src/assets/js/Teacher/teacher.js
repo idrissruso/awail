@@ -1,5 +1,3 @@
-'use strict'
-
 $(document).ready(function () {
   // Use the jQuery $ function to select the elements
   const main = $('.dashboard-container__main')
