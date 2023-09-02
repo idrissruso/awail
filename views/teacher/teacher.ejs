@@ -28,10 +28,7 @@
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="../apiConfig.js"></script>
   <script>
-    'use strict'
-
     $(document).ready(function () {
-      // Use the jQuery $ function to select the elements
       const main = $('.dashboard-container__main')
       const brandBox = $('.sidebar__brand')
       const userBox = $('.sidebar__user')
@@ -45,20 +42,30 @@
         $('.dashboard-container__sidebar').toggleClass('toggleSidebar')
       })
 
-      // Add event listeners to the elements
+      // Add event listeners to load content
       brandBox.on('click', function () {
-        // Load the content of the dashboard page into the main element
-        main.load('/teacher/main/profile.ejs')
+        loadContent('/teacher/main/profile.ejs')
       })
       manageAbsenteeismBtn.on('click', function () {
-        // Load the content of the dashboard page into the main element
-        main.load('/teacher/main/manageAbsenteeism.ejs')
+        loadContent('/teacher/main/manageAbsenteeism.ejs')
+      })
+      manageExams.on('click', function () {
+        loadContent('/teacher/main/manageExams.ejs')
       })
 
-      manageExams.on('click', function () {
-        // Load the content of the dashboard page into the main element
-        main.load('/teacher/main/manageExams.ejs')
-      })
+      async function loadContent(url) {
+        try {
+          const response = await fetch(url)
+          if (!response.ok) {
+            throw new Error(`Failed to fetch data: ${response.status}`)
+          }
+
+          const html = await response.text()
+          main.html(html)
+        } catch (error) {
+          console.error('Error:', error)
+        }
+      }
     })
   </script>
 </html>
