@@ -1,0 +1,25 @@
+version: '3.9'
+services:
+  mongo_db:
+    container_name: mongo_db-container
+    image: mongo:latest
+    restart: always
+    volumes:
+      - mongo_db:/data/db
+
+  app:
+    container_name: app-container
+    build: .
+    ports:
+      - 4000:3000
+
+    environment:
+      MONGODB_URI: mongodb://mongo_db-container:27017/awail
+      SESSION_SECRET: your-session-secret
+    depends_on:
+      - mongo_db
+    volumes:
+      - .:/usr/src/app
+
+volumes:
+  mongo_db: {}
