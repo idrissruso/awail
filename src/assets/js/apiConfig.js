@@ -1,4 +1,4 @@
 // apiConfig.js
 window.API_URLS = {
-  apiUrl: 'http://localhost:4000/api/',
+  apiUrl: 'https://awail.onrender.com/api/',
 }
