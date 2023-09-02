@@ -10,6 +10,8 @@
   let students = []
   const searchInput = document.querySelector('#student')
   const studentInfo = document.querySelector('.viewStudent__container-content')
+  const spinner = document.querySelector('#spinner')
+  const spinner2 = document.querySelector('#spinner2')
 
   //editStudent__container--show
 
@@ -18,6 +20,7 @@
       viewStudentModal.classList.add('viewStudent-show')
       viewStudentModal.classList.toggle('viewStudent-hide')
       viewStudentModalContainer.classList.add('viewStudent-animate')
+      spinner2.classList.remove('spinner2__hide')
       showStudent(e.target.dataset.student)
     }
   })
@@ -48,6 +51,7 @@
       .then((data) => {
         students.push(...data)
         updateTable(students)
+        spinner.style.display = 'none'
       })
       .catch((err) => console.log(err))
   }
@@ -252,6 +256,7 @@
   </div>`
         studentInfo.innerHTML = ''
         studentInfo.innerHTML = html
+        spinner2.classList.add('spinner2__hide')
       })
       .catch((err) => console.log(err))
   }

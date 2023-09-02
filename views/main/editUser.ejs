@@ -1,4 +1,5 @@
 <div class="editUser">
+  <%- include("../spinners/spinner2.ejs")%>
   <div class="editUser__container">
     <h1 class="editUser__heading">Mettre à jour le profil d'utilisateur</h1>
     <div class="editUser__content">
@@ -110,11 +111,12 @@
     let imageFile
     const urlAdmin = window.API_URLS.apiUrl + 'updateAdmin/' + adminId
     const urlUser = window.API_URLS.apiUrl + 'updateUser/' + userId
+    const spinner = document.querySelector('#spinner2')
 
     // Event listener for form submission
     updateForm.addEventListener('submit', async (e) => {
       e.preventDefault()
-
+      spinner.classList.remove('spinner2__hide')
       const dataAdmin = {
         FullName: updateForm.name.value + ' ' + updateForm.surname.value,
         Email: updateForm.email.value,
@@ -162,7 +164,8 @@
       }
 
       if (adminUpdated && userUpdated) {
-        alert('Profile updated successfully!')
+        spinner.classList.add('spinner2__hide')
+        alert('User updated successfully')
         location.reload()
       }
     })
@@ -201,7 +204,7 @@
     }
 
     // Display profile image if available
-    console.log(loggedInUser.username)
+
     if (loggedInUser.profileImage) {
       profileImage.src = `data:${loggedInUser.profileImageType};base64,${loggedInUser.profileImage}`
     }

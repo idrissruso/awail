@@ -10,6 +10,7 @@
 
   const addButton = document.querySelector('.addStudent-form__btn')
   const imageFileInput = document.querySelector('#image')
+  const spinner = document.querySelector('#spinner2')
   let profileImage = null
 
   imageFileInput.addEventListener('change', (e) => {
@@ -54,6 +55,7 @@
 
   addButton.addEventListener('click', async (event) => {
     event.preventDefault()
+    spinner.classList.remove('spinner2__hide')
 
     const matricule = document.querySelector('#student-no').value
     const fullName = document.querySelector('#student-name').value
@@ -67,6 +69,7 @@
     const parentTel = document.querySelector('#parent-tel').value
     const parentEmail = document.querySelector('#parent-email').value
     const address = document.querySelector('#adress').value
+    const form = document.querySelector('.addStudent-form')
 
     const formData = {
       serial_number: matricule,
@@ -126,8 +129,9 @@
               })
 
               if (response.ok) {
+                spinner.classList.add('spinner2__hide')
                 alert('Student added successfully!')
-                location.reload()
+                form.reset()
               } else {
                 console.log(response.message)
                 console.log('Not successful')

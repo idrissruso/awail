@@ -1724,6 +1724,107 @@ input[type=checkbox]:checked:after {
   transform: scale(1) translateY(0);
 }
 
+.spinner__container-loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000000;
+  transition: all 0.3s ease-in-out;
+}
+.spinner__container-loading .spinner {
+  position: relative;
+  width: 22.4px;
+  height: 22.4px;
+}
+.spinner__container-loading .spinner::before,
+.spinner__container-loading .spinner::after {
+  --radius: 250;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  animation: spinner-w7nm60 2s infinite linear;
+  background: #24243e;
+  border-radius: 50%;
+}
+.spinner__container-loading .spinner::before {
+  --radius: -250;
+  background: #d71313;
+}
+@keyframes spinner-w7nm60 {
+  0% {
+    transform: scale(1) rotate(0deg) translateY(calc(var(--radius) * 1%));
+  }
+  50% {
+    transform: scale(0.5) rotate(1440deg) translateY(0);
+  }
+  100% {
+    transform: scale(1) rotate(2920deg) translateY(calc(var(--radius) * 1%));
+  }
+}
+
+.spinner2__container-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000000;
+  transition: all 0.3s ease-in-out;
+}
+.spinner2__container-loading .spinner {
+  width: 11.2px;
+  height: 11.2px;
+  animation: spinner-o824ag 1s infinite linear;
+}
+.spinner2__container-loading .spinner div {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #d71313;
+  border-radius: 50%;
+  animation: spinner-vse6n7 1.25s infinite ease;
+}
+.spinner2__container-loading .spinner div:nth-child(1) {
+  --rotation: 90;
+}
+.spinner2__container-loading .spinner div:nth-child(2) {
+  --rotation: 180;
+}
+.spinner2__container-loading .spinner div:nth-child(3) {
+  --rotation: 270;
+}
+.spinner2__container-loading .spinner div:nth-child(4) {
+  --rotation: 360;
+}
+@keyframes spinner-vse6n7 {
+  0%, 100% {
+    transform: rotate(calc(var(--rotation) * 1deg)) translateY(0);
+  }
+  50% {
+    transform: rotate(calc(var(--rotation) * 1deg)) translateY(300%);
+  }
+}
+@keyframes spinner-o824ag {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.spinner2__hide {
+  display: none;
+}
+
 .home {
   background-image: linear-gradient(to right bottom, #2b2a4c, #eee2de, #eee2de, #2b2a4c);
   background-repeat: no-repeat;

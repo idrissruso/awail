@@ -35,6 +35,7 @@
   const detail = document.querySelector(
     '.courseDetailsModal__container-content'
   )
+  const spinner = document.querySelector('#spinner')
 
   let editCourseId
   let coursesList = []
@@ -46,6 +47,7 @@
         .then((res) => res.json())
         .then((data) => {
           coursesList = [...data]
+          spinner.style.display = 'none'
         })
     } catch (err) {
       alert('une erreur est survenue')
@@ -70,6 +72,7 @@
   // delete course by id
 
   const deleteCourseById = async (id) => {
+    spinner.style.display = 'flex'
     try {
       const response = await fetch(deleteCourseByIdUrl + id, {
         method: 'DELETE',
@@ -86,6 +89,7 @@
   // Get all teachers from the database
 
   const addNewCourse = async (course) => {
+    spinner.style.display = 'flex'
     try {
       const response = await fetch(createCourseUrl, {
         method: 'POST',
@@ -101,6 +105,7 @@
   }
 
   const updateCourse = async (course, id) => {
+    spinner.style.display = 'flex'
     try {
       const response = await fetch(updateCoursUrl + id, {
         method: 'PUT',
@@ -144,6 +149,8 @@
     } catch (err) {
       alert('une erreur est survenue')
       console.error(err)
+    } finally {
+      spinner.style.display = 'none'
     }
   }
   // Fixed query selector
@@ -230,6 +237,7 @@
       CoursDetailsContainer.classList.add(
         'courseDetailsModal__container--animate'
       )
+      spinner.style.display = 'flex'
       displayCourseDetails(event.target.dataset.id)
     }
   })
@@ -293,7 +301,7 @@
     // Clear the form
     document.querySelector('#course-name').value = ''
 
-    // Remove all the courses from the DOM
+    // Remove all the courses from the
     coursesDiv.innerHTML = ''
 
     // Display the courses again

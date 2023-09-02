@@ -16,6 +16,7 @@
   let teachers = []
   const searchInput = document.querySelector('#teacher')
   const profileImageInput = document.querySelector('#profileImg')
+  const spinner = document.querySelector('#spinner')
   let profileImage
   let teacherId
 
@@ -92,6 +93,7 @@
       const response = await fetch(getTeachersUrl)
       const data = await response.json()
       teachers = data
+      spinner.style.display = 'none'
       updateTable(teachers)
     } catch (err) {
       console.log(err)

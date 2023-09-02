@@ -2,6 +2,7 @@
   const maleStudents = document.querySelector('#male-students')
   const femaleStudents = document.querySelector('#female-students')
   const totalStudents = document.querySelector('#total-students')
+  const spinner = document.querySelector('.spinner__container-loading')
   const getStudentsUrl = window.API_URLS.apiUrl + 'getStudents'
 
   const getStudents = async () => {
@@ -15,6 +16,7 @@
   }
 
   getStudents().then((students) => {
+    spinner.style.display = 'none'
     totalStudents.innerHTML = students.length
     femaleStudents.innerHTML = students.filter(
       (student) => student.gender === 'Feminin'
