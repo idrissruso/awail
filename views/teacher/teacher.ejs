@@ -27,45 +27,5 @@
   <!-- Include the jQuery library -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="../apiConfig.js"></script>
-  <script>
-    $(document).ready(function () {
-      const main = $('.dashboard-container__main')
-      const brandBox = $('.sidebar__brand')
-      const userBox = $('.sidebar__user')
-      const dashboard = $('.dashboard')
-      const manageAbsenteeismBtn = $('.M_absenteeism')
-      const manageExams = $('.manageExams')
-      const sidebarToggler = $('.navbar__toggle')
-
-      sidebarToggler.on('click', function () {
-        $('.dashBoardRoot').toggleClass('sideBarHidden')
-        $('.dashboard-container__sidebar').toggleClass('toggleSidebar')
-      })
-
-      // Add event listeners to load content
-      brandBox.on('click', function () {
-        loadContent('/teacher/main/profile.ejs')
-      })
-      manageAbsenteeismBtn.on('click', function () {
-        loadContent('/teacher/main/manageAbsenteeism.ejs')
-      })
-      manageExams.on('click', function () {
-        loadContent('/teacher/main/manageExams.ejs')
-      })
-
-      async function loadContent(url) {
-        try {
-          const response = await fetch(url)
-          if (!response.ok) {
-            throw new Error(`Failed to fetch data: ${response.status}`)
-          }
-
-          const html = await response.text()
-          main.html(html)
-        } catch (error) {
-          console.error('Error:', error)
-        }
-      }
-    })
-  </script>
+  <script src="teacher.js"></script>
 </html>
