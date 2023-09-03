@@ -35,6 +35,7 @@
   const searchInput = document.querySelector('#user')
   const tableBody = document.querySelector('#tableBody')
   const imgInput = document.querySelector('#image')
+  const spinner = document.querySelector('#spinner')
   let femaleUsers = 0
   let male = 0
   let total = 0
@@ -98,6 +99,7 @@
       .then((data) => {
         users.push(...data)
         updateTable(users)
+        spinner.style.display = 'none'
       })
       .catch((err) => console.error(err))
   }

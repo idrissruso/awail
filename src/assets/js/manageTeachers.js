@@ -17,6 +17,7 @@
   const searchInput = document.querySelector('#teacher')
   const profileImageInput = document.querySelector('#profileImg')
   const spinner = document.querySelector('#spinner')
+  const spinner2 = document.querySelector('#spinner2')
   let profileImage
   let teacherId
 
@@ -169,7 +170,7 @@
 
   addNewTeacherForm.addEventListener('submit', async (e) => {
     e.preventDefault()
-
+    spinner2.classList.remove('spinner2__hide')
     const formData = new FormData(addNewTeacherForm)
     const teacherData = {
       serial_number: formData.get('teacher-no'),
@@ -226,6 +227,7 @@
         if (userResponse.ok) {
           // User created successfully
           alert('Teacher added successfully')
+          spinner2.classList.add('spinner2__hide')
           document.location.reload()
           // Reset the form
         } else {
