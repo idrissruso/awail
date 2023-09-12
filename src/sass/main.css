@@ -1830,11 +1830,20 @@ input[type=checkbox]:checked:after {
   background-repeat: no-repeat;
   background-size: cover;
   height: 100vh;
-  padding: 16rem;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+}
+@media screen and (min-width: 68.75em) {
+  .home {
+    padding: 16rem;
+  }
+}
+@media screen and (max-width: 56.25em) {
+  .home {
+    gap: 5rem;
+  }
 }
 
 .options-container {

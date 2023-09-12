@@ -9,11 +9,17 @@
   background-repeat: no-repeat;
   background-size: cover;
   height: 100vh;
-  padding: 16rem;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+
+  @media screen and (min-width: $bp-large) {
+    padding: 16rem;
+  }
+  @media screen and (max-width: $bp-medium) {
+    gap: 5rem;
+  }
 }
 
 .options-container {
