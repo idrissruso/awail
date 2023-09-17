@@ -36,6 +36,9 @@
   const tableBody = document.querySelector('#tableBody')
   const imgInput = document.querySelector('#image')
   const spinner = document.querySelector('#spinner')
+  const spinner2 = document.querySelector('#spinner2')
+
+  console.log(spinner2)
   let femaleUsers = 0
   let male = 0
   let total = 0
@@ -180,6 +183,7 @@
     const addUserForm = document.querySelector('#addUserForm')
     addUserForm.addEventListener('submit', async (e) => {
       e.preventDefault()
+      spinner2.classList.remove('spinner2__hide')
       const formData = new FormData(addUserForm)
       const name = formData.get('name')
       const surname = formData.get('surname')
@@ -236,6 +240,7 @@
           if (res.ok) {
             alert('Utilisateur ajouté avec succès')
             location.reload()
+            spinner2.classList.add('spinner2__hide')
           }
         }
       } catch (err) {
