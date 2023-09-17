@@ -14,6 +14,7 @@
   const classesSelect = document.querySelector('#class-select')
   const form = document.querySelector('#form')
   const absenteeismDate = document.querySelector('#date-select')
+  const spinner = document.querySelector('#spinner2')
 
   //make date input today's date
   const today = new Date()
@@ -71,6 +72,7 @@
   }
 
   const sendData = async () => {
+    spinner.classList.remove('spinner2__hide')
     const rows = tbody.querySelectorAll('tr')
     let data = {}
     let success = true
@@ -105,19 +107,30 @@
       alert("Impossible d'enregistrer les absences plusieurs fois")
       document.location.reload()
     }
+    spinner.classList.add('spinner2__hide')
   }
 
   // send the data to the server
 
   // function to populate the classes select element
 
-  async function populateClasses(classes) {
-    classesSelect.innerHTML = classes
-      .map(
-        (classe) =>
-          `<option value="${classe._id}">${classe.class_name}</option>`
-      )
-      .join('')
+  // function to populate the classes select element
+  const populateClasses = async (classes) => {
+    classesSelect.innerHTML = '' // Clear existing options
+
+    // Create and add the first option with value 0 and default text
+    const defaultOption = document.createElement('option')
+    defaultOption.value = '0'
+    defaultOption.textContent = 'Sélectionnez une classe' // Change this to your desired default text
+    classesSelect.appendChild(defaultOption)
+
+    // Loop through the classes and append the rest of the options
+    classes.forEach((classe) => {
+      const option = document.createElement('option')
+      option.value = classe._id
+      option.textContent = classe.class_name
+      classesSelect.appendChild(option)
+    })
   }
 
   // function to get all the students

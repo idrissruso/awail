@@ -19,6 +19,7 @@
   const examSelect = document.querySelector('#exam-select')
   const form = document.querySelector('#form')
   const action = document.querySelector('#action')
+  const spinner = document.querySelector('#spinner2')
 
   let action_ = 'Add'
   // function to get all the classes
@@ -80,8 +81,15 @@
 
   // function to populate the classes select element
   const populateClasses = async (classes) => {
-    classesSelect.innerHTML = ''
+    classesSelect.innerHTML = '' // Clear existing options
 
+    // Create and add the first option with value 0 and default text
+    const defaultOption = document.createElement('option')
+    defaultOption.value = '0'
+    defaultOption.textContent = 'Sélectionnez une classe' // Change this to your desired default text
+    classesSelect.appendChild(defaultOption)
+
+    // Loop through the classes and append the rest of the options
     classes.forEach((classe) => {
       const option = document.createElement('option')
       option.value = classe._id
@@ -130,6 +138,7 @@
   })
 
   const sendData = async (update = false) => {
+    spinner.classList.remove('spinner2__hide')
     const rows = tbody.querySelectorAll('tr')
     let data = {}
     let success = true
@@ -161,6 +170,7 @@
         console.error('Error:', error)
         success = false
       }
+      spinner.classList.add('spinner2__hide')
     }
 
     if (success) {
