@@ -10,11 +10,12 @@
   }
 
   const tbody = document.querySelector('#tbody')
-  const searchBtn = document.querySelector('#search-student')
+  const searchInput = document.querySelector('#search-student')
   const classesSelect = document.querySelector('#class-select')
   const form = document.querySelector('#form')
   const absenteeismDate = document.querySelector('#date-select')
-  const spinner = document.querySelector('#spinner2')
+  const spinner = document.querySelector('#spinner')
+  const spin = document.querySelector('#spinner2')
 
   //make date input today's date
   const today = new Date()
@@ -22,6 +23,7 @@
   const mm = String(today.getMonth() + 1).padStart(2, '0') //January is 0!
   const yyyy = today.getFullYear()
   absenteeismDate.value = yyyy + '-' + mm + '-' + dd
+  let students = []
 
   // function to get all the classes
 
@@ -72,7 +74,6 @@
   }
 
   const sendData = async () => {
-    spinner.classList.remove('spinner2__hide')
     const rows = tbody.querySelectorAll('tr')
     let data = {}
     let success = true
@@ -107,7 +108,6 @@
       alert("Impossible d'enregistrer les absences plusieurs fois")
       document.location.reload()
     }
-    spinner.classList.add('spinner2__hide')
   }
 
   // send the data to the server
@@ -131,6 +131,7 @@
       option.textContent = classe.class_name
       classesSelect.appendChild(option)
     })
+    spinner.style.display = 'none'
   }
 
   // function to get all the students
@@ -146,47 +147,49 @@
 
   // function to display students in the table
   const displayStudents = async (students) => {
-    tbody.innerHTML = ''
+    // Clear existing rows in the table body
+    while (tbody.firstChild) {
+      tbody.removeChild(tbody.firstChild)
+    }
+
     for (const [i, student] of students.entries()) {
+      console.log("i've been called" + (i + 1) + 'times')
       const tr = document.createElement('tr')
       const user = await getUserByRoleData(student._id)
       let name = `attendance${i}`
       tr.innerHTML = `
-      <tr class="table__row">
-          <td class="table__cell">${i + 1}</td>
-          <td class="table__cell" data-student-id = ${student._id}>${
-        user.username
-      }</td>
-          <td class="table__cell" >${student.fullName}</td>
-          <td class="table__cell">
-            <div class="checkbox-group">
-              <label class="checkbox-group__label checkbox-group__label-absent">
-                <input
-                  type="radio"
-                  name=${name}
-                  class="checkbox-group__checkbox"
-                  value="Absent"
-                  required
-                />
-                Absent
-              </label>
-              <label
-                class="checkbox-group__label checkbox-group__label-present"
-              >
-                <input
-                  type="radio"
-                  name=${name}
-                  class="checkbox-group__checkbox"
-                  value="Présent"
-                  required
-                />
-                Présent
-              </label>
-            </div>
-          </td>
-        </tr>`
+<tr class="table__row">
+    <td class="table__cell">${i + 1}</td>
+    <td class="table__cell" data-student-id=${student._id}>${user.username}</td>
+    <td class="table__cell">${student.fullName}</td>
+    <td class="table__cell">
+      <div class="checkbox-group">
+        <label class="checkbox-group__label checkbox-group__label-absent">
+          <input
+            type="radio"
+            name=${name}
+            class="checkbox-group__checkbox"
+            value="Absent"
+            required
+          />
+          Absent
+        </label>
+        <label class="checkbox-group__label checkbox-group__label-present">
+          <input
+            type="radio"
+            name=${name}
+            class="checkbox-group__checkbox"
+            value="Présent"
+            required
+          />
+          Présent
+        </label>
+      </div>
+    </td>
+  </tr>`
       tbody.appendChild(tr)
     }
+    spin.classList.add('spinner2__hide')
   }
 
   // function to filter students by class id
@@ -203,28 +206,28 @@
   // add event listener for classes select element to filter students by class id
   // add event listener for classes select element to filter students by class id
   classesSelect.addEventListener('change', (e) => {
+    spin.classList.remove('spinner2__hide')
     const classId = e.target.value
     getStudents().then((data) => {
-      let students = data
-      getStudentsByClass(students, classId).then((students) => {
+      let allStudents = data
+      getStudentsByClass(allStudents, classId).then((st) => {
+        students = st
         displayStudents(students)
       })
     })
   })
 
   // add event listener for search input to filter students by name
-  searchBtn.addEventListener('input', (e) => {
-    const searchValue = e.target.value.toLowerCase()
-    const classId = classesSelect.value
-    getStudents().then((data) => {
-      let students = data
-      getStudentsByClass(students, classId).then((students) => {
-        const filteredStudents = students.filter((student) =>
-          student.fullName.toLowerCase().includes(searchValue)
-        )
-        displayStudents(filteredStudents)
-      })
-    })
+  let debounceTimeout
+  searchInput.addEventListener('input', (e) => {
+    clearTimeout(debounceTimeout)
+    debounceTimeout = setTimeout(() => {
+      const searchValue = e.target.value.toLowerCase()
+      const filteredStudents = students.filter((student) =>
+        student.fullName.toLowerCase().includes(searchValue)
+      )
+      displayStudents(filteredStudents)
+    }, 300) // adjust delay as needed
   })
 
   // add event listener for form submit to send data to server

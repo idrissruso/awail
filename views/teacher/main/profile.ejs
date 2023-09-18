@@ -1,3 +1,4 @@
+<%- include("../../spinners/spinner1.ejs")%>
 <div class="tProfile">
   <div class="tProfile__container">
     <div class="tProfile__container-content">
@@ -10,27 +11,27 @@
           <div class="tProfile__info-box">
             <div class="tProfile__row">
               <span class="tProfile__label">Matricule:</span>
-              <span class="tProfile__value" id="matricule">123456</span>
+              <span class="tProfile__value" id="matricule"></span>
             </div>
             <div class="tProfile__row">
               <span class="tProfile__label">Nom Complet:</span>
-              <span class="tProfile__value" id="fullName">John Doe</span>
+              <span class="tProfile__value" id="fullName"></span>
             </div>
             <div class="tProfile__row">
               <span class="tProfile__label">Téléphone:</span>
-              <span class="tProfile__value" id="phone">123-456-7890</span>
+              <span class="tProfile__value" id="phone"></span>
             </div>
             <div class="tProfile__row">
               <span class="tProfile__label">Date de Naissance:</span>
-              <span class="tProfile__value" id="dateOfBirth">1998-05-15</span>
+              <span class="tProfile__value" id="dateOfBirth"></span>
             </div>
             <div class="tProfile__row">
               <span class="tProfile__label">Gendre:</span>
-              <span class="tProfile__value" id="gender">Homme</span>
+              <span class="tProfile__value" id="gender"></span>
             </div>
             <div class="tProfile__row">
               <span class="tProfile__label">Cours:</span>
-              <span class="tProfile__value" id="course">MAth</span>
+              <span class="tProfile__value" id="course"></span>
             </div>
             <div class="tProfile__divider"></div>
             <h3 class="tProfile__subheading">Programme Hebdomadaire</h3>
@@ -61,6 +62,7 @@
     const getUserByRoleDataUrl = `${baseUrl}getUserByRoleData`
     const teacher = JSON.parse('<%- JSON.stringify(loggedInTeacher) %>')
     const profileImg = document.querySelector('.tProfile__img')
+    const spinner = document.querySelector('#spinner')
     if (teacher.profileImage) {
       profileImg.src = `data:${teacher.profileImageType};base64,${teacher.profileImage}`
     } else {
@@ -107,6 +109,7 @@
       birthDate.textContent = formateDate(teacher.dateOfBirth)
       gender.textContent = teacher.gender
       course.textContent = courseName
+      spinner.style.display = 'none'
     }
 
     displayInfo(teacher)
