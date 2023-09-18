@@ -29,8 +29,8 @@
 }
 .section-login {
   background-color: rgba($color-primary, 0.5);
-  height: 100%;
-  width: 100%;
+  height: 100vh;
+  width: 100vw;
   position: absolute;
   top: 0;
   left: 0;
@@ -41,6 +41,7 @@
   transition: all 0.3s;
 
   &__container {
+    margin: 5rem;
     position: relative;
     background-color: $color-secondary;
     display: grid;

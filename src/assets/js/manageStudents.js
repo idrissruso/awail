@@ -11,16 +11,16 @@
   const searchInput = document.querySelector('#student')
   const studentInfo = document.querySelector('.viewStudent__container-content')
   const spinner = document.querySelector('#spinner')
-  const spinner2 = document.querySelector('#spinner2')
+  const spin2 = document.querySelector('#spinner2')
 
   //editStudent__container--show
 
   table.addEventListener('click', (e) => {
     if (e.target.classList.contains('manageStudents__btn--eye')) {
+      spinner.style.display = 'flex'
       viewStudentModal.classList.add('viewStudent-show')
       viewStudentModal.classList.toggle('viewStudent-hide')
       viewStudentModalContainer.classList.add('viewStudent-animate')
-      spinner2.classList.remove('spinner2__hide')
       showStudent(e.target.dataset.student)
     }
   })
@@ -256,7 +256,7 @@
   </div>`
         studentInfo.innerHTML = ''
         studentInfo.innerHTML = html
-        spinner2.classList.add('spinner2__hide')
+        spinner.style.display = 'none'
       })
       .catch((err) => console.log(err))
   }

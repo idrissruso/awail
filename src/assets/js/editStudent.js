@@ -22,6 +22,7 @@
   const form_container = document.querySelector('.editStudent__container')
   const table = document.querySelector('#table-body')
   const form = document.querySelector('#modifyForm')
+  const spin = document.querySelector('#spinner2')
   let student
   let profileImg
 
@@ -73,6 +74,7 @@
 
   table.addEventListener('click', async (e) => {
     if (e.target.classList.contains('manageStudents__btn--modify')) {
+      spin.classList.remove('spinner2__hide')
       modifyPopUp.classList.add('shown')
       modifyPopUp.classList.toggle('hidden')
       form_container.classList.add('editStudent__container--show')
@@ -94,6 +96,7 @@
         img.src = `profile.png`
       }
     }
+    spin.classList.add('spinner2__hide')
   })
 
   const formatDate = (date) => {
