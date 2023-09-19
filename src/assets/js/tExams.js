@@ -13,15 +13,17 @@
   }
 
   const tbody = document.querySelector('#tbody')
-  const searchBtn = document.querySelector('#search-student')
+  const searchInput = document.querySelector('#search-student')
   const classesSelect = document.querySelector('#class-select')
   const selectCourse = document.querySelector('#cours-select')
   const examSelect = document.querySelector('#exam-select')
   const form = document.querySelector('#form')
   const action = document.querySelector('#action')
   const spinner = document.querySelector('#spinner2')
+  const spin = document.querySelector('#spinner')
 
   let action_ = 'Add'
+  let students = []
   // function to get all the classes
 
   async function postData(url, data, method = 'POST', id = '') {
@@ -111,6 +113,7 @@
       option.textContent = course.course_name
       selectCourse.appendChild(option)
     })
+    spin.style.display = 'none'
   }
 
   // manage action select element
@@ -130,7 +133,8 @@
     action_ = e.target.value
     const classId = classesSelect.value // Assuming you also want to consider the selected class
     try {
-      const students = await getStudentsByClass(await getStudents(), classId)
+      const std = await getStudentsByClass(await getStudents(), classId)
+      students = std
       displayStudents(students)
     } catch (error) {
       console.error('Error fetching and displaying students:', error)
@@ -138,7 +142,6 @@
   })
 
   const sendData = async (update = false) => {
-    spinner.classList.remove('spinner2__hide')
     const rows = tbody.querySelectorAll('tr')
     let data = {}
     let success = true
@@ -170,7 +173,6 @@
         console.error('Error:', error)
         success = false
       }
-      spinner.classList.add('spinner2__hide')
     }
 
     if (success) {
@@ -198,6 +200,7 @@
 
   // function to display students in the table
   const displayStudents = async (students) => {
+    spinner.classList.remove('spinner2__hide')
     tbody.innerHTML = ''
     for (const [i, student] of students.entries()) {
       const grades =
@@ -205,9 +208,6 @@
       const grade = await grades.filter(
         (grade) => grade.exam === examSelect.value
       )[0]
-      console.log(grade)
-      console.log(action_)
-      console.log(examSelect.value)
       const tr = document.createElement('tr')
       const user = await getUserByRoleData(student._id)
       tr.innerHTML = `
@@ -234,6 +234,7 @@
         </tr>`
       tbody.appendChild(tr)
     }
+    spinner.classList.add('spinner2__hide')
   }
 
   // function to filter students by class id
@@ -254,33 +255,37 @@
   // display all students on page load and add event listener for search input
   // add event listener for classes select element to filter students by class id
   classesSelect.addEventListener('change', (e) => {
+    spinner.classList.remove('spinner2__hide')
     const classId = e.target.value
     getStudents().then((data) => {
-      let students = data
-      getStudentsByClass(students, classId).then((students) => {
+      let std = data
+      students = std
+      getStudentsByClass(std, classId).then((students) => {
         displayStudents(students)
       })
     })
   })
 
   // add event listener for search input to filter students by name
-  searchBtn.addEventListener('input', (e) => {
-    const searchValue = e.target.value.toLowerCase()
-    const classId = classesSelect.value
-    getStudents().then((data) => {
-      let students = data
-      getStudentsByClass(students, classId).then((students) => {
-        const filteredStudents = students.filter((student) =>
-          student.fullName.toLowerCase().includes(searchValue)
-        )
-        displayStudents(filteredStudents)
-      })
-    })
+  let debounceTimeout
+  searchInput.addEventListener('input', (e) => {
+    clearTimeout(debounceTimeout)
+    debounceTimeout = setTimeout(() => {
+      const searchValue = e.target.value.toLowerCase()
+      console.log(searchValue)
+      console.log(students)
+      const filteredStudents = students.filter((student) =>
+        student.fullName.toLowerCase().includes(searchValue)
+      )
+      console.log(filteredStudents)
+      displayStudents(filteredStudents)
+    }, 300) // adjust delay as needed
   })
   examSelect.addEventListener('change', async () => {
     const classId = classesSelect.value // Assuming you also want to consider the selected class
     try {
-      const students = await getStudentsByClass(await getStudents(), classId)
+      const std = await getStudentsByClass(await getStudents(), classId)
+      students = std
       displayStudents(students)
     } catch (error) {
       console.error('Error fetching and displaying students:', error)

@@ -147,13 +147,13 @@
 
   // function to display students in the table
   const displayStudents = async (students) => {
+    spin.classList.remove('spinner2__hide')
     // Clear existing rows in the table body
     while (tbody.firstChild) {
       tbody.removeChild(tbody.firstChild)
     }
 
     for (const [i, student] of students.entries()) {
-      console.log("i've been called" + (i + 1) + 'times')
       const tr = document.createElement('tr')
       const user = await getUserByRoleData(student._id)
       let name = `attendance${i}`
