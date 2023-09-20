@@ -1,7 +1,8 @@
 /*=============== SHOW MENU ===============*/
 const headerToggle = document.getElementById('header-toggle'),
   main = document.getElementById('main'),
-  navClose = document.getElementById('nav-close')
+  navClose = document.getElementById('nav-close'),
+  logoutBtn = document.getElementById('logout')
 
 /*===== MENU SHOW =====*/
 /* Validate if constant exists */
@@ -62,3 +63,10 @@ function scrollActive() {
 }
 
 window.addEventListener('scroll', scrollActive)
+
+/*=============== logout ===============*/
+
+logoutBtn.addEventListener('click', () => {
+  localStorage.removeItem('user')
+  window.location.href = '/logout'
+})

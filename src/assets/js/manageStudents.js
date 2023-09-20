@@ -239,7 +239,23 @@
               <td>Excellent</td>
             </tr>
             
-            <!-- Add more rows for other subjects and exam results -->
+            <!-- la moyenne -->
+            <tr>
+              <td>Français</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td>89.6</td>
+              <td>Excellent</td>
+            </tr>
+
           </tbody>
         </table>
       </div>

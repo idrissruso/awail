@@ -92,7 +92,7 @@ img {
 /*=============== HEADER Y NAV ===============*/
 .nav {
   background-color: var(--container-color-dark);
-  padding-top: 10rem;
+  padding-top: 5rem;
   position: fixed;
   top: 0;
   left: 0;
