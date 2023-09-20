@@ -15,7 +15,7 @@
   <!--=============== HOME ===============-->
   <section class="section section__height container" id="home">
     <%- include("title.ejs", {sectionTitle : "Profile"}) %> <%-
-    include("./main/profile.ejs")%>
+    include("./main/profile.ejs", user = user)%>
   </section>
 
   <!--=============== ABOUT ===============-->

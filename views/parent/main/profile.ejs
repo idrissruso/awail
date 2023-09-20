@@ -7,49 +7,59 @@
     <div class="profile__info-box">
       <div class="profile__row">
         <span class="profile__label">Matricule:</span>
-        <span class="profile__value">123456</span>
+        <span class="profile__value"><%= loggedInUser.serial_number %></span>
       </div>
       <div class="profile__row">
         <span class="profile__label">Nom Complet:</span>
-        <span class="profile__value">John Doe</span>
+        <span class="profile__value"><%= loggedInUser.fullName %></span>
       </div>
       <div class="profile__row">
         <span class="profile__label">Téléphone:</span>
-        <span class="profile__value">123-456-7890</span>
+        <span class="profile__value"
+          ><%= loggedInUser.contact_info.phone %></span
+        >
       </div>
       <div class="profile__row">
         <span class="profile__label">E-mail:</span>
-        <span class="profile__value" id="email">exemple@gmail.com</span>
+        <span class="profile__value" id="email"
+          ><%= loggedInUser.contact_info.email %></span
+        >
       </div>
       <div class="profile__row">
         <span class="profile__label">Date de Naissance:</span>
-        <span class="profile__value">1998-05-15</span>
+        <span class="profile__value"><%= loggedInUser.dateOfBirth %></span>
       </div>
       <div class="profile__row">
-        <span class="profile__label">Sexe:</span>
-        <span class="profile__value">Homme</span>
+        <span class="profile__label">Gendre:</span>
+        <span class="profile__value"><%= loggedInUser.gender %></span>
       </div>
       <div class="profile__row">
         <span class="profile__label">Classe:</span>
-        <span class="profile__value">Option 1</span>
+        <span class="profile__value"><%= loggedInUser.class %></span>
       </div>
       <div class="profile__divider"></div>
       <h3 class="profile__subheading">Information du Parent</h3>
       <div class="profile__row">
         <span class="profile__label">Nom du Parent:</span>
-        <span class="profile__value">Jane Doe</span>
+        <span class="profile__value"><%= loggedInUser.parent.fullName %></span>
       </div>
       <div class="profile__row">
         <span class="profile__label">Profession du Parent:</span>
-        <span class="profile__value">Enseignant</span>
+        <span class="profile__value"
+          ><%= loggedInUser.parent.profession %></span
+        >
       </div>
       <div class="profile__row">
         <span class="profile__label">Téléphone du Parent:</span>
-        <span class="profile__value">987-654-3210</span>
+        <span class="profile__value"
+          ><%= loggedInUser.parent.contact_info.phone %></span
+        >
       </div>
       <div class="profile__row">
         <span class="profile__label">Adresse du Parent:</span>
-        <span class="profile__value">123 Rue de Parent, Ville</span>
+        <span class="profile__value"
+          ><%= loggedInUser.contact_info.address %></span
+        >
       </div>
     </div>
   </div>

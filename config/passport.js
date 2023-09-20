@@ -6,7 +6,6 @@ import crypto from 'crypto'
 
 passport.use(
   new LocalStrategy(async (username, password, done) => {
-    console.log(username, password)
     try {
       const user = await User.findOne({ username: username })
       if (!user) return done(null, false, { message: 'Incorrect username.' })

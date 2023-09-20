@@ -5,7 +5,7 @@
     <!--=============== NAV ===============-->
     <%- include("navbar.ejs")%>
     <!--=============== MAIN ===============-->
-    <%- include("main.ejs")%>
+    <%- include("main.ejs", user = loggedInUser)%>
     <!--=============== MAIN JS ===============-->
 
     <script src="../apiConfig.js"></script>

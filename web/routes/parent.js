@@ -1,9 +1,14 @@
 import express from 'express'
+import getUserById from '../../utils/getUSer.js'
 
 const router = express.Router()
-router.get('/', (req, res) => {
+router.get('/', async (req, res) => {
   if (req.isAuthenticated() && req.user?.role === 'Parent') {
-    return res.render('parent/parent.ejs', { user: req.user })
+    const loggedInParent = await getUserById(req.user.roleData, req.user.role)
+    return res.render('parent/parent.ejs', {
+      user: req.user,
+      loggedInUser: loggedInParent,
+    })
   }
   res.redirect('/')
 })
