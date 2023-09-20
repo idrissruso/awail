@@ -159,13 +159,13 @@
   }
 
   &__label {
-    font-size: 1.5rem;
+    font-size: 1rem;
     font-weight: 600;
     color: $color-primary;
   }
 
   &__value {
-    font-size: 1.5rem;
+    font-size: 1rem;
     font-weight: 400;
     color: $color-gray-dark;
   }
@@ -178,10 +178,17 @@
 
   &__table th,
   &__table td {
-    padding: 10px;
+    font-size: 1rem;
+    padding: 0.3rem 0.5rem;
     text-align: center;
     background-color: white;
-    border: 1px solid $color-gray-dark; /* Set the background color of the cells */
+    border: 1px solid $color-gray-dark;
+
+    @media screen and (max-width: 768px) {
+      padding: 0.1rem;
+    }
+
+    /* Set the background color of the cells */
   }
 
   &__table th {

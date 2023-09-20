@@ -211,6 +211,13 @@
               <th>Examen 1</th>
               <th>Examen 2</th>
               <th>Examen 3</th>
+              <th>Examen 4</th>
+              <th>Examen 5</th>
+              <th>Examen 6</th>
+              <th>Examen 7</th>
+              <th>Examen 8</th>
+              <th>Examen 9</th>
+              <th>Examen 10</th>
               <th>Moyenne</th>
               <th>Appréciation</th>
             </tr>
@@ -222,32 +229,16 @@
               <td>85</td>
               <td>92</td>
               <td>89</td>
+              <td>87</td>
+              <td>90</td>
+              <td>85</td>
+              <td>92</td>
+              <td>89</td>
+              <td>87</td>
+              <td>89.6</td>
               <td>Excellent</td>
             </tr>
-            <tr>
-              <td>Sciences</td>
-              <td>75</td>
-              <td>80</td>
-              <td>78</td>
-              <td>77.67</td>
-              <td>Bien</td>
-            </tr>
-            <tr>
-              <td>Sciences</td>
-              <td>75</td>
-              <td>80</td>
-              <td>78</td>
-              <td>77.67</td>
-              <td>Bien</td>
-            </tr>
-            <tr>
-              <td>Sciences</td>
-              <td>75</td>
-              <td>80</td>
-              <td>78</td>
-              <td>77.67</td>
-              <td>Bien</td>
-            </tr>
+            
             <!-- Add more rows for other subjects and exam results -->
           </tbody>
         </table>

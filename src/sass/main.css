@@ -1352,12 +1352,12 @@ input[type=checkbox]:checked:after {
   margin-bottom: 1rem;
 }
 .viewStudent__label {
-  font-size: 1.5rem;
+  font-size: 1rem;
   font-weight: 600;
   color: #24243e;
 }
 .viewStudent__value {
-  font-size: 1.5rem;
+  font-size: 1rem;
   font-weight: 400;
   color: #2c2c2c;
 }
@@ -1367,10 +1367,17 @@ input[type=checkbox]:checked:after {
   margin-top: 10px;
 }
 .viewStudent__table th, .viewStudent__table td {
-  padding: 10px;
+  font-size: 1rem;
+  padding: 0.3rem 0.5rem;
   text-align: center;
   background-color: white;
-  border: 1px solid #2c2c2c; /* Set the background color of the cells */
+  border: 1px solid #2c2c2c;
+  /* Set the background color of the cells */
+}
+@media screen and (max-width: 768px) {
+  .viewStudent__table th, .viewStudent__table td {
+    padding: 0.1rem;
+  }
 }
 .viewStudent__table th {
   background-color: #f1f1f1; /* Set the background color of the table header */
@@ -3382,38 +3389,35 @@ input[type=checkbox]:checked:after {
   font-weight: bold;
 }
 
-.results {
-  padding: 4rem 6rem;
+#results {
+  margin-top: 3rem;
 }
-.results__subheading {
-  font-size: 1.2rem;
-  margin-bottom: 10px;
+#results.section {
+  padding: 0 2rem;
+  border-radius: 1rem;
 }
-.results__table {
+#results.section .section__content {
+  overflow-x: auto;
+}
+#results.section .section__content .class-schedule {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 10px;
 }
-.results__table th,
-.results__table td {
-  border: 1px solid #ddd;
-  padding: 10px;
+#results.section .section__content .class-schedule th,
+#results.section .section__content .class-schedule td {
+  padding: 1rem 1.5rem;
   text-align: center;
+  border: 0.1rem solid hsl(273, 80%, 14%);
 }
-.results__table th {
-  background-color: #f9f9f9;
-  font-weight: bold;
+#results.section .section__content .class-schedule thead th {
+  background-color: rgba(0, 0, 0, 0.2);
+  border: 0.1rem solid hsl(273, 80%, 14%);
 }
-.results__table-row:nth-child(even) {
-  background-color: #f8f8f8;
+#results.section .section__content .class-schedule tbody tr:nth-child(even) {
+  background-color: rgba(255, 255, 255, 0.05);
 }
-.results__table-cell.subject {
-  font-weight: bold;
-}
-.results__table-total {
-  background-color: #f9f9f9;
-  font-weight: bold;
-  color: #d71313;
+#results.section .section__content .class-schedule tbody tr td:first-child {
+  text-align: left;
 }
 
 /* Base Styles */
