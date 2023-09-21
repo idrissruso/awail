@@ -2,7 +2,6 @@
   margin: 1.5rem 2rem 0 2rem;
   gap: 4rem;
   display: flex;
-  flex-wrap: wrap;
   padding: 1.5rem 3rem;
 
   &__logo {
@@ -18,14 +17,11 @@
 
   &__info {
     display: flex;
-    margin-right: auto;
-    flex-wrap: wrap;
     gap: 2rem;
     box-shadow: 0 2rem 4rem rgba(hsl(273, 80%, 14%), 0.2);
     padding: 1rem 2rem;
     flex: 1;
     border-radius: 1rem;
-    justify-content: center;
   }
 
   &__info-box {
@@ -39,14 +35,13 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 10rem;
-    height: 10rem;
+    width: 15rem;
     overflow: hidden;
   }
 
   &__img {
     width: 100%;
-    height: 100%;
+
     aspect-ratio: 1/1;
     object-fit: cover;
     object-position: center;
