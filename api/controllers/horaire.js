@@ -1,4 +1,6 @@
 import Horaire from '../models/horaire.js'
+import Class from '../models/class.js'
+import mongoose from 'mongoose'
 
 // Get all horaires
 export const getHoraires = async (req, res) => {
@@ -54,5 +56,19 @@ export const updateHoraire = async (req, res) => {
     res.status(200).json(horaire)
   } catch (err) {
     res.status(400).json({ message: err.message })
+  }
+}
+
+export const getHorairesByClass = async (req, res) => {
+  try {
+    const horaires = await Horaire.find({
+      class: new mongoose.Types.ObjectId(req.params.id),
+    })
+    console.log(req.params.id)
+    if (!horaires)
+      return res.status(404).json({ message: 'Horaires not found' })
+    res.status(200).json(horaires)
+  } catch (err) {
+    res.status(500).json({ message: err.message })
   }
 }
