@@ -38,7 +38,6 @@
   const spinner = document.querySelector('#spinner')
   const spinner2 = document.querySelector('#spinner2')
 
-  console.log(spinner2)
   let femaleUsers = 0
   let male = 0
   let total = 0
@@ -236,7 +235,6 @@
             body: JSON.stringify(user),
           })
           const userData = await res.json()
-          console.log(userData)
           if (res.ok) {
             alert('Utilisateur ajouté avec succès')
             location.reload()
