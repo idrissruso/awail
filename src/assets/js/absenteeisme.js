@@ -16,9 +16,11 @@
   )
   const absenteeismModal = document.querySelector('.absenteeism__modal')
   const select = document.querySelector('#absence-date')
+  const spinner = document.querySelector('#spinner2')
 
   table.addEventListener('click', async (e) => {
     if (e.target.classList.contains('manageStudents__btn--attendees')) {
+      spinner.classList.remove('spinner2__hide')
       attendeesPopUp.classList.add('absenteeismShown')
       attendeesPopUp.classList.toggle('absenteeismHide')
       absenteeismModal.classList.add('absenteeism__container--show')
@@ -63,12 +65,14 @@
       console.error('Error fetching absenteeism data:', err)
       tBody.innerHTML = `<p class="payment__history__error">Une erreur est survenue</p>`
       throw err
+    } finally {
+      spinner.classList.add('spinner2__hide')
     }
   }
 
   form.addEventListener('submit', async (event) => {
     event.preventDefault()
-
+    spinner.classList.remove('spinner2__hide')
     const absenceDate = document.querySelector('#absence-date').value
     const status = document.querySelector('#status').value
 
@@ -85,8 +89,9 @@
       })
 
       if (response.ok) {
-        // Success
-        alert('Absence explanation updated successfully')
+        // reset the form
+        form.reset()
+        spinner.classList.add('spinner2__hide')
         document.location.reload()
       } else {
         alert('Une erreur est survenue')

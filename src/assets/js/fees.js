@@ -9,10 +9,12 @@
   const addFeeForm = document.querySelector('.payment__new-payment')
   const getFeesUrl = `${baseUrl}getStudentFees/`
   const createFeeUrl = `${baseUrl}createFee/`
+  const spinner = document.querySelector('#spinner2')
   let studentId
 
   table.addEventListener('click', (e) => {
     if (e.target.classList.contains('payment-btn')) {
+      spinner.classList.remove('spinner2__hide')
       paymentModal.classList.add('paymentShown')
       paymentModal.classList.toggle('paymentHidden')
       paymentModalContent.classList.add('payment__container--show')
@@ -55,6 +57,7 @@
             </tr>`
       tbody.insertAdjacentHTML('beforeend', tr)
     })
+    spinner.classList.add('spinner2__hide')
   }
   function getDataFromForm(formElement) {
     const formData = new FormData(formElement)
@@ -68,6 +71,8 @@
   }
   addFeeForm.addEventListener('submit', async (e) => {
     e.preventDefault()
+    spinner.classList.remove('spinner2__hide')
+
     const data = getDataFromForm(addFeeForm)
     const fee = {
       student: studentId,
@@ -84,7 +89,9 @@
         body: JSON.stringify(fee), // Use the 'fee' object here
       })
       if (response.ok) {
-        alert('Paiement effectué avec succès')
+        addFeeForm.reset()
+
+        spinner.classList.add('spinner2__hide')
         getStudentFees(studentId)
       }
     } catch (err) {

@@ -255,7 +255,6 @@
               <td>89.6</td>
               <td>Excellent</td>
             </tr>
-
           </tbody>
         </table>
       </div>

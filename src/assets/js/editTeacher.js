@@ -20,6 +20,7 @@
   const profilImg = document.querySelector('.form__box-img--img')
   const imgInput = document.querySelector('#profileImg')
   const imgLabel = document.querySelector('.form__box-img--caption')
+  const spin = document.querySelector('#spinner2')
   let imgFile
 
   imgLabel.addEventListener('click', () => {
@@ -86,6 +87,8 @@
   form.addEventListener('submit', async (e) => {
     e.preventDefault()
 
+    spin.classList.remove('spinner2__hide')
+
     var teacherData = {
       fullName: form.nomComplet.value,
       serial_number: form.matricule.value,
@@ -112,6 +115,7 @@
       })
 
       if (response.ok) {
+        spin.classList.add('spinner2__hide')
         alert('teacher updated successfully')
         window.location.reload()
       } else {
@@ -148,6 +152,7 @@
       teacherId = target.dataset.teacher
     }
     if (target.classList.contains('manageTeachers__btn--modify')) {
+      spin.classList.remove('spinner2__hide')
       modifyPopUp.classList.add('editTeacher-show')
       modifyPopUp.classList.toggle('editTeacher-hide')
       modifyTeacherForm.classList.add('editTeacher-animate')
@@ -186,6 +191,7 @@
         profilImg.src = displayImg(teacher)
         form.qualification.value = teacher.qualification
         form.address.value = teacher.contact_info.address
+        spin.classList.add('spinner2__hide')
       }
     } catch (err) {
       alert('une erreur est survenue' + err + 'form second')
