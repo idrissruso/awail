@@ -3199,6 +3199,12 @@ input[type=checkbox]:checked:after {
   flex: 1;
   border-radius: 1rem;
 }
+@media screen and (max-width: 370px) {
+  .profile__info {
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+}
 .profile__info-box {
   display: flex;
   flex-direction: column;
@@ -3243,6 +3249,16 @@ input[type=checkbox]:checked:after {
     width: 10rem;
     justify-content: flex-start;
   }
+}
+@media screen and (max-width: 370px) {
+  .profile__label {
+    font-size: 1.2rem;
+    width: -moz-min-content;
+    width: min-content;
+  }
+}
+.profile #classe {
+  text-transform: capitalize;
 }
 .profile__value {
   font-size: 1.5rem;
@@ -3375,6 +3391,11 @@ input[type=checkbox]:checked:after {
 
 .exams-schedule {
   padding: 3rem 6rem;
+}
+@media screen and (max-width: 568px) {
+  .exams-schedule {
+    padding: 1rem 2rem;
+  }
 }
 .exams-schedule__title {
   font-size: 1.5rem;

@@ -27,7 +27,7 @@
       </div>
       <div class="profile__row">
         <span class="profile__label">Date de Naissance:</span>
-        <span class="profile__value"><%= loggedInUser.dateOfBirth %></span>
+        <span class="profile__value" id="date"></span>
       </div>
       <div class="profile__row">
         <span class="profile__label">Gendre:</span>
@@ -35,7 +35,7 @@
       </div>
       <div class="profile__row">
         <span class="profile__label">Classe:</span>
-        <span class="profile__value"><%= loggedInUser.class %></span>
+        <span class="profile__value" id="classe"></span>
       </div>
       <div class="profile__divider"></div>
       <h3 class="profile__subheading">Information du Parent</h3>
@@ -122,3 +122,7 @@
     </div>
   </div>
 </div>
+
+<script>
+  const user = <%- JSON.stringify(loggedInUser) %>;
+</script>

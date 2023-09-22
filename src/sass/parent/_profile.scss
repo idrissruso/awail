@@ -28,6 +28,10 @@
     padding: 1rem 2rem;
     flex: 1;
     border-radius: 1rem;
+    @media screen and (max-width: 370px) {
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
   }
 
   &__info-box {
@@ -77,6 +81,15 @@
       width: 10rem;
       justify-content: flex-start;
     }
+
+    @media screen and (max-width: 370px) {
+      font-size: 1.2rem;
+      width: min-content;
+    }
+  }
+
+  #classe {
+    text-transform: capitalize;
   }
 
   &__value {

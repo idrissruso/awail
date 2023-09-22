@@ -1,6 +1,10 @@
 .exams-schedule {
   padding: 3rem 6rem;
 
+  @media screen and (max-width: 568px) {
+    padding: 1rem 2rem;
+  }
+
   &__title {
     font-size: 1.5rem;
     margin-bottom: 1rem;
