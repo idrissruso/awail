@@ -9,6 +9,7 @@ import fees from './routes/fees.js'
 import attendee from './routes/attendee.js'
 import blockedUsers from './routes/blockedUsers.js'
 import grade from './routes/grade.js'
+import horaire from './models/horaire.js'
 const router = express.Router()
 
 router.use('/', users)
@@ -21,5 +22,6 @@ router.use('/', fees)
 router.use('/', attendee)
 router.use('/', blockedUsers)
 router.use('/', grade)
+router.use('/', horaire)
 
 export default router
