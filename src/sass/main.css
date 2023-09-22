@@ -3174,6 +3174,13 @@ input[type=checkbox]:checked:after {
   display: flex;
   padding: 1.5rem 3rem;
 }
+@media screen and (max-width: 768px) {
+  .profile {
+    margin: 0;
+    padding: 0;
+    gap: 2rem;
+  }
+}
 .profile__logo {
   width: 20rem;
   display: inline-block;
@@ -3231,12 +3238,23 @@ input[type=checkbox]:checked:after {
   display: flex;
   justify-content: flex-end;
 }
+@media screen and (max-width: 768px) {
+  .profile__label {
+    width: 10rem;
+    justify-content: flex-start;
+  }
+}
 .profile__value {
   font-size: 1.5rem;
   font-weight: 400;
   color: #2c2c2c;
   padding: 0.5rem 1rem;
   text-transform: uppercase;
+}
+@media screen and (max-width: 768px) {
+  .profile__value {
+    padding: 0.5rem;
+  }
 }
 .profile #email {
   text-transform: lowercase;
@@ -3261,6 +3279,11 @@ input[type=checkbox]:checked:after {
   flex-direction: column;
   row-gap: 2rem;
   justify-content: center;
+}
+@media screen and (max-width: 768px) {
+  .profile__side {
+    display: none;
+  }
 }
 
 #schedule {

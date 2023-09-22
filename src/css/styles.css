@@ -210,6 +210,9 @@ img {
     var(--container-color-dark),
     var(--first-color-shape)
   );
+  @media screen and (max-width: 768px) {
+    padding: 1rem;
+  }
 }
 
 .header__nav {
@@ -304,6 +307,7 @@ img {
 
 /*=============== title ===============*/
 .title {
+  margin-top: 3rem;
   padding: 0.5rem 1rem;
   background-color: var(--gray-color);
   display: flex;

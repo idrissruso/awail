@@ -4,6 +4,12 @@
   display: flex;
   padding: 1.5rem 3rem;
 
+  @media screen and (max-width: 768px) {
+    margin: 0;
+    padding: 0;
+    gap: 2rem;
+  }
+
   &__logo {
     width: 20rem;
     display: inline-block;
@@ -67,6 +73,10 @@
     width: 15rem;
     display: flex;
     justify-content: flex-end;
+    @media screen and (max-width: 768px) {
+      width: 10rem;
+      justify-content: flex-start;
+    }
   }
 
   &__value {
@@ -75,6 +85,9 @@
     color: $color-gray-dark;
     padding: 0.5rem 1rem;
     text-transform: uppercase;
+    @media screen and (max-width: 768px) {
+      padding: 0.5rem;
+    }
   }
 
   #email {
@@ -103,5 +116,9 @@
     flex-direction: column;
     row-gap: 2rem;
     justify-content: center;
+
+    @media screen and (max-width: 768px) {
+      display: none;
+    }
   }
 }
