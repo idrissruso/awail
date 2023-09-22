@@ -1,0 +1,108 @@
+<div class="manageAbsenteeism">
+  <div class="header">
+    <h1 class="header__title">Gestion des absences de classe</h1>
+  </div>
+  <form class="form" id="form">
+    <div class="form__group">
+      <div class="form__select-group">
+        <label class="form__label" for="class-select">classe :</label>
+        <select class="form__select" id="class-select" required>
+          <option value="" disabled selected hidden>Choisir une classe</option>
+        </select>
+      </div>
+    </div>
+    <section id="schedule" class="section">
+      <div class="section__content">
+        <table class="class-schedule">
+          <thead>
+            <tr>
+              <th></th>
+              <th>Lundi</th>
+              <th>Mardi</th>
+              <th>Mercredi</th>
+              <th>Jeudi</th>
+              <th>Vendredi</th>
+              <th>Samedi</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td contenteditable="true">08:00 - 09:30</td>
+              <td contenteditable="true">Mathématiques</td>
+              <td contenteditable="true">Langue Française</td>
+              <td contenteditable="true">Biologie</td>
+              <td contenteditable="true">Éducation Physique</td>
+              <td contenteditable="true">Physique</td>
+              <td contenteditable="true">Chimie</td>
+            </tr>
+            <tr>
+              <td contenteditable="true">09:45 - 11:15</td>
+              <td contenteditable="true">Chimie</td>
+              <td contenteditable="true">Physique</td>
+              <td contenteditable="true">Histoire</td>
+              <td contenteditable="true">Mathématiques</td>
+              <td contenteditable="true">Langue Française</td>
+              <td contenteditable="true">Biologie</td>
+            </tr>
+            <tr>
+              <td contenteditable="true">11:30 - 13:00</td>
+              <td contenteditable="true">Langue Française</td>
+              <td contenteditable="true">Biologie</td>
+              <td contenteditable="true">Mathématiques</td>
+              <td contenteditable="true">Chimie</td>
+              <td contenteditable="true">Physique</td>
+              <td contenteditable="true">Éducation Physique</td>
+            </tr>
+            <tr>
+              <td contenteditable="true">14:00 - 15:30</td>
+              <td contenteditable="true">Physique</td>
+              <td contenteditable="true">Chimie</td>
+              <td contenteditable="true">Histoire</td>
+              <td contenteditable="true">Mathématiques</td>
+              <td contenteditable="true">Langue Française</td>
+              <td contenteditable="true">Biologie</td>
+            </tr>
+            <tr>
+              <td contenteditable="true">15:45 - 17:15</td>
+              <td contenteditable="true">Langue Française</td>
+              <td contenteditable="true">Biologie</td>
+              <td contenteditable="true">Mathématiques</td>
+              <td contenteditable="true">Chimie</td>
+              <td contenteditable="true">Physique</td>
+              <td contenteditable="true">Éducation Physique</td>
+            </tr>
+            <tr>
+              <td contenteditable="true">17:30 - 19:00</td>
+              <td contenteditable="true">Physique</td>
+              <td contenteditable="true">Chimie</td>
+              <td contenteditable="true">Histoire</td>
+              <td contenteditable="true">Mathématiques</td>
+              <td contenteditable="true">Langue Française</td>
+              <td contenteditable="true">Biologie</td>
+            </tr>
+            <tr>
+              <td contenteditable="true">19:15 - 20:45</td>
+              <td contenteditable="true">Langue Française</td>
+              <td contenteditable="true">Biologie</td>
+              <td contenteditable="true">Mathématiques</td>
+              <td contenteditable="true">Chimie</td>
+              <td contenteditable="true">Physique</td>
+              <td contenteditable="true">Éducation Physique</td>
+            </tr>
+            <tr>
+              <td contenteditable="true">21:00 - 22:30</td>
+              <td contenteditable="true">Mathématiques</td>
+              <td contenteditable="true">Chimie</td>
+              <td contenteditable="true">Histoire</td>
+              <td contenteditable="true">Langue Française</td>
+              <td contenteditable="true">Physique</td>
+              <td contenteditable="true">Biologie</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <button class="form__button" type="submit">Marquer la présence</button>
+  </form>
+</div>

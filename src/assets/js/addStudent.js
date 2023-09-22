@@ -1,7 +1,6 @@
 'use strict'
 ;(function () {
   const baseUrl = window.API_URLS.apiUrl
-
   const apiUrls = {
     getClasses: `${baseUrl}getClasses/`,
     addStudent: `${baseUrl}createStudent/`,
@@ -13,6 +12,7 @@
   const spinner = document.querySelector('#spinner2')
   let profileImage = null
 
+  spinner.classList.remove('spinner2__hide')
   imageFileInput.addEventListener('change', (e) => {
     profileImage = e.target.files[0]
   })
@@ -47,6 +47,7 @@
       option.textContent = classe.class_name
       classesSelect.appendChild(option)
     })
+    spinner.classList.add('spinner2__hide')
   }
 
   getClasses().then((classes) => {

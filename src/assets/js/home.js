@@ -10,6 +10,7 @@ $(document).ready(function () {
   const manageCourses = $('.manage-courses')
   const manageTeachers = $('.manage-teachers')
   const sidebarToggler = $('.navbar__toggle')
+  const schedule = $('.schedule')
 
   sidebarToggler.on('click', function () {
     $('.dashBoardRoot').toggleClass('sideBarHidden')
@@ -56,6 +57,11 @@ $(document).ready(function () {
   manageCourses.on('click', function () {
     // Load the content of the manageCourses page into the main element
     main.load('main/manageCourses.ejs')
+  })
+
+  schedule.on('click', function () {
+    // Load the content of the schedule page into the main element
+    main.load('main/horaire.ejs')
   })
   //manage students page
 
