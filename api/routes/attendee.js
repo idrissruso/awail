@@ -5,6 +5,7 @@ import {
   updateAttendee,
   deleteAttendee,
   getStudentAttendees,
+  createAttendees,
 } from '../controllers/attendee.js'
 import express from 'express'
 
@@ -15,4 +16,5 @@ router.post('/createAttendee', createAttendee)
 router.patch('/updateAttendee/:id', updateAttendee)
 router.delete('/deleteAttendee/:id', deleteAttendee)
 router.get('/getStudentAttendees/:id', getStudentAttendees)
+router.post('/createAttendees', createAttendees)
 export default router

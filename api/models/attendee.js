@@ -26,4 +26,15 @@ attendanceSchema.index({ student: 1, date: 1 }, { unique: true })
 const Attendance =
   mongoose.models.Attendance || mongoose.model('Attendance', attendanceSchema)
 
+// Recreate the index
+Attendance.collection.createIndex(
+  { student: 1, date: 1 },
+  { unique: true },
+  function (err, result) {
+    if (err) {
+      console.log('Error in creating index!', err)
+    }
+  }
+)
+
 export default Attendance

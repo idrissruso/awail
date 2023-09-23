@@ -36,6 +36,23 @@ export const createAttendee = async (req, res) => {
   }
 }
 
+export const createAttendees = async (req, res) => {
+  try {
+    const attendees = req.body.map((attendeeData) => {
+      const newAttendee = new attendee({
+        ...attendeeData,
+        student: new mongoose.Types.ObjectId(attendeeData.student),
+      })
+      return newAttendee.save()
+    })
+
+    await Promise.all(attendees)
+    res.status(201).json(attendees)
+  } catch (err) {
+    res.status(400).json({ message: err.message })
+  }
+}
+
 // Get a specific attendee by ID
 export const getAttendee = async (req, res) => {
   try {

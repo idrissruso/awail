@@ -3,6 +3,7 @@
   const apiUrls = {
     getClassById: `${baseUrl}getClass/`,
     getHoraireByClass: `${baseUrl}getHorairesByClass/`,
+    getAttendanceByStudent: `${baseUrl}getStudentAttendees/`,
   }
   const date = document.querySelector('#date')
   const img = document.querySelector('.profile__img')
@@ -93,5 +94,15 @@
   getHoraireByClass(user.class).then((horaires) => {
     schedules = horaires
     populateSchedule()
+  })
+
+  //===================== Attendance =====================
+
+  const getAttendanceByStudent = async (id) => {
+    return await fetchData(apiUrls.getAttendanceByStudent, id)
+  }
+
+  getAttendanceByStudent(user._id).then((attendances) => {
+    console.log(attendances)
   })
 })()

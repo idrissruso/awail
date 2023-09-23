@@ -7,6 +7,7 @@
     getStudents: `${baseUrl}getStudents/`,
     getUserByRoleData: `${baseUrl}getUserByRoleData/`,
     createAttendance: `${baseUrl}createAttendee/`,
+    createAttendances: `${baseUrl}createAttendees/`,
   }
 
   const tbody = document.querySelector('#tbody')
@@ -74,8 +75,11 @@
   }
 
   const sendData = async () => {
+    const date = new Date(absenteeismDate.value)
+    date.setHours(0, 0, 0, 0)
+
     const rows = tbody.querySelectorAll('tr')
-    let data = {}
+    let dataToSend = [] // Array to store data for absent students
     let success = true
 
     for (const row of rows) {
@@ -83,26 +87,35 @@
       const absentInput = row.querySelector('input[value="Absent"]')
       const presentInput = row.querySelector('input[value="Présent"]')
       let attendance
+
       if (absentInput.checked) {
         attendance = 'Absent'
+
+        // Construct data for the attendance record
+        const attendanceData = {
+          student: studentId, // Replace with an actual student ID
+          date: date, // Use the current date
+          status: attendance,
+        }
+
+        // Push attendance data to the array
+        dataToSend.push(attendanceData)
       } else if (presentInput.checked) {
         attendance = 'Present'
       }
-      data = {
-        student: studentId,
-        date: absenteeismDate.value,
-        status: attendance,
-      }
-      try {
-        const response = await postData(apiUrls.createAttendance, data)
-      } catch (error) {
-        console.error('Error:', error)
-        success = false
-      }
+    }
+
+    try {
+      // Send data for all absent students to the API in a single request
+      const response = await postData(apiUrls.createAttendances, dataToSend)
+    } catch (error) {
+      console.error('Error:', error)
+      success = false
     }
 
     if (success) {
-      alert('Enregistrement effectué avec succès')
+      spin.classList.add('spinner2__hide')
+      alert('Absences enregistrées avec succès')
       document.location.reload()
     } else {
       alert("Impossible d'enregistrer les absences plusieurs fois")
@@ -232,6 +245,7 @@
 
   // add event listener for form submit to send data to server
   form.addEventListener('submit', (e) => {
+    spin.classList.remove('spinner2__hide')
     e.preventDefault()
     sendData()
   })
