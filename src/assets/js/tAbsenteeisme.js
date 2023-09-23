@@ -96,6 +96,7 @@
           student: studentId, // Replace with an actual student ID
           date: date, // Use the current date
           status: attendance,
+          explanation: 'Non justifié',
         }
 
         // Push attendance data to the array
