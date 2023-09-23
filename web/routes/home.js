@@ -13,7 +13,8 @@ function checkRole(req, res, next) {
   if (req.body.role.toUpperCase() !== req.user.role.toUpperCase()) {
     req.logout(() => {
       req.flash('message', {
-        message: 'Invalid path. Please choose a convenient role.',
+        message:
+          'Authentification non valide. Veuillez choisir un rôle convenable.',
       })
       res.redirect('/')
     })
@@ -28,7 +29,8 @@ function checkRole(req, res, next) {
     } else {
       req.logout(() => {
         req.flash('message', {
-          message: 'Invalid path. Please choose a convenient role.',
+          message:
+            'Authentification non valide. Veuillez choisir un rôle convenable.',
         })
         res.redirect('/')
       })
