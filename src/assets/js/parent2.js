@@ -8,8 +8,10 @@
   const date = document.querySelector('#date')
   const img = document.querySelector('.profile__img')
   const scheduleTable = document.querySelector('.class-schedule tbody')
+  const absenteeTable = document.querySelector('.absence-details__table tbody')
 
   let schedules = []
+  let attendees = []
 
   async function fetchData(url, id = '') {
     try {
@@ -102,7 +104,40 @@
     return await fetchData(apiUrls.getAttendanceByStudent, id)
   }
 
-  getAttendanceByStudent(user._id).then((attendances) => {
-    console.log(attendances)
+  const populateAttendanceTable = (attendees) => {
+    absenteeTable.innerHTML = '' // Clear the table body
+    attendees.forEach((entry) => {
+      const row = `<tr class="absence-details__table-row">
+        <td class="absence-details__table-cell date">${formatDate(
+          entry.date
+        )}</td>
+        <td class="absence-details__table-cell ${
+          entry.explanation == 'Non justifié' ? 'no' : 'yes'
+        }">${entry.explanation}</td>
+      </tr>`
+      absenteeTable.insertAdjacentHTML('beforeend', row)
+    })
+  }
+
+  const calculateAbsence = (attendees) => {
+    const total = attendees.length
+    const justified = attendees.filter(
+      (attendee) => attendee.explanation === 'Justifié'
+    ).length
+    const unJustified = attendees.filter(
+      (attendee) => attendee.explanation === 'Non justifié'
+    ).length
+    const percentageNoj = Math.round((unJustified / total) * 100)
+    const percentageJ = Math.round((justified / total) * 100)
+    const absenceNoJ = document.querySelector('.attendance-overview__absent')
+    const absenceJ = document.querySelector('.attendance-overview__present')
+    absenceJ.textContent = `Justifié : ${percentageJ}%`
+    absenceNoJ.textContent = `Non justifié : ${percentageNoj}%`
+  }
+
+  getAttendanceByStudent(user._id).then((entries) => {
+    attendees = entries
+    populateAttendanceTable(attendees)
+    calculateAbsence(attendees)
   })
 })()
