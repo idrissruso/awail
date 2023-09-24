@@ -21,13 +21,15 @@
   const action = document.querySelector('#action')
   const spinner = document.querySelector('#spinner2')
   const spin = document.querySelector('#spinner')
+  const submitBtn = document.querySelector('.result-form-button')
+
+  submitBtn.disabled = true
 
   let action_ = 'Add'
   let students = []
   // function to get all the classes
 
   async function postData(url, data, method = 'POST', id = '') {
-    console.log(data)
     try {
       const response = await fetch(`${url}${id}`, {
         method: method,
@@ -39,8 +41,6 @@
 
       if (!response.ok) {
         throw new Error('Network response was not ok')
-      } else {
-        console.log('Data sent successfully')
       }
 
       return await response.json()
@@ -120,6 +120,7 @@
 
   // Outside of the action event listener
   form.addEventListener('submit', (e) => {
+    spinner.classList.remove('spinner2__hide')
     e.preventDefault()
     if (action_ === 'Add') {
       sendData()
@@ -148,7 +149,6 @@
 
     for (const row of rows) {
       const studentId = row.querySelector('td:nth-child(2)').dataset.studentId
-      console.log(studentId)
       const pointsInput = row.querySelector('input[name="points1"]')
       const gradeId = pointsInput.dataset.gradeId
       const points = pointsInput.value
@@ -185,6 +185,7 @@
         } pour modifier les points`
       )
     }
+    spinner.classList.add('spinner2__hide')
   }
 
   // function to get all the students
@@ -235,6 +236,7 @@
       tbody.appendChild(tr)
     }
     spinner.classList.add('spinner2__hide')
+    submitBtn.disabled = false
   }
 
   // function to filter students by class id
@@ -255,6 +257,7 @@
   // display all students on page load and add event listener for search input
   // add event listener for classes select element to filter students by class id
   classesSelect.addEventListener('change', (e) => {
+    submitBtn.disabled = true
     spinner.classList.remove('spinner2__hide')
     const classId = e.target.value
     getStudents().then((data) => {
@@ -272,12 +275,9 @@
     clearTimeout(debounceTimeout)
     debounceTimeout = setTimeout(() => {
       const searchValue = e.target.value.toLowerCase()
-      console.log(searchValue)
-      console.log(students)
       const filteredStudents = students.filter((student) =>
         student.fullName.toLowerCase().includes(searchValue)
       )
-      console.log(filteredStudents)
       displayStudents(filteredStudents)
     }, 300) // adjust delay as needed
   })

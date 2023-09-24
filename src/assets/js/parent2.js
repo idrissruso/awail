@@ -4,11 +4,14 @@
     getClassById: `${baseUrl}getClass/`,
     getHoraireByClass: `${baseUrl}getHorairesByClass/`,
     getAttendanceByStudent: `${baseUrl}getStudentAttendees/`,
+    getGradesByStudent: `${baseUrl}getStudentGrades/`,
+    getCourseById: `${baseUrl}getCourse/`,
   }
   const date = document.querySelector('#date')
   const img = document.querySelector('.profile__img')
   const scheduleTable = document.querySelector('.class-schedule tbody')
   const absenteeTable = document.querySelector('.absence-details__table tbody')
+  const gradesTable = document.querySelector('#resultsTable tbody')
 
   let schedules = []
   let attendees = []
@@ -90,7 +93,6 @@
 
   const populateSchedule = () => {
     const schedule = schedules.find((schedule) => schedule.class === user.class)
-    console.log(schedules)
     populateScheduleTable(schedule)
   }
   getHoraireByClass(user.class).then((horaires) => {
@@ -139,5 +141,85 @@
     attendees = entries
     populateAttendanceTable(attendees)
     calculateAbsence(attendees)
+  })
+
+  //==========================grades==========================
+
+  const getGradesByStudent = async (id) => {
+    return await fetchData(apiUrls.getGradesByStudent, id)
+  }
+
+  const getCourseById = async (id) => {
+    return await fetchData(apiUrls.getCourseById, id)
+  }
+
+  const exams = [
+    'Exam 1',
+    'Exam 2',
+    'Exam 3',
+    'Exam 4',
+    'Exam 5',
+    'Exam 6',
+    'Exam 7',
+    'Exam 8',
+    'Exam 9',
+    'Exam 10',
+  ]
+
+  const populateGradesTable = async (grades) => {
+    gradesTable.innerHTML = '' // Clear the table body
+
+    let totalMarks = 0
+    let totalExams = 0
+
+    for (let i = 0; i < grades.length; i++) {
+      const entry = grades[i]
+      const row = document.createElement('tr')
+
+      // Create a new cell for course
+      const courseCell = document.createElement('td')
+      courseCell.textContent = await getCourseById(entry.course).course_name
+      row.appendChild(courseCell)
+
+      // Create a new cell for each exam
+      exams.forEach((exam) => {
+        const cell = document.createElement('td')
+        if (entry.exam === exam) {
+          cell.textContent = entry.marks
+          totalMarks += entry.marks
+          totalExams++
+        } else {
+          cell.textContent = '' // No marks for this exam
+        }
+        row.appendChild(cell)
+      })
+
+      // Calculate average and create a new cell for it
+      const avgCell = document.createElement('td')
+      const average = ((totalMarks / (totalExams * 20)) * 100).toFixed(2) // Calculate average percentage and round to two decimal places
+      avgCell.textContent = average + '%'
+      row.appendChild(avgCell)
+
+      // Calculate appreciation and create a new cell for it
+      const apprCell = document.createElement('td')
+      if (average >= 90) {
+        apprCell.textContent = 'Excellent'
+      } else if (average >= 80) {
+        apprCell.textContent = 'Very Good'
+      } else if (average >= 70) {
+        apprCell.textContent = 'Good'
+      } else if (average >= 60) {
+        apprCell.textContent = 'Average'
+      } else {
+        apprCell.textContent = 'Poor'
+      }
+      row.appendChild(apprCell)
+
+      gradesTable.appendChild(row)
+    }
+  }
+
+  getGradesByStudent(user._id).then((grades) => {
+    populateGradesTable(grades)
   })
 })()
