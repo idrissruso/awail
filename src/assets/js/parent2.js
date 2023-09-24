@@ -167,16 +167,17 @@
   ]
 
   const populateGradesTable = async (grades) => {
-    gradesTable.innerHTML = '' // Clear the table body
+    // Get the last row (for overall average and appreciation)
+    const lastRow = gradesTable.lastElementChild
 
     // Group grades by course
     const gradesByCourse = {}
     for (let i = 0; i < grades.length; i++) {
       const entry = grades[i]
       if (!gradesByCourse[entry.course]) {
-        gradesByCourse[entry.course] = []
+        gradesByCourse[entry.course] = {}
       }
-      gradesByCourse[entry.course].push(entry)
+      gradesByCourse[entry.course][entry.exam] = entry.marks
     }
 
     // Create a new row for each course
@@ -186,7 +187,9 @@
 
       // Create a new cell for course
       const courseCell = document.createElement('td')
-      courseCell.textContent = await getCourseById(courseId).course_name
+      getCourseById(courseId).then((course) => {
+        courseCell.textContent = course.course_name
+      })
       row.appendChild(courseCell)
 
       let totalMarks = 0
@@ -195,10 +198,9 @@
       // Create a new cell for each exam
       exams.forEach((exam) => {
         const cell = document.createElement('td')
-        const gradeEntry = courseGrades.find((entry) => entry.exam === exam)
-        if (gradeEntry) {
-          cell.textContent = gradeEntry.marks
-          totalMarks += gradeEntry.marks
+        if (courseGrades[exam]) {
+          cell.textContent = courseGrades[exam]
+          totalMarks += courseGrades[exam]
           totalExams++
         } else {
           cell.textContent = '' // No marks for this exam
@@ -217,21 +219,67 @@
       if (average >= 90) {
         apprCell.textContent = 'Excellent'
       } else if (average >= 80) {
-        apprCell.textContent = 'Très bien'
+        apprCell.textContent = 'Very Good'
       } else if (average >= 70) {
-        apprCell.textContent = 'Bien'
+        apprCell.textContent = 'Good'
       } else if (average >= 60) {
-        apprCell.textContent = 'Assez bien'
+        apprCell.textContent = 'Average'
       } else {
-        apprCell.textContent = 'Insuffisant'
+        apprCell.textContent = 'Poor'
       }
       row.appendChild(apprCell)
 
-      gradesTable.appendChild(row)
+      // Insert the new row before the last row
+      gradesTable.insertBefore(row, lastRow)
+    }
+  }
+
+  function calculateAndPopulateAverage() {
+    // Get all the rows in the table body
+    const rows = gradesTable.querySelectorAll('tbody tr')
+    console.log(rows)
+
+    let totalMarks = 0
+    let totalExams = 0
+
+    // Iterate over each row (except the last one)
+    for (let i = 0; i < rows.length - 1; i++) {
+      const cells = rows[i].querySelectorAll('td')
+
+      // Iterate over each cell (skip the first and last two cells)
+      for (let j = 1; j < cells.length - 2; j++) {
+        const marks = parseFloat(cells[j].textContent)
+        if (!isNaN(marks)) {
+          totalMarks += marks
+          totalExams++
+        }
+      }
+    }
+
+    // Calculate the average
+    const average = ((totalMarks / (totalExams * 20)) * 100).toFixed(2) // Calculate average percentage and round to two decimal places
+
+    // Populate the average cell in the last row
+    const averageCell = gradesTable.querySelector('#totalOverage')
+    averageCell.textContent = average + '%'
+
+    // Calculate appreciation and populate the appreciation cell in the last row
+    const appreciationCell = gradesTable.querySelector('#totalAppreciation')
+    if (average >= 90) {
+      appreciationCell.textContent = 'Excellent'
+    } else if (average >= 80) {
+      appreciationCell.textContent = 'Very Good'
+    } else if (average >= 70) {
+      appreciationCell.textContent = 'Good'
+    } else if (average >= 60) {
+      appreciationCell.textContent = 'Average'
+    } else {
+      appreciationCell.textContent = 'Poor'
     }
   }
 
   getGradesByStudent(user._id).then((grades) => {
     populateGradesTable(grades)
+    calculateAndPopulateAverage()
   })
 })()
