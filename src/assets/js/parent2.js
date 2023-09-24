@@ -169,24 +169,36 @@
   const populateGradesTable = async (grades) => {
     gradesTable.innerHTML = '' // Clear the table body
 
-    let totalMarks = 0
-    let totalExams = 0
-
+    // Group grades by course
+    const gradesByCourse = {}
     for (let i = 0; i < grades.length; i++) {
       const entry = grades[i]
+      if (!gradesByCourse[entry.course]) {
+        gradesByCourse[entry.course] = []
+      }
+      gradesByCourse[entry.course].push(entry)
+    }
+
+    // Create a new row for each course
+    for (let courseId in gradesByCourse) {
+      const courseGrades = gradesByCourse[courseId]
       const row = document.createElement('tr')
 
       // Create a new cell for course
       const courseCell = document.createElement('td')
-      courseCell.textContent = await getCourseById(entry.course).course_name
+      courseCell.textContent = await getCourseById(courseId).course_name
       row.appendChild(courseCell)
+
+      let totalMarks = 0
+      let totalExams = 0
 
       // Create a new cell for each exam
       exams.forEach((exam) => {
         const cell = document.createElement('td')
-        if (entry.exam === exam) {
-          cell.textContent = entry.marks
-          totalMarks += entry.marks
+        const gradeEntry = courseGrades.find((entry) => entry.exam === exam)
+        if (gradeEntry) {
+          cell.textContent = gradeEntry.marks
+          totalMarks += gradeEntry.marks
           totalExams++
         } else {
           cell.textContent = '' // No marks for this exam
@@ -205,13 +217,13 @@
       if (average >= 90) {
         apprCell.textContent = 'Excellent'
       } else if (average >= 80) {
-        apprCell.textContent = 'Very Good'
+        apprCell.textContent = 'Très bien'
       } else if (average >= 70) {
-        apprCell.textContent = 'Good'
+        apprCell.textContent = 'Bien'
       } else if (average >= 60) {
-        apprCell.textContent = 'Average'
+        apprCell.textContent = 'Assez bien'
       } else {
-        apprCell.textContent = 'Poor'
+        apprCell.textContent = 'Insuffisant'
       }
       row.appendChild(apprCell)
 

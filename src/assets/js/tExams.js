@@ -142,6 +142,17 @@
     }
   })
 
+  selectCourse.addEventListener('change', async () => {
+    const classId = classesSelect.value // Assuming you also want to consider the selected class
+    try {
+      const std = await getStudentsByClass(await getStudents(), classId)
+      students = std
+      displayStudents(students)
+    } catch (error) {
+      console.error('Error fetching and displaying students:', error)
+    }
+  })
+
   const sendData = async (update = false) => {
     const rows = tbody.querySelectorAll('tr')
     let data = {}
@@ -207,7 +218,8 @@
       const grades =
         action_ === 'Update' ? await getStudentGrades(student._id) : []
       const grade = await grades.filter(
-        (grade) => grade.exam === examSelect.value
+        (grade) =>
+          grade.exam === examSelect.value && grade.course === selectCourse.value
       )[0]
       const tr = document.createElement('tr')
       const user = await getUserByRoleData(student._id)
