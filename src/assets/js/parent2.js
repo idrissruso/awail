@@ -218,14 +218,19 @@
       const apprCell = document.createElement('td')
       if (average >= 90) {
         apprCell.textContent = 'Excellent'
+        apprCell.style.color = '#4caf50'
       } else if (average >= 80) {
-        apprCell.textContent = 'Very Good'
+        apprCell.textContent = 'Très bien'
+        apprCell.style.color = '#8bc34a'
       } else if (average >= 70) {
-        apprCell.textContent = 'Good'
+        apprCell.textContent = 'Bien'
+        apprCell.style.color = '#ffc107'
       } else if (average >= 60) {
-        apprCell.textContent = 'Average'
+        apprCell.textContent = 'Assez bien'
+        apprCell.style.color = '#ff9800'
       } else {
-        apprCell.textContent = 'Poor'
+        apprCell.textContent = 'Insuffisant'
+        apprCell.style.color = '#f44336'
       }
       row.appendChild(apprCell)
 
@@ -237,7 +242,6 @@
   function calculateAndPopulateAverage() {
     // Get all the rows in the table body
     const rows = gradesTable.querySelectorAll('tbody tr')
-    console.log(rows)
 
     let totalMarks = 0
     let totalExams = 0
@@ -267,14 +271,19 @@
     const appreciationCell = gradesTable.querySelector('#totalAppreciation')
     if (average >= 90) {
       appreciationCell.textContent = 'Excellent'
+      appreciationCell.style.color = '#4caf50'
     } else if (average >= 80) {
-      appreciationCell.textContent = 'Very Good'
+      appreciationCell.textContent = 'Très bien'
+      appreciationCell.style.color = '#8bc34a'
     } else if (average >= 70) {
-      appreciationCell.textContent = 'Good'
+      appreciationCell.textContent = 'Bien'
+      appreciationCell.style.color = '#ffc107'
     } else if (average >= 60) {
-      appreciationCell.textContent = 'Average'
+      appreciationCell.textContent = 'Assez bien'
+      appreciationCell.style.color = '#ff9800'
     } else {
-      appreciationCell.textContent = 'Poor'
+      appreciationCell.textContent = 'Insuffisant'
+      appreciationCell.style.color = '#f44336'
     }
   }
 
