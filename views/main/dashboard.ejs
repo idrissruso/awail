@@ -1,18 +1,20 @@
 <%- include("../spinners/spinner1.ejs")%>
 <div class="dashboard">
-  <h1 class="dashboard__heading">Tableau de Bord</h1>
+  <h1 class="dashboard__heading" id="dashboardTitle">Tableau de Bord</h1>
   <div class="dashboard__content">
     <div class="dashboard__card">
       <div class="dashboard__card-content" id="first__card">
         <div class="content__statistics">
           <p class="content__statistics-num" id="total-students"></p>
-          <h2 class="content__statistics-title">Nombre total d'élèves</h2>
+          <h2 class="content__statistics-title" id="dashTotalStudents1">
+            Nombre total d'élèves
+          </h2>
         </div>
         <img src="students.svg" alt="students" class="content__icon" />
       </div>
 
       <div class="dashboard__card-button">
-        <span class="dashboard__card-button--text"
+        <span class="dashboard__card-button--text" id="dashTotalStudentsBtn1"
           >Plus d'info
           <svg class="arrow">
             <use xlink:href="#icon-arrow-circle-right"></use>
@@ -24,13 +26,15 @@
       <div class="dashboard__card-content" id="second__card">
         <div class="content__statistics">
           <p class="content__statistics-num" id="male-students"></p>
-          <h2 class="content__statistics-title">Nombre total d'élèves (M)</h2>
+          <h2 class="content__statistics-title" id="dashTotalStudents3">
+            Nombre total d'élèves (M)
+          </h2>
         </div>
         <img src="student-b.svg" alt="students" class="content__icon" />
       </div>
 
       <div class="dashboard__card-button" id="second__card-btn">
-        <span class="dashboard__card-button--text"
+        <span class="dashboard__card-button--text" id="dashTotalStudentsBtn2"
           >Plus d'info
           <svg class="arrow">
             <use xlink:href="#icon-arrow-circle-right"></use>
@@ -42,13 +46,15 @@
       <div class="dashboard__card-content" id="third-card">
         <div class="content__statistics">
           <p class="content__statistics-num" id="female-students"></p>
-          <h2 class="content__statistics-title">Nombre total d'élèves (F)</h2>
+          <h2 class="content__statistics-title" id="dashTotalStudents2">
+            Nombre total d'élèves (F)
+          </h2>
         </div>
         <img src="student-g.svg" alt="students" class="content__icon" />
       </div>
 
       <div class="dashboard__card-button" id="third__card-btn">
-        <span class="dashboard__card-button--text"
+        <span class="dashboard__card-button--text" id="dashTotalStudentsBtn3"
           >Plus d'info
           <svg class="arrow">
             <use xlink:href="#icon-arrow-circle-right"></use>
@@ -59,4 +65,34 @@
   </div>
 </div>
 <script src="apiConfig.js"></script>
-<script src="dashBoard.js"></script>
+<script type="module" src="dashBoard.js"></script>
+<script>
+  ;(function () {
+    const maleStudents = document.querySelector('#male-students')
+    const femaleStudents = document.querySelector('#female-students')
+    const totalStudents = document.querySelector('#total-students')
+    const spinner = document.querySelector('#spinner')
+    const getStudentsUrl = window.API_URLS.apiUrl + 'getStudents'
+
+    const getStudents = async () => {
+      try {
+        const response = await fetch(getStudentsUrl)
+        const students = await response.json()
+        return students
+      } catch (error) {
+        alert('Une erreur est survenue')
+      }
+    }
+
+    getStudents().then((students) => {
+      totalStudents.innerHTML = students.length
+      femaleStudents.innerHTML = students.filter(
+        (student) => student.gender === 'Feminin'
+      ).length
+      maleStudents.innerHTML = students.filter(
+        (student) => student.gender === 'Masculin'
+      ).length
+      spinner.style.display = 'none'
+    })
+  })()
+</script>

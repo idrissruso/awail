@@ -1,3 +1,5 @@
+import { switchLang } from './langManager.js'
+
 $(document).ready(function () {
   // Use the jQuery $ function to select the elements
   const brandBox = $('.sidebar__brand')
@@ -81,4 +83,15 @@ $(document).ready(function () {
   $(document).on('click', '.manage-teachers', function () {
     main.load('main/manageTeachers.ejs')
   })
+
+  //===languages===
+
+  switchLang('sideBarTitle')
+  switchLang('sideBardAddStudent')
+  switchLang('sideBardManStudents')
+  switchLang('sideBarManCourses')
+  switchLang('sideBardManTeachers')
+  switchLang('parAndSec')
+  switchLang('sideBardAddUser')
+  switchLang('sideBardSchedule')
 })

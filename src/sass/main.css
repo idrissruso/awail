@@ -2040,6 +2040,24 @@ input[type=checkbox]:checked:after {
   background-color: transparent;
   color: transparent;
 }
+.dashboard-container__navbar .navbar__setting {
+  position: relative;
+}
+.dashboard-container__navbar .navbar__setting #language-select {
+  position: absolute;
+  top: 0rem;
+  right: 3rem;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.dashboard-container__navbar .navbar__setting #language-select:hover {
+  transform: translateY(-0.5rem);
+}
 .dashboard-container__navbar .navbar__setting-icon {
   height: 2rem;
   width: 2rem;

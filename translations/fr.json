@@ -6,5 +6,20 @@
   "userName": "Nom d'utilisateur",
   "passWord": "Mot de passe",
   "showP": "Afficher le mot de passe",
-  "connexion": "Connexion"
+  "connexion": "Connexion",
+  "sideBarTitle": "Tableau de bord",
+  "sideBardAddStudent": "Ajouter un élève",
+  "sideBardManStudents": "Gérer les élèves",
+  "sideBarManCourses": "Gérer les cours",
+  "sideBardManTeachers": "Gérer les enseignants",
+  "parAndSec": "Parametre&sécurité",
+  "sideBardAddUser": "Ajouter l'utilisateur",
+  "sideBardSchedule": "Horaire",
+  "dashboardTitle": "Tableau de bord",
+  "dashTotalStudents1": "Nombre total d'élèves",
+  "dashTotalStudents2": "Nombre total d'élèves (F))",
+  "dashTotalStudents3": "Nombre total d'élèves (M)",
+  "dashTotalStudentsBtn1": "plus d'info",
+  "dashTotalStudentsBtn2": "plus d'info",
+  "dashTotalStudentsBtn3": "plus d'info"
 }

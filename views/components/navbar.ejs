@@ -25,13 +25,17 @@
     <svg class="navbar__setting-icon">
       <use xlink:href="#icon-log-out"></use>
     </svg>
+    <select id="language-select">
+      <option value="fr">Fr</option>
+      <option value="ar">Ar</option>
+    </select>
   </div>
 
   <!-- Navbar right section -->
 </nav>
 
 <script>
-  const logout = document.querySelector('.navbar__setting')
+  const logout = document.querySelector('.navbar__setting-icon')
   logout.addEventListener('click', () => {
     window.location.href = '/logout'
   })

@@ -113,6 +113,22 @@
         }
       }
       &__setting {
+        position: relative;
+        #language-select {
+          position: absolute;
+          top: 0rem;
+          right: 3rem;
+          z-index: 100;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 1rem;
+          cursor: pointer;
+          transition: all 0.3s;
+          &:hover {
+            transform: translateY(-0.5rem);
+          }
+        }
         &-icon {
           height: 2rem;
           width: 2rem;
