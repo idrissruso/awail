@@ -21,5 +21,13 @@
   "dashTotalStudents3": "Nombre total d'élèves (M)",
   "dashTotalStudentsBtn1": "plus d'info",
   "dashTotalStudentsBtn2": "plus d'info",
-  "dashTotalStudentsBtn3": "plus d'info"
+  "dashTotalStudentsBtn3": "plus d'info",
+  "editUserTitle": "Mettre à jour le profil d'utilisateur",
+  "editUserSubtitle": "Modifier le profil",
+  "editUserUserNamelabel": "Nom d'utilisateur",
+  "editUserRole": "Rôle",
+  "editUserAdminLabel": "Admin",
+  "editUserUserLabel": "Utilisateur",
+  "editUserSubmitBtn": "Mettre à jour",
+  "editUserImg": "Modifier L'image"
 }

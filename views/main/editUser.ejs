@@ -1,7 +1,9 @@
 <div class="editUser">
   <%- include("../spinners/spinner2.ejs")%>
   <div class="editUser__container">
-    <h1 class="editUser__heading">Mettre à jour le profil d'utilisateur</h1>
+    <h1 class="editUser__heading" id="editUserTitle">
+      Mettre à jour le profil d'utilisateur
+    </h1>
     <div class="editUser__content">
       <form class="form">
         <div class="form__box-img">
@@ -28,10 +30,14 @@
           <span class="form__box-img--name"><%- admin.FullName %></span>
           <span class="form__box-img--email"><%- admin.Email %></span>
           <input type="file" class="form__box-img--file" id="file" />
-          <label for="file" class="form__box-img--btn">Modifier L'image</label>
+          <label for="file" class="form__box-img--btn" id="editUserImg"
+            >Modifier L'image</label
+          >
         </div>
         <div class="form__box-info">
-          <h3 class="form__box-info--heading">Modifier le profil</h3>
+          <h3 class="form__box-info--heading" id="editUserSubtitle">
+            Modifier le profil
+          </h3>
           <div class="form__box-info--group">
             <input
               type="text"
@@ -73,7 +79,10 @@
             />
           </div>
           <div class="form__box-info--group">
-            <label for="role" class="form__box-info--label"
+            <label
+              for="role"
+              class="form__box-info--label"
+              id="editUserUserNamelabel"
               >Nom d'Utilisateur</label
             >
             <input
@@ -86,14 +95,18 @@
             />
           </div>
           <div class="form__box-info--group">
-            <label for="role" class="form__box-info--label">Role</label>
+            <label for="role" class="form__box-info--label" id="editUserRole"
+              >Rôle</label
+            >
             <select name="role" id="role" class="form__box-info--input">
-              <option value="admin">Admin</option>
-              <option value="user">Utilisateur</option>
+              <option value="admin" id="editUserAdminLabel">Admin</option>
+              <option value="user" id="editUserUserLabel">Utilisateur</option>
             </select>
           </div>
 
-          <button class="form__box-info--btn">Modifier</button>
+          <button class="form__box-info--btn" id="editUserSubmitBtn">
+            Mettre à jour"
+          </button>
         </div>
       </form>
     </div>
@@ -210,3 +223,4 @@
     }
   })()
 </script>
+<script type="module" src="editUser.js"></script>

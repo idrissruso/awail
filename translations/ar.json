@@ -21,5 +21,13 @@
   "dashTotalStudents3": "عدد الطلاب الإجمالي (ذكور)",
   "dashTotalStudentsBtn1": "المزيد من المعلومات",
   "dashTotalStudentsBtn2": "المزيد من المعلومات",
-  "dashTotalStudentsBtn3": "المزيد من المعلومات"
+  "dashTotalStudentsBtn3": "المزيد من المعلومات",
+  "editUserTitle": "تحديث ملف المستخدم",
+  "editUserSubtitle": "تعديل الملف الشخصي",
+  "editUserUserNamelabel": "اسم المستخدم",
+  "editUserRole": "الدور",
+  "editUserAdminLabel": "مدير",
+  "editUserUserLabel": "مستخدم",
+  "editUserSubmitBtn": "تحديث",
+  "editUserImg": "تعديل الصورة"
 }
