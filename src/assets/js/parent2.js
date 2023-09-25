@@ -6,6 +6,7 @@
     getAttendanceByStudent: `${baseUrl}getStudentAttendees/`,
     getGradesByStudent: `${baseUrl}getStudentGrades/`,
     getCourseById: `${baseUrl}getCourse/`,
+    getFeesByStudent: `${baseUrl}getStudentFees/`,
   }
   const date = document.querySelector('#date')
   const img = document.querySelector('.profile__img')
@@ -290,5 +291,87 @@
   getGradesByStudent(user._id).then((grades) => {
     populateGradesTable(grades)
     calculateAndPopulateAverage()
+  })
+
+  //==========================fees==========================
+  const populateFeesTable = (fees) => {
+    const tableBody = document.querySelector('.payment-table__body')
+    tableBody.innerHTML = '' // Clear the table body
+
+    // Define an array of months you want to display in the table
+    const months = [
+      'Octobre',
+      'Novembre',
+      'Decembre',
+      'Janvier',
+      'Février',
+      'Mars',
+      'Avril',
+      'Mai',
+      'Juin',
+    ]
+
+    // Calculate the total amounts for each month
+    const totalAmounts = {}
+    fees.forEach((fee) => {
+      if (months.includes(fee.month)) {
+        if (!totalAmounts[fee.month]) {
+          totalAmounts[fee.month] = 0
+        }
+        totalAmounts[fee.month] += fee.amount
+      }
+    })
+
+    // Iterate through each month and populate the table
+    months.forEach((month) => {
+      // Create a new table row
+      const row = document.createElement('tr')
+
+      // Create and fill in the cells for month, date, and amount
+      const monthCell = document.createElement('td')
+      monthCell.classList.add(
+        'payment-table__cell',
+        'payment-table__cell--month'
+      )
+      monthCell.textContent = month
+      row.appendChild(monthCell)
+
+      const dateCell = document.createElement('td')
+      dateCell.classList.add('payment-table__cell', 'payment-table__cell--date')
+      const amountCell = document.createElement('td')
+      amountCell.classList.add(
+        'payment-table__cell',
+        'payment-table__cell--amount'
+      )
+
+      if (totalAmounts[month]) {
+        const startDate = new Date(Date.UTC(2023, months.indexOf(month), 1)) // Assuming the year is 2023
+        const endDate = new Date(Date.UTC(2023, months.indexOf(month) + 1, 0)) // Assuming the year is 2023
+        dateCell.textContent = `${formatDate(startDate)} - ${formatDate(
+          endDate
+        )}`
+        amountCell.textContent = `${totalAmounts[month]}`
+      } else {
+        dateCell.textContent = '-' // Not paid yet
+        amountCell.textContent = '-'
+      }
+
+      row.appendChild(dateCell)
+      row.appendChild(amountCell)
+
+      // Append the row to the table body
+      tableBody.appendChild(row)
+    })
+  }
+
+  // Rest of your code...
+
+  const getFeesByStudent = async (id) => {
+    return await fetchData(apiUrls.getFeesByStudent, id)
+  }
+
+  // Call the function to populate the fees table
+  getFeesByStudent(user._id).then((fees) => {
+    populateFeesTable(fees)
   })
 })()
