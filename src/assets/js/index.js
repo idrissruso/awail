@@ -1,5 +1,7 @@
 'use strict'
 
+import { switchLang } from './langManager.js'
+
 function getCookie(name) {
   const cookies = document.cookie.split('; ')
   for (let i = 0; i < cookies.length; i++) {
@@ -106,3 +108,14 @@ userForm.addEventListener('submit', (e) => {
   // Submit the form
   userForm.submit()
 })
+
+//============language================
+
+switchLang('aParent')
+switchLang('aTeacher')
+switchLang('aAdmin')
+switchLang('login__caption')
+switchLang('userName')
+switchLang('passWord')
+switchLang('showP')
+switchLang('submit')

@@ -1,0 +1,10 @@
+{
+  "aParent": "Accès parents",
+  "aAdmin": "Accès administrateur",
+  "aTeacher": "Accès enseignant",
+  "login__caption": "Accès des élèves",
+  "userName": "Nom d'utilisateur",
+  "passWord": "Mot de passe",
+  "showP": "Afficher le mot de passe",
+  "connexion": "Connexion"
+}

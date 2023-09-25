@@ -1,4 +1,21 @@
+#language-select {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  cursor: pointer;
+  transition: all 0.3s;
+  &:hover {
+    transform: translateY(-0.5rem);
+  }
+}
+
 .home {
+  position: relative;
   background-image: linear-gradient(
     to right bottom,
     #2b2a4c,
@@ -13,6 +30,8 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+
+  //language selector
 
   @media screen and (min-width: $bp-large) {
     padding: 16rem;

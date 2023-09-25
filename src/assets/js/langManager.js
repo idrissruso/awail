@@ -2,7 +2,7 @@ import { getCurrentLanguage, setCurrentLanguage } from './language.js'
 
 function updateElementTranslation(idKey) {
   const language = getCurrentLanguage()
-  fetch(`/translations/${language}.json`)
+  fetch(`${language}.json`)
     .then((response) => response.json())
     .then((translations) => {
       const translation = translations[idKey]
@@ -15,6 +15,6 @@ export const switchLang = (id) => {
   languageSelect.addEventListener('change', (event) => {
     const newLanguage = event.target.value
     setCurrentLanguage(newLanguage)
-    updateElementTranslation('greeting')
+    updateElementTranslation(id)
   })
 }

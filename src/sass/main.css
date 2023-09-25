@@ -1832,7 +1832,24 @@ input[type=checkbox]:checked:after {
   display: none;
 }
 
+#language-select {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+#language-select:hover {
+  transform: translateY(-0.5rem);
+}
+
 .home {
+  position: relative;
   background-image: linear-gradient(to right bottom, #2b2a4c, #eee2de, #eee2de, #2b2a4c);
   background-repeat: no-repeat;
   background-size: cover;
