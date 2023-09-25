@@ -65,6 +65,7 @@ app.use(express.static(path.join(__dirname, 'src', 'assets', 'js')))
 app.use(express.static(path.join(__dirname, 'src', 'assets', 'js', 'Teacher')))
 app.use(express.static(path.join(__dirname, 'src', 'assets', 'svg')))
 app.use(express.static(path.join(__dirname, 'src', 'css')))
+app.use(express.static(path.join(__dirname, 'translations')))
 
 //body parser
 
