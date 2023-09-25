@@ -3,7 +3,7 @@
   <%- include("head.ejs")%>
   <body>
     <!--=============== NAV ===============-->
-    <%- include("navbar.ejs")%>
+    <%- include("navbar.ejs", user = loggedInUser)%>
     <!--=============== MAIN ===============-->
     <%- include("main.ejs", user = loggedInUser)%>
     <!--=============== MAIN JS ===============-->

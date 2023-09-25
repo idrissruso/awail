@@ -14,8 +14,8 @@
 
       <span class="nav__greeting">Bonjour!</span>
       <h1 class="nav__name">
-        Idrissa <br />
-        Rusongeka
+        <span id="name"></span> <br />
+        <span id="surname"></span>
       </h1>
     </div>
 
@@ -59,3 +59,19 @@
     </ul>
   </div>
 </nav>
+
+<script>
+  const loggedInUser = <%- JSON.stringify(loggedInUser) %>;
+  console.log(loggedInUser);
+  const names = loggedInUser.fullName.split(" ");
+  const name = document.getElementById("name");
+  const surname = document.getElementById("surname");
+  const img = document.querySelector(".nav__img");
+  name.innerHTML = names[0];
+  surname.innerHTML = names[1];
+    if (loggedInUser.profileImage) {
+    img.src = `data:${loggedInUser.profileImageType};base64,${loggedInUser.profileImage}`
+  } else {
+    img.src = `../profile.png`
+  }
+</script>
