@@ -2,16 +2,15 @@ import { getCurrentLanguage, setCurrentLanguage } from './language.js'
 
 function updateElementTranslation(idKey) {
   const language = getCurrentLanguage()
-  try {
-    fetch(`${language}.json`)
-      .then((response) => response.json())
-      .then((translations) => {
-        const translation = translations[idKey]
-        document.getElementById(idKey).textContent = translation
-      })
-  } catch (error) {
-    console.error(document.getElementById(idKey))
-  }
+  fetch(`${language}.json`)
+    .then((response) => response.json())
+    .then((translations) => {
+      const translation = translations[idKey]
+      const element = document.getElementById(idKey)
+      if (element) {
+        element.innerHTML = translation
+      }
+    })
 }
 
 export const switchLang = (id) => {

@@ -2352,10 +2352,12 @@ input[type=checkbox]:checked:after {
 .addStudent-form {
   padding: 1rem 2rem;
 }
-.addStudent-form #heading {
+.addStudent-form #heading,
+.addStudent-form #addStheading,
+.addStudent-form #addStAdressH {
   padding: 1rem 1.5rem;
   font-size: 1.6rem;
-  font-weight: 400;
+  font-weight: 600;
   color: #d71313;
   border-bottom: 1.3px solid rgba(32, 30, 64, 0.1);
 }

@@ -22,10 +22,12 @@
 
   &-form {
     padding: 1rem 2rem;
-    #heading {
+    #heading,
+    #addStheading,
+    #addStAdressH {
       padding: 1rem 1.5rem;
       font-size: 1.6rem;
-      font-weight: 400;
+      font-weight: 600;
       color: $color-tertiary;
       @include line-dark;
     }

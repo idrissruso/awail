@@ -1,13 +1,16 @@
 <%- include("../spinners/spinner2.ejs")%>
 <div class="addStudent">
   <div class="addStudent__container">
-    <h1 class="addStudent__heading">Ajouter un élève</h1>
+    <h1 class="addStudent__heading" id="addStuTitle">Ajouter un élève</h1>
     <div class="addStudent__content">
       <form action="#" class="addStudent-form">
-        <h3 id="heading">Détails d'élève.</h3>
+        <h3 id="heading" id="addStuSubtitle">Détails d'élève.</h3>
         <div class="student">
           <div class="addStudent-form__group" id="matricule">
-            <label class="addStudent-form__label" for="student-no"
+            <label
+              class="addStudent-form__label"
+              for="student-no"
+              id="addStuMatricule"
               >Matricule</label
             >
             <input
@@ -21,7 +24,10 @@
           </div>
 
           <div class="addStudent-form__group">
-            <label class="addStudent-form__label" for="student-name"
+            <label
+              class="addStudent-form__label"
+              for="student-name"
+              id="addStuName"
               >Nom Complet</label
             >
             <input
@@ -34,7 +40,10 @@
             />
           </div>
           <div class="addStudent-form__group">
-            <label class="addStudent-form__label" for="student-phone"
+            <label
+              class="addStudent-form__label"
+              for="student-phone"
+              id="addStuPhone"
               >Téléphone</label
             >
             <input
@@ -47,7 +56,10 @@
             />
           </div>
           <div class="addStudent-form__group">
-            <label class="addStudent-form__label" for="student-email"
+            <label
+              class="addStudent-form__label"
+              for="student-email"
+              id="addStuEmail"
               >E-mail</label
             >
             <input
@@ -60,7 +72,10 @@
             />
           </div>
           <div class="addStudent-form__group" id="age">
-            <label class="addStudent-form__label" for="student-age"
+            <label
+              class="addStudent-form__label"
+              for="student-age"
+              id="addStuAge"
               >Date de naissance</label
             >
             <input
@@ -73,7 +88,10 @@
             />
           </div>
           <div class="addStudent-form__group" id="sex">
-            <label class="addStudent-form__label" for="student-sex"
+            <label
+              class="addStudent-form__label"
+              for="student-sex"
+              id="addStuSex"
               >Gendre</label
             >
             <select
@@ -82,13 +100,16 @@
               class="addStudent-form__input"
               required
             >
-              <option value="Masculin">Masculin</option>
-              <option value="Feminin">Feminin</option>
+              <option value="Masculin" id="addStuGM">Masculin</option>
+              <option value="Feminin" id="addStuGF">Feminin</option>
             </select>
           </div>
           <div class="addStudent-from__group">
-            <label class="addStudent-form__label" for="student-class"
-              >Class</label
+            <label
+              class="addStudent-form__label"
+              for="student-class"
+              id="addStuClass"
+              >Classe</label
             >
             <select
               name="student-class"
@@ -98,16 +119,22 @@
             ></select>
           </div>
           <div class="addStudent-from__group">
-            <label class="addStudent-form__label" for="student-img"
+            <label
+              class="addStudent-form__label"
+              for="student-img"
+              id="addStuImg"
               >Photo</label
             >
             <input type="file" class="addStudent-form__input" id="image" />
           </div>
         </div>
-        <h3 id="heading">Détails du Parent</h3>
+        <h3 id="addStheading">Détails du Parent</h3>
         <div class="parent">
           <div class="addStudent-form__group">
-            <label class="addStudent-form__label" for="parent-name"
+            <label
+              class="addStudent-form__label"
+              for="parent-name"
+              id="addStuPName"
               >Nom Complet</label
             >
             <input
@@ -119,7 +146,10 @@
             />
           </div>
           <div class="addStudent-form__group">
-            <label class="addStudent-form__label" for="parent-profession"
+            <label
+              class="addStudent-form__label"
+              for="parent-profession"
+              id="addStuPProfession"
               >Profession</label
             >
             <input
@@ -131,7 +161,12 @@
             />
           </div>
           <div class="addStudent-form__group">
-            <label class="addStudent-form__label" for="parent-tel">Tel</label>
+            <label
+              class="addStudent-form__label"
+              for="parent-tel"
+              id="addStuPTel"
+              >Téléphone</label
+            >
             <input
               type="tel"
               name="parent-tel"
@@ -141,7 +176,10 @@
             />
           </div>
           <div class="addStudent-form__group">
-            <label class="addStudent-form__label" for="parent-email"
+            <label
+              class="addStudent-form__label"
+              for="parent-email"
+              id="addStuPEmail"
               >Email</label
             >
             <input
@@ -153,11 +191,11 @@
             />
           </div>
         </div>
-        <h3 id="heading">Adresse</h3>
+        <h3 id="addStAdressH">Adresse</h3>
         <div class="adress">
           <div class="addStudent-form__group">
-            <label class="addStudent-form__label" for="adress"
-              >Adresse Complet</label
+            <label class="addStudent-form__label" for="adress" id="addStuAdress"
+              >Adresse Complete</label
             >
             <textarea
               name="student-address"
@@ -170,7 +208,9 @@
           </div>
         </div>
         <div class="addStudent-form__group">
-          <button class="addStudent-form__btn">Ajouter</button>
+          <button class="addStudent-form__btn" id="addStuBtn" type="submit">
+            Ajouter
+          </button>
         </div>
       </form>
     </div>
@@ -179,3 +219,4 @@
 
 <script src="apiConfig.js"></script>
 <script src="addStudent.js"></script>
+<script type="module" src="languages/addUser.js"></script>
