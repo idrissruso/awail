@@ -198,7 +198,7 @@
       // Create a new cell for each exam
       exams.forEach((exam) => {
         const cell = document.createElement('td')
-        if (courseGrades[exam]) {
+        if (courseGrades[exam] !== undefined) {
           cell.textContent = courseGrades[exam]
           totalMarks += courseGrades[exam]
           totalExams++

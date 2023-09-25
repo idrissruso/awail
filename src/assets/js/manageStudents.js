@@ -1,5 +1,10 @@
 ;(function () {
   const baseUrl = window.API_URLS.apiUrl
+  const apiUrls = {
+    getGradesByStudent: `${baseUrl}getStudentGrades/`,
+    getCourseById: `${baseUrl}getCourse/`,
+  }
+
   const viewStudentModal = document.querySelector('.viewStudent')
 
   const viewStudentModalContainer = document.querySelector(
@@ -12,6 +17,8 @@
   const studentInfo = document.querySelector('.viewStudent__container-content')
   const spinner = document.querySelector('#spinner')
   const spin2 = document.querySelector('#spinner2')
+  let gradesTable
+  let rows
 
   //editStudent__container--show
 
@@ -32,6 +39,25 @@
       viewStudentModalContainer.classList.remove('viewStudent-animate')
     }
   })
+
+  const fetchData = async (url, id = '') => {
+    try {
+      const response = await fetch(`${url}${id}`, {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      })
+      const data = await response.json()
+      if (!response.ok) {
+        throw new Error('Network response was not ok')
+      }
+      return data
+    } catch (error) {
+      console.error('Error:', error)
+      throw error
+    }
+  }
 
   function formatDate(date) {
     const options = { year: 'numeric', month: '2-digit', day: '2-digit' }
@@ -223,37 +249,14 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>Mathématiques</td>
-              <td>90</td>
-              <td>85</td>
-              <td>92</td>
-              <td>89</td>
-              <td>87</td>
-              <td>90</td>
-              <td>85</td>
-              <td>92</td>
-              <td>89</td>
-              <td>87</td>
-              <td>89.6</td>
-              <td>Excellent</td>
-            </tr>
+           
             
             <!-- la moyenne -->
             <tr>
-              <td>Français</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td>89.6</td>
-              <td>Excellent</td>
+              <td>Total</td>
+              <td colspan="10"></td>
+              <td id ="totalOverage">89.6</td>
+              <td id = "totalAppreciation">Excellent</td>
             </tr>
           </tbody>
         </table>
@@ -262,8 +265,159 @@
   </div>`
         studentInfo.innerHTML = ''
         studentInfo.innerHTML = html
-        spinner.style.display = 'none'
       })
       .catch((err) => console.log(err))
+    gradesTable = document.querySelector('.viewStudent__table tbody')
+
+    getGradesByStudent(id).then((grades) => {
+      populateGradesTable(grades)
+      calculateAndPopulateAverage()
+    })
+  }
+
+  //===================Populate Grades=================
+  const getGradesByStudent = async (id) => {
+    return await fetchData(apiUrls.getGradesByStudent, id)
+  }
+
+  const getCourseById = async (id) => {
+    return await fetchData(apiUrls.getCourseById, id)
+  }
+
+  const exams = [
+    'Exam 1',
+    'Exam 2',
+    'Exam 3',
+    'Exam 4',
+    'Exam 5',
+    'Exam 6',
+    'Exam 7',
+    'Exam 8',
+    'Exam 9',
+    'Exam 10',
+  ]
+
+  const populateGradesTable = async (grades) => {
+    // Get the last row (for overall average and appreciation)
+    const lastRow = gradesTable.lastElementChild
+
+    // Group grades by course
+    const gradesByCourse = {}
+    for (let i = 0; i < grades.length; i++) {
+      const entry = grades[i]
+      if (!gradesByCourse[entry.course]) {
+        gradesByCourse[entry.course] = {}
+      }
+      gradesByCourse[entry.course][entry.exam] = entry.marks
+    }
+
+    // Create a new row for each course
+    for (let courseId in gradesByCourse) {
+      const courseGrades = gradesByCourse[courseId]
+      const row = document.createElement('tr')
+
+      // Create a new cell for course
+      const courseCell = document.createElement('td')
+      getCourseById(courseId).then((course) => {
+        courseCell.textContent = course.course_name
+      })
+      row.appendChild(courseCell)
+
+      let totalMarks = 0
+      let totalExams = 0
+
+      // Create a new cell for each exam
+      exams.forEach((exam) => {
+        const cell = document.createElement('td')
+
+        if (courseGrades[exam] !== undefined) {
+          cell.textContent = courseGrades[exam]
+          totalMarks += courseGrades[exam]
+          totalExams++
+        } else {
+          cell.textContent = '' // No marks for this exam
+        }
+        row.appendChild(cell)
+      })
+
+      // Calculate average and create a new cell for it
+      const avgCell = document.createElement('td')
+      const average = ((totalMarks / (totalExams * 20)) * 100).toFixed(2) // Calculate average percentage and round to two decimal places
+      avgCell.textContent = average + '%'
+      row.appendChild(avgCell)
+
+      // Calculate appreciation and create a new cell for it
+      const apprCell = document.createElement('td')
+      if (average >= 90) {
+        apprCell.textContent = 'Excellent'
+        apprCell.style.color = '#4caf50'
+      } else if (average >= 80) {
+        apprCell.textContent = 'Très bien'
+        apprCell.style.color = '#8bc34a'
+      } else if (average >= 70) {
+        apprCell.textContent = 'Bien'
+        apprCell.style.color = '#ffc107'
+      } else if (average >= 60) {
+        apprCell.textContent = 'Assez bien'
+        apprCell.style.color = '#ff9800'
+      } else {
+        apprCell.textContent = 'Insuffisant'
+        apprCell.style.color = '#f44336'
+      }
+      row.appendChild(apprCell)
+
+      // Insert the new row before the last row
+      gradesTable.insertBefore(row, lastRow)
+    }
+    rows = gradesTable.querySelectorAll('tbody tr')
+  }
+
+  function calculateAndPopulateAverage() {
+    // Get all the rows in the table body
+    const rows = gradesTable.querySelectorAll('tbody tr')
+
+    let totalMarks = 0
+    let totalExams = 0
+
+    // Iterate over each row (except the last one)
+    for (let i = 0; i < rows.length - 1; i++) {
+      const cells = rows[i].querySelectorAll('td')
+
+      // Iterate over each cell (skip the first and last two cells)
+      for (let j = 1; j < cells.length - 2; j++) {
+        const marks = parseFloat(cells[j].textContent)
+        if (!isNaN(marks)) {
+          totalMarks += marks
+          totalExams++
+        }
+      }
+    }
+
+    // Calculate the average
+    const average = ((totalMarks / (totalExams * 20)) * 100).toFixed(2) // Calculate average percentage and round to two decimal places
+
+    // Populate the average cell in the last row
+    const averageCell = gradesTable.querySelector('#totalOverage')
+    averageCell.textContent = average + '%'
+
+    // Calculate appreciation and populate the appreciation cell in the last row
+    const appreciationCell = gradesTable.querySelector('#totalAppreciation')
+    if (average >= 90) {
+      appreciationCell.textContent = 'Excellent'
+      appreciationCell.style.color = '#4caf50'
+    } else if (average >= 80) {
+      appreciationCell.textContent = 'Très bien'
+      appreciationCell.style.color = '#8bc34a'
+    } else if (average >= 70) {
+      appreciationCell.textContent = 'Bien'
+      appreciationCell.style.color = '#ffc107'
+    } else if (average >= 60) {
+      appreciationCell.textContent = 'Assez bien'
+      appreciationCell.style.color = '#ff9800'
+    } else {
+      appreciationCell.textContent = 'Insuffisant'
+      appreciationCell.style.color = '#f44336'
+    }
+    spinner.style.display = 'none'
   }
 })()
