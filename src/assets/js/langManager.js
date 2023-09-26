@@ -23,8 +23,10 @@
   }
 
   const switchLang = (id) => {
-    updateElementTranslation(id)
     const languageSelect = document.getElementById('language-select')
+    const currentLanguage = languageSelect.value
+    setCurrentLanguage(currentLanguage)
+    updateElementTranslation(id)
     languageSelect.addEventListener('change', (event) => {
       const newLanguage = event.target.value
       setCurrentLanguage(newLanguage)
