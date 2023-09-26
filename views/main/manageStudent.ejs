@@ -3,17 +3,23 @@ include("../spinners/spinner2.ejs")%>
 <div class="manageStudents">
   <div class="manageStudents__container">
     <div class="manageStudents__header">
-      <h1 class="manageStudents__heading">Gérer les élèves.</h1>
+      <h1 class="manageStudents__heading" id="manStuTitle">
+        Gérer les élèves.
+      </h1>
       <button class="manageStudents__header-btn" id="addStudent">
         <span>
           <svg class="manageStudents__header-icon">
             <use xlink:href="#icon-plus"></use>
-          </svg> </span
-        >Ajouter un élève
+          </svg>
+          <span id="manStudAddStuBtn">Ajouter un élève</span>
+        </span>
       </button>
     </div>
     <div class="manageStudents__searchbar">
-      <label class="manageStudents__searchbar-label" for="student"
+      <label
+        class="manageStudents__searchbar-label"
+        for="student"
+        id="manStudSearchLabel"
         >Rechercher :</label
       >
       <input type="text" class="manageStudents__searchbar-input" id="student" />
@@ -23,34 +29,64 @@ include("../spinners/spinner2.ejs")%>
       <table class="manageStudents__table">
         <tr class="manageStudents__row manageStudents__row--header">
           <th class="manageStudents__cell manageStudents__cell--header">#</th>
-          <th class="manageStudents__cell manageStudents__cell--header">
+          <th
+            class="manageStudents__cell manageStudents__cell--header"
+            id="manStudImage"
+          >
             Image
           </th>
-          <th class="manageStudents__cell manageStudents__cell--header">
+          <th
+            class="manageStudents__cell manageStudents__cell--header"
+            id="manStudMatricule"
+          >
             Matricule
           </th>
-          <th class="manageStudents__cell manageStudents__cell--header">
+          <th
+            class="manageStudents__cell manageStudents__cell--header"
+            id="manStudName"
+          >
             Nom et Prénom
           </th>
-          <th class="manageStudents__cell manageStudents__cell--header">
+          <th
+            class="manageStudents__cell manageStudents__cell--header"
+            id="manStuBrDate"
+          >
             Date de naissance
           </th>
-          <th class="manageStudents__cell manageStudents__cell--header">
+          <th
+            class="manageStudents__cell manageStudents__cell--header"
+            id="manStudTel"
+          >
             Téléphone
           </th>
-          <th class="manageStudents__cell manageStudents__cell--header">
+          <th
+            class="manageStudents__cell manageStudents__cell--header"
+            id="manStudParentName"
+          >
             Nom du parent
           </th>
-          <th class="manageStudents__cell manageStudents__cell--header">
+          <th
+            class="manageStudents__cell manageStudents__cell--header"
+            id="manStudParentPhone"
+          >
             Téléphone des parents
           </th>
-          <th class="manageStudents__cell manageStudents__cell--header">
+          <th
+            class="manageStudents__cell manageStudents__cell--header"
+            id="manStudAdress"
+          >
             Adresse
           </th>
-          <th class="manageStudents__cell manageStudents__cell--header">
+          <th
+            class="manageStudents__cell manageStudents__cell--header"
+            id="manStudPayment"
+          >
             Frais
           </th>
-          <th class="manageStudents__cell manageStudents__cell--header">
+          <th
+            class="manageStudents__cell manageStudents__cell--header"
+            id="manStudAction"
+          >
             Action
           </th>
         </tr>
@@ -372,6 +408,7 @@ include("../spinners/spinner2.ejs")%>
 
 <!--scripts-->
 <script src="apiConfig.js"></script>
+<script src="langManager.js"></script>
 <script src="manageStudents.js"></script>
 <script src="fees.js"></script>
 <script src="editStudent.js"></script>

@@ -1,4 +1,42 @@
 ;(function () {
+  const multiLanguage = () => {
+    window.switchLang('manStuTitle')
+    window.switchLang('manStudAddStuBtn')
+    window.switchLang('manStudSearchLabel')
+    window.switchLang('manStudImage')
+    window.switchLang('manStudMatricule')
+    window.switchLang('manStudName')
+    window.switchLang('manStuBrDate')
+    window.switchLang('manStudTel')
+    window.switchLang('manStudParentName')
+    window.switchLang('manStudParentPhone')
+    window.switchLang('manStudAdress')
+    window.switchLang('manStudPayment')
+    window.switchLang('manStudAction')
+  }
+
+  const shoStuLang = () => {
+    window.switchLang('studentDetailsTitle')
+    window.switchLang('subjectHeader')
+    window.switchLang('exam1Header')
+    window.switchLang('exam2Header')
+    window.switchLang('exam3Header')
+    window.switchLang('exam4Header')
+    window.switchLang('exam5Header')
+    window.switchLang('exam6Header')
+    window.switchLang('exam7Header')
+    window.switchLang('exam8Header')
+    window.switchLang('exam9Header')
+    window.switchLang('exam10Header')
+    window.switchLang('averageHeader')
+    window.switchLang('appreciationHeader')
+    window.switchLang('parentInfo')
+    window.switchLang('RésultatsDesExamens')
+    window.switchLang('appreciationHeader')
+  }
+  //===================multi language=================
+  multiLanguage()
+
   const baseUrl = window.API_URLS.apiUrl
   const apiUrls = {
     getGradesByStudent: `${baseUrl}getStudentGrades/`,
@@ -155,116 +193,114 @@
       .then((data) => {
         const student = data
         let html = `<div class="viewStudent__container-content">
-    <span class="viewStudent__close-btn">✖️</span>
-    <h2 class="viewStudent__title">Détails de l'élève</h2>
-    <div class="viewStudent__content">
-      <div class="viewStudent__info">
-        <figure class="viewStudent__img-box">
-          <img src="${displayImg(
-            student
-          )}" alt="user image" class="viewStudent__img" />
-          <figcaption class="viewStudent__img-caption">
-            <svg class="viewStudent__btn--modify">
-              <use xlink:href="#icon-edit"></use>
-            </svg>
-            <svg class="viewStudent__btn--remove">
-              <use xlink:href="#icon-bin2"></use>
-            </svg>
-            <svg class="viewStudent__btn--attendees">
-              <use xlink:href="#icon-calendar-check-o"></use>
-            </svg>
-          </figcaption>
-        </figure>
-        <div class="viewStudent__info-box">
-          <div class="viewStudent__row">
-            <span class="viewStudent__label">Matricule:</span>
-            <span class="viewStudent__value">${student.serial_number}</span>
-          </div>
-          <div class="viewStudent__row">
-            <span class="viewStudent__label">Nom Complet:</span>
-            <span class="viewStudent__value">${student.fullName}</span>
-          </div>
-          <div class="viewStudent__row">
-            <span class="viewStudent__label">Téléphone:</span>
-            <span class="viewStudent__value">${
-              student.contact_info.phone
-            }</span>
-          </div>
-          <div class="viewStudent__row">
-            <span class="viewStudent__label">Date de Naissance:</span>
-            <span class="viewStudent__value">${formatDate(
-              student.dateOfBirth
-            )}</span>
-          </div>
-          <div class="viewStudent__row">
-            <span class="viewStudent__label">Sexe:</span>
-            <span class="viewStudent__value">${student.gender}</span>
-          </div>
-          <div class="viewStudent__row">
-            <span class="viewStudent__label">Classe:</span>
-            <span class="viewStudent__value">${student.class}</span>
-          </div>
-          <div class="viewStudent__divider"></div>
-          <h3 class="viewStudent__subheading">Information du Parent</h3>
-          <div class="viewStudent__row">
-            <span class="viewStudent__label">Nom du Parent:</span>
-            <span class="viewStudent__value">${student.parent.fullName}</span>
-          </div>
-          <div class="viewStudent__row">
-            <span class="viewStudent__label">Profession du Parent:</span>
-            <span class="viewStudent__value">${student.parent.profession}</span>
-          </div>
-          <div class="viewStudent__row">
-            <span class="viewStudent__label">Téléphone du Parent:</span>
-            <span class="viewStudent__value">${
-              student.parent.contact_info.phone
-            }</span>
-          </div>
-          <div class="viewStudent__row">
-            <span class="viewStudent__label">Adresse du Parent:</span>
-            <span class="viewStudent__value">${
-              student.contact_info.address
-            }</span>
-          </div>
+  <span class="viewStudent__close-btn">✖️</span>
+  <h2 class="viewStudent__title" id="studentDetailsTitle">Détails de l'élève</h2>
+  <div class="viewStudent__content">
+    <div class="viewStudent__info">
+      <figure class="viewStudent__img-box">
+        <img src="${displayImg(
+          student
+        )}" alt="user image" class="viewStudent__img" />
+        <figcaption class="viewStudent__img-caption">
+          <svg class="viewStudent__btn--modify">
+            <use xlink:href="#icon-edit"></use>
+          </svg>
+          <svg class="viewStudent__btn--remove">
+            <use xlink:href="#icon-bin2"></use>
+          </svg>
+          <svg class="viewStudent__btn--attendees">
+            <use xlink:href="#icon-calendar-check-o"></use>
+          </svg>
+        </figcaption>
+      </figure>
+      <div class="viewStudent__info-box">
+        <div class="viewStudent__row">
+          <span class="viewStudent__label" id="ViewStudentMatricule">Matricule:</span>
+          <span class="viewStudent__value" >${student.serial_number}</span>
+        </div>
+        <div class="viewStudent__row">
+          <span class="viewStudent__label" id="studentFullName">Nom Complet:</span>
+          <span class="viewStudent__value" >${student.fullName}</span>
+        </div>
+        <div class="viewStudent__row">
+          <span class="viewStudent__label" id="studentPhone">Téléphone:</span>
+          <span class="viewStudent__value" >${student.contact_info.phone}</span>
+        </div>
+        <div class="viewStudent__row">
+          <span class="viewStudent__label" id="studentDateOfBirth">Date de Naissance:</span>
+          <span class="viewStudent__value" >${formatDate(
+            student.dateOfBirth
+          )}</span>
+        </div>
+        <div class="viewStudent__row">
+          <span class="viewStudent__label" id="studentGender">Gendre:</span>
+          <span class="viewStudent__value" >${student.gender}</span>
+        </div>
+        <div class="viewStudent__row">
+          <span class="viewStudent__label" id="studentClass">Classe:</span>
+          <span class="viewStudent__value" >${student.class}</span>
+        </div>
+        <div class="viewStudent__divider"></div>
+        <h3 class="viewStudent__subheading" id="parentInfo">Information du Parent</h3>
+        <div class="viewStudent__row">
+          <span class="viewStudent__label" id="parentFullName">Nom du Parent:</span>
+          <span class="viewStudent__value" >${student.parent.fullName}</span>
+        </div>
+        <div class="viewStudent__row">
+          <span class="viewStudent__label" id="parentProfession">Profession du Parent:</span>
+          <span class="viewStudent__value" >${student.parent.profession}</span>
+        </div>
+        <div class="viewStudent__row">
+          <span class="viewStudent__label" id="parentPhone">Téléphone du Parent:</span>
+          <span class="viewStudent__value" >${
+            student.parent.contact_info.phone
+          }</span>
+        </div>
+        <div class="viewStudent__row">
+          <span class="viewStudent__label" id="parentAddress">Adresse du Parent:</span>
+          <span class="viewStudent__value" >${
+            student.contact_info.address
+          }</span>
         </div>
       </div>
-      <div class="viewStudent__exams">
-        <h3 class="viewStudent__subheading">Résultats des Examens</h3>
-        <table class="viewStudent__table">
-          <thead>
-            <tr>
-              <th>Matière</th>
-              <th>Examen 1</th>
-              <th>Examen 2</th>
-              <th>Examen 3</th>
-              <th>Examen 4</th>
-              <th>Examen 5</th>
-              <th>Examen 6</th>
-              <th>Examen 7</th>
-              <th>Examen 8</th>
-              <th>Examen 9</th>
-              <th>Examen 10</th>
-              <th>Moyenne</th>
-              <th>Appréciation</th>
-            </tr>
-          </thead>
-          <tbody>
-           
-            
-            <!-- la moyenne -->
-            <tr>
-              <td>Total</td>
-              <td colspan="10"></td>
-              <td id ="totalOverage">89.6</td>
-              <td id = "totalAppreciation">Excellent</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
     </div>
-  </div>`
+    <div class="viewStudent__exams">
+      <h3 class="viewStudent__subheading" id="RésultatsDesExamens">Résultats des Examens</h3>
+      <table class="viewStudent__table">
+        <thead>
+          <tr>
+            <th id="subjectHeader">Matière</th>
+            <th id="exam1Header">Examen 1</th>
+            <th id="exam2Header">Examen 2</th>
+            <th id="exam3Header">Examen 3</th>
+            <th id="exam4Header">Examen 4</th>
+            <th id="exam5Header">Examen 5</th>
+            <th id="exam6Header">Examen 6</th>
+            <th id="exam7Header">Examen 7</th>
+            <th id="exam8Header">Examen 8</th>
+            <th id="exam9Header">Examen 9</th>
+            <th id="exam10Header">Examen 10</th>
+            <th id="averageHeader">Moyenne</th>
+            <th id="appreciationHeader">Appréciation</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- la moyenne -->
+          <tr>
+            <td>Total</td>
+            <td colspan="10"></td>
+            <td id="totalOverage">89.6</td>
+            <td id="totalAppreciation">Excellent</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+`
         studentInfo.innerHTML = ''
         studentInfo.innerHTML = html
+        shoStuLang()
       })
       .catch((err) => console.log(err))
     gradesTable = document.querySelector('.viewStudent__table tbody')
