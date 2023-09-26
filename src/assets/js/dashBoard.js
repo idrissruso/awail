@@ -1,10 +1,10 @@
-import { switchLang } from './langManager.js'
-
 //===============multi language================
-switchLang('dashboardTitle')
-switchLang('dashTotalStudents1')
-switchLang('dashTotalStudents2')
-switchLang('dashTotalStudents3')
-switchLang('dashTotalStudentsBtn1')
-switchLang('dashTotalStudentsBtn2')
-switchLang('dashTotalStudentsBtn3')
+;(function () {
+  window.switchLang('dashboardTitle')
+  window.switchLang('dashTotalStudents1')
+  window.switchLang('dashTotalStudents2')
+  window.switchLang('dashTotalStudents3')
+  window.switchLang('dashTotalStudentsBtn1')
+  window.switchLang('dashTotalStudentsBtn2')
+  window.switchLang('dashTotalStudentsBtn3')
+})()

@@ -1,9 +1,7 @@
-let currentLanguage = 'fr'
-
-export function setCurrentLanguage(lang) {
-  currentLanguage = lang
+window.setCurrentLanguage = function (lang) {
+  setCurrentLanguage(lang)
 }
 
-export function getCurrentLanguage() {
-  return currentLanguage
+window.getCurrentLanguage = function () {
+  getCurrentLanguage()
 }

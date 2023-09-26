@@ -1,5 +1,3 @@
-import { switchLang } from './langManager.js'
-
 $(document).ready(function () {
   // Use the jQuery $ function to select the elements
   const brandBox = $('.sidebar__brand')
@@ -22,7 +20,7 @@ $(document).ready(function () {
   // Add event listeners to the elements
   brandBox.on('click', function () {
     // Load the content of the dashboard page into the main element
-    main.load('main/dashboard.ejs')
+    main.load('main/dashboard.ejs', function () {})
   })
 
   userBox.on('click', function () {
@@ -86,12 +84,12 @@ $(document).ready(function () {
 
   //===languages===
 
-  switchLang('sideBarTitle')
-  switchLang('sideBardAddStudent')
-  switchLang('sideBardManStudents')
-  switchLang('sideBarManCourses')
-  switchLang('sideBardManTeachers')
-  switchLang('parAndSec')
-  switchLang('sideBardAddUser')
-  switchLang('sideBardSchedule')
+  window.switchLang('sideBarTitle')
+  window.switchLang('sideBardAddStudent')
+  window.switchLang('sideBardManStudents')
+  window.switchLang('sideBarManCourses')
+  window.switchLang('sideBardManTeachers')
+  window.switchLang('parAndSec')
+  window.switchLang('sideBardAddUser')
+  window.switchLang('sideBardSchedule')
 })
