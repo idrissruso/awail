@@ -41,6 +41,7 @@
   const apiUrls = {
     getGradesByStudent: `${baseUrl}getStudentGrades/`,
     getCourseById: `${baseUrl}getCourse/`,
+    getClassById: `${baseUrl}getClass/`,
   }
 
   const viewStudentModal = document.querySelector('.viewStudent')
@@ -120,6 +121,11 @@
       .catch((err) => console.log(err))
   }
 
+  const getClassNameById = async (id) => {
+    const data = await fetchData(apiUrls.getClassById, id)
+    return data.class_name
+  }
+
   searchInput.addEventListener('input', (e) => {
     const searchValue = e.target.value.toLowerCase()
     const filteredStudents = students.filter((student) =>
@@ -190,8 +196,9 @@
   const showStudent = async (id) => {
     const response = await fetch(`${baseUrl}getStudent/${id}`)
       .then((res) => res.json())
-      .then((data) => {
+      .then(async (data) => {
         const student = data
+        const className = await getClassNameById(student.class)
         let html = `<div class="viewStudent__container-content">
   <span class="viewStudent__close-btn">✖️</span>
   <h2 class="viewStudent__title" id="studentDetailsTitle">Détails de l'élève</h2>
@@ -238,7 +245,8 @@
         </div>
         <div class="viewStudent__row">
           <span class="viewStudent__label" id="studentClass">Classe:</span>
-          <span class="viewStudent__value" >${student.class}</span>
+          <span class="viewStudent__value" >${className}
+          </span>
         </div>
         <div class="viewStudent__divider"></div>
         <h3 class="viewStudent__subheading" id="parentInfo">Information du Parent</h3>
