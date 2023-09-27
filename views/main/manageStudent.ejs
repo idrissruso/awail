@@ -356,17 +356,19 @@ include("../spinners/spinner2.ejs")%>
 
 <!--Absenteeism-->
 
-<div class="absenteeism absenteeismHide">
+<div class="absenteeism absenteeismHide" id="absenteeismModal">
   <div class="absenteeism__modal">
-    <h2 class="absenteeism__title">Suivi de Présence</h2>
-    <section class="student-profile"></section>
-    <section class="attendance-list">
-      <h3 class="attendance-list__title">Historique d'Absence</h3>
+    <h2 class="absenteeism__title" id="absenteeismTitle">Suivi de Présence</h2>
+    <section class="student-profile" id="studentProfileSection"></section>
+    <section class="attendance-list" id="attendanceListSection">
+      <h3 class="attendance-list__title" id="attendanceListTitle">
+        Historique d'Absence
+      </h3>
       <table class="attendance-list__table">
         <thead>
           <tr>
-            <th>Date d'Absence</th>
-            <th>Status</th>
+            <th id="absenteeismDatedAbsence">Date d'Absence</th>
+            <th id="absenteeismStatus">Status</th>
           </tr>
         </thead>
         <tbody id="absenteeism__tbody">
@@ -374,11 +376,16 @@ include("../spinners/spinner2.ejs")%>
         </tbody>
       </table>
     </section>
-    <section class="add-attendance">
-      <h3 class="add-attendance__title">Modifier le Status</h3>
+    <section class="add-attendance" id="addAttendanceSection">
+      <h3 class="add-attendance__title" id="modifyAttendanceTitle">
+        Modifier le Status
+      </h3>
       <form class="add-attendance__form">
         <div class="input-group">
-          <label for="absence-date" class="input-group__label"
+          <label
+            for="absence-date"
+            class="input-group__label"
+            id="absenceDateLabel"
             >Date d'Absence:</label
           >
           <select
@@ -389,17 +396,27 @@ include("../spinners/spinner2.ejs")%>
           ></select>
         </div>
         <div class="input-group">
-          <label for="status" class="input-group__label">Statut:</label>
+          <label for="status" class="input-group__label" id="statusLabel"
+            >Statut:</label
+          >
           <select id="status" name="status" required class="input-group__input">
             <option value="Non justifié">Non justifié</option>
             <option value="Justifié">Justifié</option>
           </select>
         </div>
         <div class="input-group input-group__actions">
-          <button type="reset" class="add-attendance__cancel-button btn">
+          <button
+            type="reset"
+            class="add-attendance__cancel-button btn"
+            id="cancelButton"
+          >
             Annuler
           </button>
-          <button type="submit" class="add-attendance__submit-button btn">
+          <button
+            type="submit"
+            class="add-attendance__submit-button btn"
+            id="submitButton"
+          >
             Modifier
           </button>
         </div>

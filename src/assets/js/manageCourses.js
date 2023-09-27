@@ -6,6 +6,15 @@
     // Navy Blue
   ]
 
+  window.switchLang('manageCoursesHeading')
+  window.switchLang('addNewCoursModalHeading')
+  window.switchLang('courseDetailsModalHeading')
+  window.switchLang('courseNameLabel')
+  window.switchLang('creditsLabel')
+  window.switchLang('CourseCancelButton')
+  window.switchLang('addButton')
+  window.switchLang('addNewCoursModalSubmit')
+
   const baseUrl = window.API_URLS.apiUrl
   const getCoursesUrl = `${baseUrl}getCourses`
   const createCourseUrl = `${baseUrl}createCourse`
@@ -126,31 +135,38 @@
         .then((res) => res.json())
         .then(async (data) => {
           detail.innerHTML = `<div class="courseDetailsModal__info">
-        <p><span class="infoLabel">Id du cours :</span> ${data.code}</p>
-        <p><span class="infoLabel">Titre du cours :</span> ${
-          data.course_name
-        }</p>
-        <p><span class="infoLabel">Instructeur :</span> ${await getTeacherById(
-          data.teacher
-        ).then((data) => data.fullName)}</p>
-        <p><span class="infoLabel">Crédits :</span> ${data.credits}</p>
-         
-        </p>
-
-        <p></p>
-      </div>
-
-      <div class="courseDetailsModal__actions">
-        <button class="actionButton edit" id="editBtn" data-id = "${id}">Modifier</button>
-        <button class="actionButton delete" id="deleteBtn" data-id = "${id}">Supprimer</button>
-        <button class="actionButton cancel" id="cancelBtn" data-id = "${id}">Annuler</button>
-      </div>`
+    <p><span class="infoLabel" id="courseIdLabel">Id du cours :</span> ${
+      data.code
+    }</p>
+    <p><span class="infoLabel" id="courseTitleLabel">Titre du cours :</span> ${
+      data.course_name
+    }</p>
+    <p><span class="infoLabel" id="instructorLabel">Instructeur :</span> ${await getTeacherById(
+      data.teacher
+    ).then((data) => data.fullName)}</p>
+    <p><span class="infoLabel" id="creditsLabel2">Crédits :</span> ${
+      data.credits
+    }</p> 
+</div>
+<div class="courseDetailsModal__actions">
+    <button class="actionButton edit" id="coursEditBtn" data-id="${id}">Modifier</button>
+    <button class="actionButton delete" id="coursDeleteBtn" data-id="${id}">Supprimer</button>
+    <button class="actionButton cancel" id="coursCancelBtn" data-id="${id}">Annuler</button>
+</div>
+`
         })
     } catch (err) {
       alert('une erreur est survenue')
       console.error(err)
     } finally {
       spinner.style.display = 'none'
+      window.switchLang('courseIdLabel')
+      window.switchLang('courseTitleLabel')
+      window.switchLang('instructorLabel')
+      window.switchLang('creditsLabel2')
+      window.switchLang('coursEditBtn')
+      window.switchLang('coursDeleteBtn')
+      window.switchLang('coursCancelBtn')
     }
   }
   // Fixed query selector
@@ -190,6 +206,8 @@
         } catch (err) {
           console.error(err)
         }
+      } else {
+        teacherName = "Pas d'instructeur attribué"
       }
 
       courseDiv.innerHTML = `
@@ -227,7 +245,6 @@
 
   manageCourses.addEventListener('click', (event) => {
     if (event.target.matches('.add-newCourse, .add-newCourse *')) {
-      submitBtn.textContent = 'Ajouter'
       addNewCourseModal.classList.add('addNewCoursModal--show')
       addNewCourseModal.classList.remove('addNewCoursModal--hide')
       addNewCourseContainer.classList.add('addNewCoursContainer--animate')

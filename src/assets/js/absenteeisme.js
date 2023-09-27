@@ -1,4 +1,16 @@
 ;(function () {
+  const absenteeismLang = () => {
+    window.switchLang('absenteeismTitle')
+    window.switchLang('attendanceListTitle')
+    window.switchLang('absenceDateLabel')
+    window.switchLang('statusLabel')
+    window.switchLang('cancelButton')
+    window.switchLang('submitButton')
+    window.switchLang('modifyAttendanceTitle')
+    window.switchLang('absenteeismDatedAbsence')
+    window.switchLang('absenteeismStatus')
+  }
+
   const baseUrl = window.API_URLS.apiUrl
 
   const apiUrls = {
@@ -106,5 +118,6 @@
     }
   })
 
+  absenteeismLang()
   // Call the function to populate the options when the page loads
 })()
