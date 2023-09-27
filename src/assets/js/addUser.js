@@ -101,7 +101,6 @@
       .then((data) => {
         users.push(...data)
         updateTable(users)
-        spinner.style.display = 'none'
       })
       .catch((err) => console.error(err))
   }
@@ -170,6 +169,7 @@
       </tr>`
     }
     tableBody.innerHTML = tableContent
+    spinner.style.display = 'none'
   }
 
   getUsers()

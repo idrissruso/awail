@@ -3,49 +3,88 @@ include("../spinners/spinner2.ejs") %>
 <div class="manageTeachers">
   <div class="manageTeachers__container">
     <div class="manageTeachers__header">
-      <h1 class="manageTeachers__heading">Gérer les enseignants.</h1>
+      <h1 class="manageTeachers__heading" id="manageTeachersHeading">
+        Gérer les enseignants.
+      </h1>
       <button class="manageTeachers__header-btn" id="addTeacher">
         <span>
           <svg class="manageTeachers__header-icon">
             <use xlink:href="#icon-plus"></use>
-          </svg> </span
-        >Ajouter un enseignant
+          </svg>
+        </span>
+        <span id="addTeacherBtnText">Ajouter un enseignant</span>
       </button>
     </div>
     <div class="manageTeachers__searchbar">
-      <label class="manageTeachers__searchbar-label" for="teacher"
+      <label
+        class="manageTeachers__searchbar-label"
+        for="teacher"
+        id="searchTeacherLabel"
         >Rechercher :</label
       >
       <input type="text" class="manageTeachers__searchbar-input" id="teacher" />
     </div>
-
     <div class="manageTeachers__content">
       <table class="manageTeachers__table">
         <tr class="manageTeachers__row manageTeachers__row--header">
-          <th class="manageTeachers__cell manageTeachers__cell--header">#</th>
-          <th class="manageTeachers__cell manageTeachers__cell--header">
+          <th
+            class="manageTeachers__cell manageTeachers__cell--header"
+            id="headerNumber"
+          >
+            #
+          </th>
+          <th
+            class="manageTeachers__cell manageTeachers__cell--header"
+            id="headerPhoto"
+          >
             Photo
           </th>
-          <th class="manageTeachers__cell manageTeachers__cell--header">ID</th>
-          <th class="manageTeachers__cell manageTeachers__cell--header">
+          <th
+            class="manageTeachers__cell manageTeachers__cell--header"
+            id="teacherIdHeader"
+          >
+            ID
+          </th>
+          <th
+            class="manageTeachers__cell manageTeachers__cell--header"
+            id="teacherNameHeader"
+          >
             Nom complet
           </th>
-          <th class="manageTeachers__cell manageTeachers__cell--header">
+          <th
+            class="manageTeachers__cell manageTeachers__cell--header"
+            id="headerBirthDate"
+          >
             Date de naissance
           </th>
-          <th class="manageTeachers__cell manageTeachers__cell--header">
+          <th
+            class="manageTeachers__cell manageTeachers__cell--header"
+            id="headerPhone"
+          >
             Téléphone
           </th>
-          <th class="manageTeachers__cell manageTeachers__cell--header">
+          <th
+            class="manageTeachers__cell manageTeachers__cell--header"
+            id="headerEmail"
+          >
             Email
           </th>
-          <th class="manageTeachers__cell manageTeachers__cell--header">
+          <th
+            class="manageTeachers__cell manageTeachers__cell--header"
+            id="headerAddress"
+          >
             Adresse
           </th>
-          <th class="manageTeachers__cell manageTeachers__cell--header">
+          <th
+            class="manageTeachers__cell manageTeachers__cell--header"
+            id="headerQualification"
+          >
             Qualification
           </th>
-          <th class="manageTeachers__cell manageTeachers__cell--header">
+          <th
+            class="manageTeachers__cell manageTeachers__cell--header"
+            id="headerActions"
+          >
             Actions
           </th>
         </tr>
@@ -60,13 +99,18 @@ include("../spinners/spinner2.ejs") %>
 
 <div class="addNewTeacher addNewTeacher-hide">
   <div class="addNewTeacher__container">
-    <h1 class="addNewTeacher__heading">Ajouter un enseignant</h1>
+    <h1 class="addNewTeacher__heading" id="addTeacherHeading">
+      Ajouter un enseignant
+    </h1>
     <div class="addNewTeacher__content">
       <form action="#" class="addNewTeacher-form">
-        <h3 id="heading">Détails de l'enseignant</h3>
+        <h3 id="teacherDetailsHeading">Détails de l'enseignant</h3>
         <div class="teacher">
           <div class="addNewTeacher-form__group" id="matricule">
-            <label class="addNewTeacher-form__label" for="teacher-no"
+            <label
+              class="addNewTeacher-form__label"
+              for="teacher-no"
+              id="teacherMatriculeLabel"
               >Matricule</label
             >
             <input
@@ -80,7 +124,10 @@ include("../spinners/spinner2.ejs") %>
           </div>
 
           <div class="addNewTeacher-form__group">
-            <label class="addNewTeacher-form__label" for="teacher-name"
+            <label
+              class="addNewTeacher-form__label"
+              for="teacher-name"
+              id="teacherNameLabel"
               >Nom Complet</label
             >
             <input
@@ -93,7 +140,10 @@ include("../spinners/spinner2.ejs") %>
             />
           </div>
           <div class="addNewTeacher-form__group">
-            <label class="addNewTeacher-form__label" for="teacher-phone"
+            <label
+              class="addNewTeacher-form__label"
+              for="teacher-phone"
+              id="teacherPhoneLabel"
               >Téléphone</label
             >
             <input
@@ -106,7 +156,10 @@ include("../spinners/spinner2.ejs") %>
             />
           </div>
           <div class="addNewTeacher-form__group" id="age">
-            <label class="addNewTeacher-form__label" for="teacher-age"
+            <label
+              class="addNewTeacher-form__label"
+              for="teacher-age"
+              id="teacherAgeLabel"
               >Date de naissance</label
             >
             <input
@@ -119,7 +172,10 @@ include("../spinners/spinner2.ejs") %>
             />
           </div>
           <div class="addNewTeacher-form__group" id="sex">
-            <label class="addNewTeacher-form__label" for="teacher-sex"
+            <label
+              class="addNewTeacher-form__label"
+              for="teacher-sex"
+              id="teacherSexLabel"
               >Sexe</label
             >
             <select
@@ -132,7 +188,10 @@ include("../spinners/spinner2.ejs") %>
             </select>
           </div>
           <div class="addNewTeacher-form__group" id="qualification">
-            <label class="addNewTeacher-form__label" for="teacher-qualification"
+            <label
+              class="addNewTeacher-form__label"
+              for="teacher-qualification"
+              id="teacherQualificationLabel"
               >Qualification</label
             >
             <input
@@ -145,7 +204,10 @@ include("../spinners/spinner2.ejs") %>
             />
           </div>
           <div class="addNewTeacher-form__group">
-            <label class="addNewTeacher-form__label" for="teacher-email"
+            <label
+              class="addNewTeacher-form__label"
+              for="teacher-email"
+              id="teacherEmailLabel"
               >Email</label
             >
             <input
@@ -158,7 +220,10 @@ include("../spinners/spinner2.ejs") %>
             />
           </div>
           <div class="addNewTeacher-form__group" id="subjects">
-            <label class="addNewTeacher-form__label" for="teacher-subjects"
+            <label
+              class="addNewTeacher-form__label"
+              for="teacher-subjects"
+              id="teacherSubjectsLabel"
               >Matières</label
             >
             <select
@@ -167,14 +232,22 @@ include("../spinners/spinner2.ejs") %>
               class="addNewTeacher-form__input"
               required
             >
-              <option value="" name="teacher-course" selected>
+              <option
+                value=""
+                name="teacher-course"
+                id="teacherSubjectsOption"
+                selected
+              >
                 Choisissez une cours
               </option>
             </select>
           </div>
 
           <div class="addNewTeacher-form__group">
-            <label class="addNewTeacher-form__label" for="teacher-img"
+            <label
+              class="addNewTeacher-form__label"
+              for="teacher-img"
+              id="teacherImgLabel"
               >Photo</label
             >
             <input
@@ -184,10 +257,13 @@ include("../spinners/spinner2.ejs") %>
             />
           </div>
         </div>
-        <h3 id="heading">Adresse</h3>
+        <h3 id="addressHeading">Adresse</h3>
         <div class="adress">
           <div class="addNewTeacher-form__group">
-            <label class="addNewTeacher-form__label" for="address"
+            <label
+              class="addNewTeacher-form__label"
+              for="address"
+              id="teacherAddressLabel"
               >Adresse Complet</label
             >
             <textarea
@@ -206,12 +282,14 @@ include("../spinners/spinner2.ejs") %>
           <button
             type="submit"
             class="addNewTeacher-form__btn addNewTeacher-form__btn-submit"
+            id="addTeacherBtn"
           >
             Ajouter
           </button>
           <button
             type="reset"
             class="addNewTeacher-form__btn addNewTeacher-form__btn-cancel"
+            id="cancelTeacherBtn"
           >
             Annuler
           </button>

@@ -1,5 +1,38 @@
 'use strict'
 ;(function () {
+  window.switchLang('manageTeachersHeading')
+  window.switchLang('searchTeacherLabel')
+  window.switchLang('headerNumber')
+  window.switchLang('headerPhoto')
+  window.switchLang('teacherIdHeader')
+  window.switchLang('teacherNameHeader')
+  window.switchLang('headerBirthDate')
+  window.switchLang('headerPhone')
+  window.switchLang('headerEmail')
+  window.switchLang('headerAddress')
+  window.switchLang('headerQualification')
+  window.switchLang('headerActions')
+  window.switchLang('addTeacherBtnText')
+
+  const newTeacherLang = () => {
+    window.switchLang('addTeacherHeading')
+    window.switchLang('teacherDetailsHeading')
+    window.switchLang('teacherMatriculeLabel')
+    window.switchLang('teacherNameLabel')
+    window.switchLang('teacherPhoneLabel')
+    window.switchLang('teacherAgeLabel')
+    window.switchLang('teacherSexLabel')
+    window.switchLang('teacherQualificationLabel')
+    window.switchLang('teacherEmailLabel')
+    window.switchLang('teacherSubjectsLabel')
+    window.switchLang('teacherSubjectsOption')
+    window.switchLang('teacherImgLabel')
+    window.switchLang('addressHeading')
+    window.switchLang('teacherAddressLabel')
+    window.switchLang('addTeacherBtn')
+    window.switchLang('cancelTeacherBtn')
+  }
+
   const baseUrl = window.API_URLS.apiUrl
   const tBody = document.querySelector('#teachers__tBody')
   const addNewTeacherBtn = document.querySelector('#addTeacher')
@@ -77,6 +110,7 @@
   }
 
   addNewTeacherBtn.addEventListener('click', function () {
+    newTeacherLang()
     addNewTeacherPopUp.classList.add('addNewTeacher-show')
     addNewTeacherPopUp.classList.remove('addNewTeacher-hide')
     addNewTeacherContainer.classList.add('addNewTeacher-animate')
