@@ -116,5 +116,9 @@
   "editStudent-parentEmail-label": "Email du Parent:",
   "editStudent-parentAddress-label": "Adresse:",
   "editStudent-submit-button": "Modifier",
-  "editStudent-cancel-button": "annuler"
+  "editStudent-cancel-button": "annuler",
+  "deleteModalTitle": "Confirmation de Suppression",
+  "deleteModalMessage": "Êtes-vous sûr(e) de vouloir supprimer cet élève ?",
+  "deleteModalCancel": "Annuler",
+  "deleteModalConfirm": "Confirmer"
 }

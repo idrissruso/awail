@@ -116,5 +116,9 @@
   "editStudent-parentEmail-label": "بريد الوالد:",
   "editStudent-parentAddress-label": "العنوان:",
   "editStudent-submit-button": "تحديث",
-  "editStudent-cancel-button": "إلغاء"
+  "editStudent-cancel-button": "إلغاء",
+  "deleteModalTitle": "تأكيد الحذف",
+  "deleteModalMessage": "هل أنت متأكد من رغبتك في حذف هذا الطالب؟",
+  "deleteModalCancel": "إلغاء",
+  "deleteModalConfirm": "تأكيد"
 }

@@ -1,4 +1,9 @@
 ;(function () {
+  window.switchLang('deleteModalTitle')
+  window.switchLang('deleteModalMessage')
+  window.switchLang('deleteModalCancel')
+  window.switchLang('deleteModalConfirm')
+
   const baseUrl = window.API_URLS.apiUrl
 
   let studentId

@@ -328,21 +328,32 @@ include("../spinners/spinner2.ejs")%>
 <!--delete modal-->
 <div class="deleteModal deleteStudent modalHide">
   <div class="deleteModal__content">
-    <h2 class="deleteModal__title">Confirmation de Suppression</h2>
-    <svg class="deleteModal__icon">
+    <h2 id="deleteModalTitle" class="deleteModal__title">
+      Confirmation de Suppression
+    </h2>
+    <svg id="deleteModalIcon" class="deleteModal__icon">
       <use xlink:href="#icon-x-circle" />
     </svg>
-    <p class="deleteModal__message">
+    <p id="deleteModalMessage" class="deleteModal__message">
       Êtes-vous sûr(e) de vouloir supprimer cet élève ?
     </p>
     <div class="deleteModal__buttons">
-      <button class="deleteModal__btn deleteModal__btn--cancel">Annuler</button>
-      <button class="deleteModal__btn deleteModal__btn--confirm">
+      <button
+        id="deleteModalCancel"
+        class="deleteModal__btn deleteModal__btn--cancel"
+      >
+        Annuler
+      </button>
+      <button
+        id="deleteModalConfirm"
+        class="deleteModal__btn deleteModal__btn--confirm"
+      >
         Confirmer
       </button>
     </div>
   </div>
 </div>
+
 <!--Absenteeism-->
 
 <div class="absenteeism absenteeismHide">
