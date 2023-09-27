@@ -124,8 +124,9 @@
         gap: 1rem;
         margin-top: 2rem;
 
-        #subheading {
+        #editStudent-subheading {
           grid-column: 1/-1;
+          color: $color-tertiary-dark;
         }
 
         &--heading {

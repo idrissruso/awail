@@ -1,4 +1,15 @@
 ;(function () {
+  const paymentLang = () => {
+    window.switchLang('payment-history-title')
+    window.switchLang('payment-date-header')
+    window.switchLang('payment-amount-header')
+    window.switchLang('payment-month-header')
+    window.switchLang('payment-new-payment-title')
+    window.switchLang('payment-date-label')
+    window.switchLang('payment-month-label')
+    window.switchLang('payment-amount-label')
+    window.switchLang('payment-add-btn')
+  }
   const baseUrl = window.API_URLS.apiUrl
 
   const tbody = document.querySelector('#payment__table-body')
@@ -58,6 +69,7 @@
       tbody.insertAdjacentHTML('beforeend', tr)
     })
     spinner.classList.add('spinner2__hide')
+    paymentLang()
   }
   function getDataFromForm(formElement) {
     const formData = new FormData(formElement)

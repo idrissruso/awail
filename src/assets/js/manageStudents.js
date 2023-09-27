@@ -34,6 +34,7 @@
     window.switchLang('RésultatsDesExamens')
     window.switchLang('appreciationHeader')
   }
+
   //===================multi language=================
   multiLanguage()
 

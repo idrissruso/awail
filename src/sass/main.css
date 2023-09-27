@@ -2717,8 +2717,9 @@ input[type=checkbox]:checked:after {
   gap: 1rem;
   margin-top: 2rem;
 }
-.editStudent__content .form__box-info #subheading {
+.editStudent__content .form__box-info #editStudent-subheading {
   grid-column: 1/-1;
+  color: #a50b0b;
 }
 .editStudent__content .form__box-info--heading {
   font-size: 1.4rem;

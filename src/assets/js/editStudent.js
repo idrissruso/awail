@@ -1,4 +1,24 @@
 ;(function () {
+  window.switchLang('editStudent-heading')
+  window.switchLang('editImageBtnLabel')
+  window.switchLang('editStudent-profile-heading')
+  window.switchLang('editStudent-matricule-label')
+  window.switchLang('editStudent-nomComplet-label')
+  window.switchLang('editStudent-telephone-label')
+  window.switchLang('editStudent-dateNaissance-label')
+  window.switchLang('editStudent-sex-label')
+  window.switchLang('editStudent-sex-option-homme')
+  window.switchLang('editStudent-sex-option-femme')
+  window.switchLang('editStudent-classe-label')
+  window.switchLang('editStudent-subheading')
+  window.switchLang('editStudent-parentName-label')
+  window.switchLang('editStudent-parentProfession-label')
+  window.switchLang('editStudent-parentPhone-label')
+  window.switchLang('editStudent-parentEmail-label')
+  window.switchLang('editStudent-parentAddress-label')
+  window.switchLang('editStudent-submit-button')
+  window.switchLang('editStudent-cancel-button')
+
   const baseUrl = window.API_URLS.apiUrl
 
   let modifyPopUp = document.querySelector('.modifyStudent')
