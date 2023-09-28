@@ -1,4 +1,10 @@
 ;(function () {
+  const deleteTeacherLang = () => {
+    window.switchLang('deleteTeacherTitle')
+    window.switchLang('deleteTeacherMessage')
+    window.switchLang('cancelDeleteTeacherBtn')
+    window.switchLang('confirmDeleteTeacherBtn')
+  }
   const baseUrl = window.API_URLS.apiUrl
 
   const tBody = document.querySelector('#teachers__tBody')
@@ -146,6 +152,7 @@
       target.classList.contains('manageTeachers__btn--remove') ||
       target.classList.contains('bin')
     ) {
+      deleteTeacherLang()
       deleteTeacherPopUp.classList.add('modalShown')
       deleteTeacherPopUp.classList.toggle('modalHide')
       deleteTeacherContainer.classList.add('shaking')

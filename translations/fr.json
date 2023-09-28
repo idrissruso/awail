@@ -176,5 +176,9 @@
   "addressHeading": "Adresse",
   "teacherAddressLabel": "Adresse Complet",
   "addTeacherBtn": "Ajouter",
-  "cancelTeacherBtn": "Annuler"
+  "cancelTeacherBtn": "Annuler",
+  "deleteTeacherTitle": "Confirmation de Suppression",
+  "deleteTeacherMessage": "Êtes-vous sûr(e) de vouloir supprimer cet Enseignant ?",
+  "cancelDeleteTeacherBtn": "Annuler",
+  "confirmDeleteTeacherBtn": "Confirmer"
 }

@@ -97,7 +97,7 @@
     // Add a default option
     const defaultOption = document.createElement('option')
     defaultOption.value = ''
-    defaultOption.textContent = 'Select a subject'
+    defaultOption.textContent = 'Choisissez un cours'
     courseSelect.appendChild(defaultOption)
 
     // Populate with fetched courses

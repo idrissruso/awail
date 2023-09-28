@@ -176,5 +176,9 @@
   "addressHeading": "العنوان",
   "teacherAddressLabel": "العنوان بالكامل",
   "addTeacherBtn": "إضافة",
-  "cancelTeacherBtn": "إلغاء"
+  "cancelTeacherBtn": "إلغاء",
+  "deleteTeacherTitle": "تأكيد الحذف",
+  "deleteTeacherMessage": "هل أنت متأكد من رغبتك في حذف هذا المعلم؟",
+  "cancelDeleteTeacherBtn": "إلغاء",
+  "confirmDeleteTeacherBtn": "تأكيد"
 }
