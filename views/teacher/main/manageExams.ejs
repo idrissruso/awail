@@ -3,20 +3,28 @@ include("../../spinners/spinner2.ejs")%>
 
 <div class="results-container" id="resultsContainer">
   <div class="header">
-    <h1 class="header-title">Gestion des Résultats</h1>
+    <h1 class="header-title" id="resultManagementTitle">
+      Gestion des Résultats
+    </h1>
   </div>
   <form class="result-form" id="form">
     <div class="result-form-group">
       <div class="result-form-select-group">
-        <label class="result-form-label" for="class-select">classe :</label>
+        <label class="result-form-label" for="class-select" id="classLabel"
+          >Classe :</label
+        >
         <select class="result-form-select" id="class-select"></select>
       </div>
       <div class="result-form-select-group">
-        <label class="result-form-label" for="cours-select">Cours :</label>
+        <label class="result-form-label" for="cours-select" id="courseLabel"
+          >Cours :</label
+        >
         <select class="result-form-select" id="cours-select"></select>
       </div>
       <div class="result-form-select-group">
-        <label class="result-form-label" for="exam-select">Examen :</label>
+        <label class="result-form-label" for="exam-select" id="examLabel"
+          >Examen :</label
+        >
         <select class="result-form-select" id="exam-select" required>
           <option value="Exam 1">1er Examen</option>
           <option value="Exam 2">2e Examen</option>
@@ -31,14 +39,18 @@ include("../../spinners/spinner2.ejs")%>
         </select>
       </div>
       <div class="result-form-select-group">
-        <label class="result-form-label" for="action">Action :</label>
+        <label class="result-form-label" for="action" id="actionLabel"
+          >Action :</label
+        >
         <select class="result-form-select" id="action" required>
-          <option value="Add">Enregistrer</option>
-          <option value="Update">Metre a jours</option>
+          <option value="Add" id="addAction">Enregistrer</option>
+          <option value="Update" id="updateAction">Mettre à jour</option>
         </select>
       </div>
       <div class="result-form-select-group">
-        <label class="result-form-label" for="search-student">Rechercher</label>
+        <label class="result-form-label" for="search-student" id="searchLabel"
+          >Rechercher</label
+        >
         <input
           class="result-form-input"
           type="search"
@@ -52,14 +64,18 @@ include("../../spinners/spinner2.ejs")%>
       <thead class="result-table-head">
         <tr class="result-table-row">
           <th class="result-table-header" id="number">#</th>
-          <th class="result-table-header">Nom de l'élève</th>
-          <th class="result-table-header">Numéro de l'élève</th>
-          <th class="result-table-header">Points</th>
+          <th class="result-table-header" id="studentNameHeader">
+            Nom de l'élève
+          </th>
+          <th class="result-table-header" id="studentNumberHeader">
+            Numéro de l'élève
+          </th>
+          <th class="result-table-header" id="pointsHeader">Points</th>
         </tr>
       </thead>
       <tbody class="result-table-body" id="tbody"></tbody>
     </table>
-    <button class="result-form-button" type="submit">
+    <button class="result-form-button" type="submit" id="saveResultsButton">
       Enregistrer les résultats
     </button>
   </form>

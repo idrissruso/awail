@@ -2,20 +2,28 @@
 include("../../spinners/spinner2.ejs")%>
 <div class="manageAbsenteeism">
   <div class="header">
-    <h1 class="header__title">Gestion des absences de classe</h1>
+    <h1 class="header__title" id="absenceTitle">
+      Gestion des absences de classe
+    </h1>
   </div>
   <form class="form" id="form">
     <div class="form__group">
       <div class="form__select-group">
-        <label class="form__label" for="class-select">classe :</label>
+        <label class="form__label" for="class-select" id="classLabel"
+          >classe :</label
+        >
         <select class="form__select" id="class-select" required></select>
       </div>
       <div class="form__select-group">
-        <label class="form__label" for="date-select">date :</label>
+        <label class="form__label" for="date-select" id="dateLabel"
+          >date :</label
+        >
         <input class="form__input" type="date" id="date-select" required />
       </div>
       <div class="form__select-group">
-        <label class="form__label" for="search-student">Rechercher</label>
+        <label class="form__label" for="search-student" id="searchLabel"
+          >Rechercher</label
+        >
         <input
           class="form__input"
           type="search"
@@ -29,16 +37,21 @@ include("../../spinners/spinner2.ejs")%>
       <thead class="table__head">
         <tr class="table__row">
           <th class="table__header">#</th>
-          <th class="table__header">Numéro de l'élève</th>
-          <th class="table__header">Nom de l'élève</th>
-          <th class="table__header">Présence</th>
+          <th class="table__header" id="studentNumberHeader">
+            Numéro de l'élève
+          </th>
+          <th class="table__header" id="studentNameHeader">Nom de l'élève</th>
+          <th class="table__header" id="attendanceHeader">Présence</th>
         </tr>
       </thead>
       <tbody class="table__body" id="tbody"></tbody>
     </table>
-    <button class="form__button" type="submit">Marquer la présence</button>
+    <button class="form__button" type="submit" id="markAttendanceButton">
+      Marquer la présence
+    </button>
   </form>
 </div>
 
 <script src="../apiConfig.js"></script>
 <script src="../../tAbsenteeisme.js"></script>
+<script src="../../lanManager.js"></script>

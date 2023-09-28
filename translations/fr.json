@@ -230,5 +230,13 @@
   "tDayLabel": "Vendredi",
   "teacherDashboardTitle": "Tableau de bord",
   "teacherAbsenceTitle": "Gérer les absences",
-  "teacherExamsTitle": "Gérer les examens"
+  "teacherExamsTitle": "Gérer les examens",
+  "absenceTitle": "Gestion des absences de classe",
+  "classLabel": "classe :",
+  "dateLabel": "date :",
+  "searchLabel": "Rechercher",
+  "studentNumberHeader": "Numéro de l'élève",
+  "studentNameHeader": "Nom de l'élève",
+  "attendanceHeader": "Présence",
+  "markAttendanceButton": "Marquer la présence"
 }

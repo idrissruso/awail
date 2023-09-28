@@ -10,6 +10,15 @@
     createAttendances: `${baseUrl}createAttendees/`,
   }
 
+  window.switchLang('absenceTitle', true)
+  window.switchLang('classLabel', true)
+  window.switchLang('dateLabel', true)
+  window.switchLang('searchLabel', true)
+  window.switchLang('studentNumberHeader', true)
+  window.switchLang('studentNameHeader', true)
+  window.switchLang('attendanceHeader', true)
+  window.switchLang('markAttendanceButton', true)
+
   const tbody = document.querySelector('#tbody')
   const searchInput = document.querySelector('#search-student')
   const classesSelect = document.querySelector('#class-select')

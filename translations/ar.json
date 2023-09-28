@@ -230,5 +230,13 @@
   "tDayLabel": "الجمعة",
   "teacherDashboardTitle": "لوحة القيادة للمعلم",
   "teacherAbsenceTitle": "إدارة الغيابات للمعلم",
-  "teacherExamsTitle": "إدارة الامتحانات للمعلم"
+  "teacherExamsTitle": "إدارة الامتحانات للمعلم",
+  "absenceTitle": "إدارة غياب الصف",
+  "classLabel": "الصف:",
+  "dateLabel": "التاريخ:",
+  "searchLabel": "البحث",
+  "studentNumberHeader": "رقم الطالب",
+  "studentNameHeader": "اسم الطالب",
+  "attendanceHeader": "الحضور",
+  "markAttendanceButton": "وضع علامة الحضور"
 }
