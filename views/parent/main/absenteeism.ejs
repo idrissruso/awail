@@ -1,21 +1,26 @@
-<div class="absence-details">
-  <h2 class="absence-details__title">Détails des Absences et des Presences</h2>
+<div class="absence-details" id="absenceDetails">
+  <h2 class="absence-details__title" id="absenceDetailsTitle">
+    Détails des Absences et des Présences
+  </h2>
   <table class="absence-details__table">
     <thead>
       <tr>
-        <th class="absence-details__table-header">Date</th>
-        <th class="absence-details__table-header">Status</th>
+        <th class="absence-details__table-header" id="dateHeader">Date</th>
+        <th class="absence-details__table-header" id="statusHeader">Statut</th>
       </tr>
     </thead>
-    <tbody>
+
+    <tbody id="absenceDetailsTableBody">
       <!-- Add more rows as needed -->
     </tbody>
   </table>
   <div class="attendance-overview">
-    <h2 class="attendance-overview__title">Aperçu de la Présence</h2>
+    <h2 class="attendance-overview__title" id="attendanceOverviewTitle">
+      Aperçu de la Présence
+    </h2>
     <div class="attendance-overview__current-month">
-      <div class="attendance-overview__present">Justifié : 50%</div>
-      <div class="attendance-overview__absent">Non Justifié : 50%</div>
+      <div class="attendance-overview__present" id="attendancePresent"></div>
+      <div class="attendance-overview__absent" id="attendanceAbsent"></div>
     </div>
   </div>
 </div>

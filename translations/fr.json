@@ -288,5 +288,13 @@
   "event1Label": "Événement 1 :",
   "event2Label": "Événement 2 :",
   "event1": "-",
-  "event2": "-"
+  "event2": "-",
+  "absenceDetailsTitle": "Détails des Absences et des Présences",
+  "absenceDetailsTableHeaderDate": "Date",
+  "absenceDetailsTableHeaderStatus": "Statut",
+  "attendanceOverviewTitle": "Aperçu de la Présence",
+  "attendanceOverviewPresent": "Justifié : 50%",
+  "attendanceOverviewAbsent": "Non Justifié : 50%",
+  "dateHeader": "Date",
+  "statusHeader": "Statut"
 }

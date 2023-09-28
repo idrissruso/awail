@@ -289,5 +289,13 @@
   "event1Label": "الحدث 1:",
   "event2Label": "الحدث 2:",
   "event1": "-",
-  "event2": "-"
+  "event2": "-",
+  "absenceDetailsTitle": "تفاصيل الغياب والحضور",
+  "absenceDetailsTableHeaderDate": "التاريخ",
+  "absenceDetailsTableHeaderStatus": "الحالة",
+  "attendanceOverviewTitle": "نظرة عامة على الحضور",
+  "attendanceOverviewPresent": "مبرر: 50%",
+  "attendanceOverviewAbsent": "غير مبرر: 50%",
+  "dateHeader": "التاريخ",
+  "statusHeader": "الحالة"
 }
