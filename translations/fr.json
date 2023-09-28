@@ -227,5 +227,8 @@
   "courseLabel": "Cours",
   "fDayLabel": "Lundi",
   "sDayLabel": "Mardi",
-  "tDayLabel": "Vendredi"
+  "tDayLabel": "Vendredi",
+  "teacherDashboardTitle": "Tableau de bord",
+  "teacherAbsenceTitle": "Gérer les absences",
+  "teacherExamsTitle": "Gérer les examens"
 }

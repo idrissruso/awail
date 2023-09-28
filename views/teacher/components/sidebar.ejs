@@ -20,23 +20,30 @@
       <svg class="navigation__item-icon">
         <use xlink:href="#icon-meter"></use>
       </svg>
-      <p class="navigation__item-title">Tableau de bord</p>
+      <p class="navigation__item-title" id="teacherDashboardTitle">
+        Tableau de bord
+      </p>
     </li>
     <li class="navigation__item M_absenteeism">
       <svg class="navigation__item-icon">
         <use xlink:href="#icon-calendar"></use>
       </svg>
-      <p class="navigation__item-title">Gérer les absences</p>
+      <p class="navigation__item-title" id="teacherAbsenceTitle">
+        Gérer les absences
+      </p>
     </li>
     <li class="navigation__item manageExams">
       <svg class="navigation__item-icon">
         <use xlink:href="#icon-params"></use>
       </svg>
-      <p class="navigation__item-title">Gérer les résultats</p>
+      <p class="navigation__item-title" id="teacherExamsTitle">
+        Gérer les examens
+      </p>
     </li>
   </ul>
 </aside>
 
+<script src="../langmanager.js"></script>
 <script>
   ;(function () {
     const teacher = JSON.parse('<%- JSON.stringify(teacher) %>')

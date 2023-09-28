@@ -27,4 +27,8 @@ $(document).ready(function () {
     // Load the content of the dashboard page into the main element
     main.load('/teacher/main/manageExams.ejs')
   })
+
+  window.switchLang('teacherDashboardTitle', true)
+  window.switchLang('teacherAbsenceTitle', true)
+  window.switchLang('teacherExamsTitle', true)
 })

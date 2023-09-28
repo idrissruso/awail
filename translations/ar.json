@@ -227,5 +227,8 @@
   "courseLabel": "المقررات",
   "fDayLabel": "الاثنين",
   "sDayLabel": "الثلاثاء",
-  "tDayLabel": "الجمعة"
+  "tDayLabel": "الجمعة",
+  "teacherDashboardTitle": "لوحة القيادة للمعلم",
+  "teacherAbsenceTitle": "إدارة الغيابات للمعلم",
+  "teacherExamsTitle": "إدارة الامتحانات للمعلم"
 }
