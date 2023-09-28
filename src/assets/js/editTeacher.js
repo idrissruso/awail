@@ -5,6 +5,17 @@
     window.switchLang('cancelDeleteTeacherBtn')
     window.switchLang('confirmDeleteTeacherBtn')
   }
+  const modLang = () => {
+    window.switchLang('editTeacherHeading')
+    window.switchLang('editImgBtn')
+    window.switchLang('editTeacherInfoHeading')
+    window.switchLang('qualificationLabel')
+    window.switchLang('sexLabel')
+    window.switchLang('modifyTeacherOpHomme')
+    window.switchLang('modifyTeacherOFfemme')
+    window.switchLang('editTeacherBtn')
+    window.switchLang('close')
+  }
   const baseUrl = window.API_URLS.apiUrl
 
   const tBody = document.querySelector('#teachers__tBody')
@@ -198,11 +209,13 @@
         profilImg.src = displayImg(teacher)
         form.qualification.value = teacher.qualification
         form.address.value = teacher.contact_info.address
-        spin.classList.add('spinner2__hide')
       }
     } catch (err) {
       alert('une erreur est survenue' + err + 'form second')
       console.error(err)
+    } finally {
+      spin.classList.add('spinner2__hide')
+      modLang()
     }
   }
 

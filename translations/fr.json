@@ -180,5 +180,14 @@
   "deleteTeacherTitle": "Confirmation de Suppression",
   "deleteTeacherMessage": "Êtes-vous sûr(e) de vouloir supprimer cet Enseignant ?",
   "cancelDeleteTeacherBtn": "Annuler",
-  "confirmDeleteTeacherBtn": "Confirmer"
+  "confirmDeleteTeacherBtn": "Confirmer",
+  "editTeacherHeading": "Mettre à jour le profil de l'enseignant",
+  "editImgBtn": "Modifier L'image",
+  "editTeacherInfoHeading": "Modifier le profil",
+  "qualificationLabel": "Qualification",
+  "sexLabel": "Gendre",
+  "modifyTeacherOpHomme": "Homme",
+  "modifyTeacherOFfemme": "Femme",
+  "editTeacherBtn": "Modifier",
+  "close": "annuler"
 }

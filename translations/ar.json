@@ -180,5 +180,14 @@
   "deleteTeacherTitle": "تأكيد الحذف",
   "deleteTeacherMessage": "هل أنت متأكد من رغبتك في حذف هذا المعلم؟",
   "cancelDeleteTeacherBtn": "إلغاء",
-  "confirmDeleteTeacherBtn": "تأكيد"
+  "confirmDeleteTeacherBtn": "تأكيد",
+  "editTeacherHeading": "تحديث ملف المعلم",
+  "editImgBtn": "تحرير الصورة",
+  "editTeacherInfoHeading": "تحديث المعلومات الشخصية",
+  "qualificationLabel": "المؤهل",
+  "sexLabel": "الجنس",
+  "modifyTeacherOpHomme": "ذكر",
+  "modifyTeacherOFfemme": "أنثى",
+  "editTeacherBtn": "تحديث",
+  "close": "إلغاء"
 }

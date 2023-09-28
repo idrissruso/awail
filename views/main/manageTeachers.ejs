@@ -332,7 +332,7 @@ include("../spinners/spinner2.ejs") %>
 <div class="modifyTeacher editTeacher-hide">
   <div class="editTeacher">
     <div class="editTeacher__container">
-      <h1 class="editTeacher__heading">
+      <h1 class="editTeacher__heading" id="editTeacherHeading">
         Mettre à jour le profil de l'enseignant
       </h1>
 
@@ -350,12 +350,14 @@ include("../spinners/spinner2.ejs") %>
 
             <span class="form__box-img--name">Idrissa Rusongeka</span>
             <input type="file" class="form__box-img--file" id="file" />
-            <label for="file" class="form__box-img--btn"
+            <label for="file" class="form__box-img--btn" id="editImgBtn"
               >Modifier L'image</label
             >
           </div>
           <div class="form__box-info">
-            <h3 class="form__box-info--heading">Modifier le profil</h3>
+            <h3 class="form__box-info--heading" id="editTeacherInfoHeading">
+              Modifier le profil
+            </h3>
             <div class="form__box-info--group">
               <input
                 type="text"
@@ -407,7 +409,10 @@ include("../spinners/spinner2.ejs") %>
             </div>
             <div></div>
             <div class="form__box-info--group">
-              <label for="qualification" class="form__box-info--label"
+              <label
+                for="qualification"
+                class="form__box-info--label"
+                id="qualificationLabel"
                 >Qualification</label
               >
               <input
@@ -420,15 +425,22 @@ include("../spinners/spinner2.ejs") %>
               />
             </div>
             <div class="form__box-info--group">
-              <label for="sex" class="form__box-info--label">Sexe</label>
+              <label for="sex" class="form__box-info--label" id="sexLabel"
+                >Gendre</label
+              >
               <select name="sex" id="sex" class="form__box-info--input">
-                <option value="homme">Homme</option>
-                <option value="femme">Femme</option>
+                <option value="homme" id="modifyTeacherOpHomme">Homme</option>
+                <option value="femme" id="modifyTeacherOFfemme">Femme</option>
               </select>
             </div>
 
             <div class="form__box-info--group">
-              <label for="address" class="form__box-info--label">Address</label>
+              <label
+                for="address"
+                class="form__box-info--label"
+                id="addressLabel"
+                >Address</label
+              >
               <input
                 type="text"
                 name="address"
@@ -439,7 +451,9 @@ include("../spinners/spinner2.ejs") %>
               />
             </div>
             <div class="form__box-info--group form__box-info--group-action">
-              <button class="form__box-info--btn">Modifier</button>
+              <button class="form__box-info--btn" id="editTeacherBtn">
+                Modifier
+              </button>
               <span class="form__box-info--btn" id="close">Annuler</span>
             </div>
           </div>
