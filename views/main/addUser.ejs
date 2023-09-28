@@ -5,24 +5,32 @@ include("../spinners/spinner2.ejs") %>
   <div class="header">
     <div class="header__box header__box--total-users">
       <span class="header__box-value" id="totalUsers"></span>
-      <span class="header__box-label">Utilisateurs Totals</span>
+      <span class="header__box-label" id="totalUsersLabel"
+        >Utilisateurs Totals</span
+      >
     </div>
     <div class="header__box header__box--male-users">
       <span class="header__box-value" id="maleUsers"></span>
-      <span class="header__box-label">Utilisateurs Masculins</span>
+      <span class="header__box-label" id="maleUsersLabel"
+        >Utilisateurs Masculins</span
+      >
     </div>
     <div class="header__box header__box--female-users">
-      <span class="header__box-value" id="FemaleUsers"></span>
-      <span class="header__box-label">Utilisatrices Féminines</span>
+      <span class="header__box-value" id="femaleUsers"></span>
+      <span class="header__box-label" id="femaleUsersLabel"
+        >Utilisatrices Féminines</span
+      >
     </div>
     <div class="header__box header__box--active-users">
-      <span class="header__box-value" id="actifUsers"></span>
-      <span class="header__box-label">Utilisateurs Actifs</span>
+      <span class="header__box-value" id="activeUsers"></span>
+      <span class="header__box-label" id="activeUsersLabel"
+        >Utilisateurs Actifs</span
+      >
     </div>
   </div>
   <div class="addUser__container">
     <div class="addUser__header">
-      <button class="addUser__header-btn" id="addUser">
+      <button class="addUser__header-btn" id="addUserBtn">
         <span>
           <svg class="addUser__header-icon">
             <use xlink:href="#icon-plus"></use>
@@ -30,7 +38,7 @@ include("../spinners/spinner2.ejs") %>
         </span>
         Ajouter un utilisateur
       </button>
-      <!--<button class="addUser__header-blockedUsers" id="blockedUsers">
+      <!--<button class="addUser__header-blockedUsers" id="blockedUsersBtn">
         <span>
           <svg class="addUser__header-icon--block" id="block-icon">
             <use xlink:href="#icon-x-circle"></use>
@@ -39,7 +47,9 @@ include("../spinners/spinner2.ejs") %>
         Les Utilisateurs Bloqués
       </button>-->
       <div class="addUser__searchbar">
-        <label class="addUser__searchbar-label" for="user">Rechercher :</label>
+        <label class="addUser__searchbar-label" for="user" id="userSearchLabel"
+          >Rechercher :</label
+        >
         <input type="text" class="addUser__searchbar-input" id="user" />
       </div>
     </div>
@@ -48,13 +58,27 @@ include("../spinners/spinner2.ejs") %>
       <table class="addUser__table">
         <tr class="addUser__row addUser__row--header">
           <th class="addUser__cell addUser__cell--header">#</th>
-          <th class="addUser__cell addUser__cell--header">Nom d'utilisateur</th>
-          <th class="addUser__cell addUser__cell--header">Matricule</th>
-          <th class="addUser__cell addUser__cell--header">Nom Complet</th>
-          <th class="addUser__cell addUser__cell--header">E-mail</th>
-          <th class="addUser__cell addUser__cell--header">Mobile</th>
-          <th class="addUser__cell addUser__cell--header">Permission</th>
-          <th class="addUser__cell addUser__cell--header">Statut</th>
+          <th class="addUser__cell addUser__cell--header" id="usernameHeader">
+            Nom d'utilisateur
+          </th>
+          <th class="addUser__cell addUser__cell--header" id="matriculeHeader">
+            Matricule
+          </th>
+          <th class="addUser__cell addUser__cell--header" id="nomCompletHeader">
+            Nom Complet
+          </th>
+          <th class="addUser__cell addUser__cell--header" id="emailHeader">
+            E-mail
+          </th>
+          <th class="addUser__cell addUser__cell--header" id="mobileHeader">
+            Mobile
+          </th>
+          <th class="addUser__cell addUser__cell--header" id="permissionHeader">
+            Permission
+          </th>
+          <th class="addUser__cell addUser__cell--header" id="statutHeader">
+            Statut
+          </th>
         </tr>
         <tbody id="tableBody"></tbody>
       </table>
@@ -65,10 +89,12 @@ include("../spinners/spinner2.ejs") %>
 <!--add new user-->
 <div class="addNewUser addNewUserHide">
   <div class="addNewUser__container">
-    <h1 class="addNewUser__heading">Ajouter un Utilisateur</h1>
+    <h1 class="addNewUser__heading" id="addUserHeading">
+      Ajouter un Utilisateur
+    </h1>
     <form class="addNewUser__form" id="addUserForm">
       <div class="addNewUser__form-group">
-        <label class="addNewUser__label" for="name">Nom :</label>
+        <label class="addNewUser__label" for="name" id="nameLabel">Nom :</label>
         <input
           class="addNewUser__input"
           type="text"
@@ -78,7 +104,9 @@ include("../spinners/spinner2.ejs") %>
         />
       </div>
       <div class="addNewUser__form-group">
-        <label class="addNewUser__label" for="surname">Prénom :</label>
+        <label class="addNewUser__label" for="surname" id="surnameLabel"
+          >Prénom :</label
+        >
         <input
           class="addNewUser__input"
           type="text"
@@ -88,7 +116,9 @@ include("../spinners/spinner2.ejs") %>
         />
       </div>
       <div class="addNewUser__form-group">
-        <label class="addNewUser__label" for="email">E-mail :</label>
+        <label class="addNewUser__label" for="email" id="emailLabel"
+          >E-mail :</label
+        >
         <input
           class="addNewUser__input"
           type="email"
@@ -98,14 +128,18 @@ include("../spinners/spinner2.ejs") %>
         />
       </div>
       <div class="addNewUser__form-group">
-        <label class="addNewUser__label" for="permission">Permission :</label>
+        <label class="addNewUser__label" for="permission" id="permissionLabel"
+          >Permission :</label
+        >
         <select class="addNewUser__input" id="permission" name="permission">
           <option value="admin">Admin</option>
           <option value="user">Utilisateur</option>
         </select>
       </div>
       <div class="addNewUser__form-group">
-        <label class="addNewUser__label" for="mobile">Mobile :</label>
+        <label class="addNewUser__label" for="mobile" id="mobileLabel"
+          >Mobile :</label
+        >
         <input
           class="addNewUser__input"
           type="text"
@@ -115,7 +149,9 @@ include("../spinners/spinner2.ejs") %>
         />
       </div>
       <div class="addNewUser__form-group">
-        <label class="addNewUser__label" for="gender">Genre :</label>
+        <label class="addNewUser__label" for="gender" id="genderLabel"
+          >Genre :</label
+        >
         <select class="addNewUser__input" id="gender" name="gender">
           <option value="male">Homme</option>
           <option value="female">Femme</option>
@@ -123,7 +159,9 @@ include("../spinners/spinner2.ejs") %>
       </div>
 
       <div class="addNewUser__form-group">
-        <label class="addUser__label" for="matricule"> Matricule : </label>
+        <label class="addUser__label" for="matricule" id="matriculeLabel">
+          Matricule :
+        </label>
         <input
           class="addNewUser__input"
           type="text"
@@ -134,7 +172,9 @@ include("../spinners/spinner2.ejs") %>
       </div>
 
       <div class="addNewUser__form-group">
-        <label class="addNewUser__label" for="image">Image :</label>
+        <label class="addNewUser__label" for="image" id="imageLabel"
+          >Image :</label
+        >
         <input
           class="addNewUser__input"
           type="file"
@@ -146,10 +186,18 @@ include("../spinners/spinner2.ejs") %>
       <div class="addNewUser__form-group"></div>
 
       <div class="addNewUser__buttons">
-        <button class="addNewUser__btn addNewUser__btn-submit" type="submit">
+        <button
+          class="addNewUser__btn addNewUser__btn-submit"
+          type="submit"
+          id="usersAddUserBtn"
+        >
           Ajouter
         </button>
-        <button class="addNewUser__btn addNewUser__btn-cancel" type="button">
+        <button
+          class="addNewUser__btn addNewUser__btn-cancel"
+          type="button"
+          id="cancelAddUserBtn"
+        >
           Annuler
         </button>
       </div>

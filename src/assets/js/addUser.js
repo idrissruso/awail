@@ -8,11 +8,44 @@
     createUser: `${baseUrl}createUser`,
   }
 
+  const manUsersLang = () => {
+    window.switchLang('totalUsersLabel')
+    window.switchLang('maleUsersLabel')
+    window.switchLang('femaleUsersLabel')
+    window.switchLang('activeUsersLabel')
+    window.switchLang('addUserBtn')
+    window.switchLang('usernameHeader')
+    window.switchLang('matriculeHeader')
+    window.switchLang('nomCompletHeader')
+    window.switchLang('emailHeader')
+    window.switchLang('mobileHeader')
+    window.switchLang('permissionHeader')
+    window.switchLang('statutHeader')
+    window.switchLang('userSearchLabel')
+  }
+
+  const addUserLang = () => {
+    window.switchLang('addUserHeading')
+    window.switchLang('nameLabel')
+    window.switchLang('surnameLabel')
+    window.switchLang('emailLabel')
+    window.switchLang('permissionLabel')
+    window.switchLang('mobileLabel')
+    window.switchLang('genderLabel')
+    window.switchLang('matriculeLabel')
+    window.switchLang('imageLabel')
+    window.switchLang('usersAddUserBtn')
+    window.switchLang('cancelAddUserBtn')
+  }
+
+  manUsersLang()
+  addUserLang()
+
   const totalUsers = document.querySelector('#totalUsers')
   const maleUsers = document.querySelector('#maleUsers')
-  const FemaleUsers = document.querySelector('#FemaleUsers')
-  const activeUsers = document.querySelector('#actifUsers')
-  const addUserBtn = document.querySelector('#addUser')
+  const FemaleUsers = document.querySelector('#femaleUsers')
+  const activeUsers = document.querySelector('#activeUsers')
+  const addUserBtn = document.querySelector('#addUserBtn')
   var addNewUserModal = document.querySelector('.addNewUser')
   const addNewUserContainer = document.querySelector('.addNewUser__container')
   const cancelBtn = document.querySelector('.addNewUser__btn-cancel')
