@@ -1,5 +1,18 @@
 'use strict'
 ;(function () {
+  window.switchLang('resultManagementTitle', true)
+  window.switchLang('examsClassLabel', true)
+  window.switchLang('examsSubjectLabel', true)
+  window.switchLang('examLabel', true)
+  window.switchLang('actionLabel', true)
+  window.switchLang('addAction', true)
+  window.switchLang('updateAction', true)
+  window.switchLang('examsSearchLabel', true)
+  window.switchLang('examsStudentNameHeader', true)
+  window.switchLang('examsStudentNumberHeader', true)
+  window.switchLang('pointsHeader', true)
+  window.switchLang('saveResultsButton', true)
+
   const baseUrl = window.API_URLS.apiUrl
 
   const apiUrls = {

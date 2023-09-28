@@ -12,7 +12,6 @@
   function updateElementTranslation(idKey, op) {
     const language = getCurrentLanguage()
     if (op) {
-      console.log(op)
       fetch(`../${language}.json`)
         .then((response) => response.json())
         .then((translations) => {
@@ -23,7 +22,6 @@
           }
         })
     } else {
-      console.log(op)
       fetch(`${language}.json`)
         .then((response) => response.json())
         .then((translations) => {

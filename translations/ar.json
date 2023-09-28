@@ -238,5 +238,19 @@
   "studentNumberHeader": "رقم الطالب",
   "studentNameHeader": "اسم الطالب",
   "attendanceHeader": "الحضور",
-  "markAttendanceButton": "وضع علامة الحضور"
+  "markAttendanceButton": "وضع علامة الحضور",
+  "resultManagementTitle": "إدارة النتائج",
+  "examsClassLabel": "الصف:",
+  "examsSubjectLabel": "المادة:",
+  "examLabel": "الامتحان:",
+  "actionLabel": "الإجراء:",
+  "addAction": "حفظ",
+  "updateAction": "تحديث",
+  "examsSearchLabel": "البحث:",
+  "number": "#",
+  "examsStudentNameHeader": "اسم الطالب",
+  "examsStudentNumberHeader": "رقم الطالب",
+  "pointsHeader": "النقاط",
+  "saveResultsButton": "حفظ النتائج",
+  "programmeHebdoLabel": "البرنامج الأسبوعي"
 }

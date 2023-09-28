@@ -10,13 +10,16 @@ include("../../spinners/spinner2.ejs")%>
   <form class="result-form" id="form">
     <div class="result-form-group">
       <div class="result-form-select-group">
-        <label class="result-form-label" for="class-select" id="classLabel"
+        <label class="result-form-label" for="class-select" id="examsClassLabel"
           >Classe :</label
         >
         <select class="result-form-select" id="class-select"></select>
       </div>
       <div class="result-form-select-group">
-        <label class="result-form-label" for="cours-select" id="courseLabel"
+        <label
+          class="result-form-label"
+          for="cours-select"
+          id="examsSubjectLabel"
           >Cours :</label
         >
         <select class="result-form-select" id="cours-select"></select>
@@ -48,7 +51,10 @@ include("../../spinners/spinner2.ejs")%>
         </select>
       </div>
       <div class="result-form-select-group">
-        <label class="result-form-label" for="search-student" id="searchLabel"
+        <label
+          class="result-form-label"
+          for="search-student"
+          id="examsSearchLabel"
           >Rechercher</label
         >
         <input
@@ -64,10 +70,10 @@ include("../../spinners/spinner2.ejs")%>
       <thead class="result-table-head">
         <tr class="result-table-row">
           <th class="result-table-header" id="number">#</th>
-          <th class="result-table-header" id="studentNameHeader">
+          <th class="result-table-header" id="examsStudentNameHeader">
             Nom de l'élève
           </th>
-          <th class="result-table-header" id="studentNumberHeader">
+          <th class="result-table-header" id="examsStudentNumberHeader">
             Numéro de l'élève
           </th>
           <th class="result-table-header" id="pointsHeader">Points</th>

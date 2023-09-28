@@ -42,7 +42,10 @@
               <span class="tProfile__value" id="course"></span>
             </div>
             <div class="tProfile__divider"></div>
-            <h3 class="tProfile__subheading">Programme Hebdomadaire</h3>
+            <h3 class="tProfile__subheading" id="programmeHebdoLabel">
+              Programme Hebdomadaire
+            </h3>
+
             <div class="tProfile__row">
               <span class="tProfile__label" id="fDayLabel">Lundi:</span>
               <span class="tProfile__value" id="fDay">9:00-11:00</span>
@@ -77,6 +80,7 @@
     window.switchLang('fDayLabel', true)
     window.switchLang('sDayLabel', true)
     window.switchLang('tDayLabel', true)
+    window.switchLang('programmeHebdoLabel', true)
     const baseUrl = window.API_URLS.apiUrl
     const getCourseUrl = `${baseUrl}getCourse`
     const getUserByRoleDataUrl = `${baseUrl}getUserByRoleData`

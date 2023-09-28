@@ -238,5 +238,18 @@
   "studentNumberHeader": "Numéro de l'élève",
   "studentNameHeader": "Nom de l'élève",
   "attendanceHeader": "Présence",
-  "markAttendanceButton": "Marquer la présence"
+  "markAttendanceButton": "Marquer la présence",
+  "resultManagementTitle": "Gestion des Résultats",
+  "examsClassLabel": "Classe :",
+  "examsSubjectLabel": "Matière :",
+  "examLabel": "Examen :",
+  "actionLabel": "Action :",
+  "addAction": "Enregistrer",
+  "updateAction": "Mettre à jour",
+  "examsSearchLabel": "Rechercher :",
+  "examsStudentNameHeader": "Nom de l'élève",
+  "examsStudentNumberHeader": "Numéro de l'élève",
+  "pointsHeader": "Points",
+  "saveResultsButton": "Enregistrer les résultats",
+  "programmeHebdoLabel": "Programme Hebdomadaire"
 }
