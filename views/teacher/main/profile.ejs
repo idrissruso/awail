@@ -2,7 +2,7 @@
 <div class="tProfile">
   <div class="tProfile__container">
     <div class="tProfile__container-content">
-      <h2 class="tProfile__title">Profile</h2>
+      <h2 class="tProfile__title" id="teacherProfileTitle">Profile</h2>
       <div class="tProfile__content">
         <div class="tProfile__info">
           <figure class="tProfile__img-box">
@@ -10,41 +10,49 @@
           </figure>
           <div class="tProfile__info-box">
             <div class="tProfile__row">
-              <span class="tProfile__label">Matricule:</span>
+              <span class="tProfile__label" id="teachermatriculeLabel"
+                >Matricule:</span
+              >
               <span class="tProfile__value" id="matricule"></span>
             </div>
             <div class="tProfile__row">
-              <span class="tProfile__label">Nom Complet:</span>
+              <span class="tProfile__label" id="fullNameLabel"
+                >Nom Complet:</span
+              >
               <span class="tProfile__value" id="fullName"></span>
             </div>
             <div class="tProfile__row">
-              <span class="tProfile__label">Téléphone:</span>
+              <span class="tProfile__label" id="phoneLabel">Téléphone:</span>
               <span class="tProfile__value" id="phone"></span>
             </div>
             <div class="tProfile__row">
-              <span class="tProfile__label">Date de Naissance:</span>
+              <span class="tProfile__label" id="dateOfBirthLabel"
+                >Date de Naissance:</span
+              >
               <span class="tProfile__value" id="dateOfBirth"></span>
             </div>
             <div class="tProfile__row">
-              <span class="tProfile__label">Gendre:</span>
+              <span class="tProfile__label" id="teachergenderLabel"
+                >Gendre:</span
+              >
               <span class="tProfile__value" id="gender"></span>
             </div>
             <div class="tProfile__row">
-              <span class="tProfile__label">Cours:</span>
+              <span class="tProfile__label" id="courseLabel">Cours:</span>
               <span class="tProfile__value" id="course"></span>
             </div>
             <div class="tProfile__divider"></div>
             <h3 class="tProfile__subheading">Programme Hebdomadaire</h3>
             <div class="tProfile__row">
-              <span class="tProfile__label">Lundi:</span>
+              <span class="tProfile__label" id="fDayLabel">Lundi:</span>
               <span class="tProfile__value" id="fDay">9:00-11:00</span>
             </div>
             <div class="tProfile__row">
-              <span class="tProfile__label">Mardi:</span>
+              <span class="tProfile__label" id="sDayLabel">Mardi:</span>
               <span class="tProfile__value" id="sDay">1:00-3:00</span>
             </div>
             <div class="tProfile__row">
-              <span class="tProfile__label">Vendredi:</span>
+              <span class="tProfile__label" id="tDayLabel">Vendredi:</span>
               <span class="tProfile__value" id="tDay">9:00-11:00</span>
             </div>
           </div>
@@ -53,10 +61,22 @@
     </div>
   </div>
 </div>
+
 <script src="../apiConfig.js"></script>
+<script src="../langManager.js"></script>
 <script>
   'use strict'
   ;(function async() {
+    window.switchLang('teacherProfileTitle', true)
+    window.switchLang('teachermatriculeLabel', true)
+    window.switchLang('fullNameLabel', true)
+    window.switchLang('phoneLabel', true)
+    window.switchLang('dateOfBirthLabel', true)
+    window.switchLang('teachergenderLabel', true)
+    window.switchLang('courseLabel', true)
+    window.switchLang('fDayLabel', true)
+    window.switchLang('sDayLabel', true)
+    window.switchLang('tDayLabel', true)
     const baseUrl = window.API_URLS.apiUrl
     const getCourseUrl = `${baseUrl}getCourse`
     const getUserByRoleDataUrl = `${baseUrl}getUserByRoleData`

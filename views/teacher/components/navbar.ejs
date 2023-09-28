@@ -22,6 +22,7 @@
     </button>
   </form>
   <div class="navbar__setting">
+    <%- include("../../components/langSelector.ejs") %>
     <svg class="navbar__setting-icon">
       <use xlink:href="#icon-log-out"></use>
     </svg>
@@ -31,7 +32,7 @@
 </nav>
 
 <script>
-  const logout = document.querySelector('.navbar__setting')
+  const logout = document.querySelector('.navbar__setting-icon')
   logout.addEventListener('click', () => {
     window.location.href = '/logout'
   })

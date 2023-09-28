@@ -217,5 +217,15 @@
   "horaireTitle": "Horaire Hebdomadaire de classe",
   "horaireClassLabel": "Classe :",
   "horaireClassOption": "Choisir une classe",
-  "updateButton": "Mettre à jour"
+  "updateButton": "Mettre à jour",
+  "teacherProfileTitle": "Profil de l'enseignant",
+  "teachermatriculeLabel": "Matricule",
+  "fullNameLabel": "Nom Complet",
+  "phoneLabel": "Téléphone",
+  "dateOfBirthLabel": "Date de Naissance",
+  "teachergenderLabel": "Gendre",
+  "courseLabel": "Cours",
+  "fDayLabel": "Lundi",
+  "sDayLabel": "Mardi",
+  "tDayLabel": "Vendredi"
 }

@@ -217,5 +217,15 @@
   "horaireTitle": "جدول الفصول الأسبوعي",
   "horaireClassLabel": "الصف:",
   "horaireClassOption": "اختر صفًا",
-  "updateButton": "تحديث الجدول"
+  "updateButton": "تحديث الجدول",
+  "teacherProfileTitle": "ملف المعلم",
+  "teachermatriculeLabel": "الرقم الوظيفي",
+  "fullNameLabel": "الاسم الكامل",
+  "phoneLabel": "رقم الهاتف",
+  "dateOfBirthLabel": "تاريخ الميلاد",
+  "teachergenderLabel": "الجنس",
+  "courseLabel": "المقررات",
+  "fDayLabel": "الاثنين",
+  "sDayLabel": "الثلاثاء",
+  "tDayLabel": "الجمعة"
 }
