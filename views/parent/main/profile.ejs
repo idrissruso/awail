@@ -6,58 +6,72 @@
     </figure>
     <div class="profile__info-box">
       <div class="profile__row">
-        <span class="profile__label">Matricule:</span>
-        <span class="profile__value"><%= loggedInUser.serial_number %></span>
+        <span class="profile__label" id="pmatriculeLabel">Matricule:</span>
+        <span class="profile__value" id="matricule"
+          ><%= loggedInUser.serial_number %></span
+        >
       </div>
       <div class="profile__row">
-        <span class="profile__label">Nom Complet:</span>
-        <span class="profile__value"><%= loggedInUser.fullName %></span>
+        <span class="profile__label" id="nomCompletLabel">Nom Complet:</span>
+        <span class="profile__value" id="nomComplet"
+          ><%= loggedInUser.fullName %></span
+        >
       </div>
       <div class="profile__row">
-        <span class="profile__label">Téléphone:</span>
-        <span class="profile__value"
+        <span class="profile__label" id="telephoneLabel">Téléphone:</span>
+        <span class="profile__value" id="telephone"
           ><%= loggedInUser.contact_info.phone %></span
         >
       </div>
       <div class="profile__row">
-        <span class="profile__label">E-mail:</span>
+        <span class="profile__label" id="pemailLabel">E-mail:</span>
         <span class="profile__value" id="email"
           ><%= loggedInUser.contact_info.email %></span
         >
       </div>
       <div class="profile__row">
-        <span class="profile__label">Date de Naissance:</span>
+        <span class="profile__label" id="pdateLabel">Date de Naissance:</span>
         <span class="profile__value" id="date"></span>
       </div>
       <div class="profile__row">
-        <span class="profile__label">Gendre:</span>
-        <span class="profile__value"><%= loggedInUser.gender %></span>
+        <span class="profile__label" id="pgenderLabel">Gendre:</span>
+        <span class="profile__value" id="gender"
+          ><%= loggedInUser.gender %></span
+        >
       </div>
       <div class="profile__row">
-        <span class="profile__label">Classe:</span>
+        <span class="profile__label" id="classeLabel">Classe:</span>
         <span class="profile__value" id="classe"></span>
       </div>
       <div class="profile__divider"></div>
-      <h3 class="profile__subheading">Information du Parent</h3>
+      <h3 class="profile__subheading" id="pinfoLabel">Information du Parent</h3>
       <div class="profile__row">
-        <span class="profile__label">Nom du Parent:</span>
-        <span class="profile__value"><%= loggedInUser.parent.fullName %></span>
+        <span class="profile__label" id="parentNomLabel">Nom du Parent:</span>
+        <span class="profile__value" id="parentNom"
+          ><%= loggedInUser.parent.fullName %></span
+        >
       </div>
       <div class="profile__row">
-        <span class="profile__label">Profession du Parent:</span>
-        <span class="profile__value"
+        <span class="profile__label" id="parentProfessionLabel"
+          >Profession du Parent:</span
+        >
+        <span class="profile__value" id="parentProfession"
           ><%= loggedInUser.parent.profession %></span
         >
       </div>
       <div class="profile__row">
-        <span class="profile__label">Téléphone du Parent:</span>
-        <span class="profile__value"
+        <span class="profile__label" id="parentTelephoneLabel"
+          >Téléphone du Parent:</span
+        >
+        <span class="profile__value" id="parentTelephone"
           ><%= loggedInUser.parent.contact_info.phone %></span
         >
       </div>
       <div class="profile__row">
-        <span class="profile__label">Adresse du Parent:</span>
-        <span class="profile__value"
+        <span class="profile__label" id="parentAdresseLabel"
+          >Adresse du Parent:</span
+        >
+        <span class="profile__value" id="parentAdresse"
           ><%= loggedInUser.contact_info.address %></span
         >
       </div>
@@ -71,51 +85,49 @@
     </figure>
     <div class="profile__announcements">
       <div class="school-contact">
-        <h3 class="subheading info">Coordonnées de l'École</h3>
+        <h3 class="subheading info" id="schoolContact">
+          Coordonnées de l'École
+        </h3>
         <div class="row">
-          <span class="label">Nom de l'École:</span>
-          <span class="value">École ABC</span>
+          <span class="label" id="schoolNameLabel">Nom de l'École:</span>
+          <span class="value" id="schoolName"></span>
         </div>
         <div class="row">
-          <span class="label">Adresse:</span>
-          <span class="value">123 Rue de l'École, Ville</span>
+          <span class="label" id="schoolAddressLabel">Adresse:</span>
+          <span class="value" id="schoolAddress"></span>
         </div>
         <div class="row">
-          <span class="label">Téléphone de l'École:</span>
-          <span class="value">555-123-4567</span>
+          <span class="label" id="schoolPhoneLabel">Téléphone de l'École:</span>
+          <span class="value" id="schoolPhone"></span>
         </div>
       </div>
     </div>
 
     <div class="profile__announcements">
       <div class="school-contact">
-        <h3 class="subheading info">Annonces</h3>
+        <h3 class="subheading info" id="schoolAnnouncements">Annonces</h3>
         <div class="row">
-          <span class="label">Annonce 1:</span>
-          <span class="value"
-            >Nouvel événement : Description de l'événement</span
-          >
+          <span class="label" id="announcement1Label">Annonce 1:</span>
+          <span class="value" id="announcement1">-</span>
         </div>
         <div class="row">
-          <span class="label">Annonce 2:</span>
-          <span class="value"
-            >Information importante : Description de l'information</span
-          >
+          <span class="label" id="announcement2Label">Annonce 2:</span>
+          <span class="value" id="announcement2">-</span>
         </div>
         <!-- Ajoutez plus d'annonces comme vous le souhaitez -->
       </div>
     </div>
 
-    <div class="profile__announcements">
+    <div class="profile__announcements" id="upcomingEvents">
       <div class="school-contact">
         <h3 class="subheading info">Événements à Venir</h3>
         <div class="row">
-          <span class="label">Événement 1:</span>
-          <span class="value">Pique-nique communautaire - Date : 20 août</span>
+          <span class="label" id="event1Label">Événement 1:</span>
+          <span class="value" id="event1">-</span>
         </div>
         <div class="row">
-          <span class="label">Événement 2:</span>
-          <span class="value">Foire scientifique - Date : 5 septembre</span>
+          <span class="label" id="event2Label">Événement 2:</span>
+          <span class="value" id="event2">-</span>
         </div>
         <!-- Ajoutez plus d'événements à venir comme vous le souhaitez -->
       </div>

@@ -216,6 +216,7 @@ img {
 }
 
 .header__nav {
+  position: relative;
   height: var(--header-height);
   display: flex;
   justify-content: space-between;
@@ -233,10 +234,21 @@ img {
 }
 
 .header__toggle {
+  margin-left: 1rem;
   font-size: 2rem;
   cursor: pointer;
 }
 
+.header__action {
+  position: relative;
+}
+
+#language-select {
+  right: 0 !important;
+  top: 0.2rem !important;
+  margin-right: 3.5rem;
+  font-size: smaller;
+}
 /* Show menu */
 .show-menu {
   transform: translate(70%);

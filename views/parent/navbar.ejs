@@ -12,7 +12,7 @@
         <img src="../author.JPG" alt="" class="nav__img" />
       </div>
 
-      <span class="nav__greeting">Bonjour!</span>
+      <span class="nav__greeting" id="nav-greeting">Bonjour!</span>
       <h1 class="nav__name">
         <span id="name"></span> <br />
         <span id="surname"></span>
@@ -22,45 +22,60 @@
     <ul class="nav__list">
       <li class="nav__item">
         <a href="#home" class="nav__link active-link">
-          <i class="bx bx-user"></i> Profil
+          <i class="bx bx-user"></i>
+          <span id="nav-link-home">Profil</span>
         </a>
       </li>
       <li class="nav__item">
         <a href="#weekly-schedule" class="nav__link">
-          <i class="bx bx-calendar"></i> Programme Hebdomadaire
+          <i class="bx bx-calendar"></i>
+          <span id="nav-link-weekly-schedule">Programme Hebdomadaire</span>
         </a>
       </li>
       <li class="nav__item">
         <a href="#presenses" class="nav__link">
-          <i class="bx bx-check"></i> Présence
+          <i class="bx bx-check"></i>
+          <span id="nav-link-presences">Présence</span>
         </a>
       </li>
       <li class="nav__item">
         <a href="#calendar" class="nav__link">
-          <i class="bx bx-calendar-event"></i> Calendrier des Examens
+          <i class="bx bx-calendar-event"></i>
+          <span id="nav-link-calendar">Calendrier des Examens</span>
         </a>
       </li>
       <li class="nav__item">
         <a href="#results" class="nav__link">
-          <i class="bx bx-file"></i> Résultats des Examens
+          <i class="bx bx-file"></i>
+          <span id="nav-link-results">Résultats des Examens</span>
         </a>
       </li>
 
       <li class="nav__item">
         <a href="#fees" class="nav__link">
-          <i class="bx bx-credit-card"></i> Frais Scholaire
+          <i class="bx bx-credit-card"></i>
+          <span id="nav-link-fees">Frais Scolaires</span>
         </a>
       </li>
       <li class="nav__item" id="logout">
         <a href="#logout" class="nav__link">
-          <i class="bx bx-log-out"></i> Déconnexion
+          <i class="bx bx-log-out"></i>
+          <span id="nav-link-logout">Déconnexion</span>
         </a>
       </li>
     </ul>
   </div>
 </nav>
 
+<script src="../langManager.js"></script>
 <script>
+
+  (function(){
+
+
+
+
+
   const loggedInUser = <%- JSON.stringify(loggedInUser) %>;
   console.log(loggedInUser);
   const names = loggedInUser.fullName.split(" ");
@@ -74,4 +89,5 @@
   } else {
     img.src = `../profile.png`
   }
+  })()
 </script>
