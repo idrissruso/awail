@@ -1,15 +1,18 @@
 <%- include("../spinners/spinner2.ejs")%>
+
 <div class="manageAbsenteeism">
   <div class="header">
-    <h1 class="header__title">Horaire Hebdomadaire de classe</h1>
+    <h1 class="header__title" id="horaireTitle">
+      Horaire Hebdomadaire de classe
+    </h1>
   </div>
   <form class="form" id="form">
     <div class="form__group">
       <div class="form__select-group">
-        <label class="form__label" for="class-select">classe :</label>
-        <select class="form__select" id="class-select" required>
-          <option value="" disabled selected hidden>Choisir une classe</option>
-        </select>
+        <label class="form__label" for="class-select" id="horaireClassLabel"
+          >classe :</label
+        >
+        <select class="form__select" id="class-select" required></select>
       </div>
     </div>
     <section id="schedule" class="section">
@@ -18,20 +21,22 @@
           <thead>
             <tr>
               <th></th>
-              <th>Lundi</th>
-              <th>Mardi</th>
-              <th>Mercredi</th>
-              <th>Jeudi</th>
-              <th>Vendredi</th>
-              <th>Samedi</th>
+              <th id="lundiLabel">Lundi</th>
+              <th id="mardiLabel">Mardi</th>
+              <th id="mercrediLabel">Mercredi</th>
+              <th id="jeudiLabel">Jeudi</th>
+              <th id="vendrediLabel">Vendredi</th>
+              <th id="samediLabel">Samedi</th>
             </tr>
           </thead>
-          <tbody></tbody>
+          <tbody id="scheduleTable"></tbody>
         </table>
       </div>
     </section>
 
-    <button class="form__button" type="submit">Mettre à jour</button>
+    <button class="form__button" type="submit" id="updateButton">
+      Mettre à jour
+    </button>
   </form>
 </div>
 <script src="apiConfig.js"></script>

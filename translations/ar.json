@@ -213,5 +213,9 @@
   "matriculeLabel": "الرقم الجامعي:",
   "imageLabel": "الصورة:",
   "usersAddUserBtn": "إضافة",
-  "cancelAddUserBtn": "إلغاء"
+  "cancelAddUserBtn": "إلغاء",
+  "horaireTitle": "جدول الفصول الأسبوعي",
+  "horaireClassLabel": "الصف:",
+  "horaireClassOption": "اختر صفًا",
+  "updateButton": "تحديث الجدول"
 }

@@ -213,5 +213,9 @@
   "matriculeLabel": "Matricule :",
   "imageLabel": "Image :",
   "usersAddUserBtn": "Ajouter",
-  "cancelAddUserBtn": "Annuler"
+  "cancelAddUserBtn": "Annuler",
+  "horaireTitle": "Horaire Hebdomadaire de classe",
+  "horaireClassLabel": "Classe :",
+  "horaireClassOption": "Choisir une classe",
+  "updateButton": "Mettre à jour"
 }

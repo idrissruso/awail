@@ -7,6 +7,11 @@
     updateHoraire: `${baseUrl}updateHoraire/`, // Add the API endpoint for updating schedule
   }
 
+  window.switchLang('horaireTitle')
+  window.switchLang('horaireClassLabel')
+  window.switchLang('horaireClassOption')
+  window.switchLang('updateButton')
+
   const spin = document.querySelector('#spinner2')
   const classesSelect = document.querySelector('#class-select')
   const scheduleTable = document.querySelector('.class-schedule tbody') // Select the table body
@@ -52,8 +57,10 @@
     // Create and add the first option with value 0 and default text
     const defaultOption = document.createElement('option')
     defaultOption.value = '0'
-    defaultOption.textContent = 'Sélectionnez une classe' // Change this to your desired default text
+    defaultOption.textContent = 'Sélectionnez une classe'
+    defaultOption.id = 'horaireClassOption'
     classesSelect.appendChild(defaultOption)
+    window.switchLang('horaireClassOption')
 
     // Loop through the classes and append the rest of the options
     classes.forEach((classe) => {
