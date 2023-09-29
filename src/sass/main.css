@@ -1890,11 +1890,11 @@ input[type=checkbox]:checked:after {
   transition: all 0.3s;
 }
 .section-login__container {
-  margin: 5rem;
+  margin: 10rem;
   position: relative;
   background-color: #eee2de;
   display: grid;
-  grid-template-columns: max-content minmax(max-content, 45rem);
+  grid-template-columns: max-content min-content;
   box-shadow: 0 2rem 4rem rgba(36, 36, 62, 0.5);
   transform: scale(0.5);
   transition: all 0.3s 0.1s;

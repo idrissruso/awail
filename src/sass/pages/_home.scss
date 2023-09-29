@@ -60,11 +60,11 @@
   transition: all 0.3s;
 
   &__container {
-    margin: 5rem;
+    margin: 10rem;
     position: relative;
     background-color: $color-secondary;
     display: grid;
-    grid-template-columns: max-content minmax(max-content, 45rem);
+    grid-template-columns: max-content min-content;
     box-shadow: $shadow-light;
     transform: scale(0.5);
     transition: all 0.3s 0.1s;
