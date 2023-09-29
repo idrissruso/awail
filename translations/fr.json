@@ -314,5 +314,10 @@
   "resultsTableTotal": "Total",
   "payment-table__header-cell--month": "Mois",
   "payment-table__header-cell--date": "Date",
-  "payment-table__header-cell--amount": "Montant"
+  "payment-table__header-cell--amount": "Montant",
+  "titleProfile": "Profil",
+  "titleSchedule": "Programme Hebdomadaire",
+  "titlePresenses": "Présence",
+  "titleResults": "Résultats",
+  "titleFees": "Frais Scolaires"
 }

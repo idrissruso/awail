@@ -17,29 +17,42 @@
   <!-- When inserting your content into sections, remove the section__height class -->
   <!--=============== HOME ===============-->
   <section class="section section__height container" id="home">
-    <%- include("title.ejs", {sectionTitle : "Profile"}) %> <%-
-    include("./main/profile.ejs", user = user)%>
+    <div class="title">
+      <h1 class="title__heading" id="titleProfile">Profile</h1>
+    </div>
+    <%- include("./main/profile.ejs", user = user)%>
   </section>
 
-  <!--=============== ABOUT ===============-->
+  <!--=============== Horaire ===============-->
   <section class="section section__height container" id="weekly-schedule">
-    <%- include("title.ejs", {sectionTitle : "Programme Hebdomadaire"}) %>
+    <div class="title">
+      <h1 class="title__heading" id="titleSchedule">Programme Hebdomadaire</h1>
+    </div>
+
     <%-include("./main/schedule.ejs")%>
   </section>
 
   <!--=============== PORTFOLIO ===============-->
   <section class="section section__height container" id="presenses">
-    <%- include("title.ejs", {sectionTitle : "Presences"}) %>
+    <div class="title">
+      <h1 class="title__heading" id="titlePresenses">Presences</h1>
+    </div>
+
     <%-include("./main/absenteeism.ejs")%>
   </section>
 
   <!--=============== CONTACT ===============-->
   <section class="section section__height container" id="results">
-    <%- include("title.ejs", {sectionTitle : "Résultats des Examens"}) %>
+    <div class="title">
+      <h1 class="title__heading" id="titleResults">Résultats des Examens</h1>
+    </div>
+
     <%-include("./main/results.ejs")%>
   </section>
   <section class="section section__height container" id="fees">
-    <%- include("title.ejs", {sectionTitle : "Frais Scholaire"}) %>
+    <div class="title">
+      <h1 class="title__heading" id="titleFees">Frais Scholaire</h1>
+    </div>
     <%-include("./main/fees.ejs")%>
   </section>
 </main>

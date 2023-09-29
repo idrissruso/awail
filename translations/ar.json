@@ -315,5 +315,10 @@
   "resultsTableTotal": "المجموع",
   "payment-table__header-cell--month": "الشهر",
   "payment-table__header-cell--date": "التاريخ",
-  "payment-table__header-cell--amount": "المبلغ"
+  "payment-table__header-cell--amount": "المبلغ",
+  "titleProfile": "الملف الشخصي",
+  "titleSchedule": "البرنامج الأسبوعي",
+  "titlePresenses": "الحضور",
+  "titleResults": "نتائج الامتحانات",
+  "titleFees": "الرسوم الدراسية"
 }
