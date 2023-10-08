@@ -38,7 +38,7 @@ mongoose
     console.log('Connected to the Database successfully')
     app.listen(PORT, () => {
       console.log(
-        `Server running on port ${PORT}` + ' ' + `http://localhost:${PORT}/`
+        `Server running on port ${PORT}` + ' ' + `http://0.0.0.0:${PORT}/`
       )
     })
   })
